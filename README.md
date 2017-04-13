@@ -94,3 +94,13 @@ Run `yarn build` to create static site ready to host (`/public`)
  ├── tslint.json              // tslint configuration
  └── yarn.lock
  ```
+
+## Plop generators - `yarn generate`
+
+To avoid any boring copy/past, this starter-kit have a `plopfile.js` and `/templates` to permit 
+simple bootstrap of current file pattern (eg. components and blog post).
+
+You can add/update/remove any generator easily, just please note that you need to `git commit --no-verify` if 
+you modify any templates (lint-staged not really love the mix with handlebar and typescript file).
+
+Be lazy and have fun!
