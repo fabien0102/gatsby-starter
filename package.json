@@ -1,0 +1,83 @@
+{
+  "name": "gatsby-starter",
+  "version": "1.0.0",
+  "description": "Gatsby 1.0 starter",
+  "author": "fabien0102 <fabien0102@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "test": "xo && tslint && jest",
+    "test:watch": "jest --watch",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "@types/react": "15.0.21",
+    "@types/react-dom": "0.14.23",
+    "@types/react-helmet": "5.0.0",
+    "babel-eslint": "^7.2.1",
+    "gatsby": "canary",
+    "gatsby-link": "canary",
+    "gatsby-parser-json": "canary",
+    "gatsby-parser-sharp": "canary",
+    "gatsby-plugin-glamor": "canary",
+    "gatsby-plugin-google-analytics": "canary",
+    "gatsby-plugin-manifest": "canary",
+    "gatsby-plugin-offline": "canary",
+    "gatsby-plugin-sharp": "canary",
+    "gatsby-plugin-typescript": "canary",
+    "gatsby-source-filesystem": "canary",
+    "gatsby-typegen-filesystem": "canary",
+    "gatsby-typegen-sharp": "canary",
+    "react": "15.5.3",
+    "react-helmet": "5.0.3",
+    "slash": "1.0.0",
+    "ts-loader": "^2.0.3",
+    "typescript": "2.2.2"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^2.7.8",
+    "@types/jest": "^19.2.2",
+    "@types/react-test-renderer": "^15.4.3",
+    "enzyme": "^2.8.1",
+    "eslint-config-xo-react": "0.11.1",
+    "eslint-plugin-react": "6.10.3",
+    "husky": "0.13.3",
+    "jest": "19.0.2",
+    "lint-staged": "3.4.0",
+    "react-addons-test-utils": "^15.5.1",
+    "react-test-renderer": "^15.5.4",
+    "ts-jest": "19.0.8",
+    "ts-lint": "4.5.1",
+    "xo": "^0.18.1"
+  },
+  "keywords": [
+    "gatsby",
+    "starter"
+  ],
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "xo --fix",
+      "git add"
+    ]
+  },
+  "xo": {
+    "extends": "xo-react/space",
+    "space": true
+  }
+}
