@@ -73,8 +73,8 @@ Run `yarn build` to create static site ready to host (`/public`)
   - [ ] Code climate config
 - [x] SEO
   - [x] [Helmet](https://github.com/nfl/react-helmet)
-- [ ] Lazyboy tools
-  - [ ] [plop](https://github.com/amwmedia/plop) templates -> `yarn generate`
+- [x] Lazyboy tools
+  - [x] [plop](https://github.com/amwmedia/plop) templates -> `yarn generate`
 
 ## Files structure
 ```

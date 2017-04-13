@@ -9,6 +9,7 @@
     "build": "gatsby build",
     "test": "xo && tslint && jest",
     "test:watch": "jest --watch",
+    "generate": "plop",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -45,6 +46,7 @@
     "husky": "0.13.3",
     "jest": "19.0.2",
     "lint-staged": "3.4.0",
+    "plop": "^1.7.4",
     "react-addons-test-utils": "^15.5.1",
     "react-test-renderer": "^15.5.4",
     "ts-jest": "19.0.8",
@@ -60,6 +62,10 @@
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/templates/"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
