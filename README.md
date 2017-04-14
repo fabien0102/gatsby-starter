@@ -50,7 +50,7 @@ Install this starter (assuming Gatsby is installed) by running from your CLI:
 $ gatsby new my-website https://github.com/fabien0102/gatsby-starter
 ```
 
-Run `yarn start` to hot-serve your website on http://localhost:8000.
+Run `yarn start` (or press `F5` if you are on VSCode) to hot-serve your website on http://localhost:8000.
 
 Run `yarn build` to create static site ready to host (`/public`)
 
