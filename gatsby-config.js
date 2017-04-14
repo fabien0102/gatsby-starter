@@ -1,5 +1,5 @@
 module.exports = {
-  htmlPath: `/src/html.tsx`,
+  rootPath: `/src/`,
   siteMetadata: {
     title: `My website`
   },
