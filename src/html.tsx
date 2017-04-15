@@ -20,15 +20,17 @@ interface HtmlProps {
   headComponents: any;
 }
 
-export default (props: HtmlProps) => {
+// Use `module.exports` to be compliante with `webpack-require` import method
+module.exports = React.createClass<HtmlProps, void>({
+  render() {
     const head = Helmet.rewind();
 
     const css = (process.env.NODE_ENV === `production`) ?
-        <style
-          id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{ __html: styles }}
-        />
-       : null;
+      <style
+        id="gatsby-inlined-css"
+        dangerouslySetInnerHTML={{ __html: styles }}
+      />
+      : null;
 
     return (
       <html lang="en">
@@ -55,4 +57,5 @@ export default (props: HtmlProps) => {
         </body>
       </html>
     );
-  };
+  },
+});
