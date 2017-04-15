@@ -64,15 +64,16 @@ Run `yarn build` to create static site ready to host (`/public`)
   - [ ] manifest
   - [x] typescript
   - [ ] blog in markdown
-- [ ] Best practices tools
+- [x] Best practices tools
   - [x] [Jest](https://facebook.github.io/jest/) / [Enzyme](http://airbnb.io/enzyme/)
   - [x] [Typescript](https://www.typescriptlang.org/) / [tslint](https://palantir.github.io/tslint/)
   - [x] [xo linter](https://github.com/sindresorhus/xo)
   - [x] [Hunsky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for autofix each commit
+  - [ ] [Remark-lint](https://github.com/wooorm/remark-lint)
   - [ ] Travis config
   - [ ] Code climate config
-- [x] SEO
-  - [x] [Helmet](https://github.com/nfl/react-helmet)
+- [ ] SEO
+  - [ ] [Helmet](https://github.com/nfl/react-helmet)
 - [x] Lazyboy tools
   - [x] [plop](https://github.com/amwmedia/plop) templates -> `yarn generate`
 
@@ -80,12 +81,16 @@ Run `yarn build` to create static site ready to host (`/public`)
 ```
  .
  ├── gatsby-config.js         // gatsby configuration
+ ├── gatsby-node.js           // gatsby node hooks
  ├── package.json             // package configuration (description, scripts, dependencies)
+ ├── plopfile.js              // plop generators configuration
  ├── public                   // static site files after `yarn build`
  ├── README.md
  ├── src                      // sources
  │   ├── components           // all react components (.tsx) and tests (.test.tsx)
  │   ├── html.tsx             // main html
+ │   ├── layouts              // layouts
+ │   │   └── default.tsx
  │   └── pages                // all pages
  │       ├── 404.tsx
  │       └── index.tsx
