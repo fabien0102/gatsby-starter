@@ -24,8 +24,9 @@ exports.createPages = ({graphql, actionCreators}) => {
       }
 
       result.data.allFile.edges.forEach(edge => {
+        const path = /pages(.*)\.tsx$/.exec(edge.node.id)[1];
         upsertPage({
-          path: /pages(.*)\.tsx$/.exec(edge.node.id)[1] + '/',
+          path: path === `/index` ? `/` : path,
           component: edge.node.id
         });
         resolve();
