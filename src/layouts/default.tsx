@@ -10,7 +10,7 @@ export default class DefaultLayout extends React.Component<HTMLDivElement, void>
             Home
           </Link>
           |
-          <Link to="/about" activeStyle={{color: "red"}}>
+          <Link to="/about/" activeStyle={{color: "red"}}>
             About
           </Link>
         </div>

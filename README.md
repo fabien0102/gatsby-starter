@@ -100,7 +100,7 @@ Run `yarn build` to create static site ready to host (`/public`)
  └── yarn.lock
  ```
 
-## Plop generators - `yarn generate`
+## Plop generators - `yarn generate`
 
 To avoid any boring copy/past, this starter-kit have a `plopfile.js` and `/templates` to permit 
 simple bootstrap of current file pattern (eg. components and blog post).
