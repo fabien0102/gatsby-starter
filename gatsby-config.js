@@ -1,5 +1,4 @@
 module.exports = {
-  rootPath: `/src/`,
   siteMetadata: {
     title: `My website`
   },

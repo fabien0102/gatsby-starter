@@ -136,4 +136,4 @@ $RECYCLE.BIN/
 
 ### Gatsby ###
 public
-.intermediate-representation
+.cache
