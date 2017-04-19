@@ -5,42 +5,7 @@ Gatsby 1.0 starter for generate awesome static website working with a nice env d
 
 ## Warning
 
-This starter is currently in wip and not working out of the box.
-
-I'm (@fabien0102) working on my fork to make gatsby works with this architecture.
-
-Steps for bootstrap this wip project:
-
-```bash
-# 1.a Clone gatsby
-$ git clone git@github.com:fabien0102/gatsby.git
-$ cd gatsby
-$ git checkout -b 1.0-typescript-support origin/1.0-typescript-support
-$ yarn
-$ yarn watch # let this console open
-
-# 1.b Or add a remote to your gatsby fork
-$ git add remote fabien0102 git@github.com:fabien0102/gatsby.git
-$ git checkout -b 1.0-typescript-support fabien0102/1.0-typescript-support
-$ yarn
-$ yarn watch # let this console open
-
-# 2. Install gatsby-dev-cli
-$ npm i -g gatsby-dev-cli@canary
-$ gatsby-dev --set-path-to-repo /path/to/my/cloned/version/gatsby
-
-# 3. Clone this starter
-$ git clone git@github.com:fabien0102/gatsby-starter.git
-$ cd gatsby-starter
-
-# 4. Install dependencies
-$ yarn
-$ gatsby-dev # let this console open
-
-# 5. Start play
-$ cd /path/to/fabien0102-gatsby-starter
-$ yarn start
-```
+This starter is currently in wip (see progression to #What's inside session).
 
 ## Getting started
 
