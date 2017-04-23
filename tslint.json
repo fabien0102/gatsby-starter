@@ -8,6 +8,9 @@
         "interface-name": [ "never-prefix" ],
         "member-access": [
             false
+        ],
+        "ordered-imports": [
+            false
         ]
     },
     "rulesDirectory": []
