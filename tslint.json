@@ -11,6 +11,9 @@
         ],
         "ordered-imports": [
             false
+        ],
+        "no-console": [
+            false
         ]
     },
     "rulesDirectory": []
