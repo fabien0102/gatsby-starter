@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as Link from "gatsby-link";
 import {
   Button,
   Menu,
@@ -13,13 +14,13 @@ import {
 } from "semantic-ui-react";
 import { version } from "../../package.json";
 
-export default class IndexPage extends React.Component<HTMLDivElement, void> {
-  activeItem: string = "home";
+interface IndexPageProps {
+  location: {
+    pathname: string;
+  };
+}
 
-  handleItemClick(event: React.MouseEvent<HTMLAnchorElement>, { name }: MenuItemProps) {
-    console.log(name);
-  }
-
+export default class IndexPage extends React.Component<IndexPageProps, void> {
   render() {
     return (
       <div>
@@ -27,13 +28,15 @@ export default class IndexPage extends React.Component<HTMLDivElement, void> {
         <Segment vertical inverted textAlign="center" className="masthead">
           <Container>
             <Menu large inverted pointing secondary>
-              <Menu.Item name="Home" active={true} />
-              <Menu.Item name="About" onClick={this.handleItemClick} />
-              <Menu.Item name="Blog" onClick={this.handleItemClick} />
+              <Menu.Item as={Link} name="Home" to="/" active={this.props.location.pathname === "/"} />
+              <Menu.Item as={Link} name="About" to="/about/" active={this.props.location.pathname === "/about/"} />
+              <Menu.Item as={Link} name="Blog" to="/blog/" active={this.props.location.pathname === "/blog/"} />
+              <Menu.Menu position="right">
+                <Label color="black">Version: {version}</Label>
+              </Menu.Menu>
             </Menu>
           </Container>
           <Container text>
-            <Label color="black">{version}</Label>
             <Header inverted as="h1">Gatsby 1.0 - Starter kit</Header>
             <Header inverted as="h2">Typescript - Jest - Semantic UI</Header>
             <Button primary size="huge">Get started!</Button>
