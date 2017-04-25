@@ -31,6 +31,7 @@ Run `yarn build` to create static site ready to host (`/public`)
   - [ ] blog in markdown
 - [x] Best practices tools
   - [x] [Jest](https://facebook.github.io/jest/) / [Enzyme](http://airbnb.io/enzyme/)
+  - [ ] [Storybook](https://storybooks.js.org/)
   - [x] [Typescript](https://www.typescriptlang.org/) / [tslint](https://palantir.github.io/tslint/)
   - [x] [xo linter](https://github.com/sindresorhus/xo)
   - [x] [Hunsky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for autofix each commit
@@ -39,6 +40,7 @@ Run `yarn build` to create static site ready to host (`/public`)
   - [ ] Code climate config
 - [ ] SEO
   - [ ] [Helmet](https://github.com/nfl/react-helmet)
+- [x] [Semantic-ui](http://react.semantic-ui.com) for styling
 - [x] Lazyboy tools
   - [x] [plop](https://github.com/amwmedia/plop) templates -> `yarn generate`
 
