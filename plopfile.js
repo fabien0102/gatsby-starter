@@ -29,4 +29,24 @@ module.exports = plop => {
       ];
     }
   });
+
+  plop.setGenerator('page', {
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Page name?',
+        validate: value => /.+/.test(value) ? true : 'name is required'
+      }
+    ],
+    actions: data => {
+      return [
+        {
+          type: 'add',
+          path: 'src/pages/{{camelCase name}}.tsx',
+          templateFile: 'templates/page.tsx.template'
+        }
+      ];
+    }
+  });
 };
