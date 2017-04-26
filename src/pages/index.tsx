@@ -20,9 +20,7 @@ export default (props: IndexPageProps) =>
   <div>
     {/* Master head */}
     <Segment vertical inverted textAlign="center" className="masthead">
-      <Container>
-        <HeaderMenu pathname={props.location.pathname} />
-      </Container>
+      <HeaderMenu pathname={props.location.pathname} />
       <Container text>
         <Header inverted as="h1">Gatsby 1.0 - Starter kit</Header>
         <Header inverted as="h2">Typescript - Jest - Semantic UI</Header>

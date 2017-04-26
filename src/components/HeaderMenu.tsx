@@ -14,16 +14,18 @@ export default (props: HeaderMenuProps) => {
   const isBlog = props.pathname === "/blog/";
 
   return (
-    <Menu large pointing secondary inverted={isHome}>
-      <Menu.Item as={Link} name="Home" to="/" active={isHome} />
-      <Menu.Item as={Link} name="About" to="/about/" active={isAbout} />
-      <Menu.Item as={Link} name="Blog" to="/blog/" active={isBlog} />
-      <Menu.Menu position="right">
-        {isHome
-        ? <Label color="black">Version: {version}</Label>
-        : <Label style={{ backgroundColor: "white" }}>Version: {version}</Label>
-        }
-      </Menu.Menu>
-    </Menu>
+    <Container>
+      <Menu large pointing secondary inverted={isHome}>
+        <Menu.Item as={Link} name="Home" to="/" active={isHome} />
+        <Menu.Item as={Link} name="About" to="/about/" active={isAbout} />
+        <Menu.Item as={Link} name="Blog" to="/blog/" active={isBlog} />
+        <Menu.Menu position="right">
+          {isHome
+          ? <Label color="black">Version: {version}</Label>
+          : <Label style={{ backgroundColor: "white" }}>Version: {version}</Label>
+          }
+        </Menu.Menu>
+      </Menu>
+    </Container>
   );
 };
