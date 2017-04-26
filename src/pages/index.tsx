@@ -1,18 +1,14 @@
 import * as React from "react";
 import * as Link from "gatsby-link";
+import HeaderMenu from "../components/HeaderMenu";
 import {
   Button,
-  Menu,
-  MenuItem,
-  MenuItemProps,
   Segment,
   Container,
   Grid,
   Header,
-  Label,
   Icon,
 } from "semantic-ui-react";
-import { version } from "../../package.json";
 
 interface IndexPageProps {
   location: {
@@ -25,14 +21,7 @@ export default (props: IndexPageProps) =>
     {/* Master head */}
     <Segment vertical inverted textAlign="center" className="masthead">
       <Container>
-        <Menu large inverted pointing secondary>
-          <Menu.Item as={Link} name="Home" to="/" active={props.location.pathname === "/"} />
-          <Menu.Item as={Link} name="About" to="/about/" active={props.location.pathname === "/about/"} />
-          <Menu.Item as={Link} name="Blog" to="/blog/" active={props.location.pathname === "/blog/"} />
-          <Menu.Menu position="right">
-            <Label color="black">Version: {version}</Label>
-          </Menu.Menu>
-        </Menu>
+        <HeaderMenu pathname={props.location.pathname} />
       </Container>
       <Container text>
         <Header inverted as="h1">Gatsby 1.0 - Starter kit</Header>
@@ -116,12 +105,5 @@ export default (props: IndexPageProps) =>
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </Segment>
-
-    {/* Footer */}
-    <Segment inverted vertical>
-      <Container textAlign="center">
-        <p>Powered with <Icon name="heart" /> by Gatsby 1.0</p>
-      </Container>
     </Segment>
   </div>;

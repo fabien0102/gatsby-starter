@@ -19,7 +19,10 @@ export default (props: HeaderMenuProps) => {
       <Menu.Item as={Link} name="About" to="/about/" active={isAbout} />
       <Menu.Item as={Link} name="Blog" to="/blog/" active={isBlog} />
       <Menu.Menu position="right">
-        <Label style={{ backgroundColor: "white" }}>Version: {version}</Label>
+        {isHome
+        ? <Label color="black">Version: {version}</Label>
+        : <Label style={{ backgroundColor: "white" }}>Version: {version}</Label>
+        }
       </Menu.Menu>
     </Menu>
   );
