@@ -5,7 +5,7 @@ import {{pascalCase name}} from "./{{pascalCase name}}";
 
 describe("{{pascalCase name}} component", () => {
   it("should have the correct text", () => {
-    const {{name}} = shallow(<{{pascalCase name}} />);
-    expect({{name}}.text()).toBe("My awesome component");
+    const wrapper = shallow(<{{pascalCase name}} />);
+    expect(wrapper.text()).toBe("My awesome component");
   });
 });
