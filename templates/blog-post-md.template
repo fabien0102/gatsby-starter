@@ -1,0 +1,16 @@
+---
+title: {{title}}
+createdDate: "{{createdDate}}"
+updatedDate: "{{createdDate}}"
+author: {{author}}
+icon: {{icon}}{{tags}}
+image: welcoming.png
+draft: {{draft}}
+---
+
+My awesome article
+
+## TODO
+
+- [ ] Replace image
+- [ ] Write an awesome article
