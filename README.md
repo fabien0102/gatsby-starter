@@ -22,13 +22,13 @@ Run `yarn build` to create static site ready to host (`/public`)
 ## What's inside?
 
 - [ ] Gatsby 1.0 (alpha)
-  - [ ] sharp
-  - [ ] offline support
+  - [x] sharp
+  - [x] offline support
   - [ ] glamor
   - [ ] google analytics
-  - [ ] manifest
+  - [x] manifest
   - [x] typescript
-  - [ ] blog in markdown
+  - [x] blog in markdown
 - [x] Best practices tools
   - [x] [Jest](https://facebook.github.io/jest/) / [Enzyme](http://airbnb.io/enzyme/)
   - [ ] [Storybook](https://storybooks.js.org/)
@@ -58,9 +58,10 @@ Run `yarn build` to create static site ready to host (`/public`)
  │   ├── html.tsx             // main html
  │   ├── layouts              // layouts
  │   │   └── default.tsx
- │   └── pages                // all pages
- │       ├── 404.tsx
- │       └── index.tsx
+ │   ├── pages                // all pages
+ │   │   ├── 404.tsx
+ │   │   └── index.tsx
+ │   └── templates            // all templates (used for create pages from markdown)
  ├── templates                // templates for file generation with `yarn generate`
  ├── tsconfig.json            // typescript configuration
  ├── tslint.json              // tslint configuration
