@@ -101,3 +101,13 @@
     font-size: 1.5em;
   }
 }
+
+
+/* Code blocks (Fix a strange bug with prismjs) */
+pre {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+	background: #272822;
+}

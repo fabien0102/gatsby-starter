@@ -3,6 +3,7 @@ import * as React from "react";
 import HeaderMenu from "../components/HeaderMenu";
 import { Segment, Icon, Container } from "semantic-ui-react";
 import "../css/styles.css";
+import "prismjs/themes/prism-okaidia.css";
 
 interface DefaultLayoutProps extends HTMLDivElement {
   location: {
