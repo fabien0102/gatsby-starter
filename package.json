@@ -39,6 +39,7 @@
     "gatsby-typegen-remark-responsive-image": "next",
     "gatsby-typegen-sharp": "next",
     "graphql-code-generator": "^0.5.1",
+    "gray-matter": "^2.1.1",
     "react": "15.5.3",
     "react-helmet": "5.0.3",
     "semantic-ui-react": "^0.68.0",
@@ -93,6 +94,10 @@
     ],
     "*.{js,jsx}": [
       "xo --fix",
+      "git add"
+    ],
+    "*.md": [
+      "node tools/updatePostDate.js",
       "git add"
     ]
   },
