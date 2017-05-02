@@ -1,12 +1,13 @@
+/* tslint:disable */
 
 export interface RootQueryType {
   file: File | null;
-  author: Author | null;
   imageSharp: ImageSharp | null;
+  author: Author | null;
   markdownRemark: MarkdownRemark | null;
   allFile: FileConnection | null;
-  allAuthor: AuthorConnection | null;
   allImageSharp: ImageSharpConnection | null;
+  allAuthor: AuthorConnection | null;
   allMarkdownRemark: MarkdownRemarkConnection | null;
   site: Site | null;
 }
@@ -46,6 +47,16 @@ export interface FileRootQueryTypeArgs {
   sortBy: fileSortBy | null;
 }
 
+export interface ImageSharpRootQueryTypeArgs {
+  logical: imageSharpLogicalQueryBoolean | null;
+  id: imageSharpIdQueryString | null;
+  contentDigest: imageSharpContentDigestQueryString | null;
+  type: imageSharpTypeQueryString | null;
+  mediaType: imageSharpMediaTypeQueryString | null;
+  pluginName: imageSharpPluginNameQueryString | null;
+  sortBy: imageSharpSortBy | null;
+}
+
 export interface AuthorRootQueryTypeArgs {
   id: authorIdQueryString | null;
   bio: authorBioQueryString | null;
@@ -58,16 +69,6 @@ export interface AuthorRootQueryTypeArgs {
   content: authorContentQueryString | null;
   pluginName: authorPluginNameQueryString | null;
   sortBy: authorSortBy | null;
-}
-
-export interface ImageSharpRootQueryTypeArgs {
-  logical: imageSharpLogicalQueryBoolean | null;
-  id: imageSharpIdQueryString | null;
-  contentDigest: imageSharpContentDigestQueryString | null;
-  type: imageSharpTypeQueryString | null;
-  mediaType: imageSharpMediaTypeQueryString | null;
-  pluginName: imageSharpPluginNameQueryString | null;
-  sortBy: imageSharpSortBy | null;
 }
 
 export interface MarkdownRemarkRootQueryTypeArgs {
@@ -120,6 +121,18 @@ export interface AllFileRootQueryTypeArgs {
   sortBy: fileConnectionSortBy | null;
 }
 
+export interface AllImageSharpRootQueryTypeArgs {
+  skip: number | null;
+  limit: number | null;
+  logical: imageSharpConnectionLogicalQueryBoolean | null;
+  id: imageSharpConnectionIdQueryString | null;
+  contentDigest: imageSharpConnectionContentDigestQueryString | null;
+  type: imageSharpConnectionTypeQueryString | null;
+  mediaType: imageSharpConnectionMediaTypeQueryString | null;
+  pluginName: imageSharpConnectionPluginNameQueryString | null;
+  sortBy: imageSharpConnectionSortBy | null;
+}
+
 export interface AllAuthorRootQueryTypeArgs {
   skip: number | null;
   limit: number | null;
@@ -134,18 +147,6 @@ export interface AllAuthorRootQueryTypeArgs {
   content: authorConnectionContentQueryString | null;
   pluginName: authorConnectionPluginNameQueryString | null;
   sortBy: authorConnectionSortBy | null;
-}
-
-export interface AllImageSharpRootQueryTypeArgs {
-  skip: number | null;
-  limit: number | null;
-  logical: imageSharpConnectionLogicalQueryBoolean | null;
-  id: imageSharpConnectionIdQueryString | null;
-  contentDigest: imageSharpConnectionContentDigestQueryString | null;
-  type: imageSharpConnectionTypeQueryString | null;
-  mediaType: imageSharpConnectionMediaTypeQueryString | null;
-  pluginName: imageSharpConnectionPluginNameQueryString | null;
-  sortBy: imageSharpConnectionSortBy | null;
 }
 
 export interface AllMarkdownRemarkRootQueryTypeArgs {
@@ -463,100 +464,6 @@ export interface Node {
   children: Array<Node> | null;
 }
 
-export interface authorIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface authorBioQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface authorAvatarQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface authorTwitterQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface authorGithubQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface authorContentDigestQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface authorMediaTypeQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface authorTypeQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface authorContentQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface authorPluginNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface authorSortBy {
-  fields: Array<AuthorSortByFieldsEnum>;
-  order: authorSortOrderValues | null;
-}
-
-export type AuthorSortByFieldsEnum = "id" | "bio" | "avatar" | "twitter" | "github" | "contentDigest" | "mediaType" | "type" | "content" | "pluginName";
-
-export type authorSortOrderValues = "ASC" | "DESC";
-
-export interface Author extends Node {
-  id: string;
-  type: string | null;
-  parent: Node | null;
-  children: Array<Node> | null;
-  bio: string | null;
-  avatar: File | null;
-  twitter: string | null;
-  github: string | null;
-  contentDigest: string | null;
-  mediaType: File | null;
-  content: string | null;
-  pluginName: string | null;
-}
-
 export interface imageSharpLogicalQueryBoolean {
   eq: boolean | null;
   ne: boolean | null;
@@ -667,6 +574,100 @@ export interface ImageSharpResize {
   aspectRatio: number | null;
 }
 
+export interface authorIdQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface authorBioQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface authorAvatarQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface authorTwitterQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface authorGithubQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface authorContentDigestQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface authorMediaTypeQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface authorTypeQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface authorContentQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface authorPluginNameQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface authorSortBy {
+  fields: Array<AuthorSortByFieldsEnum>;
+  order: authorSortOrderValues | null;
+}
+
+export type AuthorSortByFieldsEnum = "id" | "bio" | "avatar" | "twitter" | "github" | "contentDigest" | "mediaType" | "type" | "content" | "pluginName";
+
+export type authorSortOrderValues = "ASC" | "DESC";
+
+export interface Author extends Node {
+  id: string;
+  type: string | null;
+  parent: Node | null;
+  children: Array<Node> | null;
+  bio: string | null;
+  avatar: File | null;
+  twitter: string | null;
+  github: string | null;
+  contentDigest: string | null;
+  mediaType: File | null;
+  content: string | null;
+  pluginName: string | null;
+}
+
 export interface markdownRemarkIdQueryString {
   eq: string | null;
   ne: string | null;
@@ -705,6 +706,8 @@ export interface markdownRemarkContentQueryString {
 export interface markdownRemarkFrontmatterInputObject {
   title: markdownRemarkFrontmatterTitleQueryString | null;
   date: markdownRemarkFrontmatterDateQueryString | null;
+  updatedDate: markdownRemarkFrontmatterUpdatedDateQueryString | null;
+  createdDate: markdownRemarkFrontmatterCreatedDateQueryString | null;
   author: markdownRemarkFrontmatterAuthorQueryString | null;
   icon: markdownRemarkFrontmatterIconQueryString | null;
   tags: markdownRemarkFrontmatterTagsQueryList | null;
@@ -720,6 +723,20 @@ export interface markdownRemarkFrontmatterTitleQueryString {
 }
 
 export interface markdownRemarkFrontmatterDateQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface markdownRemarkFrontmatterUpdatedDateQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface markdownRemarkFrontmatterCreatedDateQueryString {
   eq: string | null;
   ne: string | null;
   regex: string | null;
@@ -786,7 +803,7 @@ export interface markdownRemarkSortBy {
   order: markdownRemarkSortOrderValues | null;
 }
 
-export type MarkdownRemarkSortByFieldsEnum = "id" | "contentDigest" | "type" | "mediaType" | "content" | "frontmatter___title" | "frontmatter___date" | "frontmatter___author" | "frontmatter___icon" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter___parent" | "fileAbsolutePath" | "pluginName" | "slug";
+export type MarkdownRemarkSortByFieldsEnum = "id" | "contentDigest" | "type" | "mediaType" | "content" | "frontmatter___title" | "frontmatter___date" | "frontmatter___updatedDate" | "frontmatter___createdDate" | "frontmatter___author" | "frontmatter___icon" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter___parent" | "fileAbsolutePath" | "pluginName" | "slug";
 
 export type markdownRemarkSortOrderValues = "ASC" | "DESC";
 
@@ -819,6 +836,8 @@ export interface HeadingsMarkdownRemarkArgs {
 export interface frontmatter {
   title: string | null;
   date: string | null;
+  updatedDate: string | null;
+  createdDate: string | null;
   author: Author | null;
   icon: string | null;
   tags: Array<string> | null;
@@ -828,6 +847,18 @@ export interface frontmatter {
 }
 
 export interface DatefrontmatterArgs {
+  formatString: string | null;
+  fromNow: boolean | null;
+  difference: string | null;
+}
+
+export interface UpdatedDatefrontmatterArgs {
+  formatString: string | null;
+  fromNow: boolean | null;
+  difference: string | null;
+}
+
+export interface CreatedDatefrontmatterArgs {
   formatString: string | null;
   fromNow: boolean | null;
   difference: string | null;
@@ -1096,6 +1127,97 @@ export interface fileGroupConnectionEdge {
   previous: File | null;
 }
 
+export interface imageSharpConnectionLogicalQueryBoolean {
+  eq: boolean | null;
+  ne: boolean | null;
+}
+
+export interface imageSharpConnectionIdQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface imageSharpConnectionContentDigestQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface imageSharpConnectionTypeQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface imageSharpConnectionMediaTypeQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface imageSharpConnectionPluginNameQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface imageSharpConnectionSortBy {
+  fields: Array<ImageSharpConnectionSortByFieldsEnum>;
+  order: imageSharpConnectionSortOrderValues | null;
+}
+
+export type ImageSharpConnectionSortByFieldsEnum = "logical" | "id" | "contentDigest" | "type" | "mediaType" | "pluginName";
+
+export type imageSharpConnectionSortOrderValues = "ASC" | "DESC";
+
+export interface ImageSharpConnection {
+  pageInfo: PageInfo;
+  edges: Array<ImageSharpEdge> | null;
+  totalCount: number | null;
+  distinct: Array<string> | null;
+  groupBy: Array<imageSharpGroupConnectionConnection> | null;
+}
+
+export interface DistinctImageSharpConnectionArgs {
+  field: imageSharpDistinctEnum | null;
+}
+
+export interface GroupByImageSharpConnectionArgs {
+  skip: number | null;
+  limit: number | null;
+  field: imageSharpGroupByEnum | null;
+}
+
+export interface ImageSharpEdge {
+  node: ImageSharp | null;
+  next: ImageSharp | null;
+  previous: ImageSharp | null;
+}
+
+export type imageSharpDistinctEnum = "logical" | "id" | "contentDigest" | "type" | "mediaType" | "pluginName";
+
+export type imageSharpGroupByEnum = "logical" | "id" | "contentDigest" | "type" | "mediaType" | "pluginName";
+
+export interface imageSharpGroupConnectionConnection {
+  pageInfo: PageInfo;
+  edges: Array<imageSharpGroupConnectionEdge> | null;
+  field: string | null;
+  fieldValue: string | null;
+  totalCount: number | null;
+}
+
+export interface imageSharpGroupConnectionEdge {
+  node: ImageSharp | null;
+  next: ImageSharp | null;
+  previous: ImageSharp | null;
+}
+
 export interface authorConnectionIdQueryString {
   eq: string | null;
   ne: string | null;
@@ -1217,97 +1339,6 @@ export interface authorGroupConnectionEdge {
   previous: Author | null;
 }
 
-export interface imageSharpConnectionLogicalQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-}
-
-export interface imageSharpConnectionIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface imageSharpConnectionContentDigestQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface imageSharpConnectionTypeQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface imageSharpConnectionMediaTypeQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface imageSharpConnectionPluginNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-}
-
-export interface imageSharpConnectionSortBy {
-  fields: Array<ImageSharpConnectionSortByFieldsEnum>;
-  order: imageSharpConnectionSortOrderValues | null;
-}
-
-export type ImageSharpConnectionSortByFieldsEnum = "logical" | "id" | "contentDigest" | "type" | "mediaType" | "pluginName";
-
-export type imageSharpConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface ImageSharpConnection {
-  pageInfo: PageInfo;
-  edges: Array<ImageSharpEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  groupBy: Array<imageSharpGroupConnectionConnection> | null;
-}
-
-export interface DistinctImageSharpConnectionArgs {
-  field: imageSharpDistinctEnum | null;
-}
-
-export interface GroupByImageSharpConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: imageSharpGroupByEnum | null;
-}
-
-export interface ImageSharpEdge {
-  node: ImageSharp | null;
-  next: ImageSharp | null;
-  previous: ImageSharp | null;
-}
-
-export type imageSharpDistinctEnum = "logical" | "id" | "contentDigest" | "type" | "mediaType" | "pluginName";
-
-export type imageSharpGroupByEnum = "logical" | "id" | "contentDigest" | "type" | "mediaType" | "pluginName";
-
-export interface imageSharpGroupConnectionConnection {
-  pageInfo: PageInfo;
-  edges: Array<imageSharpGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
-}
-
-export interface imageSharpGroupConnectionEdge {
-  node: ImageSharp | null;
-  next: ImageSharp | null;
-  previous: ImageSharp | null;
-}
-
 export interface markdownRemarkConnectionIdQueryString {
   eq: string | null;
   ne: string | null;
@@ -1346,6 +1377,8 @@ export interface markdownRemarkConnectionContentQueryString {
 export interface markdownRemarkConnectionFrontmatterInputObject {
   title: markdownRemarkConnectionFrontmatterTitleQueryString | null;
   date: markdownRemarkConnectionFrontmatterDateQueryString | null;
+  updatedDate: markdownRemarkConnectionFrontmatterUpdatedDateQueryString | null;
+  createdDate: markdownRemarkConnectionFrontmatterCreatedDateQueryString | null;
   author: markdownRemarkConnectionFrontmatterAuthorQueryString | null;
   icon: markdownRemarkConnectionFrontmatterIconQueryString | null;
   tags: markdownRemarkConnectionFrontmatterTagsQueryList | null;
@@ -1361,6 +1394,20 @@ export interface markdownRemarkConnectionFrontmatterTitleQueryString {
 }
 
 export interface markdownRemarkConnectionFrontmatterDateQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface markdownRemarkConnectionFrontmatterUpdatedDateQueryString {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
+}
+
+export interface markdownRemarkConnectionFrontmatterCreatedDateQueryString {
   eq: string | null;
   ne: string | null;
   regex: string | null;
@@ -1427,7 +1474,7 @@ export interface markdownRemarkConnectionSortBy {
   order: markdownRemarkConnectionSortOrderValues | null;
 }
 
-export type MarkdownRemarkConnectionSortByFieldsEnum = "id" | "contentDigest" | "type" | "mediaType" | "content" | "frontmatter___title" | "frontmatter___date" | "frontmatter___author" | "frontmatter___icon" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter___parent" | "fileAbsolutePath" | "pluginName" | "slug";
+export type MarkdownRemarkConnectionSortByFieldsEnum = "id" | "contentDigest" | "type" | "mediaType" | "content" | "frontmatter___title" | "frontmatter___date" | "frontmatter___updatedDate" | "frontmatter___createdDate" | "frontmatter___author" | "frontmatter___icon" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter___parent" | "fileAbsolutePath" | "pluginName" | "slug";
 
 export type markdownRemarkConnectionSortOrderValues = "ASC" | "DESC";
 
@@ -1455,9 +1502,9 @@ export interface MarkdownRemarkEdge {
   previous: MarkdownRemark | null;
 }
 
-export type markdownRemarkDistinctEnum = "id" | "contentDigest" | "type" | "mediaType" | "content" | "frontmatter___title" | "frontmatter___date" | "frontmatter___author" | "frontmatter___icon" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter___parent" | "fileAbsolutePath" | "pluginName" | "slug";
+export type markdownRemarkDistinctEnum = "id" | "contentDigest" | "type" | "mediaType" | "content" | "frontmatter___title" | "frontmatter___date" | "frontmatter___updatedDate" | "frontmatter___createdDate" | "frontmatter___author" | "frontmatter___icon" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter___parent" | "fileAbsolutePath" | "pluginName" | "slug";
 
-export type markdownRemarkGroupByEnum = "id" | "contentDigest" | "type" | "mediaType" | "content" | "frontmatter___title" | "frontmatter___date" | "frontmatter___author" | "frontmatter___icon" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter___parent" | "fileAbsolutePath" | "pluginName" | "slug";
+export type markdownRemarkGroupByEnum = "id" | "contentDigest" | "type" | "mediaType" | "content" | "frontmatter___title" | "frontmatter___date" | "frontmatter___updatedDate" | "frontmatter___createdDate" | "frontmatter___author" | "frontmatter___icon" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter___parent" | "fileAbsolutePath" | "pluginName" | "slug";
 
 export interface markdownRemarkGroupConnectionConnection {
   pageInfo: PageInfo;

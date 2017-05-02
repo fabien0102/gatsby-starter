@@ -43,7 +43,8 @@ export default (props: BlogProps) => {
             <Feed.Content>
               <Header as="h2">{node.frontmatter.title}</Header>
               <Feed.Summary>
-                By <Feed.User>{node.frontmatter.author.id}</Feed.User> on <Feed.Date>{node.frontmatter.date}</Feed.Date>
+                By <Feed.User>{node.frontmatter.author.id}</Feed.User>
+                <Feed.Date>on {node.frontmatter.updatedDate}</Feed.Date>
               </Feed.Summary>
               <Feed.Extra text>{node.excerpt}</Feed.Extra>
               <br />
@@ -92,7 +93,7 @@ export const pageQuery = `
 
   # Get posts
   posts: allMarkdownRemark(
-    sortBy: { order: DESC, fields: [frontmatter___date] },
+    sortBy: { order: DESC, fields: [frontmatter___updatedDate] },
     frontmatter: { draft: { ne: true } },
     fileAbsolutePath: { regex: "/blog/" },
   ) {
@@ -102,7 +103,7 @@ export const pageQuery = `
         slug
         frontmatter {
           title
-          date(formatString: "DD MMMM, YYYY")
+          updatedDate(formatString: "DD MMMM, YYYY")
           author {
             id
             avatar {

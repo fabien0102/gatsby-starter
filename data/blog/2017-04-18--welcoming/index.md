@@ -1,9 +1,10 @@
 ---
 title: Welcoming
-date: "2017-04-18"
+createdDate: '2017-04-18'
+updatedDate: '2017-05-02'
 author: Fabien BERNARD
 icon: rocket
-tags: 
+tags:
   - starter
   - gatsby
 image: welcoming.png
