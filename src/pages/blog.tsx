@@ -3,6 +3,7 @@ import * as Link from "gatsby-link";
 import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
+import Tags from "../components/Tags";
 
 interface BlogProps {
   data: {
@@ -14,26 +15,6 @@ interface BlogProps {
 export default (props: BlogProps) => {
   const tags = props.data.tags.groupBy;
   const posts = props.data.posts.edges;
-
-  const Tags = (
-    <Card>
-      <Card.Content>
-        <Card.Header>
-          Tags
-        </Card.Header>
-      </Card.Content>
-      <Card.Content>
-        <List>
-          {tags.map((tag) =>
-            <List.Item as="a" key={tag.fieldValue}>
-              <List.Icon name="tag" />
-              <List.Content>{tag.fieldValue} ({tag.totalCount})</List.Content>
-            </List.Item>,
-          )}
-        </List>
-      </Card.Content>
-    </Card>
-  );
 
   const Posts = (
     <Container>
@@ -100,7 +81,7 @@ export default (props: BlogProps) => {
           </Grid.Column>
           <Grid.Column width={3} floated="right">
             <Grid.Row>
-              {Tags}
+              <Tags tags={tags} />
             </Grid.Row>
           </Grid.Column>
         </Grid>
