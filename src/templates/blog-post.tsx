@@ -21,14 +21,14 @@ export default (props: BlogPostProps) => {
 
   const recents = props.data.recents.edges
     .map(({ node }) => {
-      const tinyAvatar = node.frontmatter.author.avatar.children[0] as ImageSharp;
-      const cover = node.frontmatter.image.children[0] as ImageSharp;
+      const recentAvatar = node.frontmatter.author.avatar.children[0] as ImageSharp;
+      const recentCover = node.frontmatter.image.children[0] as ImageSharp;
       const extra = (
         <Comment.Group>
           <Comment>
-            <Comment.Avatar shape="circular"
-              src={tinyAvatar.responsiveResolution.src}
-              srcSet={tinyAvatar.responsiveResolution.srcSet}
+            <Comment.Avatar
+              src={recentAvatar.responsiveResolution.src}
+              srcSet={recentAvatar.responsiveResolution.srcSet}
             />
             <Comment.Content>
               <Comment.Author style={{ fontWeight: 400 }}>
@@ -47,8 +47,8 @@ export default (props: BlogPostProps) => {
           <Card as={Link}
             to={node.slug}
             image={{
-              src: cover.responsiveResolution.src,
-              srcSet: cover.responsiveResolution.srcSet,
+              src: recentCover.responsiveResolution.src,
+              srcSet: recentCover.responsiveResolution.srcSet,
             }}
             header={node.frontmatter.title}
             extra={extra}
@@ -86,12 +86,7 @@ export default (props: BlogPostProps) => {
         {tags}
       </Segment>
       <Segment vertical>
-        {/* TODO Navigation between posts */}
-        <Button basic content="Previous article" icon="left arrow" labelPosition="left" floated="left" />
-        <Button basic content="Next article" icon="right arrow" labelPosition="right" floated="right" />
-
-        {/* TODO Add recent posts */}
-        <Grid columns={2}>
+        <Grid columns={4}>
           <Grid.Row>
             {recents}
           </Grid.Row>
@@ -134,7 +129,7 @@ export const pageQuery = `
     sortBy: {order: DESC, fields: [frontmatter___updatedDate]},
     frontmatter: {draft: {ne: true}},
     fileAbsolutePath: {regex: "/blog/"},
-    limit: 2
+    limit: 4
   ) {
     edges {
       node {

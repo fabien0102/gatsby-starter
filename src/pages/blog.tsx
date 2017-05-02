@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as Link from "gatsby-link";
-import { Header, Grid, Card, List, Container, Feed, Segment, Divider } from "semantic-ui-react";
-import { MarkdownRemarkConnection } from "../graphql-types";
+import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "semantic-ui-react";
+import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 
 interface BlogProps {
@@ -25,7 +25,7 @@ export default (props: BlogProps) => {
       <Card.Content>
         <List>
           {tags.map((tag) =>
-            <List.Item>
+            <List.Item as="a" key={tag.fieldValue}>
               <List.Icon name="tag" />
               <List.Content>{tag.fieldValue} ({tag.totalCount})</List.Content>
             </List.Item>,
@@ -37,23 +37,51 @@ export default (props: BlogProps) => {
 
   const Posts = (
     <Container>
-      {posts.map(({ node }) =>
-        <Feed>
-          <Feed.Event>
-            <Feed.Content>
-              <Header as="h2">{node.frontmatter.title}</Header>
-              <Feed.Summary>
-                By <Feed.User>{node.frontmatter.author.id}</Feed.User>
-                <Feed.Date>on {node.frontmatter.updatedDate}</Feed.Date>
-              </Feed.Summary>
-              <Feed.Extra text>{node.excerpt}</Feed.Extra>
-              <br />
-              <Link to={node.slug}>Read more…</Link>
-            </Feed.Content>
-          </Feed.Event>
-          <Divider />
-        </Feed>,
-      )}
+      {posts.map(({ node }) => {
+        const { frontmatter, timeToRead, slug, excerpt } = node;
+        const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
+        const cover = frontmatter.image.children[0] as ImageSharp;
+
+        const extra = (
+          <Comment.Group>
+            <Comment>
+              <Comment.Avatar
+                src={avatar.responsiveResolution.src}
+                srcSet={avatar.responsiveResolution.srcSet}
+              />
+              <Comment.Content>
+                <Comment.Author style={{ fontWeight: 400 }}>
+                  {frontmatter.author.id}
+                </Comment.Author>
+                <Comment.Metadata style={{ margin: 0 }}>
+                  {frontmatter.updatedDate} - {timeToRead} min read
+              </Comment.Metadata>
+              </Comment.Content>
+            </Comment>
+          </Comment.Group>
+        );
+
+        const description = (
+          <Card.Description>
+            {excerpt}
+            <br />
+            <Link to={slug}>Read more…</Link>
+          </Card.Description>
+        );
+
+        return (
+          <Card key={slug}
+            fluid
+            image={{
+              src: cover.responsiveResolution.src,
+              srcSet: cover.responsiveResolution.srcSet,
+            }}
+            header={frontmatter.title}
+            extra={extra}
+            description={description}
+          />
+        );
+      })}
     </Container>
   );
 
@@ -100,18 +128,27 @@ export const pageQuery = `
     edges {
       node {
         excerpt
+        timeToRead
         slug
         frontmatter {
           title
           updatedDate(formatString: "DD MMMM, YYYY")
+          image {
+          	children {
+              ... on ImageSharp {
+                responsiveResolution(width: 700, height: 100) {
+                  src
+                  srcSet
+                }
+              }
+            }
+          }
           author {
             id
             avatar {
               children {
                 ... on ImageSharp {
                   responsiveResolution(width: 35, height: 35) {
-                    width
-                    height
                     src
                     srcSet
                   }
