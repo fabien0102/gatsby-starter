@@ -38,6 +38,7 @@ module.exports = {
     // Parse all images files
     `gatsby-transformer-sharp`,
     `gatsby-typegen-sharp`,
+    `gatsby-plugin-sharp`,
 
     // Parse JSON files
     `gatsby-transformer-json`,
@@ -52,10 +53,10 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Gatsby website`,
-        short_name: `Gatsby website`,
-        start_url: `/`,
-        background_color: `#f7f7f7`,
-        theme_color: `#191919`,
+        shortName: `Gatsby website`,
+        startUrl: `/`,
+        backgroundColor: `#f7f7f7`,
+        themeColor: `#191919`,
         display: `minimal-ui`
       }
     },
