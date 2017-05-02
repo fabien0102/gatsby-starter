@@ -13,12 +13,12 @@ export default (props: BlogPostProps) => {
   const { frontmatter, html, timeToRead } = props.data.post;
 
   const tags = props.data.post.frontmatter.tags
-    .map((tag) => <Label as="a">{tag}</Label>);
+    .map((tag) => <Label as="a" key={tag}>{tag}</Label>);
 
   const recents = [{ title: "", image: "", excerpt: "", slug: "" }]
     .map((post) =>
       (
-        <Grid.Row>
+        <Grid.Row key={post.slug}>
           <Card>
             <Image src={post.image} />
             <Card.Header>{post.title}</Card.Header>
@@ -33,7 +33,7 @@ export default (props: BlogPostProps) => {
       <Segment vertical style={{ border: "none" }}>
         <Item.Group>
           <Item>
-            <Item.Image size="tiny"
+            <Item.Image size="tiny" shape="circular"
               src={frontmatter.author.avatar.children[0].responsiveResolution.src}
               srcSet={frontmatter.author.avatar.children[0].responsiveResolution.srcSet}
             />
@@ -88,7 +88,7 @@ export const pageQuery = `
           avatar {
             children {
               ... on ImageSharp {
-                responsiveResolution(width: 60, height: 60, quality: 75) {
+                responsiveResolution(width: 80, height: 80, quality: 100) {
                   src
                   srcSet
                 }
