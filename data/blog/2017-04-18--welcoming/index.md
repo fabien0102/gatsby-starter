@@ -6,11 +6,9 @@ author: Fabien BERNARD
 tags:
   - starter
   - gatsby
-image: welcoming.png
+image: pexels-photo-253092.jpeg
 draft: false
 ---
-
-![Welcome](welcoming.png)
 
 Welcome to gatsby-starter!
 
@@ -30,4 +28,5 @@ const toto = "tata";
 ```
 
 coucou `plop` comment tu vas ?
+
 
