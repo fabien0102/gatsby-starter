@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Item } from "semantic-ui-react";
-import { MarkdownRemark } from "../graphql-types";
+import { MarkdownRemark, ImageSharp } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 
 interface BlogPostProps {
@@ -11,6 +11,7 @@ interface BlogPostProps {
 
 export default (props: BlogPostProps) => {
   const { frontmatter, html, timeToRead } = props.data.post;
+  const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
 
   const tags = props.data.post.frontmatter.tags
     .map((tag) => <Label as="a" key={tag}>{tag}</Label>);
@@ -34,8 +35,8 @@ export default (props: BlogPostProps) => {
         <Item.Group>
           <Item>
             <Item.Image size="tiny" shape="circular"
-              src={frontmatter.author.avatar.children[0].responsiveResolution.src}
-              srcSet={frontmatter.author.avatar.children[0].responsiveResolution.srcSet}
+              src={avatar.responsiveResolution.src}
+              srcSet={avatar.responsiveResolution.srcSet}
             />
             <Item.Content>
               <Item.Description>{frontmatter.author.id}</Item.Description>
