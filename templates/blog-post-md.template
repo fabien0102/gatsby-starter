@@ -2,8 +2,7 @@
 title: {{title}}
 createdDate: "{{createdDate}}"
 updatedDate: "{{createdDate}}"
-author: {{author}}
-icon: {{icon}}{{tags}}
+author: {{author}}{{tags}}
 image: welcoming.png
 draft: {{draft}}
 ---

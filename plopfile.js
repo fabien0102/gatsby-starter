@@ -63,12 +63,6 @@ module.exports = plop => {
         validate: inputRequired('title')
       },
       {
-        type: 'input',
-        name: 'icon',
-        message: 'A beautiful icon for your blog post? (http://react.semantic-ui.com/elements/icon)',
-        validate: inputRequired('icon')
-      },
-      {
         type: 'list',
         name: 'author',
         message: 'The author of blog post?',

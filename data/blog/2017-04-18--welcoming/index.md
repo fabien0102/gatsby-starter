@@ -3,7 +3,6 @@ title: Welcoming
 createdDate: '2017-04-18'
 updatedDate: '2017-05-02'
 author: Fabien BERNARD
-icon: rocket
 tags:
   - starter
   - gatsby
@@ -31,3 +30,4 @@ const toto = "tata";
 ```
 
 coucou `plop` comment tu vas ?
+
