@@ -97,7 +97,7 @@
       "git add"
     ],
     "*.md": [
-      "node tools/updatePostDate.js",
+      "node tools/update-post-date.js",
       "git add"
     ]
   },
