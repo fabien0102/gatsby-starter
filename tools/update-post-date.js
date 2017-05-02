@@ -9,6 +9,11 @@ process.argv.slice(3).forEach(dirtyPath => {
   // Make sure it will works on windows
   const path = slash(dirtyPath);
 
+  // Only parse blog posts
+  if (!path.includes('/data/blog/')) {
+    return;
+  }
+
   // Get file from file system and parse it with gray-matter
   const orig = fs.readFileSync(path, 'utf-8');
   const parsedFile = matter(orig);
