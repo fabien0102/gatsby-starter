@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
+    "@kadira/storybook-addon-notes": "^1.0.1",
     "@types/enzyme": "^2.7.8",
     "@types/jest": "^19.2.2",
     "@types/node": "^7.0.15",

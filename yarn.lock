@@ -18,6 +18,12 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@kadira/storybook-addon-links/-/storybook-addon-links-1.0.1.tgz#566136a8020b60f82f146ef37d93b0c86de969d8"
 
+"@kadira/storybook-addon-notes@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@kadira/storybook-addon-notes/-/storybook-addon-notes-1.0.1.tgz#8aed1f999b43efa092ed36b7711add3f04ce774c"
+  dependencies:
+    babel-runtime "^6.5.0"
+
 "@kadira/storybook-addons@^1.5.0":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@kadira/storybook-addons/-/storybook-addons-1.6.1.tgz#e84923d298b38c7c1231ddebc219dfb87b2858a6"
