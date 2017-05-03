@@ -1,0 +1,8 @@
+# {{pascalCase name}} component
+
+{{description}}
+
+## Source
+```
+<{{pascalCase name}} />
+```

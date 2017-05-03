@@ -5,6 +5,7 @@
  */
 
 const fs = require('fs');
+const {pascalCase, sentenceCase} = require('change-case');
 
 const authors = JSON.parse(fs.readFileSync('./data/author.json'));
 
@@ -20,20 +21,69 @@ module.exports = plop => {
         name: 'name',
         message: 'Component name?',
         validate: inputRequired('name')
-      }
-    ],
-    actions: [
-      {
-        type: 'add',
-        path: 'src/components/{{pascalCase name}}.tsx',
-        templateFile: 'templates/component-tsx.template'
       },
       {
-        type: 'add',
-        path: 'src/components/{{pascalCase name}}.test.tsx',
-        templateFile: 'templates/component-test-tsx.template'
+        type: 'input',
+        name: 'description',
+        message: 'Component description?',
+        default: data => `${sentenceCase(data.name)} component.`
+      },
+      {
+        type: 'checkbox',
+        name: 'files',
+        message: 'Wish files do you generate?',
+        choices: data => [
+          {
+            name: `${pascalCase(data.name)}.test.tsx`,
+            value: 'test',
+            checked: true
+          },
+          {
+            name: `${pascalCase(data.name)}.stories.tsx`,
+            value: 'stories',
+            checked: true
+          }
+        ]
       }
-    ]
+    ],
+    actions: data => {
+      const basePath = data.files.length ?
+        'src/components/{{pascalCase name}}/' :
+        'src/components/';
+
+      const actions = [
+        {
+          type: 'add',
+          path: `${basePath}{{pascalCase name}}.tsx`,
+          templateFile: 'templates/component-tsx.template'
+        }
+      ];
+
+      // Add test file
+      if (data.files.includes('test')) {
+        actions.push({
+          type: 'add',
+          path: `${basePath}{{pascalCase name}}.test.tsx`,
+          templateFile: 'templates/component-test-tsx.template'
+        });
+      }
+
+      // Add stories file
+      if (data.files.includes('stories')) {
+        actions.push({
+          type: 'add',
+          path: `${basePath}{{pascalCase name}}.stories.tsx`,
+          templateFile: 'templates/component-stories-tsx.template'
+        });
+        actions.push({
+          type: 'add',
+          path: `${basePath}README.md`,
+          templateFile: 'templates/component-readme-md.template'
+        });
+      }
+
+      return actions;
+    }
   });
 
   plop.setGenerator('page', {
