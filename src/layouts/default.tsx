@@ -5,7 +5,7 @@ import { Segment, Icon, Container } from "semantic-ui-react";
 import "../css/styles.css";
 import "prismjs/themes/prism-okaidia.css";
 
-interface DefaultLayoutProps extends HTMLDivElement {
+interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
     pathname: string;
   };
