@@ -12,7 +12,8 @@
     "test:watch": "jest --watch",
     "generate": "plop",
     "graphql-types": "gql-gen --url http://localhost:8000/graphql --template typescript --out ./src/graphql-types.d.ts",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
     "@types/react": "15.0.21",
