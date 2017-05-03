@@ -51,6 +51,7 @@
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-addon-notes": "^1.0.1",
+    "@kadira/storybook-addon-options": "^1.0.2",
     "@types/enzyme": "^2.7.8",
     "@types/jest": "^19.2.2",
     "@types/node": "^7.0.15",
@@ -62,8 +63,10 @@
     "jest": "19.0.2",
     "lint-staged": "3.4.0",
     "plop": "^1.7.4",
+    "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.5.1",
     "react-test-renderer": "^15.5.4",
+    "storybook-readme": "^2.0.2",
     "ts-jest": "19.0.8",
     "ts-lint": "4.5.1",
     "xo": "^0.18.1"

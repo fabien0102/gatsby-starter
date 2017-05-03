@@ -10,5 +10,11 @@ module.exports = function(storybookBaseConfig, configType) {
 
   storybookBaseConfig.resolve.extensions.push(".ts", ".tsx");
 
+  // Add markdown loader
+  storybookBaseConfig.module.loaders.push({
+    test: /\.md$/,
+    loader: "raw-loader"
+  });
+
   return storybookBaseConfig;
 };
