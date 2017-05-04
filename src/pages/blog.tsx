@@ -10,6 +10,9 @@ interface BlogProps {
     tags: MarkdownRemarkConnection;
     posts: MarkdownRemarkConnection;
   };
+  pathContext: {
+    tag?: string; // only set into `templates/tags-pages.tsx`
+  };
 }
 
 export default (props: BlogProps) => {
@@ -81,7 +84,7 @@ export default (props: BlogProps) => {
           </Grid.Column>
           <Grid.Column width={3} floated="right">
             <Grid.Row>
-              <TagsCard tags={tags} />
+              <TagsCard tags={tags} tag={props.pathContext.tag}/>
             </Grid.Row>
           </Grid.Column>
         </Grid>
