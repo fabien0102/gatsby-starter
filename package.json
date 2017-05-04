@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
     "@kadira/storybook-addon-notes": "^1.0.1",
     "@kadira/storybook-addon-options": "^1.0.2",
     "@types/enzyme": "^2.7.8",
