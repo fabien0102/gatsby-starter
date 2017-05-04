@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gatsby-node createPages should create blog posts 1`] = `
+Array [
+  Array [
+    Object {
+      "component": "base-path/src/templates/blog-post.tsx",
+      "context": Object {
+        "slug": "/blog/2017-04-18--welcoming/",
+      },
+      "path": "/blog/2017-04-18--welcoming/",
+    },
+  ],
+  Array [
+    Object {
+      "component": "base-path/src/templates/blog-post.tsx",
+      "context": Object {
+        "slug": "/blog/2017-05-02--article-2/",
+      },
+      "path": "/blog/2017-05-02--article-2/",
+    },
+  ],
+  Array [
+    Object {
+      "component": "base-path/src/templates/blog-post.tsx",
+      "context": Object {
+        "slug": "/blog/2017-05-02--article-1/",
+      },
+      "path": "/blog/2017-05-02--article-1/",
+    },
+  ],
+]
+`;
+
+exports[`gatsby-node onNodeCreate should create slugs for MarkdownRemark file 1`] = `
+Array [
+  Array [
+    Object {
+      "parent": "parent",
+      "slug": "/blog/2017-04-18--welcoming/",
+      "type": "MarkdownRemark",
+    },
+  ],
+]
+`;
