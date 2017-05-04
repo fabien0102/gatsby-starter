@@ -114,9 +114,6 @@
   },
   "xo": {
     "extends": "xo-react/space",
-    "space": true,
-    "env": {
-      "jest": true
-    }
+    "space": true
   }
 }
