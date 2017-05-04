@@ -45,7 +45,7 @@
     "gray-matter": "^2.1.1",
     "react": "15.5.3",
     "react-helmet": "5.0.3",
-    "semantic-ui-react": "^0.68.0",
+    "semantic-ui-react": "0.68.0",
     "slash": "1.0.0",
     "ts-loader": "^2.0.3",
     "typescript": "2.2.2"

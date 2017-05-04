@@ -9008,9 +9008,9 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
-"recursive-readdir@git+https://github.com/KyleAMathews/recursive-readdir.git":
+"recursive-readdir@https://github.com/KyleAMathews/recursive-readdir.git":
   version "2.1.0"
-  resolved "git+https://github.com/KyleAMathews/recursive-readdir.git#fbfe835d2e75a977db2d1e794214aa26ecdb0671"
+  resolved "https://github.com/KyleAMathews/recursive-readdir.git#fbfe835d2e75a977db2d1e794214aa26ecdb0671"
   dependencies:
     minimatch "3.0.2"
 
@@ -9523,9 +9523,9 @@ select@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
 
-semantic-ui-react@^0.68.0:
-  version "0.68.2"
-  resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.68.2.tgz#63f85f55c5c0b6302379c14bee8e18bbd2c04d29"
+semantic-ui-react@0.68.0:
+  version "0.68.0"
+  resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.68.0.tgz#249e3701650fa811e6ec1c0ad69720f69a6f62fd"
   dependencies:
     babel-runtime "^6.22.0"
     classnames "^2.1.5"
