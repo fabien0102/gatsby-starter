@@ -43,6 +43,7 @@
     "gatsby-typegen-sharp": "next",
     "graphql-code-generator": "^0.5.1",
     "gray-matter": "^2.1.1",
+    "lodash": "^4.17.4",
     "react": "15.5.3",
     "react-helmet": "5.0.3",
     "semantic-ui-react": "0.68.0",
@@ -114,6 +115,10 @@
   },
   "xo": {
     "extends": "xo-react/space",
-    "space": true
+    "space": true,
+    "rules": {
+      "no-case-declarations": 0,
+      "default-case": 0
+    }
   }
 }
