@@ -1,0 +1,19 @@
+import { shallow } from "enzyme";
+import "jest";
+import * as React from "react";
+import {{pascalCase name}} from "./{{pascalCase name}}";
+
+describe("{{pascalCase name}} component", () => {
+  it("should have the correct text", () => {
+    {{#if haveRequiredProps}}
+    {{#each props}}
+    {{#if required}}
+    const {{name}}: {{type}} = null; // TODO assign real value
+    {{/if}}
+    {{/each}}
+
+    {{/if}}
+    const wrapper = shallow(<{{pascalCase name}}{{#each props}}{{#if required}} {{name}}={{propsHelper name}}{{/if}}{{/each}} />);
+    expect(wrapper.text()).toBe("My awesome component");
+  });
+});
