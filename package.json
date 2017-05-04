@@ -13,7 +13,8 @@
     "generate": "plop --plopfile ./generators/plopfile.js",
     "graphql-types": "gql-gen --url http://localhost:8000/graphql --template typescript --out ./src/graphql-types.d.ts",
     "precommit": "lint-staged",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook:build": "build-storybook -c .storybook -o public/docs"
   },
   "dependencies": {
     "@types/react": "15.0.21",
