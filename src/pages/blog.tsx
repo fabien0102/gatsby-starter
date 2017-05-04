@@ -3,7 +3,7 @@ import * as Link from "gatsby-link";
 import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
-import Tags from "../components/Tags/Tags";
+import TagsCard from "../components/TagsCard/TagsCard";
 
 interface BlogProps {
   data: {
@@ -81,7 +81,7 @@ export default (props: BlogProps) => {
           </Grid.Column>
           <Grid.Column width={3} floated="right">
             <Grid.Row>
-              <Tags tags={tags} />
+              <TagsCard tags={tags} />
             </Grid.Row>
           </Grid.Column>
         </Grid>
