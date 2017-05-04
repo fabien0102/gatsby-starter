@@ -1,5 +1,8 @@
 const path = require('path');
 const slash = require('slash');
+const {kebabCase, uniq, get, compact} = require('lodash');
+
+const cleanArray = arr => compact(uniq(arr));
 
 // Create slugs for files.
 // Slug will used for blog page path.
@@ -26,9 +29,12 @@ exports.createPages = ({graphql, boundActionCreators}) => {
   const {upsertPage} = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const blogPostTemplate = path.resolve(
-      `src/templates/blog-post.tsx`
-    );
+    const templates = ['blogPost', 'tagsPage']
+      .reduce((mem, templateName) => {
+        return Object.assign({}, mem,
+        {[templateName]: path.resolve(`src/templates/${kebabCase(templateName)}.tsx`)});
+      }, {});
+
     graphql(
       `
       {
@@ -36,6 +42,9 @@ exports.createPages = ({graphql, boundActionCreators}) => {
           edges {
             node {
               slug
+              frontmatter {
+                tags
+              }
             }
           }
         }
@@ -46,17 +55,34 @@ exports.createPages = ({graphql, boundActionCreators}) => {
         return reject(result.errors);
       }
 
+      // Create blog pages
       result.data.posts.edges
         .filter(edge => edge.node.slug.startsWith('/blog/'))
         .forEach(edge => {
           upsertPage({
             path: edge.node.slug,
-            component: slash(blogPostTemplate),
+            component: slash(templates.blogPost),
             context: {
               slug: edge.node.slug
             }
           });
         });
+
+      // Create tags pages
+      result.data.posts.edges
+        .reduce((mem, edge) =>
+          cleanArray(mem.concat(get(edge, 'node.frontmatter.tags')))
+        , [])
+        .forEach(tag => {
+          upsertPage({
+            path: `/tags/${kebabCase(tag)}/`,
+            component: slash(templates.tagsPage),
+            context: {
+              tag
+            }
+          });
+        });
+
       resolve();
     });
   });

@@ -32,6 +32,74 @@ Array [
 ]
 `;
 
+exports[`gatsby-node createPages should create tags pages 1`] = `
+Array [
+  Array [
+    Object {
+      "component": "base-path/src/templates/blog-post.tsx",
+      "context": Object {
+        "slug": "/blog/2017-04-18--welcoming/",
+      },
+      "path": "/blog/2017-04-18--welcoming/",
+    },
+  ],
+  Array [
+    Object {
+      "component": "base-path/src/templates/blog-post.tsx",
+      "context": Object {
+        "slug": "/blog/2017-05-02--article-2/",
+      },
+      "path": "/blog/2017-05-02--article-2/",
+    },
+  ],
+  Array [
+    Object {
+      "component": "base-path/src/templates/blog-post.tsx",
+      "context": Object {
+        "slug": "/blog/2017-05-02--article-1/",
+      },
+      "path": "/blog/2017-05-02--article-1/",
+    },
+  ],
+  Array [
+    Object {
+      "component": "base-path/src/templates/blog-post.tsx",
+      "context": Object {
+        "slug": "/blog/2017-05-02--article-0/",
+      },
+      "path": "/blog/2017-05-02--article-0/",
+    },
+  ],
+  Array [
+    Object {
+      "component": "base-path/src/templates/tags-page.tsx",
+      "context": Object {
+        "tag": "starter",
+      },
+      "path": "/tags/starter/",
+    },
+  ],
+  Array [
+    Object {
+      "component": "base-path/src/templates/tags-page.tsx",
+      "context": Object {
+        "tag": "gatsby",
+      },
+      "path": "/tags/gatsby/",
+    },
+  ],
+  Array [
+    Object {
+      "component": "base-path/src/templates/tags-page.tsx",
+      "context": Object {
+        "tag": "test",
+      },
+      "path": "/tags/test/",
+    },
+  ],
+]
+`;
+
 exports[`gatsby-node onNodeCreate should create slugs for MarkdownRemark file 1`] = `
 Array [
   Array [

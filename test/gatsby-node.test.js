@@ -52,6 +52,65 @@ describe('gatsby-node', () => {
           expect(boundActionCreators.upsertPage.mock.calls).toMatchSnapshot();
         });
     });
+
+    it('should create tags pages', () => {
+      graphql.mockReturnValueOnce(
+        Promise.resolve(
+          {
+            data: {
+              posts: {
+                edges: [
+                  {
+                    node: {
+                      slug: '/blog/2017-04-18--welcoming/',
+                      frontmatter: {
+                        tags: [
+                          'starter',
+                          'gatsby'
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    node: {
+                      slug: '/blog/2017-05-02--article-2/',
+                      frontmatter: {
+                        tags: [
+                          'test'
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    node: {
+                      slug: '/blog/2017-05-02--article-1/',
+                      frontmatter: {
+                        tags: [
+                          'test'
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    node: {
+                      slug: '/blog/2017-05-02--article-0/',
+                      frontmatter: {
+                        tags: null
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        )
+      );
+
+      return createPages({graphql, boundActionCreators})
+        .then(() => {
+          expect(boundActionCreators.upsertPage.mock.calls).toMatchSnapshot();
+        });
+    });
   });
 
   describe('onNodeCreate', () => {
