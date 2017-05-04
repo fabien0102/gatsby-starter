@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "4"
+  - "6"
+  - "7"
+os:
+  - linux
+  - osx
+sudo: false
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+osx_image: xcode8
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
