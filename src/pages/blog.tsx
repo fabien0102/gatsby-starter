@@ -108,6 +108,7 @@ export const pageQuery = `
     sortBy: { order: DESC, fields: [frontmatter___updatedDate] },
     frontmatter: { draft: { ne: true } },
     fileAbsolutePath: { regex: "/blog/" },
+    limit: 10,
   ) {
     edges {
       node {

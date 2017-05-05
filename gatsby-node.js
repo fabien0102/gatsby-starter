@@ -1,7 +1,10 @@
 const path = require('path');
 const slash = require('slash');
-const {kebabCase, uniq, get, compact} = require('lodash');
+const {kebabCase, uniq, get, compact, times} = require('lodash');
 
+// Don't forget to update `limit` field into
+// `templates/blog-page.tsx` and `pages/blog.tsx` graphql query
+const POSTS_PER_PAGE = 10;
 const cleanArray = arr => compact(uniq(arr));
 
 // Create slugs for files.
@@ -29,7 +32,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
   const {upsertPage} = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const templates = ['blogPost', 'tagsPage']
+    const templates = ['blogPost', 'tagsPage', 'blogPage']
       .reduce((mem, templateName) => {
         return Object.assign({}, mem,
         {[templateName]: path.resolve(`src/templates/${kebabCase(templateName)}.tsx`)});
@@ -54,24 +57,25 @@ exports.createPages = ({graphql, boundActionCreators}) => {
       if (result.errors) {
         return reject(result.errors);
       }
+      const posts = result.data.posts.edges.map(p => p.node);
 
       // Create blog pages
-      result.data.posts.edges
-        .filter(edge => edge.node.slug.startsWith('/blog/'))
-        .forEach(edge => {
+      posts
+        .filter(post => post.slug.startsWith('/blog/'))
+        .forEach(post => {
           upsertPage({
-            path: edge.node.slug,
+            path: post.slug,
             component: slash(templates.blogPost),
             context: {
-              slug: edge.node.slug
+              slug: post.slug
             }
           });
         });
 
       // Create tags pages
-      result.data.posts.edges
-        .reduce((mem, edge) =>
-          cleanArray(mem.concat(get(edge, 'node.frontmatter.tags')))
+      posts
+        .reduce((mem, post) =>
+          cleanArray(mem.concat(get(post, 'frontmatter.tags')))
         , [])
         .forEach(tag => {
           upsertPage({
@@ -82,6 +86,18 @@ exports.createPages = ({graphql, boundActionCreators}) => {
             }
           });
         });
+
+      // Create blog pagination
+      const pageCount = Math.ceil(posts.length / POSTS_PER_PAGE);
+      times(pageCount, index => {
+        upsertPage({
+          path: `/blog/page/${index + 1}/`,
+          component: slash(templates.blogPage),
+          context: {
+            skip: index * POSTS_PER_PAGE
+          }
+        });
+      });
 
       resolve();
     });

@@ -111,6 +111,48 @@ describe('gatsby-node', () => {
           expect(boundActionCreators.upsertPage.mock.calls).toMatchSnapshot();
         });
     });
+
+    describe('pagination', () => {
+      const generateData = n => {
+        const edges = [...Array(n)].map((val, i) => ({
+          node: {
+            slug: `/blog/2017-04-18--article-${i + 1}/`
+          }
+        }));
+
+        return {data: {posts: {edges}}};
+      };
+
+      it('should create 1 page with 5 posts', () => {
+        graphql.mockReturnValueOnce(Promise.resolve(generateData(5)));
+        return createPages({graphql, boundActionCreators})
+          .then(() => {
+            const pages = boundActionCreators.upsertPage.mock.calls
+              .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
+            expect(pages).toMatchSnapshot();
+          });
+      });
+
+      it('should create 2 pages with 15 posts', () => {
+        graphql.mockReturnValueOnce(Promise.resolve(generateData(15)));
+        return createPages({graphql, boundActionCreators})
+          .then(() => {
+            const pages = boundActionCreators.upsertPage.mock.calls
+              .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
+            expect(pages).toMatchSnapshot();
+          });
+      });
+
+      it('should create 3 pages with 30 posts', () => {
+        graphql.mockReturnValueOnce(Promise.resolve(generateData(30)));
+        return createPages({graphql, boundActionCreators})
+          .then(() => {
+            const pages = boundActionCreators.upsertPage.mock.calls
+              .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
+            expect(pages).toMatchSnapshot();
+          });
+      });
+    });
   });
 
   describe('onNodeCreate', () => {
