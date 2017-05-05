@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/fabien0102/gatsby-starter.svg?branch=master)](https://travis-ci.org/fabien0102/gatsby-starter)
 
 Demo: https://fabien0102-gatsby-starter.netlify.com/
+Storybook: https://fabien0102-gatsby-starter.netlify.com/docs/
 
 Gatsby 1.0 starter for generate awesome static website working with a nice env development.
 
