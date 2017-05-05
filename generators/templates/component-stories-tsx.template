@@ -12,7 +12,7 @@ storiesOf("{{pascalCase name}}", module)
   .add("default", () => {
     {{#each props}}
     {{#if required}}
-    const {{name}}: {{type}} = null; // TODO assign real value
+    const {{name}}: {{{type}}} = null; // TODO assign real value
     {{/if}}
     {{/each}}
 

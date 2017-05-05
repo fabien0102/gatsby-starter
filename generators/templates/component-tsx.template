@@ -3,7 +3,7 @@ import * as React from "react";
 {{#if props}}
 interface {{pascalCase name}}Props extends React.HTMLProps<HTMLDivElement> {
 {{#each props}}
-  {{name}}{{#if optional}}?{{/if}}: {{type}};
+  {{name}}{{#if optional}}?{{/if}}: {{{type}}};
 {{/each}}
 }
 

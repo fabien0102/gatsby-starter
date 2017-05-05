@@ -8,7 +8,7 @@ describe("{{pascalCase name}} component", () => {
     {{#if haveRequiredProps}}
     {{#each props}}
     {{#if required}}
-    const {{name}}: {{type}} = null; // TODO assign real value
+    const {{name}}: {{{type}}} = null; // TODO assign real value
     {{/if}}
     {{/each}}
 
