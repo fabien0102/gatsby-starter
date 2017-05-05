@@ -1,6 +1,6 @@
 const path = require("path");
 
-module.exports = function(storybookBaseConfig, configType) {
+module.exports = function (storybookBaseConfig, configType) {
   // Add typescript loader
   storybookBaseConfig.module.loaders.push({
     test: /\.tsx?$/,

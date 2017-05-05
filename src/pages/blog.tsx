@@ -84,7 +84,7 @@ export default (props: BlogProps) => {
           </Grid.Column>
           <Grid.Column width={3} floated="right">
             <Grid.Row>
-              <TagsCard tags={tags} tag={props.pathContext.tag}/>
+              <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag}/>
             </Grid.Row>
           </Grid.Column>
         </Grid>

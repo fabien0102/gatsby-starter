@@ -75,7 +75,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
         , [])
         .forEach(tag => {
           upsertPage({
-            path: `/tags/${kebabCase(tag)}/`,
+            path: `/blog/tags/${kebabCase(tag)}/`,
             component: slash(templates.tagsPage),
             context: {
               tag

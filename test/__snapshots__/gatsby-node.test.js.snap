@@ -76,7 +76,7 @@ Array [
       "context": Object {
         "tag": "starter",
       },
-      "path": "/tags/starter/",
+      "path": "/blog/tags/starter/",
     },
   ],
   Array [
@@ -85,7 +85,7 @@ Array [
       "context": Object {
         "tag": "gatsby",
       },
-      "path": "/tags/gatsby/",
+      "path": "/blog/tags/gatsby/",
     },
   ],
   Array [
@@ -94,7 +94,7 @@ Array [
       "context": Object {
         "tag": "test",
       },
-      "path": "/tags/test/",
+      "path": "/blog/tags/test/",
     },
   ],
 ]

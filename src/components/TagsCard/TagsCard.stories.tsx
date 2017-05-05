@@ -1,8 +1,8 @@
-/* tslint:disable no-var-requires */
 const withReadme = require("storybook-readme/with-readme").default;
 const TagsCardReadme = require("./README.md");
 
 import * as React from "react";
+import { LinkProps } from "react-router";
 import { storiesOf, action } from "@kadira/storybook";
 import { withKnobs, select } from "@kadira/storybook-addon-knobs";
 import TagsCard from "./TagsCard";
@@ -14,13 +14,16 @@ const tags = [
   { fieldValue: "tag03", totalCount: 6 },
 ] as markdownRemarkGroupConnectionConnection[];
 
+const LinkStub = (props: LinkProps) =>
+  <div onClick={action(props.to.toString())} >{props.children}</div>;
+
 storiesOf("TagsCard", module)
   .addDecorator(withReadme(TagsCardReadme))
   .addDecorator(withKnobs)
-  .add("default", () => (
-    <TagsCard onTagClick={action("tag clicked")} tags={tags} />
-  ))
+  .add("default", () => {
+    return <TagsCard tags={tags} Link={LinkStub} />;
+  })
   .add("with tag property", () => {
     const tag = select("Tag", tags.map((t) => t.fieldValue), "tag01");
-    return <TagsCard tags={tags} tag={tag} />;
+    return <TagsCard tags={tags} tag={tag} Link={LinkStub} />;
   });

@@ -4,7 +4,12 @@ Component to have a pretty tags list from all posts.
 
 ## Source
 ```
-<TagsCard tags={props.data.tags} onTagClick={onTagClick.bind(this)}/>
+<TagsCard tags={props.data.tags} Link={Link}/>
+```
+
+## With tag property
+```
+<TagsCard tags={props.data.tags} tag={tag} Link={Link}/>
 ```
 
 ## GraphQL query

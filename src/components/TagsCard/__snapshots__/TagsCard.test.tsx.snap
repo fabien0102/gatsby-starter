@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TagsCard component should call onTagClick on click 1`] = `
-Array [
-  Array [
-    "tag01",
-  ],
-]
-`;
