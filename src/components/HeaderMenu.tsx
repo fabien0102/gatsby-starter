@@ -10,7 +10,7 @@ interface HeaderMenuProps extends React.HTMLProps<HTMLDivElement> {
 export default (props: HeaderMenuProps) => {
   const isHome = props.pathname === "/";
   const isAbout = props.pathname === "/about/";
-  const isBlog = props.pathname === "/blog/";
+  const isBlog = props.pathname.startsWith("/blog/");
 
   return (
     <Container>
