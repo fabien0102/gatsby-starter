@@ -22,6 +22,7 @@ query TagPage($tag: String) {
     },
     fileAbsolutePath: { regex: "/blog/" },
   ) {
+    totalCount
     edges {
       node {
         excerpt

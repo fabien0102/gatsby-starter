@@ -2,8 +2,10 @@ const path = require('path');
 const slash = require('slash');
 const {kebabCase, uniq, get, compact, times} = require('lodash');
 
-// Don't forget to update `limit` field into
-// `templates/blog-page.tsx` and `pages/blog.tsx` graphql query
+// Don't forget to update hard code values into:
+// - `templates/blog-page.tsx:23`
+// - `pages/blog.tsx:26`
+// - `pages/blog.tsx:121`
 const POSTS_PER_PAGE = 10;
 const cleanArray = arr => compact(uniq(arr));
 

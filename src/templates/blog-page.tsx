@@ -23,6 +23,7 @@ query BlogPage($skip: Int) {
     limit: 10,
     skip: $skip
   ) {
+    totalCount
     edges {
       node {
         excerpt

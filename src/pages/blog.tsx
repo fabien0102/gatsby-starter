@@ -4,6 +4,7 @@ import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "sem
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 import TagsCard from "../components/TagsCard/TagsCard";
+import BlogPagination from "../components/BlogPagination/BlogPagination";
 
 interface BlogProps {
   data: {
@@ -13,12 +14,18 @@ interface BlogProps {
   pathContext: {
     tag?: string; // only set into `templates/tags-pages.tsx`
   };
+  location: {
+    pathname: string;
+  };
 }
 
 export default (props: BlogProps) => {
   const tags = props.data.tags.groupBy;
   const posts = props.data.posts.edges;
+  const { pathname } = props.location;
+  const pageCount = Math.ceil(props.data.posts.totalCount / 10);
 
+  // TODO export posts in a proper component
   const Posts = (
     <Container>
       {posts.map(({ node }) => {
@@ -80,11 +87,14 @@ export default (props: BlogProps) => {
           <Grid.Column width={9}>
             <Grid.Row>
               {Posts}
+              <Segment vertical textAlign="center">
+                <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
+              </Segment>
             </Grid.Row>
           </Grid.Column>
           <Grid.Column width={3} floated="right">
             <Grid.Row>
-              <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag}/>
+              <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag} />
             </Grid.Row>
           </Grid.Column>
         </Grid>
@@ -110,6 +120,7 @@ export const pageQuery = `
     fileAbsolutePath: { regex: "/blog/" },
     limit: 10,
   ) {
+    totalCount
     edges {
       node {
         excerpt
