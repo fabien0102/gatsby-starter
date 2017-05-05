@@ -59,6 +59,11 @@ module.exports = plop => {
         message: 'Wish files do you generate?',
         choices: data => [
           {
+            name: `${pascalCase(data.name)}.tsx`,
+            value: 'component',
+            checked: true
+          },
+          {
             name: `${pascalCase(data.name)}.test.tsx`,
             value: 'test',
             checked: true
@@ -88,16 +93,21 @@ module.exports = plop => {
         '../src/components/{{pascalCase name}}/' :
         '../src/components/';
 
-      const actions = [
-        addWithCustomData(
-          plop,
-          {
-            path: `${basePath}{{pascalCase name}}.tsx`,
-            templateFile: 'templates/component-tsx.template'
-          },
-          data
-        )
-      ];
+      const actions = [];
+
+      // Add component file
+      if (data.files.includes('component')) {
+        actions.push(
+          addWithCustomData(
+            plop,
+            {
+              path: `${basePath}{{pascalCase name}}.tsx`,
+              templateFile: 'templates/component-tsx.template'
+            },
+            data
+          )
+        );
+      }
 
       // Add test file
       if (data.files.includes('test')) {
