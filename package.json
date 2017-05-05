@@ -18,6 +18,7 @@
     "storybook:build": "build-storybook -c .storybook -o public/docs"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.63",
     "@types/react": "15.0.21",
     "@types/react-dom": "0.14.23",
     "@types/react-helmet": "5.0.0",
