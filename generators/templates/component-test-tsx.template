@@ -1,10 +1,10 @@
-import { shallow } from "enzyme";
+import { render } from "enzyme";
 import "jest";
 import * as React from "react";
 import {{pascalCase name}} from "./{{pascalCase name}}";
 
 describe("{{pascalCase name}} component", () => {
-  it("should have the correct text", () => {
+  it("should render correctly", () => {
     {{#if haveRequiredProps}}
     {{#each props}}
     {{#if required}}
@@ -13,7 +13,7 @@ describe("{{pascalCase name}} component", () => {
     {{/each}}
 
     {{/if}}
-    const wrapper = shallow(<{{pascalCase name}}{{#each props}}{{#if required}} {{name}}={{propsHelper name}}{{/if}}{{/each}} />);
-    expect(wrapper.text()).toBe("My awesome component");
+    const wrapper = render(<{{pascalCase name}}{{#each props}}{{#if required}} {{name}}={{propsHelper name}}{{/if}}{{/each}} />);
+    expect(wrapper).toMatchSnapshot();
   });
 });
