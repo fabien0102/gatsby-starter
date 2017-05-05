@@ -28,19 +28,17 @@ Run `yarn build` to create static site ready to host (`/public`)
 - [ ] Gatsby 1.0 (alpha)
   - [x] sharp
   - [x] offline support
-  - [ ] glamor
   - [ ] google analytics
   - [x] manifest
   - [x] typescript
   - [x] blog in markdown
 - [x] Best practices tools
   - [x] [Jest](https://facebook.github.io/jest/) / [Enzyme](http://airbnb.io/enzyme/)
-  - [ ] [Storybook](https://storybooks.js.org/)
+  - [x] [Storybook](https://storybooks.js.org/)
   - [x] [Typescript](https://www.typescriptlang.org/) / [tslint](https://palantir.github.io/tslint/)
   - [x] [xo linter](https://github.com/sindresorhus/xo)
   - [x] [Hunsky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for autofix each commit
-  - [ ] [Remark-lint](https://github.com/wooorm/remark-lint)
-  - [ ] Travis config
+  - [x] Travis config
   - [ ] Code climate config
 - [ ] SEO
   - [ ] [Helmet](https://github.com/nfl/react-helmet)
