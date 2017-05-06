@@ -3,6 +3,5 @@
 {{description}}
 
 ## Source
-```
-<{{pascalCase name}}{{#each props}}{{#if required}} {{name}}={{propsHelper name}} {{/if}}{{/each}} />
-```
+
+    <{{pascalCase name}}{{#each props}}{{#if required}} {{name}}={{propsHelper name}} {{/if}}{{/each}} />
