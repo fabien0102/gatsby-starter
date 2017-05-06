@@ -95,59 +95,24 @@ module.exports = plop => {
 
       const actions = [];
 
-      // Add component file
-      if (data.files.includes('component')) {
-        actions.push(
-          addWithCustomData(
-            plop,
-            {
-              path: `${basePath}{{pascalCase name}}.tsx`,
-              templateFile: 'templates/component-tsx.template'
-            },
-            data
-          )
-        );
-      }
-
-      // Add test file
-      if (data.files.includes('test')) {
-        actions.push(
-          addWithCustomData(
-            plop,
-            {
-              path: `${basePath}{{pascalCase name}}.test.tsx`,
-              templateFile: 'templates/component-test-tsx.template'
-            },
-            data
-          )
-        );
-      }
-
-      // Add stories file
-      if (data.files.includes('stories')) {
-        actions.push(
-          addWithCustomData(
-            plop,
-            {
-              type: 'add',
-              path: `${basePath}{{pascalCase name}}.stories.tsx`,
-              templateFile: 'templates/component-stories-tsx.template'
-            },
-            data
-          )
-        );
-        actions.push(
-          addWithCustomData(
-            plop,
-            {
-              type: 'add',
-              path: `${basePath}README.md`,
-              templateFile: 'templates/component-readme-md.template'
-            },
-            data
-          )
-        );
-      }
+      [
+        {condition: 'component', actions: [
+          {path: `${basePath}{{pascalCase name}}.tsx`, templateFile: 'templates/component-tsx.template'}
+        ]},
+        {condition: 'test', actions: [
+          {path: `${basePath}{{pascalCase name}}.test.tsx`, templateFile: 'templates/component-test-tsx.template'}
+        ]},
+        {condition: 'stories', actions: [
+          {path: `${basePath}{{pascalCase name}}.stories.tsx`, templateFile: 'templates/component-stories-tsx.template'},
+          {path: `${basePath}README.md`, templateFile: 'templates/component-readme-md.template'}
+        ]}
+      ].forEach(a => {
+        if (data.files.includes(a.condition)) {
+          a.actions.forEach(i => {
+            actions.push(addWithCustomData(plop, i, data));
+          });
+        }
+      });
 
       return actions;
     }
