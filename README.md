@@ -1,6 +1,7 @@
 # Gatsby 1.0 starter
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![Build Status](https://travis-ci.org/fabien0102/gatsby-starter.svg?branch=master)](https://travis-ci.org/fabien0102/gatsby-starter)
+[![Build status](https://ci.appveyor.com/api/projects/status/k06pajqcm23lay1s/branch/master?svg=true)](https://ci.appveyor.com/project/fabien0102/gatsby-starter/branch/master)
 
 Demo: https://fabien0102-gatsby-starter.netlify.com/
 Storybook: https://fabien0102-gatsby-starter.netlify.com/docs/
@@ -38,8 +39,8 @@ Run `yarn build` to create static site ready to host (`/public`)
   - [x] [Typescript](https://www.typescriptlang.org/) / [tslint](https://palantir.github.io/tslint/)
   - [x] [xo linter](https://github.com/sindresorhus/xo)
   - [x] [Hunsky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for autofix each commit
-  - [x] Travis config
-  - [ ] Code climate config
+  - [x] Travis/AppVeyor config (unix-osx-windows CI)
+  - [x] Code climate config
 - [ ] SEO
   - [ ] [Helmet](https://github.com/nfl/react-helmet)
 - [x] [Semantic-ui](http://react.semantic-ui.com) for styling

@@ -15,7 +15,8 @@
     "graphql-types": "gql-gen --url http://localhost:8000/graphql --template typescript --out ./src/graphql-types.d.ts",
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "storybook:build": "build-storybook -c .storybook -o public/docs"
+    "storybook:build": "build-storybook -c .storybook -o public/docs",
+    "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
   },
   "dependencies": {
     "@types/lodash": "^4.14.63",
@@ -24,6 +25,7 @@
     "@types/react-helmet": "5.0.0",
     "babel-eslint": "^7.2.1",
     "change-case": "^3.0.1",
+    "codeclimate-test-reporter": "^0.4.1",
     "gatsby": "next",
     "gatsby-link": "next",
     "gatsby-plugin-glamor": "next",
@@ -100,6 +102,12 @@
       "ts",
       "tsx",
       "js"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "html"
     ]
   },
   "lint-staged": {
