@@ -14,15 +14,12 @@ engines:
   tslint:
     enabled: true
     channel: beta
-  markdownlint:
-    enabled: true
 ratings:
   paths:
   - "**.tsx"
   - "**.ts"
   - "**.jsx"
   - "**.js"
-  - "**.md"
   - "**.css"
 exclude_paths:
 - "test/"
