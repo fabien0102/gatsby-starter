@@ -1,7 +1,7 @@
 ---
 title: Welcoming
 createdDate: '2017-04-18'
-updatedDate: '2017-05-02'
+updatedDate: '2017-05-06'
 author: Fabien BERNARD
 tags:
   - starter
@@ -28,5 +28,3 @@ const toto = "tata";
 ```
 
 coucou `plop` comment tu vas ?
-
-
