@@ -1,16 +1,14 @@
 ---
 title: Welcoming
-date: "2017-04-18"
+createdDate: '2017-04-18'
+updatedDate: '2017-05-06'
 author: Fabien BERNARD
-icon: rocket
-tags: 
+tags:
   - starter
   - gatsby
-image: welcoming.png
+image: pexels-photo-253092.jpeg
 draft: false
 ---
-
-![Welcome](welcoming.png)
 
 Welcome to gatsby-starter!
 

@@ -8,17 +8,29 @@
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "test": "xo && tslint && jest",
+    "lint": "npm run lint:ts && npm run lint:md && npm run lint:js && npm run lint:css",
+    "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
+    "lint:md": "remark .",
+    "lint:js": "xo",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:scss": "stylelint src/**/*.scss --syntax scss",
+    "test": "npm run lint && jest",
     "test:watch": "jest --watch",
-    "generate": "plop",
+    "generate": "plop --plopfile ./generators/plopfile.js",
     "graphql-types": "gql-gen --url http://localhost:8000/graphql --template typescript --out ./src/graphql-types.d.ts",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook:build": "build-storybook -c .storybook -o public/docs",
+    "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.63",
     "@types/react": "15.0.21",
     "@types/react-dom": "0.14.23",
     "@types/react-helmet": "5.0.0",
     "babel-eslint": "^7.2.1",
+    "change-case": "^3.0.1",
+    "codeclimate-test-reporter": "^0.4.1",
     "gatsby": "next",
     "gatsby-link": "next",
     "gatsby-plugin-glamor": "next",
@@ -39,26 +51,41 @@
     "gatsby-typegen-remark-responsive-image": "next",
     "gatsby-typegen-sharp": "next",
     "graphql-code-generator": "^0.5.1",
+    "gray-matter": "^2.1.1",
+    "lodash": "^4.17.4",
     "react": "15.5.3",
     "react-helmet": "5.0.3",
-    "semantic-ui-react": "^0.68.0",
+    "semantic-ui-react": "0.68.0",
     "slash": "1.0.0",
     "ts-loader": "^2.0.3",
     "typescript": "2.2.2"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storybook-addon-notes": "^1.0.1",
+    "@kadira/storybook-addon-options": "^1.0.2",
     "@types/enzyme": "^2.7.8",
     "@types/jest": "^19.2.2",
+    "@types/node": "^7.0.15",
     "@types/react-test-renderer": "^15.4.3",
     "enzyme": "^2.8.1",
     "eslint-config-xo-react": "0.11.1",
     "eslint-plugin-react": "6.10.3",
+    "flat": "^2.0.1",
     "husky": "0.13.3",
     "jest": "19.0.2",
     "lint-staged": "3.4.0",
+    "mkdirp": "^0.5.1",
     "plop": "^1.7.4",
+    "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.5.1",
     "react-test-renderer": "^15.5.4",
+    "remark-cli": "^3.0.1",
+    "remark-preset-lint-recommended": "^2.0.0",
+    "storybook-readme": "^2.0.2",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
     "ts-jest": "19.0.8",
     "ts-lint": "4.5.1",
     "xo": "^0.18.1"
@@ -84,6 +111,12 @@
       "ts",
       "tsx",
       "js"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "html"
     ]
   },
   "lint-staged": {
@@ -94,10 +127,27 @@
     "*.{js,jsx}": [
       "xo --fix",
       "git add"
+    ],
+    "*.md": [
+      "node tools/update-post-date.js",
+      "remark -o",
+      "git add"
     ]
   },
   "xo": {
     "extends": "xo-react/space",
-    "space": true
+    "space": true,
+    "rules": {
+      "no-case-declarations": 0,
+      "default-case": 0
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   }
 }

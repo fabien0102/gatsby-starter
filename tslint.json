@@ -14,7 +14,8 @@
         ],
         "no-console": [
             false
-        ]
+        ],
+        "no-var-requires": false
     },
     "rulesDirectory": []
 }

@@ -10,11 +10,11 @@ interface HeaderMenuProps extends React.HTMLProps<HTMLDivElement> {
 export default (props: HeaderMenuProps) => {
   const isHome = props.pathname === "/";
   const isAbout = props.pathname === "/about/";
-  const isBlog = props.pathname === "/blog/";
+  const isBlog = props.pathname.startsWith("/blog/");
 
   return (
     <Container>
-      <Menu large pointing secondary inverted={isHome}>
+      <Menu size="large" pointing secondary inverted={isHome}>
         <Menu.Item><Icon name="spy" size="big"/></Menu.Item>
         <Menu.Item as={Link} name="Home" to="/" active={isHome} />
         <Menu.Item as={Link} name="About" to="/about/" active={isAbout} />

@@ -1,5 +1,13 @@
 const path = require('path');
 const slash = require('slash');
+const {kebabCase, uniq, get, compact, times} = require('lodash');
+
+// Don't forget to update hard code values into:
+// - `templates/blog-page.tsx:23`
+// - `pages/blog.tsx:26`
+// - `pages/blog.tsx:121`
+const POSTS_PER_PAGE = 10;
+const cleanArray = arr => compact(uniq(arr));
 
 // Create slugs for files.
 // Slug will used for blog page path.
@@ -26,9 +34,12 @@ exports.createPages = ({graphql, boundActionCreators}) => {
   const {upsertPage} = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const blogPostTemplate = path.resolve(
-      `src/templates/blog-post.tsx`
-    );
+    const templates = ['blogPost', 'tagsPage', 'blogPage']
+      .reduce((mem, templateName) => {
+        return Object.assign({}, mem,
+        {[templateName]: path.resolve(`src/templates/${kebabCase(templateName)}.tsx`)});
+      }, {});
+
     graphql(
       `
       {
@@ -36,6 +47,9 @@ exports.createPages = ({graphql, boundActionCreators}) => {
           edges {
             node {
               slug
+              frontmatter {
+                tags
+              }
             }
           }
         }
@@ -45,18 +59,48 @@ exports.createPages = ({graphql, boundActionCreators}) => {
       if (result.errors) {
         return reject(result.errors);
       }
+      const posts = result.data.posts.edges.map(p => p.node);
 
-      result.data.posts.edges
-        .filter(edge => edge.node.slug.startsWith('/blog/'))
-        .forEach(edge => {
+      // Create blog pages
+      posts
+        .filter(post => post.slug.startsWith('/blog/'))
+        .forEach(post => {
           upsertPage({
-            path: edge.node.slug,
-            component: slash(blogPostTemplate),
+            path: post.slug,
+            component: slash(templates.blogPost),
             context: {
-              slug: edge.node.slug
+              slug: post.slug
             }
           });
         });
+
+      // Create tags pages
+      posts
+        .reduce((mem, post) =>
+          cleanArray(mem.concat(get(post, 'frontmatter.tags')))
+        , [])
+        .forEach(tag => {
+          upsertPage({
+            path: `/blog/tags/${kebabCase(tag)}/`,
+            component: slash(templates.tagsPage),
+            context: {
+              tag
+            }
+          });
+        });
+
+      // Create blog pagination
+      const pageCount = Math.ceil(posts.length / POSTS_PER_PAGE);
+      times(pageCount, index => {
+        upsertPage({
+          path: `/blog/page/${index + 1}/`,
+          component: slash(templates.blogPage),
+          context: {
+            skip: index * POSTS_PER_PAGE
+          }
+        });
+      });
+
       resolve();
     });
   });
