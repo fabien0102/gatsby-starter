@@ -7,6 +7,7 @@
 [![Test Coverage](https://codeclimate.com/github/fabien0102/gatsby-starter/badges/coverage.svg)](https://codeclimate.com/github/fabien0102/gatsby-starter/coverage)
 
 Demo: <https://fabien0102-gatsby-starter.netlify.com/>
+
 Storybook: <https://fabien0102-gatsby-starter.netlify.com/docs/>
 
 Gatsby 1.0 starter for generate awesome static website working with a nice env development.
