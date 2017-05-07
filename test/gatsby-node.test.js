@@ -53,6 +53,15 @@ describe('gatsby-node', () => {
         });
     });
 
+    it('should throw an error on graphql error', () => {
+      graphql.mockReturnValueOnce(
+        Promise.resolve({errors: 'something wrong!'})
+      );
+
+      expect(createPages({graphql, boundActionCreators}))
+        .toThrow();
+    });
+
     it('should create tags pages', () => {
       graphql.mockReturnValueOnce(
         Promise.resolve(
