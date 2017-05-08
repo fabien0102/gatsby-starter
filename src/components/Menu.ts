@@ -5,6 +5,7 @@ export interface MenuItem {
   name: string;
   path: string;
   exact: boolean;
+  icon?: string;
 }
 
 export interface MenuProps extends React.HTMLProps<HTMLDivElement> {
