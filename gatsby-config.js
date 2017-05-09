@@ -3,7 +3,7 @@ module.exports = {
     title: `My website`
   },
   mapping: {
-    'MarkdownRemark.frontmatter.author': `Author`
+    'MarkdownRemark.frontmatter.author': `AuthorJson`
   },
   plugins: [
     // Expose `/data` to graphQL layer
