@@ -83,20 +83,16 @@ export default (props: BlogProps) => {
 
       {/* Content */}
       <Segment vertical>
-        <Grid columns={12}>
-          <Grid.Column width={9}>
-            <Grid.Row>
+        <Grid padded style={{justifyContent: "space-around"}}>
+          <div style={{maxWidth: 600}}>
               {Posts}
               <Segment vertical textAlign="center">
                 <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
               </Segment>
-            </Grid.Row>
-          </Grid.Column>
-          <Grid.Column width={3} floated="right">
-            <Grid.Row>
+          </div>
+          <div>
               <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag} />
-            </Grid.Row>
-          </Grid.Column>
+          </div>
         </Grid>
       </Segment>
     </Container>

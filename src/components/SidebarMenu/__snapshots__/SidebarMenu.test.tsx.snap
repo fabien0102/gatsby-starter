@@ -1,0 +1,472 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarMenu component should render correctly 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {},
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "ui vertical labeled icon ui slide along left thin visible sidebar menu",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "active item",
+              "to": "/",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {
+                  "aria-hidden": "true",
+                  "class": "icon",
+                },
+                "children": Array [],
+                "name": "i",
+                "next": Object {
+                  "data": "Home",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "text",
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+              },
+              Object {
+                "data": "Home",
+                "next": null,
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "class": "icon",
+                  },
+                  "children": Array [],
+                  "name": "i",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                },
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "next": Object {
+              "attribs": Object {
+                "class": "item",
+                "to": "/about/",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "class": "icon",
+                  },
+                  "children": Array [],
+                  "name": "i",
+                  "next": Object {
+                    "data": "About",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "text",
+                  },
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                },
+                Object {
+                  "data": "About",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": Object {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "class": "icon",
+                    },
+                    "children": Array [],
+                    "name": "i",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                  },
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "next": Object {
+                "attribs": Object {
+                  "class": "item",
+                  "to": "/blog/",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "class": "icon",
+                    },
+                    "children": Array [],
+                    "name": "i",
+                    "next": Object {
+                      "data": "Blog",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "text",
+                    },
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                  },
+                  Object {
+                    "data": "Blog",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": Object {
+                      "attribs": Object {
+                        "aria-hidden": "true",
+                        "class": "icon",
+                      },
+                      "children": Array [],
+                      "name": "i",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                    },
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+              },
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "tag",
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+          },
+          Object {
+            "attribs": Object {
+              "class": "item",
+              "to": "/about/",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {
+                  "aria-hidden": "true",
+                  "class": "icon",
+                },
+                "children": Array [],
+                "name": "i",
+                "next": Object {
+                  "data": "About",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "text",
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+              },
+              Object {
+                "data": "About",
+                "next": null,
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "class": "icon",
+                  },
+                  "children": Array [],
+                  "name": "i",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                },
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "next": Object {
+              "attribs": Object {
+                "class": "item",
+                "to": "/blog/",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "class": "icon",
+                  },
+                  "children": Array [],
+                  "name": "i",
+                  "next": Object {
+                    "data": "Blog",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "text",
+                  },
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                },
+                Object {
+                  "data": "Blog",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": Object {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "class": "icon",
+                    },
+                    "children": Array [],
+                    "name": "i",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                  },
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "tag",
+            },
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "active item",
+                "to": "/",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "class": "icon",
+                  },
+                  "children": Array [],
+                  "name": "i",
+                  "next": Object {
+                    "data": "Home",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "text",
+                  },
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                },
+                Object {
+                  "data": "Home",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": Object {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "class": "icon",
+                    },
+                    "children": Array [],
+                    "name": "i",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                  },
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+            },
+            "type": "tag",
+          },
+          Object {
+            "attribs": Object {
+              "class": "item",
+              "to": "/blog/",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {
+                  "aria-hidden": "true",
+                  "class": "icon",
+                },
+                "children": Array [],
+                "name": "i",
+                "next": Object {
+                  "data": "Blog",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "text",
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+              },
+              Object {
+                "data": "Blog",
+                "next": null,
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "class": "icon",
+                  },
+                  "children": Array [],
+                  "name": "i",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                },
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "item",
+                "to": "/about/",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "class": "icon",
+                  },
+                  "children": Array [],
+                  "name": "i",
+                  "next": Object {
+                    "data": "About",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "text",
+                  },
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                },
+                Object {
+                  "data": "About",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": Object {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "class": "icon",
+                    },
+                    "children": Array [],
+                    "name": "i",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                  },
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "active item",
+                  "to": "/",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "class": "icon",
+                    },
+                    "children": Array [],
+                    "name": "i",
+                    "next": Object {
+                      "data": "Home",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "text",
+                    },
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                  },
+                  Object {
+                    "data": "Home",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": Object {
+                      "attribs": Object {
+                        "aria-hidden": "true",
+                        "class": "icon",
+                      },
+                      "children": Array [],
+                      "name": "i",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                    },
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+              },
+              "type": "tag",
+            },
+            "type": "tag",
+          },
+        ],
+        "name": "div",
+        "next": null,
+        "parent": null,
+        "prev": null,
+        "root": [Circular],
+        "type": "tag",
+      },
+    ],
+    "name": "root",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "type": "root",
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xmlMode": false,
+  },
+}
+`;
