@@ -15,9 +15,8 @@ export default (props: BlogPostProps) => {
   const { frontmatter, html, timeToRead } = props.data.post;
   const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
 
-  // TODO add link to tags page
   const tags = props.data.post.frontmatter.tags
-    .map((tag) => <Label as="a" key={tag}>{tag}</Label>);
+    .map((tag) => <Label key={tag}><Link to={`/blog/tags/${tag}/`}>{tag}</Link></Label>);
 
   const recents = props.data.recents.edges
     .map(({ node }) => {
@@ -43,7 +42,7 @@ export default (props: BlogPostProps) => {
       );
 
       return (
-        <Grid.Column key={node.slug}>
+        <div key={node.slug} style={{paddingBottom: "1em"}}>
           <Card as={Link}
             to={node.slug}
             image={{
@@ -53,7 +52,7 @@ export default (props: BlogPostProps) => {
             header={node.frontmatter.title}
             extra={extra}
           />
-        </Grid.Column>
+        </div>
       );
     });
 
@@ -86,10 +85,8 @@ export default (props: BlogPostProps) => {
         {tags}
       </Segment>
       <Segment vertical>
-        <Grid columns={4}>
-          <Grid.Row>
-            {recents}
-          </Grid.Row>
+        <Grid padded centered>
+          {recents}
         </Grid>
       </Segment>
     </Container>
