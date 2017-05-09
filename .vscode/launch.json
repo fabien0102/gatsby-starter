@@ -11,7 +11,10 @@
       "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/cli.js",
       "args": [
         "develop"
-      ]
+      ],
+      "env":{
+        "REDUX_DEVTOOLS": "true"
+      }
     },
     {
       "type": "node",
