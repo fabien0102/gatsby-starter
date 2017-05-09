@@ -7,7 +7,7 @@ initialize {
     "children": Array [
       Object {
         "attribs": Object {
-          "class": "ui inverted vertical labeled icon ui slide along left thin visible sidebar menu",
+          "class": "ui vertical labeled icon ui slide along left thin visible sidebar menu",
         },
         "children": Array [
           Object {
