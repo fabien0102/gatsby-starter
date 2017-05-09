@@ -27,7 +27,6 @@ export default class DefaultLayout extends React.PureComponent<DefaultLayoutProp
   state = { sidebarVisible: false };
 
   toggleSidebar() {
-    console.log("toggleSidebar");
     this.setState({ sidebarVisible: !this.state.sidebarVisible });
   }
 
@@ -43,7 +42,7 @@ export default class DefaultLayout extends React.PureComponent<DefaultLayoutProp
     return (
       <Sidebar.Pushable as={Segment}>
         <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={this.state.sidebarVisible} />
-        <Sidebar.Pusher>
+        <Sidebar.Pusher style={{minHeight: "100vh"}}>
           {/* Header */}
           {isHome ? "" : <HeaderMenu
             Link={Link} pathname={pathname} items={menuItems}
