@@ -3,8 +3,8 @@ import Blog from "../pages/blog";
 
 export default Blog;
 
-export const pageQuery = `
-query TagPage($tag: String) {
+export const pageQuery = graphql`
+query TemplateTagPage($tag: String) {
   # Get tags
   tags: allMarkdownRemark(frontmatter: {draft: {ne: true}}) {
     groupBy(field: frontmatter___tags) {

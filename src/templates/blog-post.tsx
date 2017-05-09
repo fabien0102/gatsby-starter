@@ -93,7 +93,7 @@ export default (props: BlogPostProps) => {
   );
 };
 
-export const pageQuery = `
+export const pageQuery = graphql`
   query TemplateBlogPost($slug: String!) {
   post: markdownRemark(slug: {eq: $slug}) {
     html

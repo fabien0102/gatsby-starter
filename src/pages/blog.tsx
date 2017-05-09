@@ -99,8 +99,8 @@ export default (props: BlogProps) => {
   );
 };
 
-export const pageQuery = `
-{
+export const pageQuery = graphql`
+query PageBlog {
   # Get tags
   tags: allMarkdownRemark(frontmatter: {draft: {ne: true}}) {
     groupBy(field: frontmatter___tags) {
