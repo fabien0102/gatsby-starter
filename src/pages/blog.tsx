@@ -84,7 +84,7 @@ export default (props: BlogProps) => {
       {/* Content */}
       <Segment vertical>
         <Grid padded style={{justifyContent: "space-around"}}>
-          <div style={{maxWidth: 400}}>
+          <div style={{maxWidth: 600}}>
               {Posts}
               <Segment vertical textAlign="center">
                 <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
