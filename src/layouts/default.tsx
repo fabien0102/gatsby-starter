@@ -50,10 +50,12 @@ export default class DefaultLayout extends React.PureComponent<DefaultLayoutProp
           />}
 
           {/* Render children pages */}
-          {children}
+          <div style={{paddingBottom: 60}}>
+            {children}
+          </div>
 
           {/* Footer */}
-          <Segment inverted vertical>
+          <Segment inverted vertical style={{position: "absolute", bottom: 0, width: "100%"}}>
             <Container textAlign="center">
               <p>Powered with <Icon name="heart" /> by Gatsby 1.0</p>
             </Container>
