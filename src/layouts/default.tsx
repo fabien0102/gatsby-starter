@@ -4,6 +4,7 @@ import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
 import SidebarMenu from "../components/SidebarMenu/SidebarMenu";
 import { Segment, Icon, Container, Sidebar, Button } from "semantic-ui-react";
 import "../css/styles.css";
+import "../css/responsive.css";
 import "prismjs/themes/prism-okaidia.css";
 
 export const menuItems = [
