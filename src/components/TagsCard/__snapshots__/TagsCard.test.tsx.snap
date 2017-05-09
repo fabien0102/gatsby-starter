@@ -1,0 +1,416 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TagsCard component should have on tag active 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Card>
+    <CardContent>
+        <CardHeader>
+            Tags
+        </CardHeader>
+    </CardContent>
+    <CardContent>
+        <List>
+            <ListItem
+                as="a"
+            >
+                <ListIcon
+                    color="blue"
+                    name="tag"
+                />
+                <ListContent
+                    style={
+                        Object {
+                            "fontWeight": "700",
+                          }
+                    }
+                >
+                    <LinkStub
+                        to="/blog/tags/tag01/"
+                    >
+                        tag01
+                         (
+                        2
+                        )
+                    </LinkStub>
+                </ListContent>
+            </ListItem>
+            <ListItem
+                as="a"
+            >
+                <ListIcon
+                    color={null}
+                    name="tag"
+                />
+                <ListContent
+                    style={null}
+                >
+                    <LinkStub
+                        to="/blog/tags/tag02/"
+                    >
+                        tag02
+                         (
+                        4
+                        )
+                    </LinkStub>
+                </ListContent>
+            </ListItem>
+            <ListItem
+                as="a"
+            >
+                <ListIcon
+                    color={null}
+                    name="tag"
+                />
+                <ListContent
+                    style={null}
+                >
+                    <LinkStub
+                        to="/blog/tags/tag03/"
+                    >
+                        tag03
+                         (
+                        6
+                        )
+                    </LinkStub>
+                </ListContent>
+            </ListItem>
+        </List>
+    </CardContent>
+</Card>,
+  "nodes": Array [
+    <Card>
+      <CardContent>
+            <CardHeader>
+                  Tags
+            </CardHeader>
+      </CardContent>
+      <CardContent>
+            <List>
+                  <ListItem
+                        as="a"
+                  >
+                        <ListIcon
+                              color="blue"
+                              name="tag"
+                        />
+                        <ListContent
+                              style={
+                                    Object {
+                                          "fontWeight": "700",
+                                        }
+                              }
+                        >
+                              <LinkStub
+                                    to="/blog/tags/tag01/"
+                              >
+                                    tag01
+                                     (
+                                    2
+                                    )
+                              </LinkStub>
+                        </ListContent>
+                  </ListItem>
+                  <ListItem
+                        as="a"
+                  >
+                        <ListIcon
+                              color={null}
+                              name="tag"
+                        />
+                        <ListContent
+                              style={null}
+                        >
+                              <LinkStub
+                                    to="/blog/tags/tag02/"
+                              >
+                                    tag02
+                                     (
+                                    4
+                                    )
+                              </LinkStub>
+                        </ListContent>
+                  </ListItem>
+                  <ListItem
+                        as="a"
+                  >
+                        <ListIcon
+                              color={null}
+                              name="tag"
+                        />
+                        <ListContent
+                              style={null}
+                        >
+                              <LinkStub
+                                    to="/blog/tags/tag03/"
+                              >
+                                    tag03
+                                     (
+                                    6
+                                    )
+                              </LinkStub>
+                        </ListContent>
+                  </ListItem>
+            </List>
+      </CardContent>
+</Card>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 2,
+      "_context": Object {},
+      "_currentElement": <Unknown
+        Link={[Function]}
+        tag="tag01"
+        tags={
+                Array [
+                        Object {
+                          "fieldValue": "tag01",
+                          "totalCount": 2,
+                        },
+                        Object {
+                          "fieldValue": "tag02",
+                          "totalCount": 4,
+                        },
+                        Object {
+                          "fieldValue": "tag03",
+                          "totalCount": 6,
+                        },
+                      ]
+        }
+/>,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": StatelessComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "Link": [Function],
+          "tag": "tag01",
+          "tags": Array [
+            Object {
+              "fieldValue": "tag01",
+              "totalCount": 2,
+            },
+            Object {
+              "fieldValue": "tag02",
+              "totalCount": 4,
+            },
+            Object {
+              "fieldValue": "tag03",
+              "totalCount": 6,
+            },
+          ],
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 2,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Card>
+          <CardContent>
+                    <CardHeader>
+                              Tags
+                    </CardHeader>
+          </CardContent>
+          <CardContent>
+                    <List>
+                              <ListItem
+                                        as="a"
+                              >
+                                        <ListIcon
+                                                  color="blue"
+                                                  name="tag"
+                                        />
+                                        <ListContent
+                                                  style={
+                                                            Object {
+                                                                      "fontWeight": "700",
+                                                                    }
+                                                  }
+                                        >
+                                                  <LinkStub
+                                                            to="/blog/tags/tag01/"
+                                                  >
+                                                            tag01
+                                                             (
+                                                            2
+                                                            )
+                                                  </LinkStub>
+                                        </ListContent>
+                              </ListItem>
+                              <ListItem
+                                        as="a"
+                              >
+                                        <ListIcon
+                                                  color={null}
+                                                  name="tag"
+                                        />
+                                        <ListContent
+                                                  style={null}
+                                        >
+                                                  <LinkStub
+                                                            to="/blog/tags/tag02/"
+                                                  >
+                                                            tag02
+                                                             (
+                                                            4
+                                                            )
+                                                  </LinkStub>
+                                        </ListContent>
+                              </ListItem>
+                              <ListItem
+                                        as="a"
+                              >
+                                        <ListIcon
+                                                  color={null}
+                                                  name="tag"
+                                        />
+                                        <ListContent
+                                                  style={null}
+                                        >
+                                                  <LinkStub
+                                                            to="/blog/tags/tag03/"
+                                                  >
+                                                            tag03
+                                                             (
+                                                            6
+                                                            )
+                                                  </LinkStub>
+                                        </ListContent>
+                              </ListItem>
+                    </List>
+          </CardContent>
+</Card>,
+        "_debugID": 4,
+        "_renderedOutput": <Card>
+          <CardContent>
+                    <CardHeader>
+                              Tags
+                    </CardHeader>
+          </CardContent>
+          <CardContent>
+                    <List>
+                              <ListItem
+                                        as="a"
+                              >
+                                        <ListIcon
+                                                  color="blue"
+                                                  name="tag"
+                                        />
+                                        <ListContent
+                                                  style={
+                                                            Object {
+                                                                      "fontWeight": "700",
+                                                                    }
+                                                  }
+                                        >
+                                                  <LinkStub
+                                                            to="/blog/tags/tag01/"
+                                                  >
+                                                            tag01
+                                                             (
+                                                            2
+                                                            )
+                                                  </LinkStub>
+                                        </ListContent>
+                              </ListItem>
+                              <ListItem
+                                        as="a"
+                              >
+                                        <ListIcon
+                                                  color={null}
+                                                  name="tag"
+                                        />
+                                        <ListContent
+                                                  style={null}
+                                        >
+                                                  <LinkStub
+                                                            to="/blog/tags/tag02/"
+                                                  >
+                                                            tag02
+                                                             (
+                                                            4
+                                                            )
+                                                  </LinkStub>
+                                        </ListContent>
+                              </ListItem>
+                              <ListItem
+                                        as="a"
+                              >
+                                        <ListIcon
+                                                  color={null}
+                                                  name="tag"
+                                        />
+                                        <ListContent
+                                                  style={null}
+                                        >
+                                                  <LinkStub
+                                                            to="/blog/tags/tag03/"
+                                                  >
+                                                            tag03
+                                                             (
+                                                            6
+                                                            )
+                                                  </LinkStub>
+                                        </ListContent>
+                              </ListItem>
+                    </List>
+          </CardContent>
+</Card>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Unknown
+    Link={[Function]}
+    tag="tag01"
+    tags={
+        Array [
+            Object {
+              "fieldValue": "tag01",
+              "totalCount": 2,
+            },
+            Object {
+              "fieldValue": "tag02",
+              "totalCount": 4,
+            },
+            Object {
+              "fieldValue": "tag03",
+              "totalCount": 6,
+            },
+          ]
+    }
+/>,
+}
+`;
