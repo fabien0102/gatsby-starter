@@ -15,8 +15,32 @@ describe("BlogPagination component", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it("should render correctly 5 pages", () => {
+    const pathname: string = "/blog/page/2/";
+    const pageCount: number = 5;
+
+    const wrapper = render(<BlogPagination pathname={pathname} Link={LinkStub} pageCount={pageCount} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("should render correctly 10 pages", () => {
     const pathname: string = "/blog/page/5/";
+    const pageCount: number = 10;
+
+    const wrapper = render(<BlogPagination pathname={pathname} Link={LinkStub} pageCount={pageCount} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should render correctly 20 pages", () => {
+    const pathname: string = "/blog/page/5/";
+    const pageCount: number = 20;
+
+    const wrapper = render(<BlogPagination pathname={pathname} Link={LinkStub} pageCount={pageCount} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should have first link active if no match", () => {
+    const pathname: string = "/plop";
     const pageCount: number = 10;
 
     const wrapper = render(<BlogPagination pathname={pathname} Link={LinkStub} pageCount={pageCount} />);
