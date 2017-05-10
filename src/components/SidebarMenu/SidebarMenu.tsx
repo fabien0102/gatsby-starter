@@ -8,7 +8,7 @@ interface SidebarMenuProps extends MenuProps {
 
 export default ({ items, pathname, Link, visible }: SidebarMenuProps) => {
   const isActive = (item: MenuItem) => (item.exact) ? pathname === item.path : pathname.startsWith(item.path);
-  const activeItem = items.find((item: MenuItem) => isActive(item));
+  const activeItem = items.find((item: MenuItem) => isActive(item)) || {};
   return (
     <Sidebar as={Menu} animation="slide along" width="thin"
       visible={visible} icon="labeled" vertical inverted={activeItem.inverted}>
