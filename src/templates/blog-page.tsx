@@ -28,7 +28,9 @@ query TemplateBlogPage($skip: Int) {
       node {
         excerpt
         timeToRead
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           title
           updatedDate(formatString: "DD MMMM, YYYY")

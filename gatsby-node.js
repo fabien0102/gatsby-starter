@@ -12,9 +12,9 @@ const cleanArray = arr => compact(uniq(arr));
 // Create slugs for files.
 // Slug will used for blog page path.
 exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
-  const {updateNode} = boundActionCreators;
+  const {createNodeField} = boundActionCreators;
   let slug;
-  switch (node.type) {
+  switch (node.internal.type) {
     case `MarkdownRemark`:
       const fileNode = getNode(node.parent);
       const [basePath, name] = fileNode.relativePath.split('/');
@@ -22,7 +22,7 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
       break;
   }
   if (slug) {
-    updateNode(Object.assign({}, node, {slug}));
+    createNodeField({node, fieldName: `slug`, fieldValue: slug});
   }
 };
 
@@ -46,7 +46,9 @@ exports.createPages = ({graphql, boundActionCreators}) => {
         posts: allMarkdownRemark {
           edges {
             node {
-              slug
+              fields {
+                slug
+              }
               frontmatter {
                 tags
               }
@@ -63,13 +65,13 @@ exports.createPages = ({graphql, boundActionCreators}) => {
 
       // Create blog pages
       posts
-        .filter(post => post.slug.startsWith('/blog/'))
+        .filter(post => post.fields.slug.startsWith('/blog/'))
         .forEach(post => {
           createPage({
-            path: post.slug,
+            path: post.fields.slug,
             component: slash(templates.blogPost),
             context: {
-              slug: post.slug
+              slug: post.fields.slug
             }
           });
         });

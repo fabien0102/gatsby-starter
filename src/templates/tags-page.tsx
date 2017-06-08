@@ -27,7 +27,9 @@ query TemplateTagPage($tag: String) {
       node {
         excerpt
         timeToRead
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           title
           updatedDate(formatString: "DD MMMM, YYYY")

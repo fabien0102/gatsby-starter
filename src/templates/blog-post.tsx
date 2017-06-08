@@ -130,7 +130,9 @@ export const pageQuery = graphql`
   ) {
     edges {
       node {
-        slug
+        fields {
+          slug
+        }
         timeToRead
         frontmatter {
           title

@@ -29,7 +29,7 @@ export default (props: BlogProps) => {
   const Posts = (
     <Container>
       {posts.map(({ node }) => {
-        const { frontmatter, timeToRead, slug, excerpt } = node;
+        const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
         const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
         const cover = frontmatter.image.children[0] as ImageSharp;
 
@@ -83,15 +83,15 @@ export default (props: BlogProps) => {
 
       {/* Content */}
       <Segment vertical>
-        <Grid padded style={{justifyContent: "space-around"}}>
-          <div style={{maxWidth: 600}}>
-              {Posts}
-              <Segment vertical textAlign="center">
-                <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
-              </Segment>
+        <Grid padded style={{ justifyContent: "space-around" }}>
+          <div style={{ maxWidth: 600 }}>
+            {Posts}
+            <Segment vertical textAlign="center">
+              <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
+            </Segment>
           </div>
           <div>
-              <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag} />
+            <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag} />
           </div>
         </Grid>
       </Segment>
@@ -121,7 +121,9 @@ query PageBlog {
       node {
         excerpt
         timeToRead
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           title
           updatedDate(formatString: "DD MMMM, YYYY")
