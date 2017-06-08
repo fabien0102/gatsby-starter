@@ -1,6 +1,6 @@
 /* eslint-disable no-undef, max-nested-callbacks */
 jest.mock('path');
-const {createPages, onNodeCreate} = require('../gatsby-node');
+const {createPages, onCreateNode} = require('../gatsby-node');
 
 describe('gatsby-node', () => {
   const boundActionCreators = {};
@@ -9,7 +9,7 @@ describe('gatsby-node', () => {
     let graphql;
 
     beforeEach(() => {
-      boundActionCreators.upsertPage = jest.fn();
+      boundActionCreators.createPage = jest.fn();
       graphql = jest.fn();
     });
 
@@ -49,7 +49,7 @@ describe('gatsby-node', () => {
 
       return createPages({graphql, boundActionCreators})
         .then(() => {
-          expect(boundActionCreators.upsertPage.mock.calls).toMatchSnapshot();
+          expect(boundActionCreators.createPage.mock.calls).toMatchSnapshot();
         });
     });
 
@@ -117,7 +117,7 @@ describe('gatsby-node', () => {
 
       return createPages({graphql, boundActionCreators})
         .then(() => {
-          expect(boundActionCreators.upsertPage.mock.calls).toMatchSnapshot();
+          expect(boundActionCreators.createPage.mock.calls).toMatchSnapshot();
         });
     });
 
@@ -136,7 +136,7 @@ describe('gatsby-node', () => {
         graphql.mockReturnValueOnce(Promise.resolve(generateData(5)));
         return createPages({graphql, boundActionCreators})
           .then(() => {
-            const pages = boundActionCreators.upsertPage.mock.calls
+            const pages = boundActionCreators.createPage.mock.calls
               .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
             expect(pages).toMatchSnapshot();
           });
@@ -146,7 +146,7 @@ describe('gatsby-node', () => {
         graphql.mockReturnValueOnce(Promise.resolve(generateData(15)));
         return createPages({graphql, boundActionCreators})
           .then(() => {
-            const pages = boundActionCreators.upsertPage.mock.calls
+            const pages = boundActionCreators.createPage.mock.calls
               .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
             expect(pages).toMatchSnapshot();
           });
@@ -156,7 +156,7 @@ describe('gatsby-node', () => {
         graphql.mockReturnValueOnce(Promise.resolve(generateData(30)));
         return createPages({graphql, boundActionCreators})
           .then(() => {
-            const pages = boundActionCreators.upsertPage.mock.calls
+            const pages = boundActionCreators.createPage.mock.calls
               .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
             expect(pages).toMatchSnapshot();
           });
@@ -164,7 +164,7 @@ describe('gatsby-node', () => {
     });
   });
 
-  describe('onNodeCreate', () => {
+  describe('onCreateNode', () => {
     let getNode;
 
     beforeEach(() => {
@@ -182,7 +182,7 @@ describe('gatsby-node', () => {
         type: 'MarkdownRemark',
         parent: 'parent'
       };
-      onNodeCreate({node, boundActionCreators, getNode});
+      onCreateNode({node, boundActionCreators, getNode});
 
       expect(boundActionCreators.updateNode.mock.calls).toMatchSnapshot();
     });
@@ -197,7 +197,7 @@ describe('gatsby-node', () => {
         type: 'unknown',
         parent: 'parent'
       };
-      onNodeCreate({node, boundActionCreators, getNode});
+      onCreateNode({node, boundActionCreators, getNode});
 
       expect(boundActionCreators.updateNode.mock.calls.length).toBe(0);
     });
