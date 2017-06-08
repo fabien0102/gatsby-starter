@@ -11,7 +11,7 @@ const cleanArray = arr => compact(uniq(arr));
 
 // Create slugs for files.
 // Slug will used for blog page path.
-exports.onNodeCreate = ({node, boundActionCreators, getNode}) => {
+exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
   const {updateNode} = boundActionCreators;
   let slug;
   switch (node.type) {
@@ -31,7 +31,7 @@ exports.onNodeCreate = ({node, boundActionCreators, getNode}) => {
 // so you have access to any information necessary to
 // programatically create pages.
 exports.createPages = ({graphql, boundActionCreators}) => {
-  const {upsertPage} = boundActionCreators;
+  const {createPage} = boundActionCreators;
 
   return new Promise((resolve, reject) => {
     const templates = ['blogPost', 'tagsPage', 'blogPage']
@@ -65,7 +65,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
       posts
         .filter(post => post.slug.startsWith('/blog/'))
         .forEach(post => {
-          upsertPage({
+          createPage({
             path: post.slug,
             component: slash(templates.blogPost),
             context: {
@@ -80,7 +80,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
           cleanArray(mem.concat(get(post, 'frontmatter.tags')))
         , [])
         .forEach(tag => {
-          upsertPage({
+          createPage({
             path: `/blog/tags/${kebabCase(tag)}/`,
             component: slash(templates.tagsPage),
             context: {
@@ -92,7 +92,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
       // Create blog pagination
       const pageCount = Math.ceil(posts.length / POSTS_PER_PAGE);
       times(pageCount, index => {
-        upsertPage({
+        createPage({
           path: `/blog/page/${index + 1}/`,
           component: slash(templates.blogPage),
           context: {
