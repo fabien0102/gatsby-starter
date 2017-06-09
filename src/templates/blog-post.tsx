@@ -42,9 +42,9 @@ export default (props: BlogPostProps) => {
       );
 
       return (
-        <div key={node.slug} style={{paddingBottom: "1em"}}>
+        <div key={node.fields.slug} style={{paddingBottom: "1em"}}>
           <Card as={Link}
-            to={node.slug}
+            to={node.fields.slug}
             image={{
               src: recentCover.responsiveResolution.src,
               srcSet: recentCover.responsiveResolution.srcSet,
@@ -95,11 +95,13 @@ export default (props: BlogPostProps) => {
 
 export const pageQuery = graphql`
   query TemplateBlogPost($slug: String!) {
-  post: markdownRemark(slug: {eq: $slug}) {
+  post: markdownRemark(fields: {slug: {eq: $slug}}) {
     html
     excerpt
     timeToRead
-    slug
+    fields {
+      slug
+    }
     frontmatter {
       tags
       author {
@@ -122,7 +124,7 @@ export const pageQuery = graphql`
     }
   }
   recents: allMarkdownRemark(
-    slug: {ne: $slug},
+    fields: {slug: {ne: $slug}},
     sortBy: {order: DESC, fields: [frontmatter___updatedDate]},
     frontmatter: {draft: {ne: true}},
     fileAbsolutePath: {regex: "/blog/"},
