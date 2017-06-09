@@ -17,6 +17,7 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
     pathname: string;
   };
+  children: any;
 }
 
 interface DefaultLayoutStates {
@@ -35,7 +36,7 @@ export default class DefaultLayout extends React.PureComponent<DefaultLayoutProp
     const isHome = pathname === "/";
 
     // Inject `toggleSidebar` function into children
-    const children = React.Children.map(this.props.children, (child: React.ReactElement<any>) =>
+    const children = React.Children.map(this.props.children(), (child: React.ReactElement<any>) =>
       React.cloneElement(child, { toggleSidebar: this.toggleSidebar.bind(this) }),
     );
 
