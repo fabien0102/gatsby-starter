@@ -1,8 +1,8 @@
 ---
 title: 'Article #1'
 createdDate: '2017-05-02'
-updatedDate: '2017-05-06'
-author: Fabien BERNARD
+updatedDate: '2017-06-11'
+author: fabien0102
 tags:
   - test
 image: pexels-photo-59628.jpeg
