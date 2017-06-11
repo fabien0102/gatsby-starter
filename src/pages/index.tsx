@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Link from "gatsby-link";
+import Link from "gatsby-link";
 import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
 import { menuItems } from "../layouts";
 import {

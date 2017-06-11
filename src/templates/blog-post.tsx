@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Link from "gatsby-link";
+import Link from "gatsby-link";
 import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
 import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
