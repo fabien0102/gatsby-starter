@@ -15,7 +15,7 @@ export default ({ items, pathname, Link, visible }: SidebarMenuProps) => {
       {items.map((item) => {
         const active = isActive(item);
         return (
-          <Menu.Item as={Link} to={item.path} active={active}>
+          <Menu.Item as={Link} to={item.path} active={active} key={item.path}>
             <Icon name={item.icon} />
             {item.name}
           </Menu.Item>
