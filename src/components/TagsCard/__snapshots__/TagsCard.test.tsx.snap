@@ -186,6 +186,7 @@ ShallowWrapper {
                       ]
         }
 />,
+      "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": StatelessComponent {
@@ -304,6 +305,7 @@ ShallowWrapper {
                     </List>
           </CardContent>
 </Card>,
+        "_debugID": 4,
         "_renderedOutput": <Card>
           <CardContent>
                     <CardHeader>
@@ -384,6 +386,7 @@ ShallowWrapper {
       "_rootNodeID": 0,
       "_topLevelWrapper": null,
       "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
     },
     "getRenderOutput": [Function],
     "render": [Function],

@@ -22,22 +22,30 @@ describe('gatsby-node', () => {
                 edges: [
                   {
                     node: {
-                      slug: '/blog/2017-04-18--welcoming/'
+                      fields: {
+                        slug: '/blog/2017-04-18--welcoming/'
+                      }
                     }
                   },
                   {
                     node: {
-                      slug: '/blog/2017-05-02--article-2/'
+                      fields: {
+                        slug: '/blog/2017-05-02--article-2/'
+                      }
                     }
                   },
                   {
                     node: {
-                      slug: '/blog/2017-05-02--article-1/'
+                      fields: {
+                        slug: '/blog/2017-05-02--article-1/'
+                      }
                     }
                   },
                   {
                     node: {
-                      slug: '/docs/dont-take-me/'
+                      fields: {
+                        slug: '/docs/dont-take-me/'
+                      }
                     }
                   }
                 ]
@@ -71,7 +79,9 @@ describe('gatsby-node', () => {
                 edges: [
                   {
                     node: {
-                      slug: '/blog/2017-04-18--welcoming/',
+                      fields: {
+                        slug: '/blog/2017-04-18--welcoming/'
+                      },
                       frontmatter: {
                         tags: [
                           'starter',
@@ -82,7 +92,9 @@ describe('gatsby-node', () => {
                   },
                   {
                     node: {
-                      slug: '/blog/2017-05-02--article-2/',
+                      fields: {
+                        slug: '/blog/2017-05-02--article-2/'
+                      },
                       frontmatter: {
                         tags: [
                           'test'
@@ -92,7 +104,9 @@ describe('gatsby-node', () => {
                   },
                   {
                     node: {
-                      slug: '/blog/2017-05-02--article-1/',
+                      fields: {
+                        slug: '/blog/2017-05-02--article-1/'
+                      },
                       frontmatter: {
                         tags: [
                           'test'
@@ -102,7 +116,9 @@ describe('gatsby-node', () => {
                   },
                   {
                     node: {
-                      slug: '/blog/2017-05-02--article-0/',
+                      fields: {
+                        slug: '/blog/2017-05-02--article-0/'
+                      },
                       frontmatter: {
                         tags: null
                       }
@@ -125,7 +141,9 @@ describe('gatsby-node', () => {
       const generateData = n => {
         const edges = [...Array(n)].map((val, i) => ({
           node: {
-            slug: `/blog/2017-04-18--article-${i + 1}/`
+            fields: {
+              slug: `/blog/2017-04-18--article-${i + 1}/`
+            }
           }
         }));
 
@@ -168,7 +186,7 @@ describe('gatsby-node', () => {
     let getNode;
 
     beforeEach(() => {
-      boundActionCreators.updateNode = jest.fn();
+      boundActionCreators.createNodeField = jest.fn();
       getNode = jest.fn();
     });
 
@@ -179,12 +197,14 @@ describe('gatsby-node', () => {
         }
       );
       const node = {
-        type: 'MarkdownRemark',
+        internal: {
+          type: 'MarkdownRemark'
+        },
         parent: 'parent'
       };
       onCreateNode({node, boundActionCreators, getNode});
 
-      expect(boundActionCreators.updateNode.mock.calls).toMatchSnapshot();
+      expect(boundActionCreators.createNodeField.mock.calls).toMatchSnapshot();
     });
 
     it('should do nothing on unknown type', () => {
@@ -194,12 +214,14 @@ describe('gatsby-node', () => {
         }
       );
       const node = {
-        type: 'unknown',
+        internal: {
+          type: 'unknown'
+        },
         parent: 'parent'
       };
       onCreateNode({node, boundActionCreators, getNode});
 
-      expect(boundActionCreators.updateNode.mock.calls.length).toBe(0);
+      expect(boundActionCreators.createNodeField.mock.calls.length).toBe(0);
     });
   });
 });
