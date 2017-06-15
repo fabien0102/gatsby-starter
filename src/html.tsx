@@ -46,7 +46,6 @@ module.exports = React.createClass<HtmlProps, void>({
           {head.title.toComponent()}
           {head.meta.toComponent()}
           {head.link.toComponent()}
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"></link>
           {css}
         </head>
         <body>
