@@ -3,7 +3,7 @@ module.exports = {
     title: `My website`
   },
   mapping: {
-    'MarkdownRemark.frontmatter.author': `Author`
+    'MarkdownRemark.frontmatter.author': `AuthorJson`
   },
   plugins: [
     // Expose `/data` to graphQL layer
@@ -16,28 +16,26 @@ module.exports = {
     },
 
     // Parse all markdown files (each plugin add/parse some data into graphQL layer)
-    `gatsby-transformer-remark`,
     {
-      resolve: `gatsby-typegen-remark`,
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: `gatsby-typegen-remark-responsive-image`,
+            resolve: `gatsby-remark-responsive-image`,
             options: {
               maxWidth: 690,
               backgroundColor: `#f7f0eb`
             }
           },
-          `gatsby-typegen-remark-prismjs`,
-          `gatsby-typegen-remark-copy-linked-files`,
-          `gatsby-typegen-remark-autolink-headers`
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-autolink-headers`
         ]
       }
     },
 
     // Parse all images files
     `gatsby-transformer-sharp`,
-    `gatsby-typegen-sharp`,
     `gatsby-plugin-sharp`,
 
     // Parse JSON files

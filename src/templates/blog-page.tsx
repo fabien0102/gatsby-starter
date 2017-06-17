@@ -3,11 +3,11 @@ import Blog from "../pages/blog";
 
 export default Blog;
 
-export const pageQuery = `
-query BlogPage($skip: Int) {
+export const pageQuery = graphql`
+query TemplateBlogPage($skip: Int) {
   # Get tags
-  tags: allMarkdownRemark(frontmatter: {draft: {ne: true}}) {
-    groupBy(field: frontmatter___tags) {
+  tags: allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}}) {
+    group(field: frontmatter___tags) {
       fieldValue
       totalCount
     }
@@ -15,11 +15,13 @@ query BlogPage($skip: Int) {
 
   # Get posts
   posts: allMarkdownRemark(
-    sortBy: { order: DESC, fields: [frontmatter___updatedDate] },
-    frontmatter: {
-      draft: { ne: true }
-    },
-    fileAbsolutePath: { regex: "/blog/" },
+    sort: { order: DESC, fields: [frontmatter___updatedDate] },
+    filter: {
+      frontmatter: {
+        draft: { ne: true }
+      },
+      fileAbsolutePath: { regex: "/blog/" }
+    }
     limit: 10,
     skip: $skip
   ) {
@@ -28,7 +30,9 @@ query BlogPage($skip: Int) {
       node {
         excerpt
         timeToRead
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           title
           updatedDate(formatString: "DD MMMM, YYYY")

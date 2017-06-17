@@ -15,7 +15,14 @@ export default ({ items, pathname, Link, inverted, toggleSidebar }: HeaderMenuPr
         <Menu.Item className="mobile hidden"><Icon name="spy" size="big" /></Menu.Item>
         {items.map((item) => {
           const active = (item.exact) ? pathname === item.path : pathname.startsWith(item.path);
-          return <Menu.Item as={Link} className="mobile hidden" name={item.name} to={item.path} active={active} />;
+          return <Menu.Item
+            as={Link}
+            className="mobile hidden"
+            name={item.name}
+            to={item.path}
+            key={item.path}
+            active={active}
+          />;
         })}
       </Menu>
     </Container>

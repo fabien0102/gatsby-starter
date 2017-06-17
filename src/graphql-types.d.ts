@@ -80,7 +80,9 @@ export interface MarkdownRemarkRootQueryTypeArgs {
   frontmatter: markdownRemarkFrontmatterInputObject | null;
   fileAbsolutePath: markdownRemarkFileAbsolutePathQueryString | null;
   pluginName: markdownRemarkPluginNameQueryString | null;
-  slug: markdownRemarkSlugQueryString | null;
+  fields: {
+    slug: markdownRemarkSlugQueryString | null;
+  }
   sortBy: markdownRemarkSortBy | null;
 }
 
@@ -160,7 +162,9 @@ export interface AllMarkdownRemarkRootQueryTypeArgs {
   frontmatter: markdownRemarkConnectionFrontmatterInputObject | null;
   fileAbsolutePath: markdownRemarkConnectionFileAbsolutePathQueryString | null;
   pluginName: markdownRemarkConnectionPluginNameQueryString | null;
-  slug: markdownRemarkConnectionSlugQueryString | null;
+  fields: {
+    slug: markdownRemarkConnectionSlugQueryString | null;
+  }
   sortBy: markdownRemarkConnectionSortBy | null;
 }
 
@@ -818,7 +822,9 @@ export interface MarkdownRemark extends Node {
   frontmatter: frontmatter | null;
   fileAbsolutePath: File | null;
   pluginName: string | null;
-  slug: string | null;
+  fields: {
+    slug: string | null;
+  }
   html: string | null;
   excerpt: string | null;
   headings: Array<MarkdownHeading> | null;

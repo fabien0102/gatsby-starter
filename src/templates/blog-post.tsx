@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Link from "gatsby-link";
+import Link from "gatsby-link";
 import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
 import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
@@ -42,9 +42,9 @@ export default (props: BlogPostProps) => {
       );
 
       return (
-        <div key={node.slug} style={{paddingBottom: "1em"}}>
+        <div key={node.fields.slug} style={{paddingBottom: "1em"}}>
           <Card as={Link}
-            to={node.slug}
+            to={node.fields.slug}
             image={{
               src: recentCover.responsiveResolution.src,
               srcSet: recentCover.responsiveResolution.srcSet,
@@ -93,13 +93,15 @@ export default (props: BlogPostProps) => {
   );
 };
 
-export const pageQuery = `
+export const pageQuery = graphql`
   query TemplateBlogPost($slug: String!) {
-  post: markdownRemark(slug: {eq: $slug}) {
+  post: markdownRemark(fields: {slug: {eq: $slug}}) {
     html
     excerpt
     timeToRead
-    slug
+    fields {
+      slug
+    }
     frontmatter {
       tags
       author {
@@ -122,15 +124,19 @@ export const pageQuery = `
     }
   }
   recents: allMarkdownRemark(
-    slug: {ne: $slug},
-    sortBy: {order: DESC, fields: [frontmatter___updatedDate]},
-    frontmatter: {draft: {ne: true}},
-    fileAbsolutePath: {regex: "/blog/"},
+    filter: {
+      fields: {slug: {ne: $slug}}
+      frontmatter: {draft: {ne: true}},
+      fileAbsolutePath: {regex: "/blog/"},
+    },
+    sort: {order: DESC, fields: [frontmatter___updatedDate]},
     limit: 4
   ) {
     edges {
       node {
-        slug
+        fields {
+          slug
+        }
         timeToRead
         frontmatter {
           title

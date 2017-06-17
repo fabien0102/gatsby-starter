@@ -11,10 +11,10 @@ const cleanArray = arr => compact(uniq(arr));
 
 // Create slugs for files.
 // Slug will used for blog page path.
-exports.onNodeCreate = ({node, boundActionCreators, getNode}) => {
-  const {updateNode} = boundActionCreators;
+exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
+  const {createNodeField} = boundActionCreators;
   let slug;
-  switch (node.type) {
+  switch (node.internal.type) {
     case `MarkdownRemark`:
       const fileNode = getNode(node.parent);
       const [basePath, name] = fileNode.relativePath.split('/');
@@ -22,7 +22,7 @@ exports.onNodeCreate = ({node, boundActionCreators, getNode}) => {
       break;
   }
   if (slug) {
-    updateNode(Object.assign({}, node, {slug}));
+    createNodeField({node, fieldName: `slug`, fieldValue: slug});
   }
 };
 
@@ -31,7 +31,7 @@ exports.onNodeCreate = ({node, boundActionCreators, getNode}) => {
 // so you have access to any information necessary to
 // programatically create pages.
 exports.createPages = ({graphql, boundActionCreators}) => {
-  const {upsertPage} = boundActionCreators;
+  const {createPage} = boundActionCreators;
 
   return new Promise((resolve, reject) => {
     const templates = ['blogPost', 'tagsPage', 'blogPage']
@@ -46,7 +46,9 @@ exports.createPages = ({graphql, boundActionCreators}) => {
         posts: allMarkdownRemark {
           edges {
             node {
-              slug
+              fields {
+                slug
+              }
               frontmatter {
                 tags
               }
@@ -63,13 +65,13 @@ exports.createPages = ({graphql, boundActionCreators}) => {
 
       // Create blog pages
       posts
-        .filter(post => post.slug.startsWith('/blog/'))
+        .filter(post => post.fields.slug.startsWith('/blog/'))
         .forEach(post => {
-          upsertPage({
-            path: post.slug,
+          createPage({
+            path: post.fields.slug,
             component: slash(templates.blogPost),
             context: {
-              slug: post.slug
+              slug: post.fields.slug
             }
           });
         });
@@ -80,7 +82,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
           cleanArray(mem.concat(get(post, 'frontmatter.tags')))
         , [])
         .forEach(tag => {
-          upsertPage({
+          createPage({
             path: `/blog/tags/${kebabCase(tag)}/`,
             component: slash(templates.tagsPage),
             context: {
@@ -92,7 +94,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
       // Create blog pagination
       const pageCount = Math.ceil(posts.length / POSTS_PER_PAGE);
       times(pageCount, index => {
-        upsertPage({
+        createPage({
           path: `/blog/page/${index + 1}/`,
           component: slash(templates.blogPage),
           context: {
