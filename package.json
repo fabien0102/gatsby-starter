@@ -45,7 +45,7 @@
     "gatsby-remark-responsive-image": "1.0.0-beta.2",
     "gatsby-source-filesystem": "1.0.0-beta.2",
     "gatsby-transformer-json": "1.0.0-beta.2",
-    "gatsby-transformer-remark": "1.0.0-beta.2",
+    "gatsby-transformer-remark": "1.0.0-beta.1",
     "gatsby-transformer-sharp": "1.0.0-beta.2",
     "graphql-code-generator": "^0.5.2",
     "gray-matter": "^2.1.1",
