@@ -21,17 +21,41 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   children: any;
 }
 
+<<<<<<< 5442af3de0ecf751c05d56050ed25ee9114c6b7e
 export default class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
+=======
+interface DefaultLayoutStates {
+  sidebarVisible: boolean;
+}
+
+export default class DefaultLayout extends React.PureComponent<DefaultLayoutProps, DefaultLayoutStates> {
+  state = { sidebarVisible: false };
+
+  toggleSidebar() {
+    console.log("toggle sidebar");
+    this.setState({ sidebarVisible: !this.state.sidebarVisible });
+  }
+
+>>>>>>> Use null instead of empty string
   render() {
     const { pathname } = this.props.location;
     const isHome = pathname === "/";
 
+<<<<<<< 5442af3de0ecf751c05d56050ed25ee9114c6b7e
+=======
+    // Inject `toggleSidebar` function into children
+    const children = React.Children.map(this.props.children(), (child: React.ReactElement<any>) =>
+      React.cloneElement(child, { toggleSidebar: this.toggleSidebar.bind(this) }),
+    );
+
+    console.log(children);
+>>>>>>> Use null instead of empty string
     return (
       <Sidebar.Pushable as={Segment}>
         <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={false} />
         <Sidebar.Pusher style={{ minHeight: "100vh" }}>
           {/* Header */}
-          {isHome ? "" : <HeaderMenu
+          {isHome ? null : <HeaderMenu
             Link={Link} pathname={pathname} items={menuItems}
           />}
 
