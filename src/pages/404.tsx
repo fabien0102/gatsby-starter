@@ -8,7 +8,7 @@ export default () =>
       }}
     >
     <Grid.Column>
-      <Grid.Row>
+      <Grid.Row style={{textAlign: "center"}}>
         <Icon name="marker" size="huge"/>
         <Header as="h1">You are here!</Header>
         <Header as="h2">But nothing found for you #404</Header>
