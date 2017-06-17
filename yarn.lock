@@ -966,13 +966,13 @@ babel-plugin-transform-es2015-computed-properties@^6.24.1, babel-plugin-transfor
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-plugin-transform-es2015-destructuring@6.16.0:
+babel-plugin-transform-es2015-destructuring@6.16.0, babel-plugin-transform-es2015-destructuring@^6.6.0:
   version "6.16.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-destructuring/-/babel-plugin-transform-es2015-destructuring-6.16.0.tgz#050fe0866f5d53b36062ee10cdf5bfe64f929627"
   dependencies:
     babel-runtime "^6.9.0"
 
-babel-plugin-transform-es2015-destructuring@^6.22.0, babel-plugin-transform-es2015-destructuring@^6.6.0:
+babel-plugin-transform-es2015-destructuring@^6.22.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-destructuring/-/babel-plugin-transform-es2015-destructuring-6.23.0.tgz#997bb1f1ab967f682d2b0876fe358d60e765c56d"
   dependencies:
@@ -1045,7 +1045,7 @@ babel-plugin-transform-es2015-object-super@^6.24.1, babel-plugin-transform-es201
     babel-helper-replace-supers "^6.24.1"
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-es2015-parameters@6.17.0:
+babel-plugin-transform-es2015-parameters@6.17.0, babel-plugin-transform-es2015-parameters@^6.6.0:
   version "6.17.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-parameters/-/babel-plugin-transform-es2015-parameters-6.17.0.tgz#e06d30cef897f46adb4734707bbe128a0d427d58"
   dependencies:
@@ -1056,7 +1056,7 @@ babel-plugin-transform-es2015-parameters@6.17.0:
     babel-traverse "^6.16.0"
     babel-types "^6.16.0"
 
-babel-plugin-transform-es2015-parameters@^6.24.1, babel-plugin-transform-es2015-parameters@^6.6.0:
+babel-plugin-transform-es2015-parameters@^6.24.1:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-parameters/-/babel-plugin-transform-es2015-parameters-6.24.1.tgz#57ac351ab49caf14a97cd13b09f66fdf0a625f2b"
   dependencies:
@@ -1175,28 +1175,28 @@ babel-plugin-transform-react-display-name@^6.23.0, babel-plugin-transform-react-
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-react-jsx-self@6.11.0:
+babel-plugin-transform-react-jsx-self@6.11.0, babel-plugin-transform-react-jsx-self@^6.11.0:
   version "6.11.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-jsx-self/-/babel-plugin-transform-react-jsx-self-6.11.0.tgz#605c9450c1429f97a930f7e1dfe3f0d9d0dbd0f4"
   dependencies:
     babel-plugin-syntax-jsx "^6.8.0"
     babel-runtime "^6.9.0"
 
-babel-plugin-transform-react-jsx-self@^6.11.0, babel-plugin-transform-react-jsx-self@^6.22.0:
+babel-plugin-transform-react-jsx-self@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-jsx-self/-/babel-plugin-transform-react-jsx-self-6.22.0.tgz#df6d80a9da2612a121e6ddd7558bcbecf06e636e"
   dependencies:
     babel-plugin-syntax-jsx "^6.8.0"
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-react-jsx-source@6.9.0:
+babel-plugin-transform-react-jsx-source@6.9.0, babel-plugin-transform-react-jsx-source@^6.3.13:
   version "6.9.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-jsx-source/-/babel-plugin-transform-react-jsx-source-6.9.0.tgz#af684a05c2067a86e0957d4f343295ccf5dccf00"
   dependencies:
     babel-plugin-syntax-jsx "^6.8.0"
     babel-runtime "^6.9.0"
 
-babel-plugin-transform-react-jsx-source@^6.22.0, babel-plugin-transform-react-jsx-source@^6.3.13:
+babel-plugin-transform-react-jsx-source@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-jsx-source/-/babel-plugin-transform-react-jsx-source-6.22.0.tgz#66ac12153f5cd2d17b3c19268f4bf0197f44ecd6"
   dependencies:
@@ -1211,7 +1211,7 @@ babel-plugin-transform-react-jsx@^6.24.1, babel-plugin-transform-react-jsx@^6.3.
     babel-plugin-syntax-jsx "^6.8.0"
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-regenerator@6.16.1:
+babel-plugin-transform-regenerator@6.16.1, babel-plugin-transform-regenerator@^6.6.0:
   version "6.16.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-regenerator/-/babel-plugin-transform-regenerator-6.16.1.tgz#a75de6b048a14154aae14b0122756c5bed392f59"
   dependencies:
@@ -1219,7 +1219,7 @@ babel-plugin-transform-regenerator@6.16.1:
     babel-types "^6.16.0"
     private "~0.1.5"
 
-babel-plugin-transform-regenerator@^6.24.1, babel-plugin-transform-regenerator@^6.6.0:
+babel-plugin-transform-regenerator@^6.24.1:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-regenerator/-/babel-plugin-transform-regenerator-6.24.1.tgz#b8da305ad43c3c99b4848e4fe4037b770d23c418"
   dependencies:
@@ -1507,13 +1507,13 @@ babylon@6.16.1:
   version "6.16.1"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.16.1.tgz#30c5a22f481978a9e7f8cdfdf496b11d94b404d3"
 
-babylon@^6.11.0, babylon@^6.13.0, babylon@^6.15.0, babylon@^6.17.3:
-  version "6.17.3"
-  resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.17.3.tgz#1327d709950b558f204e5352587fd0290f8d8e48"
-
-babylon@^6.17.0:
+babylon@^6.11.0, babylon@^6.13.0, babylon@^6.15.0, babylon@^6.17.0:
   version "6.17.2"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.17.2.tgz#201d25ef5f892c41bae49488b08db0dd476e9f5c"
+
+babylon@^6.17.3:
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.17.3.tgz#1327d709950b558f204e5352587fd0290f8d8e48"
 
 babylon@~5.8.3:
   version "5.8.38"
@@ -4192,14 +4192,14 @@ gather-stream@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gather-stream/-/gather-stream-1.0.0.tgz#b33994af457a8115700d410f317733cbe7a0904b"
 
-gatsby-link@1.0.0-beta.2:
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.0.0-beta.2.tgz#0b0b58dbbbe0481b2632826d378a8f65425e7152"
+gatsby-link@1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.0.0-beta.1.tgz#0602ee392a514ef108eb9470af9f4389b8c11637"
   dependencies:
     prop-types "^15.5.8"
     ric "^1.3.0"
 
-gatsby-plugin-glamor@1.0.0-beta.2:
+gatsby-plugin-glamor@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-glamor/-/gatsby-plugin-glamor-1.0.0-beta.1.tgz#761e7daa33513944457cc2c3521abc3da2824267"
   dependencies:
@@ -4209,25 +4209,25 @@ gatsby-plugin-glamor@1.0.0-beta.2:
     glamor-react "^3.0.0-1"
     glamor-server next
 
-gatsby-plugin-google-analytics@1.0.0-beta.2:
+gatsby-plugin-google-analytics@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.0-beta.1.tgz#2c965df9e0f5dd82a7aa6d94b4d190a4cc556288"
 
-gatsby-plugin-manifest@1.0.0-beta.2:
+gatsby-plugin-manifest@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-1.0.0-beta.1.tgz#a67771224a73a29cc4c5abd633f065d2e504972d"
   dependencies:
     bluebird "^3.5.0"
 
-gatsby-plugin-offline@1.0.0-beta.2:
+gatsby-plugin-offline@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-1.0.0-beta.1.tgz#71e7ea3b29defa1631c22e4d5bd57005e7a44f22"
   dependencies:
     sw-precache "^5.0.0"
 
-gatsby-plugin-sharp@1.0.0-beta.2:
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.0.0-beta.2.tgz#f16111c1aaa1f22ad5cb9c9d2de470ffba3dfb99"
+gatsby-plugin-sharp@1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.0.0-beta.1.tgz#d7ff712227e9ee5a8a72860769f29a62a1691522"
   dependencies:
     async "^2.4.1"
     bluebird "^3.5.0"
@@ -4239,14 +4239,14 @@ gatsby-plugin-sharp@1.0.0-beta.2:
     qs "^6.3.0"
     sharp "^0.17.3"
 
-gatsby-plugin-typescript@1.0.0-beta.2:
+gatsby-plugin-typescript@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-1.0.0-beta.1.tgz#3d2bb8586476bce89f441f54551d75b5d93407ed"
   dependencies:
     ts-loader "^2.0.3"
     typescript "^2.2.1"
 
-gatsby-remark-autolink-headers@1.0.0-beta.2:
+gatsby-remark-autolink-headers@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-remark-autolink-headers/-/gatsby-remark-autolink-headers-1.0.0-beta.1.tgz#dc4dcc23fac94b9d8f20a3cfc3f06e1a80056153"
   dependencies:
@@ -4254,7 +4254,7 @@ gatsby-remark-autolink-headers@1.0.0-beta.2:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-copy-linked-files@1.0.0-beta.2:
+gatsby-remark-copy-linked-files@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.0.0-beta.1.tgz#19acf0c0e0ffbad7546df1e8f53fe9a6e00ed4c8"
   dependencies:
@@ -4263,24 +4263,24 @@ gatsby-remark-copy-linked-files@1.0.0-beta.2:
     lodash "^4.17.4"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-prismjs@1.0.0-beta.2:
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.0.0-beta.2.tgz#2be09d8803f62411d46c438f914af39d9cb1d8c3"
+gatsby-remark-prismjs@1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.0.0-beta.1.tgz#c0240403256ecf1a155e1b44d1a9ef109618e742"
   dependencies:
     parse-numeric-range "^0.0.2"
     prismjs "^1.6.0"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-responsive-image@1.0.0-beta.2:
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-image/-/gatsby-remark-responsive-image-1.0.0-beta.2.tgz#e45fd76094a3cfecd44c3ddf6da20cbf7557cf41"
+gatsby-remark-responsive-image@1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-image/-/gatsby-remark-responsive-image-1.0.0-beta.1.tgz#0008f2f474302be8d000f7e58785942cefb0d95e"
   dependencies:
     image-size "^0.5.1"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
     unist-util-select "^1.5.0"
 
-gatsby-source-filesystem@1.0.0-beta.2:
+gatsby-source-filesystem@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.0.0-beta.1.tgz#8aeda2351f81e8fcc85edc28df57157ffd14121b"
   dependencies:
@@ -4290,13 +4290,13 @@ gatsby-source-filesystem@1.0.0-beta.2:
     pretty-bytes "^4.0.2"
     slash "^1.0.0"
 
-gatsby-transformer-json@1.0.0-beta.2:
+gatsby-transformer-json@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-1.0.0-beta.1.tgz#69a9c7c7975b65ab61fd623c255db11625902ce4"
   dependencies:
     bluebird "^3.5.0"
 
-gatsby-transformer-remark@1.0.0-beta.2:
+gatsby-transformer-remark@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.0.0-beta.1.tgz#5d8a2aa40bd7b9fe0ce412d2b2e4e459ad6de5c7"
   dependencies:
@@ -4311,15 +4311,15 @@ gatsby-transformer-remark@1.0.0-beta.2:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby-transformer-sharp@1.0.0-beta.2:
+gatsby-transformer-sharp@1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-1.0.0-beta.1.tgz#e352d60f3a291ae176def25b91936b594cf86bac"
   dependencies:
     bluebird "^3.5.0"
 
-gatsby@1.0.0-beta.2:
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.0.0-beta.2.tgz#b1674f45567a6aea7299249f580eb357c6d74379"
+gatsby@1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.0.0-beta.1.tgz#2b92f1f56d803e0e71a3286c659c69e33503b619"
   dependencies:
     async "^2.1.2"
     babel-core "^6.24.1"
@@ -8812,7 +8812,7 @@ react-router-dom@^4.1.1:
     prop-types "^15.5.4"
     react-router "^4.1.1"
 
-react-router-scroll@ytase/react-router-scroll#build:
+"react-router-scroll@github:ytase/react-router-scroll#build":
   version "0.4.1"
   resolved "https://codeload.github.com/ytase/react-router-scroll/tar.gz/991ecddb08885e1fb80ec1e9dbf3a35844b7d4cd"
   dependencies:
@@ -8864,7 +8864,7 @@ react-textarea-autosize@^4.0.5:
   dependencies:
     prop-types "^15.5.8"
 
-react@15.5.3:
+react@15.5.3, react@^15.4.1:
   version "15.5.3"
   resolved "https://registry.yarnpkg.com/react/-/react-15.5.3.tgz#84055382c025dec4e3b902bb61a8697cc79c1258"
   dependencies:
@@ -8873,7 +8873,7 @@ react@15.5.3:
     object-assign "^4.1.0"
     prop-types "^15.5.2"
 
-react@^15.4.1, react@^15.6.0:
+react@^15.6.0:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
   dependencies:
@@ -8956,7 +8956,7 @@ readable-stream@^1.0.33, readable-stream@~1.1.9:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.2.2, readable-stream@^2.2.6:
+readable-stream@^2.0.0, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.2.2, readable-stream@^2.2.6:
   version "2.2.11"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.11.tgz#0796b31f8d7688007ff0b93a8088d34aa17c0f72"
   dependencies:
@@ -8968,7 +8968,7 @@ readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.4, readable
     string_decoder "~1.0.0"
     util-deprecate "~1.0.1"
 
-readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@~2.0.0, readable-stream@~2.0.5:
+readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@~2.0.0, readable-stream@~2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:
@@ -9453,7 +9453,7 @@ req-all@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/req-all/-/req-all-1.0.0.tgz#d128569451c340b432409c656cf166260cd2628d"
 
-request@^2.58.0, request@^2.67.0, request@^2.79.0, request@^2.81.0:
+request@^2.58.0, request@^2.67.0, request@^2.74.0, request@^2.79.0, request@^2.81.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:
@@ -9480,7 +9480,7 @@ request@^2.58.0, request@^2.67.0, request@^2.79.0, request@^2.81.0:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-request@^2.74.0, request@~2.74.0:
+request@~2.74.0:
   version "2.74.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.74.0.tgz#7693ca768bbb0ea5c8ce08c084a45efa05b892ab"
   dependencies:
