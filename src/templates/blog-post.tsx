@@ -124,10 +124,12 @@ export const pageQuery = graphql`
     }
   }
   recents: allMarkdownRemark(
-    fields: {slug: {ne: $slug}},
-    sortBy: {order: DESC, fields: [frontmatter___updatedDate]},
-    frontmatter: {draft: {ne: true}},
-    fileAbsolutePath: {regex: "/blog/"},
+    filter: {
+      fields: {slug: {ne: $slug}}
+      frontmatter: {draft: {ne: true}},
+      fileAbsolutePath: {regex: "/blog/"},
+    },
+    sort: {order: DESC, fields: [frontmatter___updatedDate]},
     limit: 4
   ) {
     edges {

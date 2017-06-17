@@ -20,7 +20,7 @@ interface BlogProps {
 }
 
 export default (props: BlogProps) => {
-  const tags = props.data.tags.groupBy;
+  const tags = props.data.tags.group;
   const posts = props.data.posts.edges;
   const { pathname } = props.location;
   const pageCount = Math.ceil(props.data.posts.totalCount / 10);
@@ -102,8 +102,8 @@ export default (props: BlogProps) => {
 export const pageQuery = graphql`
 query PageBlog {
   # Get tags
-  tags: allMarkdownRemark(frontmatter: {draft: {ne: true}}) {
-    groupBy(field: frontmatter___tags) {
+  tags: allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}}) {
+    group(field: frontmatter___tags) {
       fieldValue
       totalCount
     }
@@ -111,10 +111,12 @@ query PageBlog {
 
   # Get posts
   posts: allMarkdownRemark(
-    sortBy: { order: DESC, fields: [frontmatter___updatedDate] },
-    frontmatter: { draft: { ne: true } },
-    fileAbsolutePath: { regex: "/blog/" },
-    limit: 10,
+    sort: { order: DESC, fields: [frontmatter___updatedDate] },
+    filter: {
+      frontmatter: { draft: { ne: true } },
+      fileAbsolutePath: { regex: "/blog/" }
+    },
+    limit: 10
   ) {
     totalCount
     edges {

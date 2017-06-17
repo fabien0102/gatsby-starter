@@ -6,8 +6,8 @@ export default Blog;
 export const pageQuery = graphql`
 query TemplateBlogPage($skip: Int) {
   # Get tags
-  tags: allMarkdownRemark(frontmatter: {draft: {ne: true}}) {
-    groupBy(field: frontmatter___tags) {
+  tags: allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}}) {
+    group(field: frontmatter___tags) {
       fieldValue
       totalCount
     }
@@ -15,11 +15,13 @@ query TemplateBlogPage($skip: Int) {
 
   # Get posts
   posts: allMarkdownRemark(
-    sortBy: { order: DESC, fields: [frontmatter___updatedDate] },
-    frontmatter: {
-      draft: { ne: true }
-    },
-    fileAbsolutePath: { regex: "/blog/" },
+    sort: { order: DESC, fields: [frontmatter___updatedDate] },
+    filter: {
+      frontmatter: {
+        draft: { ne: true }
+      },
+      fileAbsolutePath: { regex: "/blog/" }
+    }
     limit: 10,
     skip: $skip
   ) {
