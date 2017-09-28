@@ -21,39 +21,23 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   children: any;
 }
 
-interface DefaultLayoutStates {
-  sidebarVisible: boolean;
-}
-
-export default class DefaultLayout extends React.PureComponent<DefaultLayoutProps, DefaultLayoutStates> {
-  state = { sidebarVisible: false };
-
-  toggleSidebar() {
-    this.setState({ sidebarVisible: !this.state.sidebarVisible });
-  }
-
+export default class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
   render() {
     const { pathname } = this.props.location;
     const isHome = pathname === "/";
 
-    // Inject `toggleSidebar` function into children
-    const children = React.Children.map(this.props.children(), (child: React.ReactElement<any>) =>
-      React.cloneElement(child, { toggleSidebar: this.toggleSidebar.bind(this) }),
-    );
-
     return (
       <Sidebar.Pushable as={Segment}>
-        <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={this.state.sidebarVisible} />
+        <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={false} />
         <Sidebar.Pusher style={{ minHeight: "100vh" }}>
           {/* Header */}
           {isHome ? "" : <HeaderMenu
             Link={Link} pathname={pathname} items={menuItems}
-            toggleSidebar={this.toggleSidebar.bind(this)}
           />}
 
           {/* Render children pages */}
           <div style={{ paddingBottom: 60 }}>
-            {children}
+            {this.props.children()}
           </div>
 
           {/* Footer */}
