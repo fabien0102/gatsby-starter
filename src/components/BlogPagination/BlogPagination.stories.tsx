@@ -1,10 +1,11 @@
 /* tslint:disable no-var-requires */
-const withReadme = require("storybook-readme/with-readme").default;
+const withReadme = (require("storybook-readme/with-readme") as any).defaultdefault;
 const BlogPaginationReadme = require("./README.md");
 
 import * as React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import { withKnobs, number } from "@kadira/storybook-addon-knobs";
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { withKnobs, number } from "@storybook/addon-knobs";
 import BlogPagination from "./BlogPagination";
 
 const LinkStub = ((props: any) =>

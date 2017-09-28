@@ -1,9 +1,10 @@
-const withReadme = require("storybook-readme/with-readme").default;
+const withReadme = (require("storybook-readme/with-readme") as any).default;
 const TagsCardReadme = require("./README.md");
 
 import * as React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import { withKnobs, select } from "@kadira/storybook-addon-knobs";
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { withKnobs, select } from "@storybook/addon-knobs";
 import TagsCard from "./TagsCard";
 import { markdownRemarkGroupConnectionConnection } from "../../graphql-types";
 
