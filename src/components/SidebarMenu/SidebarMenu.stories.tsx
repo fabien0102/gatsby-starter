@@ -1,5 +1,5 @@
 /* tslint:disable no-var-requires */
-const withReadme = (require("storybook-readme/with-readme") as any).defaultdefault;
+const withReadme = (require("storybook-readme/with-readme") as any).default;
 const SidebarMenuReadme = require("./README.md");
 
 import * as React from "react";
