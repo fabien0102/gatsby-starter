@@ -1,10 +1,9 @@
 import { render } from "enzyme";
 import "jest";
 import * as React from "react";
-import { LinkProps } from "react-router";
 import BlogPagination from "./BlogPagination";
 
-const LinkStub = (props: any) => <div {...props} />;
+const LinkStub = ((props: any) => <div {...props} />) as any;
 
 describe("BlogPagination component", () => {
   it("should render nothing if only 1 page", () => {

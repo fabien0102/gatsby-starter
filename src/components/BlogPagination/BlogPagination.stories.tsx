@@ -3,13 +3,12 @@ const withReadme = require("storybook-readme/with-readme").default;
 const BlogPaginationReadme = require("./README.md");
 
 import * as React from "react";
-import { LinkProps } from "react-router";
 import { storiesOf, action } from "@kadira/storybook";
 import { withKnobs, number } from "@kadira/storybook-addon-knobs";
 import BlogPagination from "./BlogPagination";
 
-const LinkStub = (props: any) =>
-  <div {...props} onClick={action(props.to.toString())} >{props.children}</div>;
+const LinkStub = ((props: any) =>
+  <div {...props} onClick={action(props.to.toString())} >{props.children}</div>) as any;
 
 storiesOf("BlogPagination", module)
   .addDecorator(withReadme(BlogPaginationReadme))

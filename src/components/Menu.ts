@@ -1,5 +1,5 @@
 import * as React from "react";
-import { LinkProps } from "react-router";
+import { GatsbyLinkProps } from "gatsby-link";
 
 export interface MenuItem {
   name: string;
@@ -12,5 +12,5 @@ export interface MenuItem {
 export interface MenuProps extends React.HTMLProps<HTMLDivElement> {
   items: MenuItem[];
   pathname: string;
-  Link: React.ClassicComponentClass<LinkProps> | any;
+  Link: React.ComponentClass<GatsbyLinkProps> | any;
 }

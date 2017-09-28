@@ -1,7 +1,6 @@
 import { shallow } from "enzyme";
 import "jest";
 import * as React from "react";
-import { LinkProps } from "react-router";
 import TagsCard from "./TagsCard";
 
 import { Card, List } from "semantic-ui-react";
@@ -11,7 +10,7 @@ describe("TagsCard component", () => {
   let LinkStub: any;
 
   beforeEach(() => {
-    LinkStub = (props: LinkProps) =>
+    LinkStub = (props: any) =>
       <div>{props.children}</div>;
   });
 
