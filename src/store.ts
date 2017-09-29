@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import { devToolsEnhancer } from "redux-devtools-extension";
 import { get } from "lodash";
 
 export interface StoreState {
@@ -24,10 +25,9 @@ export const reducer = (state: StoreState, action: ToggleSidebar): StoreState =>
 };
 
 // Store
-const reduxDevtool = get<Function>(window, "__REDUX_DEVTOOLS_EXTENSION__");
 export const initialState: StoreState = { isSidebarVisible: false };
 export const store = createStore<StoreState>(
   reducer,
   initialState,
-  reduxDevtool ? reduxDevtool() : (f) => f,
+  devToolsEnhancer({}),
 );
