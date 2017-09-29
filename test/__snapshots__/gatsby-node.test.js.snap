@@ -191,14 +191,14 @@ exports[`gatsby-node onCreateNode should create slugs for MarkdownRemark file 1`
 Array [
   Array [
     Object {
-      "fieldName": "slug",
-      "fieldValue": "/blog/2017-04-18--welcoming/",
+      "name": "slug",
       "node": Object {
         "internal": Object {
           "type": "MarkdownRemark",
         },
         "parent": "parent",
       },
+      "value": "/blog/2017-04-18--welcoming/",
     },
   ],
 ]

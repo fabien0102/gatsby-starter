@@ -21,7 +21,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-responsive-image`,
+            resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 690,
               backgroundColor: `#f7f0eb`

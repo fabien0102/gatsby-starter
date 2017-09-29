@@ -15,7 +15,6 @@ interface IndexPageProps {
   location: {
     pathname: string;
   };
-  toggleSidebar: () => void;
 }
 
 export default (props: IndexPageProps) =>
@@ -24,7 +23,6 @@ export default (props: IndexPageProps) =>
     <Segment vertical inverted textAlign="center" className="masthead">
       <HeaderMenu
         Link={Link} pathname={props.location.pathname} items={menuItems} inverted
-        toggleSidebar={props.toggleSidebar}
       />
       <Container text>
         <Header inverted as="h1">Gatsby 1.0 - Starter kit</Header>

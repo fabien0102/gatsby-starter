@@ -1,10 +1,13 @@
-import { render } from "enzyme";
+import { render, configure } from "enzyme";
 import "jest";
 import * as React from "react";
-import { LinkProps } from "react-router";
 import BlogPagination from "./BlogPagination";
 
-const LinkStub = (props: any) => <div {...props} />;
+// Configure enzyme with react 16 adapter
+const Adapter: any = require("enzyme-adapter-react-16");
+configure({ adapter: new Adapter() });
+
+const LinkStub = ((props: any) => <div {...props} />) as any;
 
 describe("BlogPagination component", () => {
   it("should render nothing if only 1 page", () => {

@@ -1,20 +1,27 @@
 const path = require("path");
+const genDefaultConfig = require("@storybook/react/dist/server/config/defaults/webpack.config.js");
 
-module.exports = function (storybookBaseConfig, configType) {
+module.exports = (baseConfig, env) => {
+  const config = genDefaultConfig(baseConfig, env);
+
   // Add typescript loader
-  storybookBaseConfig.module.loaders.push({
-    test: /\.tsx?$/,
-    loader: "ts-loader",
-    include: path.join(__dirname, "../src")
+  config.module.rules.push({
+    test: /\.(ts|tsx)$/,
+    include: path.resolve(__dirname, "../src"),
+    loader: require.resolve("ts-loader"),
+    options: {
+      configFile: ".storybook/tsconfig.json"
+    }
   });
-
-  storybookBaseConfig.resolve.extensions.push(".ts", ".tsx");
+  config.resolve.extensions.push(".ts", ".tsx");
 
   // Add markdown loader
-  storybookBaseConfig.module.loaders.push({
+  config.module.rules.push({
     test: /\.md$/,
-    loader: "raw-loader"
+    include: path.resolve(__dirname, "../src"),
+    loader: require.resolve("raw-loader")
   });
+  config.resolve.extensions.push(".md");
 
-  return storybookBaseConfig;
+  return config;
 };

@@ -1,11 +1,11 @@
 import * as React from "react";
-import { LinkProps } from "react-router";
+import { GatsbyLinkProps } from "gatsby-link";
 import { Menu } from "semantic-ui-react";
 import { times } from "lodash";
 
 interface BlogPaginationProps extends React.HTMLProps<HTMLDivElement> {
   pathname: string;
-  Link: React.ClassicComponentClass<LinkProps> | any;
+  Link: React.ComponentClass<GatsbyLinkProps>;
   pageCount: number;
 }
 

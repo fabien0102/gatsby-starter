@@ -1,17 +1,17 @@
 /* tslint:disable no-var-requires */
-const withReadme = require("storybook-readme/with-readme").default;
-
+const withReadme = (require("storybook-readme/with-readme") as any).default;
 const HeaderMenuReadme = require("./README.md");
 
 import * as React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import { withKnobs, text, boolean } from "@kadira/storybook-addon-knobs";
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import HeaderMenu from "./HeaderMenu";
 
 const items = [
-  {name: "Home", path: "/", exact: true},
-  {name: "About", path: "/about/", exact: true},
-  {name: "Blog", path: "/blog/", exact: false},
+  { name: "Home", path: "/", exact: true },
+  { name: "About", path: "/about/", exact: true },
+  { name: "Blog", path: "/blog/", exact: false },
 ];
 
 const LinkStub = (props: any) =>
@@ -25,6 +25,6 @@ storiesOf("HeaderMenu", module)
     const inverted = boolean("inverted", false);
 
     return (
-      <HeaderMenu Link={LinkStub} items={items} pathname={pathname} inverted={inverted}/>
+      <HeaderMenu Link={LinkStub} items={items} pathname={pathname} inverted={inverted} />
     );
   });

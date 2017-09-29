@@ -22,7 +22,7 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
       break;
   }
   if (slug) {
-    createNodeField({node, fieldName: `slug`, fieldValue: slug});
+    createNodeField({node, name: `slug`, value: slug});
   }
 };
 

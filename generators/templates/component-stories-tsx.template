@@ -1,9 +1,10 @@
 /* tslint:disable no-var-requires */
-const withReadme = require("storybook-readme/with-readme").default;
+const withReadme = (require("storybook-readme/with-readme") as any).default;
 const {{pascalCase name}}Readme = require("./README.md");
 
 import * as React from "react";
-import { storiesOf, action } from "@kadira/storybook";
+import { storiesOf } from "@kstorybook/react";
+import { action } from "@storybook/addon-actions";
 import {{pascalCase name}} from "./{{pascalCase name}}";
 
 storiesOf("{{pascalCase name}}", module)
