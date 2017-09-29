@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import { get } from "lodash";
 
 export interface StoreState {
   isSidebarVisible: boolean;
@@ -16,12 +17,17 @@ export const toggleSidebar = () => ({ type: TOGGLE_SIDEBAR });
 export const reducer = (state: StoreState, action: ToggleSidebar): StoreState => {
   switch (action.type) {
     case TOGGLE_SIDEBAR:
-      return { ...state, isSidebarVisible: !state.isSidebarVisible };
+      return Object.assign({}, state, { isSidebarVisible: !state.isSidebarVisible });
     default:
       return state;
   }
 };
 
 // Store
+const reduxDevtool = get<Function>(window, "__REDUX_DEVTOOLS_EXTENSION__");
 export const initialState: StoreState = { isSidebarVisible: false };
-export const store = createStore<StoreState>(reducer, initialState);
+export const store = createStore<StoreState>(
+  reducer,
+  initialState,
+  reduxDevtool ? reduxDevtool() : (f) => f,
+);
