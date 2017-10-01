@@ -31,7 +31,7 @@ export default class DefaultLayout extends React.PureComponent<DefaultLayoutProp
         <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={false} />
         <Sidebar.Pusher style={{ minHeight: "100vh" }}>
           {/* Header */}
-          {isHome ? "" : <HeaderMenu
+          {isHome ? null : <HeaderMenu
             Link={Link} pathname={pathname} items={menuItems}
           />}
 
