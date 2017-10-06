@@ -1,6 +1,15 @@
 [
   {
-    "id": "Fabien BERNARD",
+    "id": "truongsinh",
+    "name": "TruongSinh Tran-Nguyen",
+    "bio": "Head of Tech @ Smarp.",
+    "avatar": "avatars/alien-male-icon.png",
+    "twitter": "@truongsinhtn",
+    "github": "@truongsinh"
+  },
+  {
+    "id": "fabien",
+    "name": "Fabien BERNARD",
     "bio": "JavaScript Developer with ♥ #Craftman #Lean #JS #FRP. Member at @GatsbyJS.",
     "avatar": "avatars/fabien0102.jpg",
     "twitter": "@fabien0102",

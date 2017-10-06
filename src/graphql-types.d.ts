@@ -1402,6 +1402,7 @@ export interface UpdatedDatefrontmatter_2Args {
 
 export interface AuthorJson extends Node {
   id: string;
+  name: string;
   parent: Node | null;
   children: Array<Node> | null;
   bio: string | null;
