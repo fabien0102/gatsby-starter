@@ -56,6 +56,7 @@ export default (props: BlogPostProps) => {
       );
     });
 
+  const recentCover = frontmatter.image.children[0] as ImageSharp;
   return (
     <Container>
       <BlogTitle />
@@ -75,6 +76,11 @@ export default (props: BlogPostProps) => {
         </Item.Group>
         <Header as="h1">{frontmatter.title}</Header>
       </Segment>
+        <Image
+          src={recentCover.responsiveResolution.src}
+          srcSet={recentCover.responsiveResolution.srcSet}
+          fluid
+        />
       <Segment vertical
         style={{ border: "none" }}
         dangerouslySetInnerHTML={{
@@ -121,6 +127,16 @@ export const pageQuery = graphql`
       }
       title
       updatedDate(formatString: "MMM D, YYYY")
+      image {
+        children {
+          ... on ImageSharp {
+            responsiveResolution(width: 900, height: 300, quality: 100) {
+              src
+              srcSet
+            }
+          }
+        }
+      }
     }
   }
   recents: allMarkdownRemark(
