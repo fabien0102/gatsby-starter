@@ -3,7 +3,7 @@ const withReadme = (require("storybook-readme/with-readme") as any).default;
 const {{pascalCase name}}Readme = require("./README.md");
 
 import * as React from "react";
-import { storiesOf } from "@kstorybook/react";
+import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import {{pascalCase name}} from "./{{pascalCase name}}";
 
