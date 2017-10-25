@@ -1,7 +1,7 @@
 ---
 title: 'Article #2'
 createdDate: '2017-05-02'
-updatedDate: '2017-05-06'
+updatedDate: '2017-10-06'
 author: Fabien BERNARD
 tags:
   - test
