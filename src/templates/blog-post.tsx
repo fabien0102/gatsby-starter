@@ -31,7 +31,7 @@ export default (props: BlogPostProps) => {
             />
             <Comment.Content>
               <Comment.Author style={{ fontWeight: 400 }}>
-                {frontmatter.author.id}
+                {node.frontmatter.author.name}
               </Comment.Author>
               <Comment.Metadata style={{ margin: 0 }}>
                 {timeToRead} min read
@@ -68,7 +68,7 @@ export default (props: BlogPostProps) => {
               srcSet={avatar.responsiveResolution.srcSet}
             />
             <Item.Content>
-              <Item.Description>{frontmatter.author.id}</Item.Description>
+              <Item.Description>{frontmatter.author.name}</Item.Description>
               <Item.Meta>{frontmatter.author.bio}</Item.Meta>
               <Item.Extra>{frontmatter.updatedDate} - {timeToRead} min read</Item.Extra>
             </Item.Content>
@@ -112,6 +112,7 @@ export const pageQuery = graphql`
       tags
       author {
         id
+        name
         bio
         twitter
         avatar {
@@ -168,6 +169,7 @@ export const pageQuery = graphql`
           }
           author {
             id
+            name
             avatar {
               children {
                 ... on ImageSharp {
