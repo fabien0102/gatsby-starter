@@ -26,7 +26,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.63",
     "@types/react": "16.0.7",
-    "@types/react-dom": "^15.5.5",
+    "@types/react-dom": "^16.0.2",
     "@types/react-helmet": "5.0.0",
     "@types/react-redux": "^5.0.9",
     "@types/react-router": "^4.0.14",
@@ -72,7 +72,7 @@
     "@types/enzyme": "^2.8.9",
     "@types/jest": "^19.2.2",
     "@types/node": "^7.0.15",
-    "@types/react-test-renderer": "^15.4.3",
+    "@types/react-test-renderer": "^16.0.0",
     "@types/storybook__addon-actions": "^3.0.1",
     "@types/storybook__addon-knobs": "^3.2.0",
     "@types/storybook__addon-notes": "^3.0.1",
