@@ -10,19 +10,17 @@ install:
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version $env:platform
   # install global modules
-  - npm i -g yarn
   - npm i -g windows-build-tools
   # install modules
-  - yarn install
+  - npm install
 
 # Post-install test scripts.
 test_script:
   # Output useful info for debugging.
   - node --version
   - npm --version
-  - yarn --version
   # run tests
-  - yarn test
+  - npm test
 
 # Don't actually build.
 build: off
