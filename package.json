@@ -64,11 +64,11 @@
     "typescript": "2.5.3"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.2.11",
-    "@storybook/addon-knobs": "^3.2.10",
+    "@storybook/addon-actions": "^3.2.14",
+    "@storybook/addon-knobs": "^3.2.14",
     "@storybook/addon-notes": "^3.2.10",
-    "@storybook/addon-options": "^3.2.10",
-    "@storybook/react": "^3.2.11",
+    "@storybook/addon-options": "^3.2.14",
+    "@storybook/react": "^3.2.14",
     "@types/enzyme": "^2.8.9",
     "@types/jest": "^19.2.2",
     "@types/node": "^7.0.15",
