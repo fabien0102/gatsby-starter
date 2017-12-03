@@ -24,9 +24,9 @@ Install this starter (assuming Gatsby is installed) by running from your CLI:
 $ gatsby new my-website https://github.com/fabien0102/gatsby-starter
 ```
 
-Run `yarn start` (or press `F5` if you are on VSCode) to hot-serve your website on <http://localhost:8000>.
+Run `npm start` (or press `F5` if you are on VSCode) to hot-serve your website on <http://localhost:8000>.
 
-Run `yarn build` to create static site ready to host (`/public`)
+Run `npm run build` to create static site ready to host (`/public`)
 
 ## What's inside?
 
@@ -50,7 +50,7 @@ Run `yarn build` to create static site ready to host (`/public`)
     -   [ ] [Helmet](https://github.com/nfl/react-helmet)
 -   [x] [Semantic-ui](http://react.semantic-ui.com) for styling
 -   [x] Lazyboy tools
-    -   [x] [plop](https://github.com/amwmedia/plop) templates -> `yarn generate`
+    -   [x] [plop](https://github.com/amwmedia/plop) templates -> `npm run generate`
 
 ## Files structure
 
@@ -61,7 +61,7 @@ Run `yarn build` to create static site ready to host (`/public`)
      │   └── blog                      // all blog data (posts, images)
      ├── gatsby-config.js              // gatsby configuration
      ├── gatsby-node.js                // gatsby node hooks
-     ├── generators                    // generators (`yarn generate`)
+     ├── generators                    // generators (`npm run generate`)
      │   ├── blog-post-generator.js    // `blog post` generator
      │   ├── component-generator.js    // `component` generator
      │   ├── page-generator.js         // `page` generator
@@ -75,7 +75,7 @@ Run `yarn build` to create static site ready to host (`/public`)
      │   ├── components                // all react components
      │   ├── css                       // styles
      │   ├── declarations.d.ts         // declarations for no typescript modules/files
-     │   ├── graphql-types.d.ts        // graphql types (`yarn graphql-types`)
+     │   ├── graphql-types.d.ts        // graphql types (`npm run graphql-types`)
      │   ├── html.tsx                  // main html (required)
      │   ├── layouts                   // layouts
      │   │   └── default.tsx           // default layout (required)
@@ -85,9 +85,9 @@ Run `yarn build` to create static site ready to host (`/public`)
      │   └── update-post-date.js       // update post date hook
      ├── tsconfig.json                 // typescript configuration
      ├── tslint.json                   // tslint configuration
-     └── yarn.lock                     // yarn lock file
+     └── package-lock.json             // npm lock file
 
-## Plop generators - `yarn generate`
+## Plop generators - `npm run generate`
 
 To avoid any boring copy/past, this starter-kit have many generators to permit 
 simple bootstrap of current file pattern (eg. components/pages/blog posts).
