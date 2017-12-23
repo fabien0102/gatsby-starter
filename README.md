@@ -43,7 +43,7 @@ Run `npm run build` to create static site ready to host (`/public`)
     -   [x] [Typescript](https://www.typescriptlang.org/) / [tslint](https://palantir.github.io/tslint/)
     -   [x] [xo linter](https://github.com/sindresorhus/xo)
     -   [x] [Remark-lint](https://github.com/wooorm/remark-lint)
-    -   [x] [Hunsky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for autofix each commit
+    -   [x] [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for autofix each commit
     -   [x] Travis/AppVeyor config (unix-osx-windows CI)
     -   [x] Code climate config
 -   [ ] SEO
