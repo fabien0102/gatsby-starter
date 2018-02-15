@@ -36,9 +36,10 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
   let slug;
   switch (node.internal.type) {
     case `MarkdownRemark`:
+      const fmSlug = (node.frontmatter && node.frontmatter.slug) ? node.frontmatter.slug : false
       const fileNode = getNode(node.parent);
       const [basePath, name] = fileNode.relativePath.split('/');
-      slug = `/${basePath}/${name}/`;
+      slug = fmSlug ? `/${basePath}/${fmSlug}/` : `/${basePath}/${name}/`;
       break;
   }
   if (slug) {
