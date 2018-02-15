@@ -196,11 +196,49 @@ describe('gatsby-node', () => {
           relativePath: 'blog/2017-04-18--welcoming/index.md'
         }
       );
+
       const node = {
         internal: {
           type: 'MarkdownRemark'
         },
-        parent: 'parent'
+        parent: 'parent',
+        frontmatter: {
+          title: 'Welcoming',
+          createdDate: '2017-04-18',
+          updatedDate: '2017-05-06',
+          author: 'Fabien BERNARD',
+          tags: ['starter', 'gatsby'],
+          image: 'pexels-photo-253092.jpeg',
+          draft: false
+        }
+      };
+      onCreateNode({node, boundActionCreators, getNode});
+
+      expect(boundActionCreators.createNodeField.mock.calls).toMatchSnapshot();
+    });
+
+    it('should use frontmatter slug for MarkdownRemark file when defined', () => {
+      getNode.mockReturnValue(
+        {
+          relativePath: 'blog/2017-04-18--welcoming/index.md'
+        }
+      );
+
+      const node = {
+        internal: {
+          type: 'MarkdownRemark'
+        },
+        parent: 'parent',
+        frontmatter: {
+          title: 'Welcoming',
+          createdDate: '2017-04-18',
+          updatedDate: '2017-05-06',
+          author: 'Fabien BERNARD',
+          tags: ['starter', 'gatsby'],
+          image: 'pexels-photo-253092.jpeg',
+          draft: false,
+          slug: '2017-04-18/welcoming'
+        }
       };
       onCreateNode({node, boundActionCreators, getNode});
 
