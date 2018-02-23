@@ -59,7 +59,7 @@ ShallowWrapper {
                                         }
                               >
                                         <LinkStub
-                                                  to="/blog/tags/tag01/"
+                                                  to="/blog"
                                         >
                                                   tag01
                                                    (
@@ -158,7 +158,7 @@ ShallowWrapper {
                                     }
                         >
                                     <LinkStub
-                                                to="/blog/tags/tag01/"
+                                                to="/blog"
                                     >
                                                 tag01
                                                  (
@@ -231,7 +231,7 @@ ShallowWrapper {
                                 }
                 >
                                 <LinkStub
-                                                to="/blog/tags/tag01/"
+                                                to="/blog"
                                 >
                                                 tag01
                                                  (
@@ -303,7 +303,7 @@ ShallowWrapper {
                     }
 >
                     <LinkStub
-                                        to="/blog/tags/tag01/"
+                                        to="/blog"
                     >
                                         tag01
                                          (
@@ -333,7 +333,7 @@ ShallowWrapper {
                   "nodeType": "function",
                   "props": Object {
                     "children": <LinkStub
-                      to="/blog/tags/tag01/"
+                      to="/blog"
 >
                       tag01
                        (
@@ -356,7 +356,7 @@ ShallowWrapper {
                         2,
                         ")",
                       ],
-                      "to": "/blog/tags/tag01/",
+                      "to": "/blog",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -573,7 +573,7 @@ ShallowWrapper {
                                                 }
                                     >
                                                 <LinkStub
-                                                            to="/blog/tags/tag01/"
+                                                            to="/blog"
                                                 >
                                                             tag01
                                                              (
@@ -672,7 +672,7 @@ ShallowWrapper {
                                           }
                             >
                                           <LinkStub
-                                                        to="/blog/tags/tag01/"
+                                                        to="/blog"
                                           >
                                                         tag01
                                                          (
@@ -745,7 +745,7 @@ ShallowWrapper {
                                     }
                   >
                                     <LinkStub
-                                                      to="/blog/tags/tag01/"
+                                                      to="/blog"
                                     >
                                                       tag01
                                                        (
@@ -817,7 +817,7 @@ ShallowWrapper {
                       }
 >
                       <LinkStub
-                                            to="/blog/tags/tag01/"
+                                            to="/blog"
                       >
                                             tag01
                                              (
@@ -847,7 +847,7 @@ ShallowWrapper {
                     "nodeType": "function",
                     "props": Object {
                       "children": <LinkStub
-                        to="/blog/tags/tag01/"
+                        to="/blog"
 >
                         tag01
                          (
@@ -870,7 +870,7 @@ ShallowWrapper {
                           2,
                           ")",
                         ],
-                        "to": "/blog/tags/tag01/",
+                        "to": "/blog",
                       },
                       "ref": null,
                       "rendered": Array [
