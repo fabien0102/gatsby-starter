@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `My website`,
-    googleVerification: `abcdefz`
+    googleVerification: `abcdefz`,
+    disqus: `gatsby-typescript`
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': `AuthorJson`
