@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `My website`
+    title: `My website`,
+    googleVerification: `abcdefz`
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': `AuthorJson`
@@ -12,6 +13,19 @@ module.exports = {
       options: {
         name: `data`,
         path: `${__dirname}/data`
+      }
+    },
+
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true
       }
     },
 

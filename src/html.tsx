@@ -4,6 +4,8 @@
 import * as React from "react";
 import Helmet from "react-helmet";
 
+const config = require("../gatsby-config.js");
+
 // Load production style
 let styles: string;
 if (process.env.NODE_ENV === `production`) {
@@ -31,6 +33,10 @@ module.exports = (props: HtmlProps) => {
     />
     : null;
 
+  const verification = config.siteMetadata && config.siteMetadata.googleVerification ? <meta
+    name="google-site-verification"
+    content={config.siteMetadata.googleVerification} /> : null;
+
   return (
     <html lang="en">
       <head>
@@ -46,6 +52,7 @@ module.exports = (props: HtmlProps) => {
         {head.meta.toComponent()}
         {head.link.toComponent()}
         {css}
+        {verification}
       </head>
       <body>
         <div
