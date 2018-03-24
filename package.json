@@ -7,7 +7,7 @@
   "scripts": {
     "start": "gatsby develop",
     "develop": "gatsby develop",
-    "build": "gatsby build",
+    "build": "npm run patch && gatsby build",
     "lint": "npm run lint:ts && npm run lint:md && npm run lint:js && npm run lint:css",
     "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
     "lint:md": "remark .",
@@ -21,7 +21,8 @@
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o public/docs",
-    "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
+    "codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
+    "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js"
   },
   "dependencies": {
     "@types/lodash": "^4.14.63",
@@ -40,11 +41,11 @@
     "gatsby-plugin-google-analytics": "latest",
     "gatsby-plugin-manifest": "latest",
     "gatsby-plugin-offline": "latest",
-    "gatsby-plugin-sharp": "latest",
+    "gatsby-plugin-sharp": "^1.6.31",
     "gatsby-plugin-typescript": "latest",
     "gatsby-remark-autolink-headers": "latest",
     "gatsby-remark-copy-linked-files": "latest",
-    "gatsby-remark-images": "latest",
+    "gatsby-remark-images": "^1.5.47",
     "gatsby-remark-prismjs": "latest",
     "gatsby-source-filesystem": "latest",
     "gatsby-transformer-json": "latest",
@@ -58,7 +59,7 @@
     "react-helmet": "5.0.3",
     "react-redux": "^5.0.6",
     "redux-devtools-extension": "^2.13.2",
-    "semantic-ui-react": "^0.74.2",
+    "semantic-ui-react": "^0.79.0",
     "slash": "1.0.0",
     "ts-loader": "^2.3.7",
     "typescript": "2.5.3"
