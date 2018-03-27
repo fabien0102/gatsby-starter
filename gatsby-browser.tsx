@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "./src/store";
 
 exports.replaceRouterComponent = ({ history }) =>
-  ({ children }) =>
+  ({ children }: React.HTMLProps<any>) =>
     <Provider store={store} >
       <Router history={history}>{children}</Router>
     </Provider>;
