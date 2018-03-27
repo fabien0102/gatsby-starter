@@ -45,7 +45,7 @@ ShallowWrapper {
         <CardContent>
           <List>
                     <ListItem
-                              as="a"
+                              as="span"
                     >
                               <ListIcon
                                         color="blue"
@@ -69,7 +69,7 @@ ShallowWrapper {
                               </ListContent>
                     </ListItem>
                     <ListItem
-                              as="a"
+                              as="span"
                     >
                               <ListIcon
                                         color={null}
@@ -89,7 +89,7 @@ ShallowWrapper {
                               </ListContent>
                     </ListItem>
                     <ListItem
-                              as="a"
+                              as="span"
                     >
                               <ListIcon
                                         color={null}
@@ -144,7 +144,7 @@ ShallowWrapper {
         "props": Object {
           "children": <List>
             <ListItem
-                        as="a"
+                        as="span"
             >
                         <ListIcon
                                     color="blue"
@@ -168,7 +168,7 @@ ShallowWrapper {
                         </ListContent>
             </ListItem>
             <ListItem
-                        as="a"
+                        as="span"
             >
                         <ListIcon
                                     color={null}
@@ -188,7 +188,7 @@ ShallowWrapper {
                         </ListContent>
             </ListItem>
             <ListItem
-                        as="a"
+                        as="span"
             >
                         <ListIcon
                                     color={null}
@@ -217,7 +217,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <ListItem
-                as="a"
+                as="span"
 >
                 <ListIcon
                                 color="blue"
@@ -241,7 +241,7 @@ ShallowWrapper {
                 </ListContent>
 </ListItem>,
               <ListItem
-                as="a"
+                as="span"
 >
                 <ListIcon
                                 color={null}
@@ -261,7 +261,7 @@ ShallowWrapper {
                 </ListContent>
 </ListItem>,
               <ListItem
-                as="a"
+                as="span"
 >
                 <ListIcon
                                 color={null}
@@ -289,7 +289,7 @@ ShallowWrapper {
               "key": "tag01",
               "nodeType": "class",
               "props": Object {
-                "as": "a",
+                "as": "span",
                 "children": Array [
                   <ListIcon
                     color="blue"
@@ -377,7 +377,7 @@ ShallowWrapper {
               "key": "tag02",
               "nodeType": "class",
               "props": Object {
-                "as": "a",
+                "as": "span",
                 "children": Array [
                   <ListIcon
                     color={null}
@@ -459,7 +459,7 @@ ShallowWrapper {
               "key": "tag03",
               "nodeType": "class",
               "props": Object {
-                "as": "a",
+                "as": "span",
                 "children": Array [
                   <ListIcon
                     color={null}
@@ -559,7 +559,7 @@ ShallowWrapper {
           <CardContent>
             <List>
                         <ListItem
-                                    as="a"
+                                    as="span"
                         >
                                     <ListIcon
                                                 color="blue"
@@ -583,7 +583,7 @@ ShallowWrapper {
                                     </ListContent>
                         </ListItem>
                         <ListItem
-                                    as="a"
+                                    as="span"
                         >
                                     <ListIcon
                                                 color={null}
@@ -603,7 +603,7 @@ ShallowWrapper {
                                     </ListContent>
                         </ListItem>
                         <ListItem
-                                    as="a"
+                                    as="span"
                         >
                                     <ListIcon
                                                 color={null}
@@ -658,7 +658,7 @@ ShallowWrapper {
           "props": Object {
             "children": <List>
               <ListItem
-                            as="a"
+                            as="span"
               >
                             <ListIcon
                                           color="blue"
@@ -682,7 +682,7 @@ ShallowWrapper {
                             </ListContent>
               </ListItem>
               <ListItem
-                            as="a"
+                            as="span"
               >
                             <ListIcon
                                           color={null}
@@ -702,7 +702,7 @@ ShallowWrapper {
                             </ListContent>
               </ListItem>
               <ListItem
-                            as="a"
+                            as="span"
               >
                             <ListIcon
                                           color={null}
@@ -731,7 +731,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <ListItem
-                  as="a"
+                  as="span"
 >
                   <ListIcon
                                     color="blue"
@@ -755,7 +755,7 @@ ShallowWrapper {
                   </ListContent>
 </ListItem>,
                 <ListItem
-                  as="a"
+                  as="span"
 >
                   <ListIcon
                                     color={null}
@@ -775,7 +775,7 @@ ShallowWrapper {
                   </ListContent>
 </ListItem>,
                 <ListItem
-                  as="a"
+                  as="span"
 >
                   <ListIcon
                                     color={null}
@@ -803,7 +803,7 @@ ShallowWrapper {
                 "key": "tag01",
                 "nodeType": "class",
                 "props": Object {
-                  "as": "a",
+                  "as": "span",
                   "children": Array [
                     <ListIcon
                       color="blue"
@@ -891,7 +891,7 @@ ShallowWrapper {
                 "key": "tag02",
                 "nodeType": "class",
                 "props": Object {
-                  "as": "a",
+                  "as": "span",
                   "children": Array [
                     <ListIcon
                       color={null}
@@ -973,7 +973,7 @@ ShallowWrapper {
                 "key": "tag03",
                 "nodeType": "class",
                 "props": Object {
-                  "as": "a",
+                  "as": "span",
                   "children": Array [
                     <ListIcon
                       color={null}

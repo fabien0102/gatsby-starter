@@ -1,13 +1,15 @@
 import * as React from "react";
 import Link from "gatsby-link";
 import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
-import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection } from "../graphql-types";
+import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection, Site } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
+import { DiscussionEmbed } from "disqus-react";
 
 interface BlogPostProps {
   data: {
     post: MarkdownRemark;
     recents: MarkdownRemarkConnection;
+    site: Site
   };
 }
 
@@ -42,7 +44,7 @@ export default (props: BlogPostProps) => {
       );
 
       return (
-        <div key={node.fields.slug} style={{paddingBottom: "1em"}}>
+        <div key={node.fields.slug} style={{ paddingBottom: "1em" }}>
           <Card as={Link}
             to={node.fields.slug}
             image={{
@@ -76,11 +78,11 @@ export default (props: BlogPostProps) => {
         </Item.Group>
         <Header as="h1">{frontmatter.title}</Header>
       </Segment>
-        <Image
-          src={recentCover.responsiveResolution.src}
-          srcSet={recentCover.responsiveResolution.srcSet}
-          fluid
-        />
+      <Image
+        src={recentCover.responsiveResolution.src}
+        srcSet={recentCover.responsiveResolution.srcSet}
+        fluid
+      />
       <Segment vertical
         style={{ border: "none" }}
         dangerouslySetInnerHTML={{
@@ -90,6 +92,13 @@ export default (props: BlogPostProps) => {
       <Segment vertical>
         {tags}
       </Segment>
+      {props.data.site
+        && props.data.site.siteMetadata
+        && props.data.site.siteMetadata.disqus
+        && <Segment vertical>
+            <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus}/>
+        </Segment>
+      }
       <Segment vertical>
         <Grid padded centered>
           {recents}
@@ -101,6 +110,11 @@ export default (props: BlogPostProps) => {
 
 export const pageQuery = graphql`
   query TemplateBlogPost($slug: String!) {
+  site: site {
+    siteMetadata {
+        disqus
+    }
+  }
   post: markdownRemark(fields: {slug: {eq: $slug}}) {
     html
     excerpt
