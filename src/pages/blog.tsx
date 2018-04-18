@@ -5,6 +5,7 @@ import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
+import { get } from "lodash";
 
 interface BlogProps {
   data: {
@@ -31,7 +32,7 @@ export default (props: BlogProps) => {
       {posts.map(({ node }) => {
         const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
         const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
-        const cover = frontmatter.image.children[0] as ImageSharp;
+        const cover = get(frontmatter, "image.children.0.responsiveResolution", {});
 
         const extra = (
           <Comment.Group>
@@ -63,10 +64,7 @@ export default (props: BlogProps) => {
         return (
           <Card key={slug}
             fluid
-            image={{
-              src: cover.responsiveResolution.src,
-              srcSet: cover.responsiveResolution.srcSet,
-            }}
+            image={cover}
             header={frontmatter.title}
             extra={extra}
             description={description}

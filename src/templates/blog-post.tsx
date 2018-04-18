@@ -1,5 +1,6 @@
 import * as React from "react";
 import Link from "gatsby-link";
+import { get } from "lodash";
 import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
 import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection, Site } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
@@ -23,7 +24,7 @@ export default (props: BlogPostProps) => {
   const recents = props.data.recents.edges
     .map(({ node }) => {
       const recentAvatar = node.frontmatter.author.avatar.children[0] as ImageSharp;
-      const recentCover = node.frontmatter.image.children[0] as ImageSharp;
+      const recentCover = get(node, "frontmatter.image.children.0.responsiveResolution", {});
       const extra = (
         <Comment.Group>
           <Comment>
@@ -47,10 +48,7 @@ export default (props: BlogPostProps) => {
         <div key={node.fields.slug} style={{ paddingBottom: "1em" }}>
           <Card as={Link}
             to={node.fields.slug}
-            image={{
-              src: recentCover.responsiveResolution.src,
-              srcSet: recentCover.responsiveResolution.srcSet,
-            }}
+            image={recentCover}
             header={node.frontmatter.title}
             extra={extra}
           />
@@ -58,7 +56,7 @@ export default (props: BlogPostProps) => {
       );
     });
 
-  const recentCover = frontmatter.image.children[0] as ImageSharp;
+  const cover = get(frontmatter, "image.children.0.responsiveResolution", {} );
   return (
     <Container>
       <BlogTitle />
@@ -79,8 +77,7 @@ export default (props: BlogPostProps) => {
         <Header as="h1">{frontmatter.title}</Header>
       </Segment>
       <Image
-        src={recentCover.responsiveResolution.src}
-        srcSet={recentCover.responsiveResolution.srcSet}
+        {...cover}
         fluid
       />
       <Segment vertical
