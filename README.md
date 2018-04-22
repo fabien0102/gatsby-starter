@@ -18,7 +18,7 @@ This starter is currently in wip (see progression to #What's inside session).
 
 ## Getting started
 
-Install this starter (assuming Gatsby is installed) by running from your CLI: 
+Install this starter (assuming Gatsby is installed) by running from your CLI:
 
 ```bash
 $ gatsby new my-website https://github.com/fabien0102/gatsby-starter
@@ -89,8 +89,8 @@ Run `npm run build` to create static site ready to host (`/public`)
 
 ## Plop generators - `npm run generate`
 
-To avoid any boring copy/past, this starter-kit have many generators to permit 
-simple bootstrap of current file pattern (eg. components/pages/blog posts).
+To avoid any boring copy/paste, this starter-kit have many generators to permit
+simple bootstrap of current file pattern (eg. components/pages/blog posts). e.g. to add a new blog post first add the authors to data/authors.json and add authors' images to the data/avatars folder. Next execute 'npm run generate' and select 'Blog post'. Follow the prompts for a new post. Each blog post requires an image be added to the /data/blog/<your new post> folder prior to running 'gatsby develop'.
 
 You can add/delete/modify any generators into `/generators` folder.
 
