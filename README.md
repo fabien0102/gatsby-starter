@@ -46,8 +46,8 @@ Run `npm run build` to create static site ready to host (`/public`)
     -   [x] [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for autofix each commit
     -   [x] Travis/AppVeyor config (unix-osx-windows CI)
     -   [x] Code climate config
--   [ ] SEO
-    -   [ ] [Helmet](https://github.com/nfl/react-helmet)
+-   [x] SEO
+    -   [x] [Helmet](https://github.com/nfl/react-helmet)
 -   [x] [Semantic-ui](http://react.semantic-ui.com) for styling
 -   [x] Lazyboy tools
     -   [x] [plop](https://github.com/amwmedia/plop) templates -> `npm run generate`
