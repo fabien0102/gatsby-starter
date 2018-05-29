@@ -1,13 +1,14 @@
 ---
 title: Welcoming
 createdDate: '2017-04-18'
-updatedDate: '2017-05-06'
+updatedDate: '2018-02-15'
 author: Fabien BERNARD
 tags:
   - starter
   - gatsby
 image: pexels-photo-253092.jpeg
 draft: false
+slug: 2017-04-18/welcoming
 ---
 
 Welcome to gatsby-starter!

@@ -193,12 +193,54 @@ Array [
     Object {
       "name": "slug",
       "node": Object {
+        "frontmatter": Object {
+          "author": "Fabien BERNARD",
+          "createdDate": "2017-04-18",
+          "draft": false,
+          "image": "pexels-photo-253092.jpeg",
+          "tags": Array [
+            "starter",
+            "gatsby",
+          ],
+          "title": "Welcoming",
+          "updatedDate": "2017-05-06",
+        },
         "internal": Object {
           "type": "MarkdownRemark",
         },
         "parent": "parent",
       },
       "value": "/blog/2017-04-18--welcoming/",
+    },
+  ],
+]
+`;
+
+exports[`gatsby-node onCreateNode should use frontmatter slug for MarkdownRemark file when defined 1`] = `
+Array [
+  Array [
+    Object {
+      "name": "slug",
+      "node": Object {
+        "frontmatter": Object {
+          "author": "Fabien BERNARD",
+          "createdDate": "2017-04-18",
+          "draft": false,
+          "image": "pexels-photo-253092.jpeg",
+          "slug": "2017-04-18/welcoming",
+          "tags": Array [
+            "starter",
+            "gatsby",
+          ],
+          "title": "Welcoming",
+          "updatedDate": "2017-05-06",
+        },
+        "internal": Object {
+          "type": "MarkdownRemark",
+        },
+        "parent": "parent",
+      },
+      "value": "/blog/2017-04-18/welcoming/",
     },
   ],
 ]

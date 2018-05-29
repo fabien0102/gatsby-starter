@@ -29,6 +29,15 @@ exports.modifyWebpackConfig = ({config, stage}) => {
   }
 };
 
+// If slug defined in frontmatter use it
+// otherwise use the filepath as slug
+const buildSlug = (frontmatterSlug, basePath, name) => {
+  if (frontmatterSlug) {
+    return `/${basePath}/${frontmatterSlug}/`;
+  }
+  return `/${basePath}/${name}/`;
+};
+
 // Create slugs for files.
 // Slug will used for blog page path.
 exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
@@ -36,9 +45,10 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
   let slug;
   switch (node.internal.type) {
     case `MarkdownRemark`:
+      const frontmatterSlug = get(node, 'frontmatter.slug', null);
       const fileNode = getNode(node.parent);
       const [basePath, name] = fileNode.relativePath.split('/');
-      slug = `/${basePath}/${name}/`;
+      slug = buildSlug(frontmatterSlug, basePath, name);
       break;
   }
   if (slug) {
