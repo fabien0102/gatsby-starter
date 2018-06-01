@@ -2,13 +2,21 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "sourceMap": true,
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "module": "commonjs",
         "target": "esnext",
         "jsx": "react",
-        "lib": ["dom", "esnext"]
+        "lib": ["dom", "esnext"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "strictNullChecks": false,
+        "experimentalDecorators": true
     },
     "include": [
         "./src/**/*"
+    ],
+    "exclude": [
+        "./src/**/*.test.tsx",
+        "./src/**/*.stories.tsx"
     ]
 }

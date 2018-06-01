@@ -31,3 +31,5 @@ export const store = createStore<StoreState>(
   initialState,
   devToolsEnhancer({}),
 );
+
+export const ABC = true;

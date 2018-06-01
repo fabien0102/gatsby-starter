@@ -20,42 +20,43 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
     pathname: string;
   };
-  children: any;
+  children: React.ReactNode;
 }
 
-export default class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
-  render() {
-    const { pathname } = this.props.location;
-    const isHome = pathname === "/";
+const DefaultLayout = (props: Readonly<DefaultLayoutProps>): React.ReactNode => {
 
-    return (
-      <Provider store={store}>
-        <Sidebar.Pushable as={Segment}>
+  const { pathname } = props.location;
+  const isHome = pathname === "/";
 
-          <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={false} />
+  return (
+    <Provider store={store}>
+      <Sidebar.Pushable as={Segment}>
 
-          <Sidebar.Pusher style={{ minHeight: "100vh" }}>
-            {/* Header */}
-            {isHome ? null : <HeaderMenu
-              Link={Link}
-              pathname={pathname}
-              items={menuItems}
-            />}
+        <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={false} />
 
-            {/* Render children pages */}
-            <div style={{ paddingBottom: 60 }}>
-              {this.props.children()}
-            </div>
+        <Sidebar.Pusher style={{ minHeight: "100vh" }}>
+          {/* Header */}
+          {isHome ? null : <HeaderMenu
+            Link={Link}
+            pathname={pathname}
+            items={menuItems}
+          />}
 
-            {/* Footer */}
-            <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
-              <Container textAlign="center">
-                <p>Powered with <Icon name="heart" /> by Gatsby 1.0</p>
-              </Container>
-            </Segment>
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
-      </Provider>
-    );
-  }
-}
+          {/* Render children pages */}
+          <div style={{ paddingBottom: 60 }}>
+            {props.children}
+          </div>
+
+          {/* Footer */}
+          <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
+            <Container textAlign="center">
+              <p>Powered with <Icon name="heart" /> by Gatsby 1.0</p>
+            </Container>
+          </Segment>
+        </Sidebar.Pusher>
+      </Sidebar.Pushable>
+    </Provider>
+  );
+};
+
+export default DefaultLayout;
