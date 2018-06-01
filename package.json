@@ -63,7 +63,7 @@
     "semantic-ui-react": "^0.74.2",
     "slash": "1.0.0",
     "ts-loader": "^2.3.7",
-    "typescript": "2.5.3"
+    "typescript": "^2.8.3"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.14",
