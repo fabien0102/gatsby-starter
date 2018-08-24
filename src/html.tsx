@@ -23,7 +23,7 @@ interface HtmlProps {
 }
 
 // Use `module.exports` to be compliante with `webpack-require` import method
-module.exports = (props: HtmlProps) => {
+export default (props: HtmlProps) => {
   const head = Helmet.rewind();
 
   const css = (process.env.NODE_ENV === `production`) ?
