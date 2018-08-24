@@ -39,7 +39,7 @@ query TemplateBlogPage($skip: Int) {
           image {
           	children {
               ... on ImageSharp {
-                responsiveResolution(width: 700, height: 100) {
+                fixed(width: 700, height: 100) {
                   src
                   srcSet
                 }
@@ -51,7 +51,7 @@ query TemplateBlogPage($skip: Int) {
             avatar {
               children {
                 ... on ImageSharp {
-                  responsiveResolution(width: 35, height: 35) {
+                  fixed(width: 35, height: 35) {
                     src
                     srcSet
                   }

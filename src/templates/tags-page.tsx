@@ -38,7 +38,7 @@ query TemplateTagPage($tag: String) {
           image {
           	children {
               ... on ImageSharp {
-                responsiveResolution(width: 700, height: 100) {
+                fixed(width: 700, height: 100) {
                   src
                   srcSet
                 }
@@ -50,7 +50,7 @@ query TemplateTagPage($tag: String) {
             avatar {
               children {
                 ... on ImageSharp {
-                  responsiveResolution(width: 35, height: 35) {
+                  fixed(width: 35, height: 35) {
                     src
                     srcSet
                   }

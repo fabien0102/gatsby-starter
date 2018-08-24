@@ -24,13 +24,13 @@ export default (props: BlogPostProps) => {
   const recents = props.data.recents.edges
     .map(({ node }) => {
       const recentAvatar = node.frontmatter.author.avatar.children[0] as ImageSharp;
-      const recentCover = get(node, "frontmatter.image.children.0.responsiveResolution", {});
+      const recentCover = get(node, "frontmatter.image.children.0.fixed", {});
       const extra = (
         <Comment.Group>
           <Comment>
             <Comment.Avatar
-              src={recentAvatar.responsiveResolution.src}
-              srcSet={recentAvatar.responsiveResolution.srcSet}
+              src={recentAvatar.fixed.src}
+              srcSet={recentAvatar.fixed.srcSet}
             />
             <Comment.Content>
               <Comment.Author style={{ fontWeight: 400 }}>
@@ -56,7 +56,7 @@ export default (props: BlogPostProps) => {
       );
     });
 
-  const cover = get(frontmatter, "image.children.0.responsiveResolution", {} );
+  const cover = get(frontmatter, "image.children.0.fixed", {} );
   return (
     <Container>
       <BlogTitle />
@@ -64,8 +64,8 @@ export default (props: BlogPostProps) => {
         <Item.Group>
           <Item>
             <Item.Image size="tiny" shape="circular"
-              src={avatar.responsiveResolution.src}
-              srcSet={avatar.responsiveResolution.srcSet}
+              src={avatar.fixed.src}
+              srcSet={avatar.fixed.srcSet}
             />
             <Item.Content>
               <Item.Description>{frontmatter.author.id}</Item.Description>
@@ -128,7 +128,7 @@ export const pageQuery = graphql`
         avatar {
           children {
             ... on ImageSharp {
-              responsiveResolution(width: 80, height: 80, quality: 100) {
+              fixed(width: 80, height: 80, quality: 100) {
                 src
                 srcSet
               }
@@ -141,7 +141,7 @@ export const pageQuery = graphql`
       image {
         children {
           ... on ImageSharp {
-            responsiveResolution(width: 900, height: 300, quality: 100) {
+            fixed(width: 900, height: 300, quality: 100) {
               src
               srcSet
             }
@@ -170,7 +170,7 @@ export const pageQuery = graphql`
           image {
             children {
               ... on ImageSharp {
-                responsiveResolution(width: 300, height: 100) {
+                fixed(width: 300, height: 100) {
                   src
                   srcSet
                 }
@@ -182,7 +182,7 @@ export const pageQuery = graphql`
             avatar {
               children {
                 ... on ImageSharp {
-                  responsiveResolution(width: 36, height: 36) {
+                  fixed(width: 36, height: 36) {
                     src
                     srcSet
                   }
