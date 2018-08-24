@@ -1,4 +1,4 @@
-# Gatsby 1.0 starter
+# Gatsby 2.0 starter
 
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![Build Status](https://travis-ci.org/fabien0102/gatsby-starter.svg?branch=master)](https://travis-ci.org/fabien0102/gatsby-starter)
@@ -10,7 +10,7 @@ Demo: <https://fabien0102-gatsby-starter.netlify.com/>
 
 Storybook: <https://fabien0102-gatsby-starter.netlify.com/docs/>
 
-Gatsby 1.0 starter for generate awesome static website working with a nice env development.
+Gatsby 2.0 starter for generate awesome static website working with a nice env development.
 
 ## Warning
 
@@ -30,7 +30,7 @@ Run `npm run build` to create static site ready to host (`/public`)
 
 ## What's inside?
 
--   [ ] Gatsby 1.0 (alpha)
+-   [ ] Gatsby 2.0 (alpha)
     -   [x] sharp
     -   [x] offline support
     -   [ ] google analytics
