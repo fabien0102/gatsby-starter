@@ -31,8 +31,8 @@ exports.onCreateWebpackConfig = ({config, stage}) => {
 
 // Create slugs for files.
 // Slug will used for blog page path.
-exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
-  const {createNodeField} = boundActionCreators;
+exports.onCreateNode = ({node, actions, getNode}) => {
+  const {createNodeField} = actions;
   let slug;
   switch (node.internal.type) {
     case `MarkdownRemark`:
@@ -50,8 +50,8 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
 // This is called after the Gatsby bootstrap is finished
 // so you have access to any information necessary to
 // programatically create pages.
-exports.createPages = ({graphql, boundActionCreators}) => {
-  const {createPage} = boundActionCreators;
+exports.createPages = ({graphql, actions}) => {
+  const {createPage} = actions;
 
   return new Promise((resolve, reject) => {
     const templates = ['blogPost', 'tagsPage', 'blogPage']

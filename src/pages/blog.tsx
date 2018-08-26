@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import { StaticQuery, graphql } from "gatsby";
 import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
@@ -14,7 +14,7 @@ interface BlogProps {
     tags: MarkdownRemarkConnection;
     posts: MarkdownRemarkConnection;
   };
-  pathContext: {
+  pageContext: {
     tag?: string; // only set into `templates/tags-pages.tsx`
   };
   location: {
@@ -154,7 +154,7 @@ export default (props: BlogProps) => {
                     </Segment>
                   </div>
                   <div>
-                    <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag} />
+                    <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
                   </div>
                 </Grid>
               </Segment>
