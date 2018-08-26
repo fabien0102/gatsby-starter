@@ -7,6 +7,7 @@ import BlogTitle from "../components/BlogTitle";
 import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
+import { default as DefaultLayout } from "../components/Layout";
 
 interface BlogProps {
   data: {
@@ -138,25 +139,27 @@ export default (props: BlogProps) => {
           </Container>
         );
         return (
-          <Container>
-            {/* Title */}
-            <BlogTitle />
-      
-            {/* Content */}
-            <Segment vertical>
-              <Grid padded style={{ justifyContent: "space-around" }}>
-                <div style={{ maxWidth: 600 }}>
-                  {Posts}
-                  <Segment vertical textAlign="center">
-                    <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
-                  </Segment>
-                </div>
-                <div>
-                  <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag} />
-                </div>
-              </Grid>
-            </Segment>
-          </Container>
+          <DefaultLayout location={props.location}>
+            <Container>
+              {/* Title */}
+              <BlogTitle />
+        
+              {/* Content */}
+              <Segment vertical>
+                <Grid padded style={{ justifyContent: "space-around" }}>
+                  <div style={{ maxWidth: 600 }}>
+                    {Posts}
+                    <Segment vertical textAlign="center">
+                      <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
+                    </Segment>
+                  </div>
+                  <div>
+                    <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag} />
+                  </div>
+                </Grid>
+              </Segment>
+            </Container>
+          </DefaultLayout>
         );
       }}
     />

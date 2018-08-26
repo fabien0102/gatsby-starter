@@ -5,6 +5,7 @@ import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Ite
 import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection, Site } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 import { DiscussionEmbed } from "disqus-react";
+import { default as DefaultLayout } from "../components/Layout";
 
 interface BlogPostProps {
   data: {
@@ -58,50 +59,52 @@ export default (props: BlogPostProps) => {
 
   const cover = get(frontmatter, "image.children.0.fixed", {} );
   return (
-    <Container>
-      <BlogTitle />
-      <Segment vertical style={{ border: "none" }}>
-        <Item.Group>
-          <Item>
-            <Item.Image size="tiny" shape="circular"
-              src={avatar.fixed.src}
-              srcSet={avatar.fixed.srcSet}
-            />
-            <Item.Content>
-              <Item.Description>{frontmatter.author.id}</Item.Description>
-              <Item.Meta>{frontmatter.author.bio}</Item.Meta>
-              <Item.Extra>{frontmatter.updatedDate} - {timeToRead} min read</Item.Extra>
-            </Item.Content>
-          </Item>
-        </Item.Group>
-        <Header as="h1">{frontmatter.title}</Header>
-      </Segment>
-      <Image
-        {...cover}
-        fluid
-      />
-      <Segment vertical
-        style={{ border: "none" }}
-        dangerouslySetInnerHTML={{
-          __html: html,
-        }}
-      />
-      <Segment vertical>
-        {tags}
-      </Segment>
-      {props.data.site
-        && props.data.site.siteMetadata
-        && props.data.site.siteMetadata.disqus
-        && <Segment vertical>
-            <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus}/>
+    <DefaultLayout location={props.location}>
+      <Container>
+        <BlogTitle />
+        <Segment vertical style={{ border: "none" }}>
+          <Item.Group>
+            <Item>
+              <Item.Image size="tiny" shape="circular"
+                src={avatar.fixed.src}
+                srcSet={avatar.fixed.srcSet}
+              />
+              <Item.Content>
+                <Item.Description>{frontmatter.author.id}</Item.Description>
+                <Item.Meta>{frontmatter.author.bio}</Item.Meta>
+                <Item.Extra>{frontmatter.updatedDate} - {timeToRead} min read</Item.Extra>
+              </Item.Content>
+            </Item>
+          </Item.Group>
+          <Header as="h1">{frontmatter.title}</Header>
         </Segment>
-      }
-      <Segment vertical>
-        <Grid padded centered>
-          {recents}
-        </Grid>
-      </Segment>
-    </Container>
+        <Image
+          {...cover}
+          fluid
+        />
+        <Segment vertical
+          style={{ border: "none" }}
+          dangerouslySetInnerHTML={{
+            __html: html,
+          }}
+        />
+        <Segment vertical>
+          {tags}
+        </Segment>
+        {props.data.site
+          && props.data.site.siteMetadata
+          && props.data.site.siteMetadata.disqus
+          && <Segment vertical>
+              <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus}/>
+          </Segment>
+        }
+        <Segment vertical>
+          <Grid padded centered>
+            {recents}
+          </Grid>
+        </Segment>
+      </Container>
+    </DefaultLayout>
   );
 };
 
