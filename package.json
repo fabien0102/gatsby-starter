@@ -29,8 +29,6 @@
     "@types/react-dom": "^16.0.2",
     "@types/react-helmet": "5.0.0",
     "@types/react-redux": "^5.0.9",
-    "@types/react-router": "^4.0.14",
-    "@types/react-router-dom": "^4.0.8",
     "babel-eslint": "^7.2.1",
     "change-case": "^3.0.1",
     "codeclimate-test-reporter": "^0.4.1",
