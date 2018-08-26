@@ -17,7 +17,7 @@ const extractQueryPlugin = path.resolve(
 
 // Temporary workaround to ensure Gatsby builds minified, production build of React.
 // https://github.com/fabien0102/gatsby-starter/issues/39#issuecomment-343647558
-exports.modifyWebpackConfig = ({config, stage}) => {
+exports.onCreateWebpackConfig = ({config, stage}) => {
   if (stage === 'build-javascript') {
     config.loader('typescript', {
       test: /\.tsx?$/,
