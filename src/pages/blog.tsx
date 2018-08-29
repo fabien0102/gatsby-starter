@@ -87,7 +87,7 @@ export default (props: BlogProps) => {
       render={(data) => {
         const tags = data.tags.group;
         const posts = data.posts.edges;
-        const { pathname } = location;
+        const { pathname } = props.location;
         const pageCount = Math.ceil(data.posts.totalCount / 10);
 
         // TODO export posts in a proper component
