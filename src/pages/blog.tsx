@@ -96,7 +96,6 @@ export default (props: BlogProps) => {
             {posts.map(({ node }) => {
               const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
               const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
-              console.log("frontmatter", frontmatter);
               const cover = get(frontmatter, "image.children.0.fixed", {});
 
               const extra = (
