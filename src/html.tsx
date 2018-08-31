@@ -6,16 +6,6 @@ import Helmet from "react-helmet";
 
 const config = require("../gatsby-config.js");
 
-// Load production style
-let styles: string;
-if (process.env.NODE_ENV === `production`) {
-  try {
-    styles = require("!raw-loader!../public/styles.css");
-  } catch (err) {
-    console.log(err);
-  }
-}
-
 interface HtmlProps {
   body: any;
   postBodyComponents: any;
@@ -25,13 +15,6 @@ interface HtmlProps {
 // Use `module.exports` to be compliante with `webpack-require` import method
 export default (props: HtmlProps) => {
   const head = Helmet.rewind();
-
-  const css = (process.env.NODE_ENV === `production`) ?
-    <style
-      id="gatsby-inlined-css"
-      dangerouslySetInnerHTML={{ __html: styles }}
-    />
-    : null;
 
   const verification = config.siteMetadata && config.siteMetadata.googleVerification ? <meta
     name="google-site-verification"
@@ -51,7 +34,6 @@ export default (props: HtmlProps) => {
         {head.title.toComponent()}
         {head.meta.toComponent()}
         {head.link.toComponent()}
-        {css}
         {verification}
       </head>
       <body>
