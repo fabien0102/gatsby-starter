@@ -7,7 +7,7 @@ import BlogTitle from "../components/BlogTitle";
 import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
-import { default as DefaultLayout } from "../components/Layout";
+import DefaultLayout from "../components/Layout";
 
 interface BlogProps {
   data: {

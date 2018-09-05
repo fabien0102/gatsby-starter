@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Header, Icon, Grid } from "semantic-ui-react";
-import { default as DefaultLayout } from "../components/Layout";
+import DefaultLayout from "../components/Layout";
 
 interface NotFoundPageProps {
   location: {

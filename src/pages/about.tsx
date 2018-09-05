@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Header, Container, Segment, Icon } from "semantic-ui-react";
-import { default as DefaultLayout } from "../components/Layout";
+import DefaultLayout from "../components/Layout";
 
 interface AboutPageProps {
   location: {

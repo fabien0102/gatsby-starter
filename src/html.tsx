@@ -12,7 +12,6 @@ interface HtmlProps {
   headComponents: any;
 }
 
-// Use `module.exports` to be compliante with `webpack-require` import method
 export default (props: HtmlProps) => {
   const head = Helmet.rewind();
 

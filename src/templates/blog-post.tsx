@@ -5,7 +5,7 @@ import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Ite
 import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection, Site } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 import { DiscussionEmbed } from "disqus-react";
-import { default as DefaultLayout } from "../components/Layout";
+import DefaultLayout from "../components/Layout";
 import { graphql } from "gatsby";
 
 interface BlogPostProps {
