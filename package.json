@@ -24,11 +24,13 @@
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.63",
+    "@types/lodash": "^4.14.116",
+    "@types/reach__router": "^1.0.1",
     "@types/react": "^16.0.20",
     "@types/react-dom": "^16.0.2",
     "@types/react-helmet": "5.0.0",
-    "@types/react-redux": "^5.0.9",
+    "@types/react-redux": "^5.0.21",
+    "@types/semantic-ui": "^2.2.6",
     "babel-eslint": "^7.2.1",
     "change-case": "^3.0.1",
     "codeclimate-test-reporter": "^0.4.1",
@@ -40,7 +42,7 @@
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-offline": "next",
     "gatsby-plugin-sharp": "next",
-    "gatsby-plugin-typescript": "next",
+    "gatsby-plugin-typescript": "^2.0.0-rc.4",
     "gatsby-remark-autolink-headers": "next",
     "gatsby-remark-copy-linked-files": "next",
     "gatsby-remark-images": "next",
@@ -57,10 +59,10 @@
     "react-helmet": "5.0.3",
     "react-redux": "^5.0.7",
     "redux-devtools-extension": "^2.13.2",
-    "semantic-ui-react": "^0.74.2",
+    "semantic-ui-react": "^0.82.3",
     "slash": "1.0.0",
     "ts-loader": "^2.3.7",
-    "typescript": "2.5.3"
+    "typescript": "^2.8.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.14",

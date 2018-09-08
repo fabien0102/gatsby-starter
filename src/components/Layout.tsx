@@ -23,39 +23,37 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   children: any;
 }
 
-export default class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
-  render() {
-    const { pathname } = this.props.location;
-    const isHome = pathname === "/";
+export default (props: DefaultLayoutProps) => {
+  const { pathname } = props.location;
+  const isHome = pathname === "/";
 
-    return (
-      <Provider store={store}>
-        <Sidebar.Pushable as={Segment}>
+  return (
+    <Provider store={store}>
+      <Sidebar.Pushable as={Segment}>
 
-          <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={false} />
+        <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={false} />
 
-          <Sidebar.Pusher style={{ minHeight: "100vh" }}>
-            {/* Header */}
-            {isHome ? null : <HeaderMenu
-              Link={Link}
-              pathname={pathname}
-              items={menuItems}
-            />}
+        <Sidebar.Pusher style={{ minHeight: "100vh" }}>
+          {/* Header */}
+          {isHome ? null : <HeaderMenu
+            Link={Link}
+            pathname={pathname}
+            items={menuItems}
+          />}
 
-            {/* Render children pages */}
-            <div style={{ paddingBottom: 60 }}>
-              {this.props.children}
-            </div>
+          {/* Render children pages */}
+          <div style={{ paddingBottom: 60 }}>
+            {props.children}
+          </div>
 
-            {/* Footer */}
-            <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
-              <Container textAlign="center">
-                <p>Powered with <Icon name="heart" /> by Gatsby 1.0</p>
-              </Container>
-            </Segment>
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
-      </Provider>
-    );
-  }
-}
+          {/* Footer */}
+          <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
+            <Container textAlign="center">
+              <p>Powered with <Icon name="heart" /> by Gatsby 1.0</p>
+            </Container>
+          </Segment>
+        </Sidebar.Pusher>
+      </Sidebar.Pushable>
+    </Provider>
+  );
+};

@@ -9,6 +9,9 @@ import DefaultLayout from "../components/Layout";
 import { graphql } from "gatsby";
 
 interface BlogPostProps {
+  location: {
+    pathname: string;
+  };
   data: {
     post: MarkdownRemark;
     recents: MarkdownRemarkConnection;

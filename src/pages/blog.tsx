@@ -8,6 +8,7 @@ import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
 import DefaultLayout from "../components/Layout";
+import { MarkdownRemark } from "../graphql-types";
 
 interface BlogProps {
   data: {
@@ -93,7 +94,7 @@ export default (props: BlogProps) => {
         // TODO export posts in a proper component
         const Posts = (
           <Container>
-            {posts.map(({ node }) => {
+            {posts.map(({ node }: {node: MarkdownRemark}) => {
               const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
               const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
               const cover = get(frontmatter, "image.children.0.fixed", {});
