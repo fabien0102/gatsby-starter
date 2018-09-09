@@ -49,7 +49,7 @@ export default (props: DefaultLayoutProps) => {
           {/* Footer */}
           <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
             <Container textAlign="center">
-              <p>Powered with <Icon name="heart" /> by Gatsby 1.0</p>
+              <p>Powered with <Icon name="heart" /> by Gatsby 2.0</p>
             </Container>
           </Segment>
         </Sidebar.Pusher>
