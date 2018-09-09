@@ -69,9 +69,10 @@ export default (props: BlogPostProps) => {
         <Segment vertical style={{ border: "none" }}>
           <Item.Group>
             <Item>
-              <Item.Image size="tiny" shape="circular"
+              <Item.Image size="tiny"
                 src={avatar.fixed.src}
                 srcSet={avatar.fixed.srcSet}
+                circular
               />
               <Item.Content>
                 <Item.Description>{frontmatter.author.id}</Item.Description>
