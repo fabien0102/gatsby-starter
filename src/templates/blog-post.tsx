@@ -86,7 +86,7 @@ export default (props: BlogPostProps) => {
         <Image
           {...cover}
           fluid
-        />
+        /> 
         <Segment vertical
           style={{ border: "none" }}
           dangerouslySetInnerHTML={{
@@ -100,7 +100,7 @@ export default (props: BlogPostProps) => {
           && props.data.site.siteMetadata
           && props.data.site.siteMetadata.disqus
           && <Segment vertical>
-              <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus}/>
+              <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} config={{}}/>
           </Segment>
         }
         <Segment vertical>
