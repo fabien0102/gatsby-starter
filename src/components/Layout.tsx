@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import * as React from "react";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
 import SidebarMenu from "./SidebarMenu/SidebarMenu";
-import { Segment, Icon, Container, Sidebar, Button } from "semantic-ui-react";
+import { Segment, Icon, Container, Sidebar } from "semantic-ui-react";
 import "../css/styles.css";
 import "../css/responsive.css";
 import "../css/semantic.min.css";
@@ -16,14 +16,14 @@ export const menuItems = [
   { name: "Blog", path: "/blog/", exact: false, icon: "newspaper" },
 ];
 
-interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
+export interface LayoutProps {
   location: {
     pathname: string;
   };
   children: any;
 }
 
-export default (props: DefaultLayoutProps) => {
+const Layout = (props: LayoutProps) => {
   const { pathname } = props.location;
   const isHome = pathname === "/";
 
@@ -57,3 +57,16 @@ export default (props: DefaultLayoutProps) => {
     </Provider>
   );
 };
+
+export default Layout;
+
+export const withLayout = <P extends object>(WrappedComponent: React.ComponentType<P>) =>
+  class WithLayout extends React.Component<P & LayoutProps> {
+    render() {
+      return (
+        <Layout location={this.props.location}>
+          <WrappedComponent {...this.props} />
+        </Layout>
+      );
+    }
+  };

@@ -7,10 +7,10 @@ import BlogTitle from "../components/BlogTitle";
 import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
-import DefaultLayout from "../components/Layout";
+import {withLayout, LayoutProps} from "../components/Layout";
 import { MarkdownRemark } from "../graphql-types";
 
-interface BlogProps {
+interface BlogProps extends LayoutProps {
   data: {
     tags: MarkdownRemarkConnection;
     posts: MarkdownRemarkConnection;
@@ -18,12 +18,9 @@ interface BlogProps {
   pageContext: {
     tag?: string; // only set into `templates/tags-pages.tsx`
   };
-  location: {
-    pathname: string;
-  };
 }
 
-export default (props: BlogProps) => {
+const BlogPage = (props: BlogProps) => {
   const tags = props.data.tags.group;
   const posts = props.data.posts.edges;
   const { pathname } = props.location;
@@ -78,29 +75,29 @@ export default (props: BlogProps) => {
   );
 
   return (
-    <DefaultLayout location={props.location}>
-      <Container>
-        {/* Title */}
-        <BlogTitle />
+    <Container>
+      {/* Title */}
+      <BlogTitle />
 
-        {/* Content */}
-        <Segment vertical>
-          <Grid padded style={{ justifyContent: "space-around" }}>
-            <div style={{ maxWidth: 600 }}>
-              {Posts}
-              <Segment vertical textAlign="center">
-                <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
-              </Segment>
-            </div>
-            <div>
-              <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
-            </div>
-          </Grid>
-        </Segment>
-      </Container>
-    </DefaultLayout>
+      {/* Content */}
+      <Segment vertical>
+        <Grid padded style={{ justifyContent: "space-around" }}>
+          <div style={{ maxWidth: 600 }}>
+            {Posts}
+            <Segment vertical textAlign="center">
+              <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
+            </Segment>
+          </div>
+          <div>
+            <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
+          </div>
+        </Grid>
+      </Segment>
+    </Container>
   );
 };
+
+export default withLayout(BlogPage);
 
 export const pageQuery = graphql`
 query PageBlog {

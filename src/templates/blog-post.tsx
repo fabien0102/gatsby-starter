@@ -5,13 +5,10 @@ import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Ite
 import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection, Site } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 import { DiscussionEmbed } from "disqus-react";
-import DefaultLayout from "../components/Layout";
+import {withLayout, LayoutProps} from "../components/Layout";
 import { graphql } from "gatsby";
 
-interface BlogPostProps {
-  location: {
-    pathname: string;
-  };
+interface BlogPostProps extends LayoutProps {
   data: {
     post: MarkdownRemark;
     recents: MarkdownRemarkConnection;
@@ -19,7 +16,7 @@ interface BlogPostProps {
   };
 }
 
-export default (props: BlogPostProps) => {
+const BlogPostPage = (props: BlogPostProps) => {
   const { frontmatter, html, timeToRead } = props.data.post;
   const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
 
@@ -63,55 +60,55 @@ export default (props: BlogPostProps) => {
 
   const cover = get(frontmatter, "image.children.0.fixed", {} );
   return (
-    <DefaultLayout location={props.location}>
-      <Container>
-        <BlogTitle />
-        <Segment vertical style={{ border: "none" }}>
-          <Item.Group>
-            <Item>
-              <Item.Image size="tiny"
-                src={avatar.fixed.src}
-                srcSet={avatar.fixed.srcSet}
-                circular
-              />
-              <Item.Content>
-                <Item.Description>{frontmatter.author.id}</Item.Description>
-                <Item.Meta>{frontmatter.author.bio}</Item.Meta>
-                <Item.Extra>{frontmatter.updatedDate} - {timeToRead} min read</Item.Extra>
-              </Item.Content>
-            </Item>
-          </Item.Group>
-          <Header as="h1">{frontmatter.title}</Header>
+    <Container>
+      <BlogTitle />
+      <Segment vertical style={{ border: "none" }}>
+        <Item.Group>
+          <Item>
+            <Item.Image size="tiny"
+              src={avatar.fixed.src}
+              srcSet={avatar.fixed.srcSet}
+              circular
+            />
+            <Item.Content>
+              <Item.Description>{frontmatter.author.id}</Item.Description>
+              <Item.Meta>{frontmatter.author.bio}</Item.Meta>
+              <Item.Extra>{frontmatter.updatedDate} - {timeToRead} min read</Item.Extra>
+            </Item.Content>
+          </Item>
+        </Item.Group>
+        <Header as="h1">{frontmatter.title}</Header>
+      </Segment>
+      <Image
+        {...cover}
+        fluid
+      /> 
+      <Segment vertical
+        style={{ border: "none" }}
+        dangerouslySetInnerHTML={{
+          __html: html,
+        }}
+      />
+      <Segment vertical>
+        {tags}
+      </Segment>
+      {props.data.site
+        && props.data.site.siteMetadata
+        && props.data.site.siteMetadata.disqus
+        && <Segment vertical>
+            <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} config={{}}/>
         </Segment>
-        <Image
-          {...cover}
-          fluid
-        /> 
-        <Segment vertical
-          style={{ border: "none" }}
-          dangerouslySetInnerHTML={{
-            __html: html,
-          }}
-        />
-        <Segment vertical>
-          {tags}
-        </Segment>
-        {props.data.site
-          && props.data.site.siteMetadata
-          && props.data.site.siteMetadata.disqus
-          && <Segment vertical>
-              <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} config={{}}/>
-          </Segment>
-        }
-        <Segment vertical>
-          <Grid padded centered>
-            {recents}
-          </Grid>
-        </Segment>
-      </Container>
-    </DefaultLayout>
+      }
+      <Segment vertical>
+        <Grid padded centered>
+          {recents}
+        </Grid>
+      </Segment>
+    </Container>
   );
 };
+
+export default withLayout(BlogPostPage);
 
 export const pageQuery = graphql`
   query TemplateBlogPost($slug: String!) {

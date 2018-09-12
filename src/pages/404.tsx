@@ -1,15 +1,8 @@
 import * as React from "react";
 import { Header, Icon, Grid } from "semantic-ui-react";
-import DefaultLayout from "../components/Layout";
+import {withLayout} from "../components/Layout";
 
-interface NotFoundPageProps {
-  location: {
-    pathname: string;
-  };
-}
-
-export default (props: NotFoundPageProps) =>
-  <DefaultLayout location={props.location}>
+const NotFoundPage = () =>
     <Grid centered verticalAlign="middle"
       style={{
         minHeight: "700px",
@@ -22,5 +15,6 @@ export default (props: NotFoundPageProps) =>
           <Header as="h2">But nothing found for you #404</Header>
         </Grid.Row>
       </Grid.Column>
-    </Grid>
-  </DefaultLayout>;
+    </Grid>;
+
+export default withLayout(NotFoundPage);
