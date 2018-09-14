@@ -1,7 +1,7 @@
 import * as React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
-import { menuItems } from "../layouts";
+import { withLayout, LayoutProps, menuItems } from "../components/Layout";
 import {
   Button,
   Segment,
@@ -11,13 +11,7 @@ import {
   Icon,
 } from "semantic-ui-react";
 
-interface IndexPageProps {
-  location: {
-    pathname: string;
-  };
-}
-
-export default (props: IndexPageProps) =>
+const IndexPage = (props: LayoutProps) =>
   <div>
     {/* Master head */}
     <Segment vertical inverted textAlign="center" className="masthead">
@@ -25,7 +19,7 @@ export default (props: IndexPageProps) =>
         Link={Link} pathname={props.location.pathname} items={menuItems} inverted
       />
       <Container text>
-        <Header inverted as="h1">Gatsby 1.0 - Starter kit</Header>
+        <Header inverted as="h1">Gatsby 2.0 - Starter kit</Header>
         <Header inverted as="h2">Typescript - Jest - Semantic UI</Header>
         <Button primary size="huge">Get started!</Button>
       </Container>
@@ -108,3 +102,5 @@ export default (props: IndexPageProps) =>
       </Grid>
     </Segment>
   </div>;
+
+export default withLayout(IndexPage);

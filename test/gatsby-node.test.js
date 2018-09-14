@@ -3,13 +3,13 @@ jest.mock('path');
 const {createPages, onCreateNode} = require('../gatsby-node');
 
 describe('gatsby-node', () => {
-  const boundActionCreators = {};
+  const actions = {};
 
   describe('createPages', () => {
     let graphql;
 
     beforeEach(() => {
-      boundActionCreators.createPage = jest.fn();
+      actions.createPage = jest.fn();
       graphql = jest.fn();
     });
 
@@ -55,9 +55,9 @@ describe('gatsby-node', () => {
         )
       );
 
-      return createPages({graphql, boundActionCreators})
+      return createPages({graphql, actions})
         .then(() => {
-          expect(boundActionCreators.createPage.mock.calls).toMatchSnapshot();
+          expect(actions.createPage.mock.calls).toMatchSnapshot();
         });
     });
 
@@ -66,7 +66,7 @@ describe('gatsby-node', () => {
         Promise.resolve({errors: 'something wrong!'})
       );
 
-      expect(createPages({graphql, boundActionCreators}))
+      expect(createPages({graphql, actions}))
         .toThrow();
     });
 
@@ -131,9 +131,9 @@ describe('gatsby-node', () => {
         )
       );
 
-      return createPages({graphql, boundActionCreators})
+      return createPages({graphql, actions})
         .then(() => {
-          expect(boundActionCreators.createPage.mock.calls).toMatchSnapshot();
+          expect(actions.createPage.mock.calls).toMatchSnapshot();
         });
     });
 
@@ -152,9 +152,9 @@ describe('gatsby-node', () => {
 
       it('should create 1 page with 5 posts', () => {
         graphql.mockReturnValueOnce(Promise.resolve(generateData(5)));
-        return createPages({graphql, boundActionCreators})
+        return createPages({graphql, actions})
           .then(() => {
-            const pages = boundActionCreators.createPage.mock.calls
+            const pages = actions.createPage.mock.calls
               .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
             expect(pages).toMatchSnapshot();
           });
@@ -162,9 +162,9 @@ describe('gatsby-node', () => {
 
       it('should create 2 pages with 15 posts', () => {
         graphql.mockReturnValueOnce(Promise.resolve(generateData(15)));
-        return createPages({graphql, boundActionCreators})
+        return createPages({graphql, actions})
           .then(() => {
-            const pages = boundActionCreators.createPage.mock.calls
+            const pages = actions.createPage.mock.calls
               .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
             expect(pages).toMatchSnapshot();
           });
@@ -172,9 +172,9 @@ describe('gatsby-node', () => {
 
       it('should create 3 pages with 30 posts', () => {
         graphql.mockReturnValueOnce(Promise.resolve(generateData(30)));
-        return createPages({graphql, boundActionCreators})
+        return createPages({graphql, actions})
           .then(() => {
-            const pages = boundActionCreators.createPage.mock.calls
+            const pages = actions.createPage.mock.calls
               .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
             expect(pages).toMatchSnapshot();
           });
@@ -186,7 +186,7 @@ describe('gatsby-node', () => {
     let getNode;
 
     beforeEach(() => {
-      boundActionCreators.createNodeField = jest.fn();
+      actions.createNodeField = jest.fn();
       getNode = jest.fn();
     });
 
@@ -202,9 +202,9 @@ describe('gatsby-node', () => {
         },
         parent: 'parent'
       };
-      onCreateNode({node, boundActionCreators, getNode});
+      onCreateNode({node, actions, getNode});
 
-      expect(boundActionCreators.createNodeField.mock.calls).toMatchSnapshot();
+      expect(actions.createNodeField.mock.calls).toMatchSnapshot();
     });
 
     it('should do nothing on unknown type', () => {
@@ -219,9 +219,9 @@ describe('gatsby-node', () => {
         },
         parent: 'parent'
       };
-      onCreateNode({node, boundActionCreators, getNode});
+      onCreateNode({node, actions, getNode});
 
-      expect(boundActionCreators.createNodeField.mock.calls.length).toBe(0);
+      expect(actions.createNodeField.mock.calls.length).toBe(0);
     });
   });
 });
