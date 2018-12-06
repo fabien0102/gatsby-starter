@@ -5,7 +5,7 @@ import { times } from "lodash";
 
 interface BlogPaginationProps extends React.HTMLProps<HTMLDivElement> {
   pathname: string;
-  Link: React.ComponentClass<GatsbyLinkProps>;
+  Link: React.ComponentClass<GatsbyLinkProps<any>>;
   pageCount: number;
 }
 

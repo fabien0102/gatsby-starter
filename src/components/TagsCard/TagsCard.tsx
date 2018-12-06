@@ -5,7 +5,7 @@ import { markdownRemarkGroupConnectionConnection } from "../../graphql-types";
 
 interface TagsCardProps extends React.HTMLProps<HTMLDivElement> {
   tags: markdownRemarkGroupConnectionConnection[];
-  Link: React.ComponentClass<GatsbyLinkProps>;
+  Link: React.ComponentClass<GatsbyLinkProps<any>>;
   tag?: string;
 }
 
