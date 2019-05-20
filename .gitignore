@@ -111,6 +111,9 @@ tags
 !.vscode/launch.json
 !.vscode/extensions.json
 
+### Webstorm ###
+.idea/*
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
