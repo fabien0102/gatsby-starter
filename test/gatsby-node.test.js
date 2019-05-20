@@ -139,7 +139,7 @@ describe('gatsby-node', () => {
 
     describe('pagination', () => {
       const generateData = n => {
-        const edges = [...Array(n)].map((val, i) => ({
+        const edges = [...new Array(n)].map((val, i) => ({
           node: {
             fields: {
               slug: `/blog/2017-04-18--article-${i + 1}/`
