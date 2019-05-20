@@ -140,3 +140,6 @@ $RECYCLE.BIN/
 ### Gatsby ###
 public
 .cache
+
+### Storybook ###
+storybook-static
