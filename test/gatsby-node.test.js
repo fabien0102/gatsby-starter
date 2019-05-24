@@ -1,4 +1,4 @@
-/* eslint-disable no-undef, max-nested-callbacks */
+/* eslint-disable no-undef */
 jest.mock('path');
 const {createPages, onCreateNode} = require('../gatsby-node');
 

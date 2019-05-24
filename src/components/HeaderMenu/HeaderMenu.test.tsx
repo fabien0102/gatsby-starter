@@ -74,7 +74,7 @@ describe("HeaderMenu component", () => {
         pathname=""
         dispatch={dispatchMock} />,
     );
-    wrapper.find(".mobile .only").simulate("click");
+    wrapper.find(".mobile.only").simulate("click");
     expect(dispatchMock.mock.calls.length).toBe(1);
   });
 
