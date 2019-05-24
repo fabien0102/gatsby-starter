@@ -1,6687 +1,2921 @@
-/* tslint:disable */
-
-export interface Query {
-  allSitePage: SitePageConnection | null;
-  allSitePlugin: SitePluginConnection | null;
-  allDirectory: DirectoryConnection | null;
-  allFile: FileConnection | null;
-  allImageSharp: ImageSharpConnection | null;
-  allMarkdownRemark: MarkdownRemarkConnection | null;
-  allAuthorJson: AuthorJsonConnection | null;
-  sitePage: SitePage | null;
-  sitePlugin: SitePlugin | null;
-  site: Site | null;
-  directory: Directory | null;
-  file: File | null;
-  imageSharp: ImageSharp | null;
-  markdownRemark: MarkdownRemark | null;
-  authorJson: AuthorJson | null;
-}
-
-export interface AllSitePageQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: sitePageConnectionSort | null;
-  filter: filterSitePage | null;
-}
-
-export interface AllSitePluginQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: sitePluginConnectionSort | null;
-  filter: filterSitePlugin | null;
-}
-
-export interface AllDirectoryQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: directoryConnectionSort | null;
-  filter: filterDirectory | null;
-}
-
-export interface AllFileQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: fileConnectionSort | null;
-  filter: filterFile | null;
-}
-
-export interface AllImageSharpQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: imageSharpConnectionSort | null;
-  filter: filterImageSharp | null;
-}
-
-export interface AllMarkdownRemarkQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: markdownRemarkConnectionSort | null;
-  filter: filterMarkdownRemark | null;
-}
-
-export interface AllAuthorJsonQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: authorJsonConnectionSort | null;
-  filter: filterAuthorJson | null;
-}
-
-export interface SitePageQueryArgs {
-  jsonName: sitePageJsonNameQueryString | null;
-  internalComponentName: sitePageInternalComponentNameQueryString | null;
-  path: sitePagePathQueryString_2 | null;
-  component: sitePageComponentQueryString | null;
-  componentChunkName: sitePageComponentChunkNameQueryString | null;
-  context: sitePageContextInputObject | null;
-  pluginCreator: sitePagePluginCreatorInputObject | null;
-  pluginCreatorId: sitePagePluginCreatorIdQueryString_2 | null;
-  componentPath: sitePageComponentPathQueryString | null;
-  id: sitePageIdQueryString_2 | null;
-  internal: sitePageInternalInputObject_2 | null;
-}
-
-export interface SitePluginQueryArgs {
-  resolve: sitePluginResolveQueryString_2 | null;
-  id: sitePluginIdQueryString_2 | null;
-  name: sitePluginNameQueryString_2 | null;
-  version: sitePluginVersionQueryString_2 | null;
-  pluginOptions: sitePluginPluginOptionsInputObject_2 | null;
-  nodeAPIs: sitePluginNodeApIsQueryList_2 | null;
-  browserAPIs: sitePluginBrowserApIsQueryList_2 | null;
-  ssrAPIs: sitePluginSsrApIsQueryList_2 | null;
-  pluginFilepath: sitePluginPluginFilepathQueryString_2 | null;
-  packageJson: sitePluginPackageJsonInputObject_2 | null;
-  internal: sitePluginInternalInputObject_2 | null;
-}
-
-export interface SiteQueryArgs {
-  siteMetadata: siteSiteMetadataInputObject_2 | null;
-  port: sitePortQueryString_2 | null;
-  host: siteHostQueryString_2 | null;
-  mapping: siteMappingInputObject_2 | null;
-  pathPrefix: sitePathPrefixQueryString_2 | null;
-  polyfill: sitePolyfillQueryBoolean_2 | null;
-  buildTime: siteBuildTimeQueryString_2 | null;
-  id: siteIdQueryString_2 | null;
-  internal: siteInternalInputObject_2 | null;
-}
-
-export interface DirectoryQueryArgs {
-  id: directoryIdQueryString_2 | null;
-  internal: directoryInternalInputObject_2 | null;
-  sourceInstanceName: directorySourceInstanceNameQueryString_2 | null;
-  absolutePath: directoryAbsolutePathQueryString_2 | null;
-  relativePath: directoryRelativePathQueryString_2 | null;
-  extension: directoryExtensionQueryString_2 | null;
-  size: directorySizeQueryInteger_2 | null;
-  prettySize: directoryPrettySizeQueryString_2 | null;
-  modifiedTime: directoryModifiedTimeQueryString_2 | null;
-  accessTime: directoryAccessTimeQueryString_2 | null;
-  changeTime: directoryChangeTimeQueryString_2 | null;
-  birthTime: directoryBirthTimeQueryString_2 | null;
-  root: directoryRootQueryString_2 | null;
-  dir: directoryDirQueryString_2 | null;
-  base: directoryBaseQueryString_2 | null;
-  ext: directoryExtQueryString_2 | null;
-  name: directoryNameQueryString_2 | null;
-  relativeDirectory: directoryRelativeDirectoryQueryString_2 | null;
-  dev: directoryDevQueryInteger_2 | null;
-  mode: directoryModeQueryInteger_2 | null;
-  nlink: directoryNlinkQueryInteger_2 | null;
-  uid: directoryUidQueryInteger_2 | null;
-  gid: directoryGidQueryInteger_2 | null;
-  rdev: directoryRdevQueryInteger_2 | null;
-  blksize: directoryBlksizeQueryInteger_2 | null;
-  ino: directoryInoQueryInteger_2 | null;
-  blocks: directoryBlocksQueryInteger_2 | null;
-  atimeMs: directoryAtimeMsQueryFloat_2 | null;
-  mtimeMs: directoryMtimeMsQueryFloat_2 | null;
-  ctimeMs: directoryCtimeMsQueryFloat_2 | null;
-  birthtimeMs: directoryBirthtimeMsQueryFloat_2 | null;
-  atime: directoryAtimeQueryString_2 | null;
-  mtime: directoryMtimeQueryString_2 | null;
-  ctime: directoryCtimeQueryString_2 | null;
-  birthtime: directoryBirthtimeQueryString_2 | null;
-}
-
-export interface FileQueryArgs {
-  id: fileIdQueryString_2 | null;
-  internal: fileInternalInputObject_2 | null;
-  sourceInstanceName: fileSourceInstanceNameQueryString_2 | null;
-  absolutePath: fileAbsolutePathQueryString_2 | null;
-  relativePath: fileRelativePathQueryString_2 | null;
-  extension: fileExtensionQueryString_2 | null;
-  size: fileSizeQueryInteger_2 | null;
-  prettySize: filePrettySizeQueryString_2 | null;
-  modifiedTime: fileModifiedTimeQueryString_2 | null;
-  accessTime: fileAccessTimeQueryString_2 | null;
-  changeTime: fileChangeTimeQueryString_2 | null;
-  birthTime: fileBirthTimeQueryString_2 | null;
-  root: fileRootQueryString_2 | null;
-  dir: fileDirQueryString_2 | null;
-  base: fileBaseQueryString_2 | null;
-  ext: fileExtQueryString_2 | null;
-  name: fileNameQueryString_2 | null;
-  relativeDirectory: fileRelativeDirectoryQueryString_2 | null;
-  dev: fileDevQueryInteger_2 | null;
-  mode: fileModeQueryInteger_2 | null;
-  nlink: fileNlinkQueryInteger_2 | null;
-  uid: fileUidQueryInteger_2 | null;
-  gid: fileGidQueryInteger_2 | null;
-  rdev: fileRdevQueryInteger_2 | null;
-  blksize: fileBlksizeQueryInteger_2 | null;
-  ino: fileInoQueryInteger_2 | null;
-  blocks: fileBlocksQueryInteger_2 | null;
-  atimeMs: fileAtimeMsQueryFloat_2 | null;
-  mtimeMs: fileMtimeMsQueryFloat_2 | null;
-  ctimeMs: fileCtimeMsQueryFloat_2 | null;
-  birthtimeMs: fileBirthtimeMsQueryFloat_2 | null;
-  atime: fileAtimeQueryString_2 | null;
-  mtime: fileMtimeQueryString_2 | null;
-  ctime: fileCtimeQueryString_2 | null;
-  birthtime: fileBirthtimeQueryString_2 | null;
-  publicURL: publicUrlQueryString_3 | null;
-}
-
-export interface ImageSharpQueryArgs {
-  id: imageSharpIdQueryString_2 | null;
-  internal: imageSharpInternalInputObject_2 | null;
-  fixed: fixedTypeName_3 | null;
-  resolutions: resolutionsTypeName_3 | null;
-  fluid: fluidTypeName_3 | null;
-  sizes: sizesTypeName_3 | null;
-  original: originalTypeName_3 | null;
-  resize: resizeTypeName_3 | null;
-}
-
-export interface MarkdownRemarkQueryArgs {
-  id: markdownRemarkIdQueryString_2 | null;
-  internal: markdownRemarkInternalInputObject_2 | null;
-  frontmatter: markdownRemarkFrontmatterInputObject_2 | null;
-  excerpt: excerptQueryString_3 | null;
-  rawMarkdownBody: markdownRemarkRawMarkdownBodyQueryString_2 | null;
-  fileAbsolutePath: markdownRemarkFileAbsolutePathQueryString_2 | null;
-  fields: markdownRemarkFieldsInputObject_2 | null;
-  html: htmlQueryString_3 | null;
-  headings: headingsQueryList_3 | null;
-  timeToRead: timeToReadQueryInt_3 | null;
-  tableOfContents: tableOfContentsQueryString_3 | null;
-  wordCount: wordCountTypeName_3 | null;
-}
-
-export interface AuthorJsonQueryArgs {
-  id: authorJsonIdQueryString_2 | null;
-  bio: authorJsonBioQueryString_2 | null;
-  avatar: authorJsonAvatarQueryString_2 | null;
-  twitter: authorJsonTwitterQueryString_2 | null;
-  github: authorJsonGithubQueryString_2 | null;
-  internal: authorJsonInternalInputObject_2 | null;
-}
-
-export interface sitePageConnectionSort {
-  fields: Array<SitePageConnectionSortByFieldsEnum>;
-  order: sitePageConnectionSortOrderValues | null;
-}
-
-export type SitePageConnectionSortByFieldsEnum = "jsonName" | "internalComponentName" | "path" | "component" | "componentChunkName" | "context___slug" | "context___tag" | "context___skip" | "pluginCreator___NODE" | "pluginCreatorId" | "componentPath" | "id" | "parent" | "internal___type" | "internal___contentDigest" | "internal___description" | "internal___owner";
-
-export type sitePageConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterSitePage {
-  jsonName: sitePageConnectionJsonNameQueryString | null;
-  internalComponentName: sitePageConnectionInternalComponentNameQueryString | null;
-  path: sitePageConnectionPathQueryString_2 | null;
-  component: sitePageConnectionComponentQueryString | null;
-  componentChunkName: sitePageConnectionComponentChunkNameQueryString | null;
-  context: sitePageConnectionContextInputObject | null;
-  pluginCreator: sitePageConnectionPluginCreatorInputObject | null;
-  pluginCreatorId: sitePageConnectionPluginCreatorIdQueryString_2 | null;
-  componentPath: sitePageConnectionComponentPathQueryString | null;
-  id: sitePageConnectionIdQueryString_2 | null;
-  internal: sitePageConnectionInternalInputObject_2 | null;
-}
-
-export interface sitePageConnectionJsonNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionInternalComponentNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionComponentQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionComponentChunkNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionContextInputObject {
-  slug: sitePageConnectionContextSlugQueryString | null;
-  tag: sitePageConnectionContextTagQueryString | null;
-  skip: sitePageConnectionContextSkipQueryInteger | null;
-}
-
-export interface sitePageConnectionContextSlugQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionContextTagQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionContextSkipQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePageConnectionPluginCreatorInputObject {
-  resolve: sitePageConnectionPluginCreatorResolveQueryString | null;
-  id: sitePageConnectionPluginCreatorIdQueryString | null;
-  name: sitePageConnectionPluginCreatorNameQueryString | null;
-  version: sitePageConnectionPluginCreatorVersionQueryString | null;
-  pluginOptions: sitePageConnectionPluginCreatorPluginOptionsInputObject | null;
-  nodeAPIs: sitePageConnectionPluginCreatorNodeApIsQueryList | null;
-  browserAPIs: sitePageConnectionPluginCreatorBrowserApIsQueryList | null;
-  ssrAPIs: sitePageConnectionPluginCreatorSsrApIsQueryList | null;
-  pluginFilepath: sitePageConnectionPluginCreatorPluginFilepathQueryString | null;
-  packageJson: sitePageConnectionPluginCreatorPackageJsonInputObject | null;
-  parent: sitePageConnectionPluginCreatorParentQueryString | null;
-  internal: sitePageConnectionPluginCreatorInternalInputObject | null;
-}
-
-export interface sitePageConnectionPluginCreatorResolveQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsInputObject {
-  plugins: sitePageConnectionPluginCreatorPluginOptionsPluginsQueryList | null;
-  name: sitePageConnectionPluginCreatorPluginOptionsNameQueryString | null;
-  path: sitePageConnectionPluginCreatorPluginOptionsPathQueryString | null;
-  trackingId: sitePageConnectionPluginCreatorPluginOptionsTrackingIdQueryString | null;
-  head: sitePageConnectionPluginCreatorPluginOptionsHeadQueryBoolean | null;
-  anonymize: sitePageConnectionPluginCreatorPluginOptionsAnonymizeQueryBoolean | null;
-  respectDNT: sitePageConnectionPluginCreatorPluginOptionsRespectDntQueryBoolean | null;
-  maxWidth: sitePageConnectionPluginCreatorPluginOptionsMaxWidthQueryInteger | null;
-  backgroundColor: sitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString | null;
-  short_name: sitePageConnectionPluginCreatorPluginOptionsShortNameQueryString | null;
-  start_url: sitePageConnectionPluginCreatorPluginOptionsStartUrlQueryString | null;
-  background_color: sitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString_2 | null;
-  theme_color: sitePageConnectionPluginCreatorPluginOptionsThemeColorQueryString | null;
-  display: sitePageConnectionPluginCreatorPluginOptionsDisplayQueryString | null;
-  pathCheck: sitePageConnectionPluginCreatorPluginOptionsPathCheckQueryBoolean | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsQueryList {
-  elemMatch: sitePageConnectionPluginCreatorPluginOptionsPluginsInputObject | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsInputObject {
-  resolve: sitePageConnectionPluginCreatorPluginOptionsPluginsResolveQueryString | null;
-  id: sitePageConnectionPluginCreatorPluginOptionsPluginsIdQueryString | null;
-  name: sitePageConnectionPluginCreatorPluginOptionsPluginsNameQueryString | null;
-  version: sitePageConnectionPluginCreatorPluginOptionsPluginsVersionQueryString | null;
-  pluginOptions: sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsInputObject | null;
-  browserAPIs: sitePageConnectionPluginCreatorPluginOptionsPluginsBrowserApIsQueryList | null;
-  ssrAPIs: sitePageConnectionPluginCreatorPluginOptionsPluginsSsrApIsQueryList | null;
-  pluginFilepath: sitePageConnectionPluginCreatorPluginOptionsPluginsPluginFilepathQueryString | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsResolveQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsInputObject {
-  maxWidth: sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger | null;
-  backgroundColor: sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsBrowserApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsSsrApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsPluginFilepathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsTrackingIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsHeadQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsAnonymizeQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsRespectDntQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsMaxWidthQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsShortNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsStartUrlQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsThemeColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsDisplayQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPathCheckQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePageConnectionPluginCreatorNodeApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorBrowserApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorSsrApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginFilepathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonInputObject {
-  name: sitePageConnectionPluginCreatorPackageJsonNameQueryString | null;
-  description: sitePageConnectionPluginCreatorPackageJsonDescriptionQueryString | null;
-  version: sitePageConnectionPluginCreatorPackageJsonVersionQueryString | null;
-  main: sitePageConnectionPluginCreatorPackageJsonMainQueryString | null;
-  license: sitePageConnectionPluginCreatorPackageJsonLicenseQueryString | null;
-  dependencies: sitePageConnectionPluginCreatorPackageJsonDependenciesQueryList | null;
-  devDependencies: sitePageConnectionPluginCreatorPackageJsonDevDependenciesQueryList | null;
-  peerDependencies: sitePageConnectionPluginCreatorPackageJsonPeerDependenciesQueryList | null;
-  keywords: sitePageConnectionPluginCreatorPackageJsonKeywordsQueryList | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDescriptionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonMainQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonLicenseQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDependenciesQueryList {
-  elemMatch: sitePageConnectionPluginCreatorPackageJsonDependenciesInputObject | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDependenciesInputObject {
-  name: sitePageConnectionPluginCreatorPackageJsonDependenciesNameQueryString | null;
-  version: sitePageConnectionPluginCreatorPackageJsonDependenciesVersionQueryString | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDevDependenciesQueryList {
-  elemMatch: sitePageConnectionPluginCreatorPackageJsonDevDependenciesInputObject | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDevDependenciesInputObject {
-  name: sitePageConnectionPluginCreatorPackageJsonDevDependenciesNameQueryString | null;
-  version: sitePageConnectionPluginCreatorPackageJsonDevDependenciesVersionQueryString | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDevDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDevDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonPeerDependenciesQueryList {
-  elemMatch: sitePageConnectionPluginCreatorPackageJsonPeerDependenciesInputObject | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonPeerDependenciesInputObject {
-  name: sitePageConnectionPluginCreatorPackageJsonPeerDependenciesNameQueryString | null;
-  version: sitePageConnectionPluginCreatorPackageJsonPeerDependenciesVersionQueryString | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonPeerDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonPeerDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonKeywordsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorParentQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorInternalInputObject {
-  contentDigest: sitePageConnectionPluginCreatorInternalContentDigestQueryString | null;
-  type: sitePageConnectionPluginCreatorInternalTypeQueryString | null;
-  owner: sitePageConnectionPluginCreatorInternalOwnerQueryString | null;
-}
-
-export interface sitePageConnectionPluginCreatorInternalContentDigestQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorInternalTypeQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorInternalOwnerQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionComponentPathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionInternalInputObject_2 {
-  type: sitePageConnectionInternalTypeQueryString_2 | null;
-  contentDigest: sitePageConnectionInternalContentDigestQueryString_2 | null;
-  description: sitePageConnectionInternalDescriptionQueryString | null;
-  owner: sitePageConnectionInternalOwnerQueryString_2 | null;
-}
-
-export interface sitePageConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionInternalDescriptionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface SitePageConnection {
+// tslint:disable
+export type Maybe<T> = T | null;
+/** All built-in and custom scalars, mapped to their actual values */
+export type Scalars = {
+  ID: string;
+  String: string;
+  Boolean: boolean;
+  Int: number;
+  Float: number;
+  /** A date string, such as 2007-12-03, compliant with the ISO 8601 standard for
+   * representation of dates and times using the Gregorian calendar.
+   */
+  Date: any;
+  /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
+  JSON: any;
+};
+
+export type AuthorJson = Node & {
+  __typename?: "AuthorJson";
+  id: Scalars["ID"];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  bio?: Maybe<Scalars["String"]>;
+  avatar?: Maybe<File>;
+  twitter?: Maybe<Scalars["String"]>;
+  github?: Maybe<Scalars["String"]>;
+};
+
+export type AuthorJsonConnection = {
+  __typename?: "AuthorJsonConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<AuthorJsonEdge>;
+  nodes: Array<AuthorJson>;
   pageInfo: PageInfo;
-  edges: Array<SitePageEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<sitePageGroupConnectionConnection> | null;
+  distinct: Array<Scalars["String"]>;
+  group: Array<AuthorJsonGroupConnection>;
+};
+
+export type AuthorJsonConnectiondistinctArgs = {
+  field: AuthorJsonFieldsEnum;
+};
+
+export type AuthorJsonConnectiongroupArgs = {
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  field: AuthorJsonFieldsEnum;
+};
+
+export type AuthorJsonEdge = {
+  __typename?: "AuthorJsonEdge";
+  next?: Maybe<AuthorJson>;
+  node: AuthorJson;
+  previous?: Maybe<AuthorJson>;
+};
+
+export enum AuthorJsonFieldsEnum {
+  id = "id",
+  parent___id = "parent___id",
+  parent___parent___id = "parent___parent___id",
+  parent___parent___parent___id = "parent___parent___parent___id",
+  parent___parent___parent___children = "parent___parent___parent___children",
+  parent___parent___children = "parent___parent___children",
+  parent___parent___children___id = "parent___parent___children___id",
+  parent___parent___children___children = "parent___parent___children___children",
+  parent___parent___internal___content = "parent___parent___internal___content",
+  parent___parent___internal___contentDigest = "parent___parent___internal___contentDigest",
+  parent___parent___internal___description = "parent___parent___internal___description",
+  parent___parent___internal___fieldOwners = "parent___parent___internal___fieldOwners",
+  parent___parent___internal___ignoreType = "parent___parent___internal___ignoreType",
+  parent___parent___internal___mediaType = "parent___parent___internal___mediaType",
+  parent___parent___internal___owner = "parent___parent___internal___owner",
+  parent___parent___internal___type = "parent___parent___internal___type",
+  parent___children = "parent___children",
+  parent___children___id = "parent___children___id",
+  parent___children___parent___id = "parent___children___parent___id",
+  parent___children___parent___children = "parent___children___parent___children",
+  parent___children___children = "parent___children___children",
+  parent___children___children___id = "parent___children___children___id",
+  parent___children___children___children = "parent___children___children___children",
+  parent___children___internal___content = "parent___children___internal___content",
+  parent___children___internal___contentDigest = "parent___children___internal___contentDigest",
+  parent___children___internal___description = "parent___children___internal___description",
+  parent___children___internal___fieldOwners = "parent___children___internal___fieldOwners",
+  parent___children___internal___ignoreType = "parent___children___internal___ignoreType",
+  parent___children___internal___mediaType = "parent___children___internal___mediaType",
+  parent___children___internal___owner = "parent___children___internal___owner",
+  parent___children___internal___type = "parent___children___internal___type",
+  parent___internal___content = "parent___internal___content",
+  parent___internal___contentDigest = "parent___internal___contentDigest",
+  parent___internal___description = "parent___internal___description",
+  parent___internal___fieldOwners = "parent___internal___fieldOwners",
+  parent___internal___ignoreType = "parent___internal___ignoreType",
+  parent___internal___mediaType = "parent___internal___mediaType",
+  parent___internal___owner = "parent___internal___owner",
+  parent___internal___type = "parent___internal___type",
+  children = "children",
+  children___id = "children___id",
+  children___parent___id = "children___parent___id",
+  children___parent___parent___id = "children___parent___parent___id",
+  children___parent___parent___children = "children___parent___parent___children",
+  children___parent___children = "children___parent___children",
+  children___parent___children___id = "children___parent___children___id",
+  children___parent___children___children = "children___parent___children___children",
+  children___parent___internal___content = "children___parent___internal___content",
+  children___parent___internal___contentDigest = "children___parent___internal___contentDigest",
+  children___parent___internal___description = "children___parent___internal___description",
+  children___parent___internal___fieldOwners = "children___parent___internal___fieldOwners",
+  children___parent___internal___ignoreType = "children___parent___internal___ignoreType",
+  children___parent___internal___mediaType = "children___parent___internal___mediaType",
+  children___parent___internal___owner = "children___parent___internal___owner",
+  children___parent___internal___type = "children___parent___internal___type",
+  children___children = "children___children",
+  children___children___id = "children___children___id",
+  children___children___parent___id = "children___children___parent___id",
+  children___children___parent___children = "children___children___parent___children",
+  children___children___children = "children___children___children",
+  children___children___children___id = "children___children___children___id",
+  children___children___children___children = "children___children___children___children",
+  children___children___internal___content = "children___children___internal___content",
+  children___children___internal___contentDigest = "children___children___internal___contentDigest",
+  children___children___internal___description = "children___children___internal___description",
+  children___children___internal___fieldOwners = "children___children___internal___fieldOwners",
+  children___children___internal___ignoreType = "children___children___internal___ignoreType",
+  children___children___internal___mediaType = "children___children___internal___mediaType",
+  children___children___internal___owner = "children___children___internal___owner",
+  children___children___internal___type = "children___children___internal___type",
+  children___internal___content = "children___internal___content",
+  children___internal___contentDigest = "children___internal___contentDigest",
+  children___internal___description = "children___internal___description",
+  children___internal___fieldOwners = "children___internal___fieldOwners",
+  children___internal___ignoreType = "children___internal___ignoreType",
+  children___internal___mediaType = "children___internal___mediaType",
+  children___internal___owner = "children___internal___owner",
+  children___internal___type = "children___internal___type",
+  internal___content = "internal___content",
+  internal___contentDigest = "internal___contentDigest",
+  internal___description = "internal___description",
+  internal___fieldOwners = "internal___fieldOwners",
+  internal___ignoreType = "internal___ignoreType",
+  internal___mediaType = "internal___mediaType",
+  internal___owner = "internal___owner",
+  internal___type = "internal___type",
+  bio = "bio",
+  avatar___id = "avatar___id",
+  avatar___parent___id = "avatar___parent___id",
+  avatar___parent___parent___id = "avatar___parent___parent___id",
+  avatar___parent___parent___children = "avatar___parent___parent___children",
+  avatar___parent___children = "avatar___parent___children",
+  avatar___parent___children___id = "avatar___parent___children___id",
+  avatar___parent___children___children = "avatar___parent___children___children",
+  avatar___parent___internal___content = "avatar___parent___internal___content",
+  avatar___parent___internal___contentDigest = "avatar___parent___internal___contentDigest",
+  avatar___parent___internal___description = "avatar___parent___internal___description",
+  avatar___parent___internal___fieldOwners = "avatar___parent___internal___fieldOwners",
+  avatar___parent___internal___ignoreType = "avatar___parent___internal___ignoreType",
+  avatar___parent___internal___mediaType = "avatar___parent___internal___mediaType",
+  avatar___parent___internal___owner = "avatar___parent___internal___owner",
+  avatar___parent___internal___type = "avatar___parent___internal___type",
+  avatar___children = "avatar___children",
+  avatar___children___id = "avatar___children___id",
+  avatar___children___parent___id = "avatar___children___parent___id",
+  avatar___children___parent___children = "avatar___children___parent___children",
+  avatar___children___children = "avatar___children___children",
+  avatar___children___children___id = "avatar___children___children___id",
+  avatar___children___children___children = "avatar___children___children___children",
+  avatar___children___internal___content = "avatar___children___internal___content",
+  avatar___children___internal___contentDigest = "avatar___children___internal___contentDigest",
+  avatar___children___internal___description = "avatar___children___internal___description",
+  avatar___children___internal___fieldOwners = "avatar___children___internal___fieldOwners",
+  avatar___children___internal___ignoreType = "avatar___children___internal___ignoreType",
+  avatar___children___internal___mediaType = "avatar___children___internal___mediaType",
+  avatar___children___internal___owner = "avatar___children___internal___owner",
+  avatar___children___internal___type = "avatar___children___internal___type",
+  avatar___internal___content = "avatar___internal___content",
+  avatar___internal___contentDigest = "avatar___internal___contentDigest",
+  avatar___internal___description = "avatar___internal___description",
+  avatar___internal___fieldOwners = "avatar___internal___fieldOwners",
+  avatar___internal___ignoreType = "avatar___internal___ignoreType",
+  avatar___internal___mediaType = "avatar___internal___mediaType",
+  avatar___internal___owner = "avatar___internal___owner",
+  avatar___internal___type = "avatar___internal___type",
+  avatar___sourceInstanceName = "avatar___sourceInstanceName",
+  avatar___absolutePath = "avatar___absolutePath",
+  avatar___relativePath = "avatar___relativePath",
+  avatar___extension = "avatar___extension",
+  avatar___size = "avatar___size",
+  avatar___prettySize = "avatar___prettySize",
+  avatar___modifiedTime = "avatar___modifiedTime",
+  avatar___accessTime = "avatar___accessTime",
+  avatar___changeTime = "avatar___changeTime",
+  avatar___birthTime = "avatar___birthTime",
+  avatar___root = "avatar___root",
+  avatar___dir = "avatar___dir",
+  avatar___base = "avatar___base",
+  avatar___ext = "avatar___ext",
+  avatar___name = "avatar___name",
+  avatar___relativeDirectory = "avatar___relativeDirectory",
+  avatar___dev = "avatar___dev",
+  avatar___mode = "avatar___mode",
+  avatar___nlink = "avatar___nlink",
+  avatar___uid = "avatar___uid",
+  avatar___gid = "avatar___gid",
+  avatar___rdev = "avatar___rdev",
+  avatar___ino = "avatar___ino",
+  avatar___atimeMs = "avatar___atimeMs",
+  avatar___mtimeMs = "avatar___mtimeMs",
+  avatar___ctimeMs = "avatar___ctimeMs",
+  avatar___birthtimeMs = "avatar___birthtimeMs",
+  avatar___atime = "avatar___atime",
+  avatar___mtime = "avatar___mtime",
+  avatar___ctime = "avatar___ctime",
+  avatar___birthtime = "avatar___birthtime",
+  avatar___publicURL = "avatar___publicURL",
+  twitter = "twitter",
+  github = "github"
 }
 
-export interface DistinctSitePageConnectionArgs {
-  field: sitePageDistinctEnum | null;
-}
+export type AuthorJsonFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  bio?: Maybe<StringQueryOperatorInput>;
+  avatar?: Maybe<FileFilterInput>;
+  twitter?: Maybe<StringQueryOperatorInput>;
+  github?: Maybe<StringQueryOperatorInput>;
+};
 
-export interface GroupSitePageConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: sitePageGroupEnum | null;
-}
-
-export interface PageInfo {
-  hasNextPage: boolean;
-}
-
-export interface SitePageEdge {
-  node: SitePage | null;
-  next: SitePage | null;
-  previous: SitePage | null;
-}
-
-export interface SitePage extends Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  jsonName: string | null;
-  internalComponentName: string | null;
-  path: string | null;
-  component: string | null;
-  componentChunkName: string | null;
-  context: context | null;
-  pluginCreator: SitePlugin | null;
-  pluginCreatorId: string | null;
-  componentPath: string | null;
-  internal: internal_9 | null;
-}
-
-export interface Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-}
-
-export interface context {
-  slug: string | null;
-  tag: string | null;
-  skip: number | null;
-}
-
-export interface SitePlugin extends Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  resolve: string | null;
-  name: string | null;
-  version: string | null;
-  pluginOptions: pluginOptions_3 | null;
-  nodeAPIs: Array<string> | null;
-  browserAPIs: Array<string> | null;
-  ssrAPIs: Array<string> | null;
-  pluginFilepath: string | null;
-  packageJson: packageJson_2 | null;
-  internal: internal_10 | null;
-}
-
-export interface pluginOptions_3 {
-  plugins: Array<plugins_2> | null;
-  name: string | null;
-  path: string | null;
-  trackingId: string | null;
-  head: boolean | null;
-  anonymize: boolean | null;
-  respectDNT: boolean | null;
-  maxWidth: number | null;
-  backgroundColor: string | null;
-  short_name: string | null;
-  start_url: string | null;
-  background_color: string | null;
-  theme_color: string | null;
-  display: string | null;
-  pathCheck: boolean | null;
-}
-
-export interface plugins_2 {
-  resolve: string | null;
-  id: string | null;
-  name: string | null;
-  version: string | null;
-  pluginOptions: pluginOptions_4 | null;
-  browserAPIs: Array<string> | null;
-  ssrAPIs: Array<string> | null;
-  pluginFilepath: string | null;
-}
-
-export interface pluginOptions_4 {
-  maxWidth: number | null;
-  backgroundColor: string | null;
-}
-
-export interface packageJson_2 {
-  name: string | null;
-  description: string | null;
-  version: string | null;
-  main: string | null;
-  license: string | null;
-  dependencies: Array<dependencies_2> | null;
-  devDependencies: Array<devDependencies_2> | null;
-  peerDependencies: Array<peerDependencies_2> | null;
-  keywords: Array<string> | null;
-}
-
-export interface dependencies_2 {
-  name: string | null;
-  version: string | null;
-}
-
-export interface devDependencies_2 {
-  name: string | null;
-  version: string | null;
-}
-
-export interface peerDependencies_2 {
-  name: string | null;
-  version: string | null;
-}
-
-export interface internal_10 {
-  contentDigest: string | null;
-  type: string | null;
-  owner: string | null;
-}
-
-export interface internal_9 {
-  type: string | null;
-  contentDigest: string | null;
-  description: string | null;
-  owner: string | null;
-}
-
-export type sitePageDistinctEnum = "jsonName" | "internalComponentName" | "path" | "component" | "componentChunkName" | "context___slug" | "context___tag" | "context___skip" | "pluginCreator___NODE" | "pluginCreatorId" | "componentPath" | "id" | "parent" | "internal___type" | "internal___contentDigest" | "internal___description" | "internal___owner";
-
-export type sitePageGroupEnum = "jsonName" | "internalComponentName" | "path" | "component" | "componentChunkName" | "context___slug" | "context___tag" | "context___skip" | "pluginCreator___NODE" | "pluginCreatorId" | "componentPath" | "id" | "parent" | "internal___type" | "internal___contentDigest" | "internal___description" | "internal___owner";
-
-export interface sitePageGroupConnectionConnection {
+export type AuthorJsonGroupConnection = {
+  __typename?: "AuthorJsonGroupConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<AuthorJsonEdge>;
+  nodes: Array<AuthorJson>;
   pageInfo: PageInfo;
-  edges: Array<sitePageGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
-}
-
-export interface sitePageGroupConnectionEdge {
-  node: SitePage | null;
-  next: SitePage | null;
-  previous: SitePage | null;
-}
-
-export interface sitePluginConnectionSort {
-  fields: Array<SitePluginConnectionSortByFieldsEnum>;
-  order: sitePluginConnectionSortOrderValues | null;
-}
-
-export type SitePluginConnectionSortByFieldsEnum = "resolve" | "id" | "name" | "version" | "pluginOptions___plugins" | "pluginOptions___name" | "pluginOptions___path" | "pluginOptions___trackingId" | "pluginOptions___head" | "pluginOptions___anonymize" | "pluginOptions___respectDNT" | "pluginOptions___maxWidth" | "pluginOptions___backgroundColor" | "pluginOptions___short_name" | "pluginOptions___start_url" | "pluginOptions___background_color" | "pluginOptions___theme_color" | "pluginOptions___display" | "pluginOptions___pathCheck" | "nodeAPIs" | "browserAPIs" | "ssrAPIs" | "pluginFilepath" | "packageJson___name" | "packageJson___description" | "packageJson___version" | "packageJson___main" | "packageJson___author" | "packageJson___license" | "packageJson___dependencies" | "packageJson___devDependencies" | "packageJson___peerDependencies" | "packageJson___keywords" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export type sitePluginConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterSitePlugin {
-  resolve: sitePluginConnectionResolveQueryString_2 | null;
-  id: sitePluginConnectionIdQueryString_2 | null;
-  name: sitePluginConnectionNameQueryString_2 | null;
-  version: sitePluginConnectionVersionQueryString_2 | null;
-  pluginOptions: sitePluginConnectionPluginOptionsInputObject_2 | null;
-  nodeAPIs: sitePluginConnectionNodeApIsQueryList_2 | null;
-  browserAPIs: sitePluginConnectionBrowserApIsQueryList_2 | null;
-  ssrAPIs: sitePluginConnectionSsrApIsQueryList_2 | null;
-  pluginFilepath: sitePluginConnectionPluginFilepathQueryString_2 | null;
-  packageJson: sitePluginConnectionPackageJsonInputObject_2 | null;
-  internal: sitePluginConnectionInternalInputObject_2 | null;
-}
-
-export interface sitePluginConnectionResolveQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsInputObject_2 {
-  plugins: sitePluginConnectionPluginOptionsPluginsQueryList_2 | null;
-  name: sitePluginConnectionPluginOptionsNameQueryString_2 | null;
-  path: sitePluginConnectionPluginOptionsPathQueryString_2 | null;
-  trackingId: sitePluginConnectionPluginOptionsTrackingIdQueryString_2 | null;
-  head: sitePluginConnectionPluginOptionsHeadQueryBoolean_2 | null;
-  anonymize: sitePluginConnectionPluginOptionsAnonymizeQueryBoolean_2 | null;
-  respectDNT: sitePluginConnectionPluginOptionsRespectDntQueryBoolean_2 | null;
-  maxWidth: sitePluginConnectionPluginOptionsMaxWidthQueryInteger_2 | null;
-  backgroundColor: sitePluginConnectionPluginOptionsBackgroundColorQueryString_3 | null;
-  short_name: sitePluginConnectionPluginOptionsShortNameQueryString_2 | null;
-  start_url: sitePluginConnectionPluginOptionsStartUrlQueryString_2 | null;
-  background_color: sitePluginConnectionPluginOptionsBackgroundColorQueryString_4 | null;
-  theme_color: sitePluginConnectionPluginOptionsThemeColorQueryString_2 | null;
-  display: sitePluginConnectionPluginOptionsDisplayQueryString_2 | null;
-  pathCheck: sitePluginConnectionPluginOptionsPathCheckQueryBoolean_2 | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsQueryList_2 {
-  elemMatch: sitePluginConnectionPluginOptionsPluginsInputObject_2 | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsInputObject_2 {
-  resolve: sitePluginConnectionPluginOptionsPluginsResolveQueryString_2 | null;
-  id: sitePluginConnectionPluginOptionsPluginsIdQueryString_2 | null;
-  name: sitePluginConnectionPluginOptionsPluginsNameQueryString_2 | null;
-  version: sitePluginConnectionPluginOptionsPluginsVersionQueryString_2 | null;
-  pluginOptions: sitePluginConnectionPluginOptionsPluginsPluginOptionsInputObject_2 | null;
-  browserAPIs: sitePluginConnectionPluginOptionsPluginsBrowserApIsQueryList_2 | null;
-  ssrAPIs: sitePluginConnectionPluginOptionsPluginsSsrApIsQueryList_2 | null;
-  pluginFilepath: sitePluginConnectionPluginOptionsPluginsPluginFilepathQueryString_2 | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsResolveQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsPluginOptionsInputObject_2 {
-  maxWidth: sitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 | null;
-  backgroundColor: sitePluginConnectionPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsBrowserApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsSsrApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsPluginFilepathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsTrackingIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsHeadQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsAnonymizeQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsRespectDntQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsMaxWidthQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsBackgroundColorQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsShortNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsStartUrlQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsBackgroundColorQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsThemeColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsDisplayQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPathCheckQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginConnectionNodeApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionBrowserApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionSsrApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginFilepathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonInputObject_2 {
-  name: sitePluginConnectionPackageJsonNameQueryString_2 | null;
-  description: sitePluginConnectionPackageJsonDescriptionQueryString_2 | null;
-  version: sitePluginConnectionPackageJsonVersionQueryString_2 | null;
-  main: sitePluginConnectionPackageJsonMainQueryString_2 | null;
-  license: sitePluginConnectionPackageJsonLicenseQueryString_2 | null;
-  dependencies: sitePluginConnectionPackageJsonDependenciesQueryList_2 | null;
-  devDependencies: sitePluginConnectionPackageJsonDevDependenciesQueryList_2 | null;
-  peerDependencies: sitePluginConnectionPackageJsonPeerDependenciesQueryList_2 | null;
-  keywords: sitePluginConnectionPackageJsonKeywordsQueryList_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonMainQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonLicenseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonDependenciesQueryList_2 {
-  elemMatch: sitePluginConnectionPackageJsonDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonDependenciesInputObject_2 {
-  name: sitePluginConnectionPackageJsonDependenciesNameQueryString_2 | null;
-  version: sitePluginConnectionPackageJsonDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonDevDependenciesQueryList_2 {
-  elemMatch: sitePluginConnectionPackageJsonDevDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonDevDependenciesInputObject_2 {
-  name: sitePluginConnectionPackageJsonDevDependenciesNameQueryString_2 | null;
-  version: sitePluginConnectionPackageJsonDevDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonDevDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonDevDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonPeerDependenciesQueryList_2 {
-  elemMatch: sitePluginConnectionPackageJsonPeerDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonPeerDependenciesInputObject_2 {
-  name: sitePluginConnectionPackageJsonPeerDependenciesNameQueryString_2 | null;
-  version: sitePluginConnectionPackageJsonPeerDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonPeerDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonPeerDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonKeywordsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionInternalInputObject_2 {
-  contentDigest: sitePluginConnectionInternalContentDigestQueryString_2 | null;
-  type: sitePluginConnectionInternalTypeQueryString_2 | null;
-  owner: sitePluginConnectionInternalOwnerQueryString_2 | null;
-}
-
-export interface sitePluginConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface SitePluginConnection {
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+};
+
+export type AuthorJsonSortInput = {
+  fields?: Maybe<Array<Maybe<AuthorJsonFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type BooleanQueryOperatorInput = {
+  eq?: Maybe<Scalars["Boolean"]>;
+  ne?: Maybe<Scalars["Boolean"]>;
+  in?: Maybe<Array<Maybe<Scalars["Boolean"]>>>;
+  nin?: Maybe<Array<Maybe<Scalars["Boolean"]>>>;
+};
+
+export type DateQueryOperatorInput = {
+  eq?: Maybe<Scalars["Date"]>;
+  ne?: Maybe<Scalars["Date"]>;
+  gt?: Maybe<Scalars["Date"]>;
+  gte?: Maybe<Scalars["Date"]>;
+  lt?: Maybe<Scalars["Date"]>;
+  lte?: Maybe<Scalars["Date"]>;
+  in?: Maybe<Array<Maybe<Scalars["Date"]>>>;
+  nin?: Maybe<Array<Maybe<Scalars["Date"]>>>;
+};
+
+export type Directory = Node & {
+  __typename?: "Directory";
+  id: Scalars["ID"];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  sourceInstanceName?: Maybe<Scalars["String"]>;
+  absolutePath?: Maybe<Scalars["String"]>;
+  relativePath?: Maybe<Scalars["String"]>;
+  extension?: Maybe<Scalars["String"]>;
+  size?: Maybe<Scalars["Int"]>;
+  prettySize?: Maybe<Scalars["String"]>;
+  modifiedTime?: Maybe<Scalars["Date"]>;
+  accessTime?: Maybe<Scalars["Date"]>;
+  changeTime?: Maybe<Scalars["Date"]>;
+  birthTime?: Maybe<Scalars["Date"]>;
+  root?: Maybe<Scalars["String"]>;
+  dir?: Maybe<Scalars["String"]>;
+  base?: Maybe<Scalars["String"]>;
+  ext?: Maybe<Scalars["String"]>;
+  name?: Maybe<Scalars["String"]>;
+  relativeDirectory?: Maybe<Scalars["String"]>;
+  dev?: Maybe<Scalars["Float"]>;
+  mode?: Maybe<Scalars["Int"]>;
+  nlink?: Maybe<Scalars["Int"]>;
+  uid?: Maybe<Scalars["Int"]>;
+  gid?: Maybe<Scalars["Int"]>;
+  rdev?: Maybe<Scalars["Int"]>;
+  ino?: Maybe<Scalars["Float"]>;
+  atimeMs?: Maybe<Scalars["Float"]>;
+  mtimeMs?: Maybe<Scalars["Float"]>;
+  ctimeMs?: Maybe<Scalars["Float"]>;
+  birthtimeMs?: Maybe<Scalars["Float"]>;
+  atime?: Maybe<Scalars["Date"]>;
+  mtime?: Maybe<Scalars["Date"]>;
+  ctime?: Maybe<Scalars["Date"]>;
+  birthtime?: Maybe<Scalars["Date"]>;
+};
+
+export type DirectorymodifiedTimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
+
+export type DirectoryaccessTimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
+
+export type DirectorychangeTimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
+
+export type DirectorybirthTimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
+
+export type DirectoryatimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
+
+export type DirectorymtimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
+
+export type DirectoryctimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
+
+export type DirectorybirthtimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
+
+export type DirectoryConnection = {
+  __typename?: "DirectoryConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<DirectoryEdge>;
+  nodes: Array<Directory>;
   pageInfo: PageInfo;
-  edges: Array<SitePluginEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<sitePluginGroupConnectionConnection> | null;
+  distinct: Array<Scalars["String"]>;
+  group: Array<DirectoryGroupConnection>;
+};
+
+export type DirectoryConnectiondistinctArgs = {
+  field: DirectoryFieldsEnum;
+};
+
+export type DirectoryConnectiongroupArgs = {
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  field: DirectoryFieldsEnum;
+};
+
+export type DirectoryEdge = {
+  __typename?: "DirectoryEdge";
+  next?: Maybe<Directory>;
+  node: Directory;
+  previous?: Maybe<Directory>;
+};
+
+export enum DirectoryFieldsEnum {
+  id = "id",
+  parent___id = "parent___id",
+  parent___parent___id = "parent___parent___id",
+  parent___parent___parent___id = "parent___parent___parent___id",
+  parent___parent___parent___children = "parent___parent___parent___children",
+  parent___parent___children = "parent___parent___children",
+  parent___parent___children___id = "parent___parent___children___id",
+  parent___parent___children___children = "parent___parent___children___children",
+  parent___parent___internal___content = "parent___parent___internal___content",
+  parent___parent___internal___contentDigest = "parent___parent___internal___contentDigest",
+  parent___parent___internal___description = "parent___parent___internal___description",
+  parent___parent___internal___fieldOwners = "parent___parent___internal___fieldOwners",
+  parent___parent___internal___ignoreType = "parent___parent___internal___ignoreType",
+  parent___parent___internal___mediaType = "parent___parent___internal___mediaType",
+  parent___parent___internal___owner = "parent___parent___internal___owner",
+  parent___parent___internal___type = "parent___parent___internal___type",
+  parent___children = "parent___children",
+  parent___children___id = "parent___children___id",
+  parent___children___parent___id = "parent___children___parent___id",
+  parent___children___parent___children = "parent___children___parent___children",
+  parent___children___children = "parent___children___children",
+  parent___children___children___id = "parent___children___children___id",
+  parent___children___children___children = "parent___children___children___children",
+  parent___children___internal___content = "parent___children___internal___content",
+  parent___children___internal___contentDigest = "parent___children___internal___contentDigest",
+  parent___children___internal___description = "parent___children___internal___description",
+  parent___children___internal___fieldOwners = "parent___children___internal___fieldOwners",
+  parent___children___internal___ignoreType = "parent___children___internal___ignoreType",
+  parent___children___internal___mediaType = "parent___children___internal___mediaType",
+  parent___children___internal___owner = "parent___children___internal___owner",
+  parent___children___internal___type = "parent___children___internal___type",
+  parent___internal___content = "parent___internal___content",
+  parent___internal___contentDigest = "parent___internal___contentDigest",
+  parent___internal___description = "parent___internal___description",
+  parent___internal___fieldOwners = "parent___internal___fieldOwners",
+  parent___internal___ignoreType = "parent___internal___ignoreType",
+  parent___internal___mediaType = "parent___internal___mediaType",
+  parent___internal___owner = "parent___internal___owner",
+  parent___internal___type = "parent___internal___type",
+  children = "children",
+  children___id = "children___id",
+  children___parent___id = "children___parent___id",
+  children___parent___parent___id = "children___parent___parent___id",
+  children___parent___parent___children = "children___parent___parent___children",
+  children___parent___children = "children___parent___children",
+  children___parent___children___id = "children___parent___children___id",
+  children___parent___children___children = "children___parent___children___children",
+  children___parent___internal___content = "children___parent___internal___content",
+  children___parent___internal___contentDigest = "children___parent___internal___contentDigest",
+  children___parent___internal___description = "children___parent___internal___description",
+  children___parent___internal___fieldOwners = "children___parent___internal___fieldOwners",
+  children___parent___internal___ignoreType = "children___parent___internal___ignoreType",
+  children___parent___internal___mediaType = "children___parent___internal___mediaType",
+  children___parent___internal___owner = "children___parent___internal___owner",
+  children___parent___internal___type = "children___parent___internal___type",
+  children___children = "children___children",
+  children___children___id = "children___children___id",
+  children___children___parent___id = "children___children___parent___id",
+  children___children___parent___children = "children___children___parent___children",
+  children___children___children = "children___children___children",
+  children___children___children___id = "children___children___children___id",
+  children___children___children___children = "children___children___children___children",
+  children___children___internal___content = "children___children___internal___content",
+  children___children___internal___contentDigest = "children___children___internal___contentDigest",
+  children___children___internal___description = "children___children___internal___description",
+  children___children___internal___fieldOwners = "children___children___internal___fieldOwners",
+  children___children___internal___ignoreType = "children___children___internal___ignoreType",
+  children___children___internal___mediaType = "children___children___internal___mediaType",
+  children___children___internal___owner = "children___children___internal___owner",
+  children___children___internal___type = "children___children___internal___type",
+  children___internal___content = "children___internal___content",
+  children___internal___contentDigest = "children___internal___contentDigest",
+  children___internal___description = "children___internal___description",
+  children___internal___fieldOwners = "children___internal___fieldOwners",
+  children___internal___ignoreType = "children___internal___ignoreType",
+  children___internal___mediaType = "children___internal___mediaType",
+  children___internal___owner = "children___internal___owner",
+  children___internal___type = "children___internal___type",
+  internal___content = "internal___content",
+  internal___contentDigest = "internal___contentDigest",
+  internal___description = "internal___description",
+  internal___fieldOwners = "internal___fieldOwners",
+  internal___ignoreType = "internal___ignoreType",
+  internal___mediaType = "internal___mediaType",
+  internal___owner = "internal___owner",
+  internal___type = "internal___type",
+  sourceInstanceName = "sourceInstanceName",
+  absolutePath = "absolutePath",
+  relativePath = "relativePath",
+  extension = "extension",
+  size = "size",
+  prettySize = "prettySize",
+  modifiedTime = "modifiedTime",
+  accessTime = "accessTime",
+  changeTime = "changeTime",
+  birthTime = "birthTime",
+  root = "root",
+  dir = "dir",
+  base = "base",
+  ext = "ext",
+  name = "name",
+  relativeDirectory = "relativeDirectory",
+  dev = "dev",
+  mode = "mode",
+  nlink = "nlink",
+  uid = "uid",
+  gid = "gid",
+  rdev = "rdev",
+  ino = "ino",
+  atimeMs = "atimeMs",
+  mtimeMs = "mtimeMs",
+  ctimeMs = "ctimeMs",
+  birthtimeMs = "birthtimeMs",
+  atime = "atime",
+  mtime = "mtime",
+  ctime = "ctime",
+  birthtime = "birthtime"
 }
 
-export interface DistinctSitePluginConnectionArgs {
-  field: sitePluginDistinctEnum | null;
-}
+export type DirectoryFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  sourceInstanceName?: Maybe<StringQueryOperatorInput>;
+  absolutePath?: Maybe<StringQueryOperatorInput>;
+  relativePath?: Maybe<StringQueryOperatorInput>;
+  extension?: Maybe<StringQueryOperatorInput>;
+  size?: Maybe<IntQueryOperatorInput>;
+  prettySize?: Maybe<StringQueryOperatorInput>;
+  modifiedTime?: Maybe<DateQueryOperatorInput>;
+  accessTime?: Maybe<DateQueryOperatorInput>;
+  changeTime?: Maybe<DateQueryOperatorInput>;
+  birthTime?: Maybe<DateQueryOperatorInput>;
+  root?: Maybe<StringQueryOperatorInput>;
+  dir?: Maybe<StringQueryOperatorInput>;
+  base?: Maybe<StringQueryOperatorInput>;
+  ext?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  relativeDirectory?: Maybe<StringQueryOperatorInput>;
+  dev?: Maybe<FloatQueryOperatorInput>;
+  mode?: Maybe<IntQueryOperatorInput>;
+  nlink?: Maybe<IntQueryOperatorInput>;
+  uid?: Maybe<IntQueryOperatorInput>;
+  gid?: Maybe<IntQueryOperatorInput>;
+  rdev?: Maybe<IntQueryOperatorInput>;
+  ino?: Maybe<FloatQueryOperatorInput>;
+  atimeMs?: Maybe<FloatQueryOperatorInput>;
+  mtimeMs?: Maybe<FloatQueryOperatorInput>;
+  ctimeMs?: Maybe<FloatQueryOperatorInput>;
+  birthtimeMs?: Maybe<FloatQueryOperatorInput>;
+  atime?: Maybe<DateQueryOperatorInput>;
+  mtime?: Maybe<DateQueryOperatorInput>;
+  ctime?: Maybe<DateQueryOperatorInput>;
+  birthtime?: Maybe<DateQueryOperatorInput>;
+};
 
-export interface GroupSitePluginConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: sitePluginGroupEnum | null;
-}
-
-export interface SitePluginEdge {
-  node: SitePlugin | null;
-  next: SitePlugin | null;
-  previous: SitePlugin | null;
-}
-
-export type sitePluginDistinctEnum = "resolve" | "id" | "name" | "version" | "pluginOptions___plugins" | "pluginOptions___name" | "pluginOptions___path" | "pluginOptions___trackingId" | "pluginOptions___head" | "pluginOptions___anonymize" | "pluginOptions___respectDNT" | "pluginOptions___maxWidth" | "pluginOptions___backgroundColor" | "pluginOptions___short_name" | "pluginOptions___start_url" | "pluginOptions___background_color" | "pluginOptions___theme_color" | "pluginOptions___display" | "pluginOptions___pathCheck" | "nodeAPIs" | "browserAPIs" | "ssrAPIs" | "pluginFilepath" | "packageJson___name" | "packageJson___description" | "packageJson___version" | "packageJson___main" | "packageJson___author" | "packageJson___license" | "packageJson___dependencies" | "packageJson___devDependencies" | "packageJson___peerDependencies" | "packageJson___keywords" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export type sitePluginGroupEnum = "resolve" | "id" | "name" | "version" | "pluginOptions___plugins" | "pluginOptions___name" | "pluginOptions___path" | "pluginOptions___trackingId" | "pluginOptions___head" | "pluginOptions___anonymize" | "pluginOptions___respectDNT" | "pluginOptions___maxWidth" | "pluginOptions___backgroundColor" | "pluginOptions___short_name" | "pluginOptions___start_url" | "pluginOptions___background_color" | "pluginOptions___theme_color" | "pluginOptions___display" | "pluginOptions___pathCheck" | "nodeAPIs" | "browserAPIs" | "ssrAPIs" | "pluginFilepath" | "packageJson___name" | "packageJson___description" | "packageJson___version" | "packageJson___main" | "packageJson___author" | "packageJson___license" | "packageJson___dependencies" | "packageJson___devDependencies" | "packageJson___peerDependencies" | "packageJson___keywords" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export interface sitePluginGroupConnectionConnection {
+export type DirectoryGroupConnection = {
+  __typename?: "DirectoryGroupConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<DirectoryEdge>;
+  nodes: Array<Directory>;
   pageInfo: PageInfo;
-  edges: Array<sitePluginGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+};
+
+export type DirectorySortInput = {
+  fields?: Maybe<Array<Maybe<DirectoryFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type DuotoneGradient = {
+  highlight?: Maybe<Scalars["String"]>;
+  shadow?: Maybe<Scalars["String"]>;
+  opacity?: Maybe<Scalars["Int"]>;
+};
+
+export enum ExcerptFormats {
+  PLAIN = "PLAIN",
+  HTML = "HTML"
 }
 
-export interface sitePluginGroupConnectionEdge {
-  node: SitePlugin | null;
-  next: SitePlugin | null;
-  previous: SitePlugin | null;
-}
+export type File = Node & {
+  __typename?: "File";
+  id: Scalars["ID"];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  sourceInstanceName?: Maybe<Scalars["String"]>;
+  absolutePath?: Maybe<Scalars["String"]>;
+  relativePath?: Maybe<Scalars["String"]>;
+  extension?: Maybe<Scalars["String"]>;
+  size?: Maybe<Scalars["Int"]>;
+  prettySize?: Maybe<Scalars["String"]>;
+  modifiedTime?: Maybe<Scalars["Date"]>;
+  accessTime?: Maybe<Scalars["Date"]>;
+  changeTime?: Maybe<Scalars["Date"]>;
+  birthTime?: Maybe<Scalars["Date"]>;
+  root?: Maybe<Scalars["String"]>;
+  dir?: Maybe<Scalars["String"]>;
+  base?: Maybe<Scalars["String"]>;
+  ext?: Maybe<Scalars["String"]>;
+  name?: Maybe<Scalars["String"]>;
+  relativeDirectory?: Maybe<Scalars["String"]>;
+  dev?: Maybe<Scalars["Float"]>;
+  mode?: Maybe<Scalars["Int"]>;
+  nlink?: Maybe<Scalars["Int"]>;
+  uid?: Maybe<Scalars["Int"]>;
+  gid?: Maybe<Scalars["Int"]>;
+  rdev?: Maybe<Scalars["Int"]>;
+  ino?: Maybe<Scalars["Float"]>;
+  atimeMs?: Maybe<Scalars["Float"]>;
+  mtimeMs?: Maybe<Scalars["Float"]>;
+  ctimeMs?: Maybe<Scalars["Float"]>;
+  birthtimeMs?: Maybe<Scalars["Float"]>;
+  atime?: Maybe<Scalars["Date"]>;
+  mtime?: Maybe<Scalars["Date"]>;
+  ctime?: Maybe<Scalars["Date"]>;
+  birthtime?: Maybe<Scalars["Date"]>;
+  /** Copy file to static directory and return public url to it */
+  publicURL?: Maybe<Scalars["String"]>;
+  childImageSharp?: Maybe<ImageSharp>;
+  childMarkdownRemark?: Maybe<MarkdownRemark>;
+  childAuthorJson?: Maybe<AuthorJson>;
+};
 
-export interface directoryConnectionSort {
-  fields: Array<DirectoryConnectionSortByFieldsEnum>;
-  order: directoryConnectionSortOrderValues | null;
-}
+export type FilemodifiedTimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export type DirectoryConnectionSortByFieldsEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime";
+export type FileaccessTimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export type directoryConnectionSortOrderValues = "ASC" | "DESC";
+export type FilechangeTimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export interface filterDirectory {
-  id: directoryConnectionIdQueryString_2 | null;
-  internal: directoryConnectionInternalInputObject_2 | null;
-  sourceInstanceName: directoryConnectionSourceInstanceNameQueryString_2 | null;
-  absolutePath: directoryConnectionAbsolutePathQueryString_2 | null;
-  relativePath: directoryConnectionRelativePathQueryString_2 | null;
-  extension: directoryConnectionExtensionQueryString_2 | null;
-  size: directoryConnectionSizeQueryInteger_2 | null;
-  prettySize: directoryConnectionPrettySizeQueryString_2 | null;
-  modifiedTime: directoryConnectionModifiedTimeQueryString_2 | null;
-  accessTime: directoryConnectionAccessTimeQueryString_2 | null;
-  changeTime: directoryConnectionChangeTimeQueryString_2 | null;
-  birthTime: directoryConnectionBirthTimeQueryString_2 | null;
-  root: directoryConnectionRootQueryString_2 | null;
-  dir: directoryConnectionDirQueryString_2 | null;
-  base: directoryConnectionBaseQueryString_2 | null;
-  ext: directoryConnectionExtQueryString_2 | null;
-  name: directoryConnectionNameQueryString_2 | null;
-  relativeDirectory: directoryConnectionRelativeDirectoryQueryString_2 | null;
-  dev: directoryConnectionDevQueryInteger_2 | null;
-  mode: directoryConnectionModeQueryInteger_2 | null;
-  nlink: directoryConnectionNlinkQueryInteger_2 | null;
-  uid: directoryConnectionUidQueryInteger_2 | null;
-  gid: directoryConnectionGidQueryInteger_2 | null;
-  rdev: directoryConnectionRdevQueryInteger_2 | null;
-  blksize: directoryConnectionBlksizeQueryInteger_2 | null;
-  ino: directoryConnectionInoQueryInteger_2 | null;
-  blocks: directoryConnectionBlocksQueryInteger_2 | null;
-  atimeMs: directoryConnectionAtimeMsQueryFloat_2 | null;
-  mtimeMs: directoryConnectionMtimeMsQueryFloat_2 | null;
-  ctimeMs: directoryConnectionCtimeMsQueryFloat_2 | null;
-  birthtimeMs: directoryConnectionBirthtimeMsQueryFloat_2 | null;
-  atime: directoryConnectionAtimeQueryString_2 | null;
-  mtime: directoryConnectionMtimeQueryString_2 | null;
-  ctime: directoryConnectionCtimeQueryString_2 | null;
-  birthtime: directoryConnectionBirthtimeQueryString_2 | null;
-}
+export type FilebirthTimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export interface directoryConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type FileatimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export interface directoryConnectionInternalInputObject_2 {
-  contentDigest: directoryConnectionInternalContentDigestQueryString_2 | null;
-  type: directoryConnectionInternalTypeQueryString_2 | null;
-  description: directoryConnectionInternalDescriptionQueryString_2 | null;
-  owner: directoryConnectionInternalOwnerQueryString_2 | null;
-}
+export type FilemtimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export interface directoryConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type FilectimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export interface directoryConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type FilebirthtimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export interface directoryConnectionInternalDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionSourceInstanceNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionRelativePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionExtensionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionSizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionPrettySizeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionModifiedTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionAccessTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionChangeTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionBirthTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionRootQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionDirQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionBaseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionExtQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionRelativeDirectoryQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionDevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionModeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionNlinkQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionUidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionGidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionRdevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionBlksizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionInoQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionBlocksQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionAtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionMtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionCtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionBirthtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionAtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionMtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionCtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionBirthtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface DirectoryConnection {
+export type FileConnection = {
+  __typename?: "FileConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<FileEdge>;
+  nodes: Array<File>;
   pageInfo: PageInfo;
-  edges: Array<DirectoryEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<directoryGroupConnectionConnection> | null;
+  distinct: Array<Scalars["String"]>;
+  group: Array<FileGroupConnection>;
+};
+
+export type FileConnectiondistinctArgs = {
+  field: FileFieldsEnum;
+};
+
+export type FileConnectiongroupArgs = {
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  field: FileFieldsEnum;
+};
+
+export type FileEdge = {
+  __typename?: "FileEdge";
+  next?: Maybe<File>;
+  node: File;
+  previous?: Maybe<File>;
+};
+
+export enum FileFieldsEnum {
+  id = "id",
+  parent___id = "parent___id",
+  parent___parent___id = "parent___parent___id",
+  parent___parent___parent___id = "parent___parent___parent___id",
+  parent___parent___parent___children = "parent___parent___parent___children",
+  parent___parent___children = "parent___parent___children",
+  parent___parent___children___id = "parent___parent___children___id",
+  parent___parent___children___children = "parent___parent___children___children",
+  parent___parent___internal___content = "parent___parent___internal___content",
+  parent___parent___internal___contentDigest = "parent___parent___internal___contentDigest",
+  parent___parent___internal___description = "parent___parent___internal___description",
+  parent___parent___internal___fieldOwners = "parent___parent___internal___fieldOwners",
+  parent___parent___internal___ignoreType = "parent___parent___internal___ignoreType",
+  parent___parent___internal___mediaType = "parent___parent___internal___mediaType",
+  parent___parent___internal___owner = "parent___parent___internal___owner",
+  parent___parent___internal___type = "parent___parent___internal___type",
+  parent___children = "parent___children",
+  parent___children___id = "parent___children___id",
+  parent___children___parent___id = "parent___children___parent___id",
+  parent___children___parent___children = "parent___children___parent___children",
+  parent___children___children = "parent___children___children",
+  parent___children___children___id = "parent___children___children___id",
+  parent___children___children___children = "parent___children___children___children",
+  parent___children___internal___content = "parent___children___internal___content",
+  parent___children___internal___contentDigest = "parent___children___internal___contentDigest",
+  parent___children___internal___description = "parent___children___internal___description",
+  parent___children___internal___fieldOwners = "parent___children___internal___fieldOwners",
+  parent___children___internal___ignoreType = "parent___children___internal___ignoreType",
+  parent___children___internal___mediaType = "parent___children___internal___mediaType",
+  parent___children___internal___owner = "parent___children___internal___owner",
+  parent___children___internal___type = "parent___children___internal___type",
+  parent___internal___content = "parent___internal___content",
+  parent___internal___contentDigest = "parent___internal___contentDigest",
+  parent___internal___description = "parent___internal___description",
+  parent___internal___fieldOwners = "parent___internal___fieldOwners",
+  parent___internal___ignoreType = "parent___internal___ignoreType",
+  parent___internal___mediaType = "parent___internal___mediaType",
+  parent___internal___owner = "parent___internal___owner",
+  parent___internal___type = "parent___internal___type",
+  children = "children",
+  children___id = "children___id",
+  children___parent___id = "children___parent___id",
+  children___parent___parent___id = "children___parent___parent___id",
+  children___parent___parent___children = "children___parent___parent___children",
+  children___parent___children = "children___parent___children",
+  children___parent___children___id = "children___parent___children___id",
+  children___parent___children___children = "children___parent___children___children",
+  children___parent___internal___content = "children___parent___internal___content",
+  children___parent___internal___contentDigest = "children___parent___internal___contentDigest",
+  children___parent___internal___description = "children___parent___internal___description",
+  children___parent___internal___fieldOwners = "children___parent___internal___fieldOwners",
+  children___parent___internal___ignoreType = "children___parent___internal___ignoreType",
+  children___parent___internal___mediaType = "children___parent___internal___mediaType",
+  children___parent___internal___owner = "children___parent___internal___owner",
+  children___parent___internal___type = "children___parent___internal___type",
+  children___children = "children___children",
+  children___children___id = "children___children___id",
+  children___children___parent___id = "children___children___parent___id",
+  children___children___parent___children = "children___children___parent___children",
+  children___children___children = "children___children___children",
+  children___children___children___id = "children___children___children___id",
+  children___children___children___children = "children___children___children___children",
+  children___children___internal___content = "children___children___internal___content",
+  children___children___internal___contentDigest = "children___children___internal___contentDigest",
+  children___children___internal___description = "children___children___internal___description",
+  children___children___internal___fieldOwners = "children___children___internal___fieldOwners",
+  children___children___internal___ignoreType = "children___children___internal___ignoreType",
+  children___children___internal___mediaType = "children___children___internal___mediaType",
+  children___children___internal___owner = "children___children___internal___owner",
+  children___children___internal___type = "children___children___internal___type",
+  children___internal___content = "children___internal___content",
+  children___internal___contentDigest = "children___internal___contentDigest",
+  children___internal___description = "children___internal___description",
+  children___internal___fieldOwners = "children___internal___fieldOwners",
+  children___internal___ignoreType = "children___internal___ignoreType",
+  children___internal___mediaType = "children___internal___mediaType",
+  children___internal___owner = "children___internal___owner",
+  children___internal___type = "children___internal___type",
+  internal___content = "internal___content",
+  internal___contentDigest = "internal___contentDigest",
+  internal___description = "internal___description",
+  internal___fieldOwners = "internal___fieldOwners",
+  internal___ignoreType = "internal___ignoreType",
+  internal___mediaType = "internal___mediaType",
+  internal___owner = "internal___owner",
+  internal___type = "internal___type",
+  sourceInstanceName = "sourceInstanceName",
+  absolutePath = "absolutePath",
+  relativePath = "relativePath",
+  extension = "extension",
+  size = "size",
+  prettySize = "prettySize",
+  modifiedTime = "modifiedTime",
+  accessTime = "accessTime",
+  changeTime = "changeTime",
+  birthTime = "birthTime",
+  root = "root",
+  dir = "dir",
+  base = "base",
+  ext = "ext",
+  name = "name",
+  relativeDirectory = "relativeDirectory",
+  dev = "dev",
+  mode = "mode",
+  nlink = "nlink",
+  uid = "uid",
+  gid = "gid",
+  rdev = "rdev",
+  ino = "ino",
+  atimeMs = "atimeMs",
+  mtimeMs = "mtimeMs",
+  ctimeMs = "ctimeMs",
+  birthtimeMs = "birthtimeMs",
+  atime = "atime",
+  mtime = "mtime",
+  ctime = "ctime",
+  birthtime = "birthtime",
+  publicURL = "publicURL"
 }
 
-export interface DistinctDirectoryConnectionArgs {
-  field: directoryDistinctEnum | null;
-}
+export type FileFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  sourceInstanceName?: Maybe<StringQueryOperatorInput>;
+  absolutePath?: Maybe<StringQueryOperatorInput>;
+  relativePath?: Maybe<StringQueryOperatorInput>;
+  extension?: Maybe<StringQueryOperatorInput>;
+  size?: Maybe<IntQueryOperatorInput>;
+  prettySize?: Maybe<StringQueryOperatorInput>;
+  modifiedTime?: Maybe<DateQueryOperatorInput>;
+  accessTime?: Maybe<DateQueryOperatorInput>;
+  changeTime?: Maybe<DateQueryOperatorInput>;
+  birthTime?: Maybe<DateQueryOperatorInput>;
+  root?: Maybe<StringQueryOperatorInput>;
+  dir?: Maybe<StringQueryOperatorInput>;
+  base?: Maybe<StringQueryOperatorInput>;
+  ext?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  relativeDirectory?: Maybe<StringQueryOperatorInput>;
+  dev?: Maybe<FloatQueryOperatorInput>;
+  mode?: Maybe<IntQueryOperatorInput>;
+  nlink?: Maybe<IntQueryOperatorInput>;
+  uid?: Maybe<IntQueryOperatorInput>;
+  gid?: Maybe<IntQueryOperatorInput>;
+  rdev?: Maybe<IntQueryOperatorInput>;
+  ino?: Maybe<FloatQueryOperatorInput>;
+  atimeMs?: Maybe<FloatQueryOperatorInput>;
+  mtimeMs?: Maybe<FloatQueryOperatorInput>;
+  ctimeMs?: Maybe<FloatQueryOperatorInput>;
+  birthtimeMs?: Maybe<FloatQueryOperatorInput>;
+  atime?: Maybe<DateQueryOperatorInput>;
+  mtime?: Maybe<DateQueryOperatorInput>;
+  ctime?: Maybe<DateQueryOperatorInput>;
+  birthtime?: Maybe<DateQueryOperatorInput>;
+  publicURL?: Maybe<StringQueryOperatorInput>;
+};
 
-export interface GroupDirectoryConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: directoryGroupEnum | null;
-}
-
-export interface DirectoryEdge {
-  node: Directory | null;
-  next: Directory | null;
-  previous: Directory | null;
-}
-
-export interface Directory extends Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  internal: internal_11 | null;
-  sourceInstanceName: string | null;
-  absolutePath: string | null;
-  relativePath: string | null;
-  extension: string | null;
-  size: number | null;
-  prettySize: string | null;
-  modifiedTime: Date | null;
-  accessTime: Date | null;
-  changeTime: Date | null;
-  birthTime: Date | null;
-  root: string | null;
-  dir: string | null;
-  base: string | null;
-  ext: string | null;
-  name: string | null;
-  relativeDirectory: string | null;
-  dev: number | null;
-  mode: number | null;
-  nlink: number | null;
-  uid: number | null;
-  gid: number | null;
-  rdev: number | null;
-  blksize: number | null;
-  ino: number | null;
-  blocks: number | null;
-  atimeMs: number | null;
-  mtimeMs: number | null;
-  ctimeMs: number | null;
-  birthtimeMs: number | null;
-  atime: Date | null;
-  mtime: Date | null;
-  ctime: Date | null;
-  birthtime: Date | null;
-}
-
-export interface ModifiedTimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface AccessTimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface ChangeTimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface BirthTimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface AtimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface MtimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface CtimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface BirthtimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface internal_11 {
-  contentDigest: string | null;
-  type: string | null;
-  description: string | null;
-  owner: string | null;
-}
-
-export type Date = any;
-
-export type directoryDistinctEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime";
-
-export type directoryGroupEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime";
-
-export interface directoryGroupConnectionConnection {
+export type FileGroupConnection = {
+  __typename?: "FileGroupConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<FileEdge>;
+  nodes: Array<File>;
   pageInfo: PageInfo;
-  edges: Array<directoryGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+};
+
+export type FileSortInput = {
+  fields?: Maybe<Array<Maybe<FileFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type FloatQueryOperatorInput = {
+  eq?: Maybe<Scalars["Float"]>;
+  ne?: Maybe<Scalars["Float"]>;
+  gt?: Maybe<Scalars["Float"]>;
+  gte?: Maybe<Scalars["Float"]>;
+  lt?: Maybe<Scalars["Float"]>;
+  lte?: Maybe<Scalars["Float"]>;
+  in?: Maybe<Array<Maybe<Scalars["Float"]>>>;
+  nin?: Maybe<Array<Maybe<Scalars["Float"]>>>;
+};
+
+export enum HeadingLevels {
+  h1 = "h1",
+  h2 = "h2",
+  h3 = "h3",
+  h4 = "h4",
+  h5 = "h5",
+  h6 = "h6"
 }
 
-export interface directoryGroupConnectionEdge {
-  node: Directory | null;
-  next: Directory | null;
-  previous: Directory | null;
+export enum ImageCropFocus {
+  CENTER = "CENTER",
+  NORTH = "NORTH",
+  NORTHEAST = "NORTHEAST",
+  EAST = "EAST",
+  SOUTHEAST = "SOUTHEAST",
+  SOUTH = "SOUTH",
+  SOUTHWEST = "SOUTHWEST",
+  WEST = "WEST",
+  NORTHWEST = "NORTHWEST",
+  ENTROPY = "ENTROPY",
+  ATTENTION = "ATTENTION"
 }
 
-export interface fileConnectionSort {
-  fields: Array<FileConnectionSortByFieldsEnum>;
-  order: fileConnectionSortOrderValues | null;
+export enum ImageFit {
+  COVER = "COVER",
+  CONTAIN = "CONTAIN",
+  FILL = "FILL"
 }
 
-export type FileConnectionSortByFieldsEnum = "id" | "children" | "parent" | "internal___contentDigest" | "internal___type" | "internal___mediaType" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime" | "publicURL";
-
-export type fileConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterFile {
-  id: fileConnectionIdQueryString_2 | null;
-  internal: fileConnectionInternalInputObject_2 | null;
-  sourceInstanceName: fileConnectionSourceInstanceNameQueryString_2 | null;
-  absolutePath: fileConnectionAbsolutePathQueryString_2 | null;
-  relativePath: fileConnectionRelativePathQueryString_2 | null;
-  extension: fileConnectionExtensionQueryString_2 | null;
-  size: fileConnectionSizeQueryInteger_2 | null;
-  prettySize: fileConnectionPrettySizeQueryString_2 | null;
-  modifiedTime: fileConnectionModifiedTimeQueryString_2 | null;
-  accessTime: fileConnectionAccessTimeQueryString_2 | null;
-  changeTime: fileConnectionChangeTimeQueryString_2 | null;
-  birthTime: fileConnectionBirthTimeQueryString_2 | null;
-  root: fileConnectionRootQueryString_2 | null;
-  dir: fileConnectionDirQueryString_2 | null;
-  base: fileConnectionBaseQueryString_2 | null;
-  ext: fileConnectionExtQueryString_2 | null;
-  name: fileConnectionNameQueryString_2 | null;
-  relativeDirectory: fileConnectionRelativeDirectoryQueryString_2 | null;
-  dev: fileConnectionDevQueryInteger_2 | null;
-  mode: fileConnectionModeQueryInteger_2 | null;
-  nlink: fileConnectionNlinkQueryInteger_2 | null;
-  uid: fileConnectionUidQueryInteger_2 | null;
-  gid: fileConnectionGidQueryInteger_2 | null;
-  rdev: fileConnectionRdevQueryInteger_2 | null;
-  blksize: fileConnectionBlksizeQueryInteger_2 | null;
-  ino: fileConnectionInoQueryInteger_2 | null;
-  blocks: fileConnectionBlocksQueryInteger_2 | null;
-  atimeMs: fileConnectionAtimeMsQueryFloat_2 | null;
-  mtimeMs: fileConnectionMtimeMsQueryFloat_2 | null;
-  ctimeMs: fileConnectionCtimeMsQueryFloat_2 | null;
-  birthtimeMs: fileConnectionBirthtimeMsQueryFloat_2 | null;
-  atime: fileConnectionAtimeQueryString_2 | null;
-  mtime: fileConnectionMtimeQueryString_2 | null;
-  ctime: fileConnectionCtimeQueryString_2 | null;
-  birthtime: fileConnectionBirthtimeQueryString_2 | null;
-  publicURL: publicUrlQueryString_4 | null;
+export enum ImageFormat {
+  NO_CHANGE = "NO_CHANGE",
+  JPG = "JPG",
+  PNG = "PNG",
+  WEBP = "WEBP"
 }
 
-export interface fileConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type ImageSharp = Node & {
+  __typename?: "ImageSharp";
+  id: Scalars["ID"];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  fixed?: Maybe<ImageSharpFixed>;
+  resolutions?: Maybe<ImageSharpResolutions>;
+  fluid?: Maybe<ImageSharpFluid>;
+  sizes?: Maybe<ImageSharpSizes>;
+  original?: Maybe<ImageSharpOriginal>;
+  resize?: Maybe<ImageSharpResize>;
+};
 
-export interface fileConnectionInternalInputObject_2 {
-  contentDigest: fileConnectionInternalContentDigestQueryString_2 | null;
-  type: fileConnectionInternalTypeQueryString_2 | null;
-  mediaType: fileConnectionInternalMediaTypeQueryString_2 | null;
-  description: fileConnectionInternalDescriptionQueryString_2 | null;
-  owner: fileConnectionInternalOwnerQueryString_2 | null;
-}
+export type ImageSharpfixedArgs = {
+  width?: Maybe<Scalars["Int"]>;
+  height?: Maybe<Scalars["Int"]>;
+  base64Width?: Maybe<Scalars["Int"]>;
+  jpegProgressive: Scalars["Boolean"];
+  pngCompressionSpeed: Scalars["Int"];
+  grayscale: Scalars["Boolean"];
+  duotone?: Maybe<DuotoneGradient>;
+  traceSVG?: Maybe<Potrace>;
+  quality?: Maybe<Scalars["Int"]>;
+  toFormat: ImageFormat;
+  toFormatBase64: ImageFormat;
+  cropFocus: ImageCropFocus;
+  rotate: Scalars["Int"];
+};
 
-export interface fileConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type ImageSharpresolutionsArgs = {
+  width?: Maybe<Scalars["Int"]>;
+  height?: Maybe<Scalars["Int"]>;
+  base64Width?: Maybe<Scalars["Int"]>;
+  jpegProgressive: Scalars["Boolean"];
+  pngCompressionSpeed: Scalars["Int"];
+  grayscale: Scalars["Boolean"];
+  duotone?: Maybe<DuotoneGradient>;
+  traceSVG?: Maybe<Potrace>;
+  quality?: Maybe<Scalars["Int"]>;
+  toFormat: ImageFormat;
+  toFormatBase64: ImageFormat;
+  cropFocus: ImageCropFocus;
+  rotate: Scalars["Int"];
+};
 
-export interface fileConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type ImageSharpfluidArgs = {
+  maxWidth?: Maybe<Scalars["Int"]>;
+  maxHeight?: Maybe<Scalars["Int"]>;
+  base64Width?: Maybe<Scalars["Int"]>;
+  grayscale: Scalars["Boolean"];
+  jpegProgressive: Scalars["Boolean"];
+  pngCompressionSpeed: Scalars["Int"];
+  duotone?: Maybe<DuotoneGradient>;
+  traceSVG?: Maybe<Potrace>;
+  quality?: Maybe<Scalars["Int"]>;
+  toFormat: ImageFormat;
+  toFormatBase64: ImageFormat;
+  cropFocus: ImageCropFocus;
+  fit: ImageFit;
+  background: Scalars["String"];
+  rotate: Scalars["Int"];
+  sizes: Scalars["String"];
+  srcSetBreakpoints: Array<Maybe<Scalars["Int"]>>;
+};
 
-export interface fileConnectionInternalMediaTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type ImageSharpsizesArgs = {
+  maxWidth?: Maybe<Scalars["Int"]>;
+  maxHeight?: Maybe<Scalars["Int"]>;
+  base64Width?: Maybe<Scalars["Int"]>;
+  grayscale: Scalars["Boolean"];
+  jpegProgressive: Scalars["Boolean"];
+  pngCompressionSpeed: Scalars["Int"];
+  duotone?: Maybe<DuotoneGradient>;
+  traceSVG?: Maybe<Potrace>;
+  quality?: Maybe<Scalars["Int"]>;
+  toFormat: ImageFormat;
+  toFormatBase64: ImageFormat;
+  cropFocus: ImageCropFocus;
+  fit: ImageFit;
+  background: Scalars["String"];
+  rotate: Scalars["Int"];
+  sizes: Scalars["String"];
+  srcSetBreakpoints: Array<Maybe<Scalars["Int"]>>;
+};
 
-export interface fileConnectionInternalDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type ImageSharpresizeArgs = {
+  width?: Maybe<Scalars["Int"]>;
+  height?: Maybe<Scalars["Int"]>;
+  quality?: Maybe<Scalars["Int"]>;
+  jpegProgressive: Scalars["Boolean"];
+  pngCompressionLevel: Scalars["Int"];
+  pngCompressionSpeed: Scalars["Int"];
+  grayscale: Scalars["Boolean"];
+  duotone?: Maybe<DuotoneGradient>;
+  base64: Scalars["Boolean"];
+  traceSVG?: Maybe<Potrace>;
+  toFormat: ImageFormat;
+  cropFocus: ImageCropFocus;
+  rotate: Scalars["Int"];
+};
 
-export interface fileConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionSourceInstanceNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionRelativePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionExtensionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionSizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionPrettySizeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionModifiedTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionAccessTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionChangeTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionBirthTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionRootQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionDirQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionBaseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionExtQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionRelativeDirectoryQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionDevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionModeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionNlinkQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionUidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionGidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionRdevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionBlksizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionInoQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionBlocksQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionAtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionMtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionCtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionBirthtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionAtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionMtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionCtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionBirthtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface publicUrlQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface FileConnection {
+export type ImageSharpConnection = {
+  __typename?: "ImageSharpConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<ImageSharpEdge>;
+  nodes: Array<ImageSharp>;
   pageInfo: PageInfo;
-  edges: Array<FileEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<fileGroupConnectionConnection> | null;
+  distinct: Array<Scalars["String"]>;
+  group: Array<ImageSharpGroupConnection>;
+};
+
+export type ImageSharpConnectiondistinctArgs = {
+  field: ImageSharpFieldsEnum;
+};
+
+export type ImageSharpConnectiongroupArgs = {
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  field: ImageSharpFieldsEnum;
+};
+
+export type ImageSharpEdge = {
+  __typename?: "ImageSharpEdge";
+  next?: Maybe<ImageSharp>;
+  node: ImageSharp;
+  previous?: Maybe<ImageSharp>;
+};
+
+export enum ImageSharpFieldsEnum {
+  id = "id",
+  parent___id = "parent___id",
+  parent___parent___id = "parent___parent___id",
+  parent___parent___parent___id = "parent___parent___parent___id",
+  parent___parent___parent___children = "parent___parent___parent___children",
+  parent___parent___children = "parent___parent___children",
+  parent___parent___children___id = "parent___parent___children___id",
+  parent___parent___children___children = "parent___parent___children___children",
+  parent___parent___internal___content = "parent___parent___internal___content",
+  parent___parent___internal___contentDigest = "parent___parent___internal___contentDigest",
+  parent___parent___internal___description = "parent___parent___internal___description",
+  parent___parent___internal___fieldOwners = "parent___parent___internal___fieldOwners",
+  parent___parent___internal___ignoreType = "parent___parent___internal___ignoreType",
+  parent___parent___internal___mediaType = "parent___parent___internal___mediaType",
+  parent___parent___internal___owner = "parent___parent___internal___owner",
+  parent___parent___internal___type = "parent___parent___internal___type",
+  parent___children = "parent___children",
+  parent___children___id = "parent___children___id",
+  parent___children___parent___id = "parent___children___parent___id",
+  parent___children___parent___children = "parent___children___parent___children",
+  parent___children___children = "parent___children___children",
+  parent___children___children___id = "parent___children___children___id",
+  parent___children___children___children = "parent___children___children___children",
+  parent___children___internal___content = "parent___children___internal___content",
+  parent___children___internal___contentDigest = "parent___children___internal___contentDigest",
+  parent___children___internal___description = "parent___children___internal___description",
+  parent___children___internal___fieldOwners = "parent___children___internal___fieldOwners",
+  parent___children___internal___ignoreType = "parent___children___internal___ignoreType",
+  parent___children___internal___mediaType = "parent___children___internal___mediaType",
+  parent___children___internal___owner = "parent___children___internal___owner",
+  parent___children___internal___type = "parent___children___internal___type",
+  parent___internal___content = "parent___internal___content",
+  parent___internal___contentDigest = "parent___internal___contentDigest",
+  parent___internal___description = "parent___internal___description",
+  parent___internal___fieldOwners = "parent___internal___fieldOwners",
+  parent___internal___ignoreType = "parent___internal___ignoreType",
+  parent___internal___mediaType = "parent___internal___mediaType",
+  parent___internal___owner = "parent___internal___owner",
+  parent___internal___type = "parent___internal___type",
+  children = "children",
+  children___id = "children___id",
+  children___parent___id = "children___parent___id",
+  children___parent___parent___id = "children___parent___parent___id",
+  children___parent___parent___children = "children___parent___parent___children",
+  children___parent___children = "children___parent___children",
+  children___parent___children___id = "children___parent___children___id",
+  children___parent___children___children = "children___parent___children___children",
+  children___parent___internal___content = "children___parent___internal___content",
+  children___parent___internal___contentDigest = "children___parent___internal___contentDigest",
+  children___parent___internal___description = "children___parent___internal___description",
+  children___parent___internal___fieldOwners = "children___parent___internal___fieldOwners",
+  children___parent___internal___ignoreType = "children___parent___internal___ignoreType",
+  children___parent___internal___mediaType = "children___parent___internal___mediaType",
+  children___parent___internal___owner = "children___parent___internal___owner",
+  children___parent___internal___type = "children___parent___internal___type",
+  children___children = "children___children",
+  children___children___id = "children___children___id",
+  children___children___parent___id = "children___children___parent___id",
+  children___children___parent___children = "children___children___parent___children",
+  children___children___children = "children___children___children",
+  children___children___children___id = "children___children___children___id",
+  children___children___children___children = "children___children___children___children",
+  children___children___internal___content = "children___children___internal___content",
+  children___children___internal___contentDigest = "children___children___internal___contentDigest",
+  children___children___internal___description = "children___children___internal___description",
+  children___children___internal___fieldOwners = "children___children___internal___fieldOwners",
+  children___children___internal___ignoreType = "children___children___internal___ignoreType",
+  children___children___internal___mediaType = "children___children___internal___mediaType",
+  children___children___internal___owner = "children___children___internal___owner",
+  children___children___internal___type = "children___children___internal___type",
+  children___internal___content = "children___internal___content",
+  children___internal___contentDigest = "children___internal___contentDigest",
+  children___internal___description = "children___internal___description",
+  children___internal___fieldOwners = "children___internal___fieldOwners",
+  children___internal___ignoreType = "children___internal___ignoreType",
+  children___internal___mediaType = "children___internal___mediaType",
+  children___internal___owner = "children___internal___owner",
+  children___internal___type = "children___internal___type",
+  internal___content = "internal___content",
+  internal___contentDigest = "internal___contentDigest",
+  internal___description = "internal___description",
+  internal___fieldOwners = "internal___fieldOwners",
+  internal___ignoreType = "internal___ignoreType",
+  internal___mediaType = "internal___mediaType",
+  internal___owner = "internal___owner",
+  internal___type = "internal___type",
+  fixed___base64 = "fixed___base64",
+  fixed___tracedSVG = "fixed___tracedSVG",
+  fixed___aspectRatio = "fixed___aspectRatio",
+  fixed___width = "fixed___width",
+  fixed___height = "fixed___height",
+  fixed___src = "fixed___src",
+  fixed___srcSet = "fixed___srcSet",
+  fixed___srcWebp = "fixed___srcWebp",
+  fixed___srcSetWebp = "fixed___srcSetWebp",
+  fixed___originalName = "fixed___originalName",
+  resolutions___base64 = "resolutions___base64",
+  resolutions___tracedSVG = "resolutions___tracedSVG",
+  resolutions___aspectRatio = "resolutions___aspectRatio",
+  resolutions___width = "resolutions___width",
+  resolutions___height = "resolutions___height",
+  resolutions___src = "resolutions___src",
+  resolutions___srcSet = "resolutions___srcSet",
+  resolutions___srcWebp = "resolutions___srcWebp",
+  resolutions___srcSetWebp = "resolutions___srcSetWebp",
+  resolutions___originalName = "resolutions___originalName",
+  fluid___base64 = "fluid___base64",
+  fluid___tracedSVG = "fluid___tracedSVG",
+  fluid___aspectRatio = "fluid___aspectRatio",
+  fluid___src = "fluid___src",
+  fluid___srcSet = "fluid___srcSet",
+  fluid___srcWebp = "fluid___srcWebp",
+  fluid___srcSetWebp = "fluid___srcSetWebp",
+  fluid___sizes = "fluid___sizes",
+  fluid___originalImg = "fluid___originalImg",
+  fluid___originalName = "fluid___originalName",
+  fluid___presentationWidth = "fluid___presentationWidth",
+  fluid___presentationHeight = "fluid___presentationHeight",
+  sizes___base64 = "sizes___base64",
+  sizes___tracedSVG = "sizes___tracedSVG",
+  sizes___aspectRatio = "sizes___aspectRatio",
+  sizes___src = "sizes___src",
+  sizes___srcSet = "sizes___srcSet",
+  sizes___srcWebp = "sizes___srcWebp",
+  sizes___srcSetWebp = "sizes___srcSetWebp",
+  sizes___sizes = "sizes___sizes",
+  sizes___originalImg = "sizes___originalImg",
+  sizes___originalName = "sizes___originalName",
+  sizes___presentationWidth = "sizes___presentationWidth",
+  sizes___presentationHeight = "sizes___presentationHeight",
+  original___width = "original___width",
+  original___height = "original___height",
+  original___src = "original___src",
+  resize___src = "resize___src",
+  resize___tracedSVG = "resize___tracedSVG",
+  resize___width = "resize___width",
+  resize___height = "resize___height",
+  resize___aspectRatio = "resize___aspectRatio",
+  resize___originalName = "resize___originalName"
 }
 
-export interface DistinctFileConnectionArgs {
-  field: fileDistinctEnum | null;
-}
+export type ImageSharpFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  fixed?: Maybe<ImageSharpFixedFilterInput>;
+  resolutions?: Maybe<ImageSharpResolutionsFilterInput>;
+  fluid?: Maybe<ImageSharpFluidFilterInput>;
+  sizes?: Maybe<ImageSharpSizesFilterInput>;
+  original?: Maybe<ImageSharpOriginalFilterInput>;
+  resize?: Maybe<ImageSharpResizeFilterInput>;
+};
 
-export interface GroupFileConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: fileGroupEnum | null;
-}
+export type ImageSharpFixed = {
+  __typename?: "ImageSharpFixed";
+  base64?: Maybe<Scalars["String"]>;
+  tracedSVG?: Maybe<Scalars["String"]>;
+  aspectRatio?: Maybe<Scalars["Float"]>;
+  width?: Maybe<Scalars["Float"]>;
+  height?: Maybe<Scalars["Float"]>;
+  src?: Maybe<Scalars["String"]>;
+  srcSet?: Maybe<Scalars["String"]>;
+  srcWebp?: Maybe<Scalars["String"]>;
+  srcSetWebp?: Maybe<Scalars["String"]>;
+  originalName?: Maybe<Scalars["String"]>;
+};
 
-export interface FileEdge {
-  node: File | null;
-  next: File | null;
-  previous: File | null;
-}
+export type ImageSharpFixedFilterInput = {
+  base64?: Maybe<StringQueryOperatorInput>;
+  tracedSVG?: Maybe<StringQueryOperatorInput>;
+  aspectRatio?: Maybe<FloatQueryOperatorInput>;
+  width?: Maybe<FloatQueryOperatorInput>;
+  height?: Maybe<FloatQueryOperatorInput>;
+  src?: Maybe<StringQueryOperatorInput>;
+  srcSet?: Maybe<StringQueryOperatorInput>;
+  srcWebp?: Maybe<StringQueryOperatorInput>;
+  srcSetWebp?: Maybe<StringQueryOperatorInput>;
+  originalName?: Maybe<StringQueryOperatorInput>;
+};
 
-export interface File extends Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  childAuthorJson: AuthorJson | null;
-  childImageSharp: ImageSharp | null;
-  childMarkdownRemark: MarkdownRemark | null;
-  internal: internal_12 | null;
-  sourceInstanceName: string | null;
-  absolutePath: string | null;
-  relativePath: string | null;
-  extension: string | null;
-  size: number | null;
-  prettySize: string | null;
-  modifiedTime: Date | null;
-  accessTime: Date | null;
-  changeTime: Date | null;
-  birthTime: Date | null;
-  root: string | null;
-  dir: string | null;
-  base: string | null;
-  ext: string | null;
-  name: string | null;
-  relativeDirectory: string | null;
-  dev: number | null;
-  mode: number | null;
-  nlink: number | null;
-  uid: number | null;
-  gid: number | null;
-  rdev: number | null;
-  blksize: number | null;
-  ino: number | null;
-  blocks: number | null;
-  atimeMs: number | null;
-  mtimeMs: number | null;
-  ctimeMs: number | null;
-  birthtimeMs: number | null;
-  atime: Date | null;
-  mtime: Date | null;
-  ctime: Date | null;
-  birthtime: Date | null;
-  publicURL: string | null;
-}
+export type ImageSharpFluid = {
+  __typename?: "ImageSharpFluid";
+  base64?: Maybe<Scalars["String"]>;
+  tracedSVG?: Maybe<Scalars["String"]>;
+  aspectRatio?: Maybe<Scalars["Float"]>;
+  src?: Maybe<Scalars["String"]>;
+  srcSet?: Maybe<Scalars["String"]>;
+  srcWebp?: Maybe<Scalars["String"]>;
+  srcSetWebp?: Maybe<Scalars["String"]>;
+  sizes?: Maybe<Scalars["String"]>;
+  originalImg?: Maybe<Scalars["String"]>;
+  originalName?: Maybe<Scalars["String"]>;
+  presentationWidth?: Maybe<Scalars["Int"]>;
+  presentationHeight?: Maybe<Scalars["Int"]>;
+};
 
-export interface ModifiedTimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
+export type ImageSharpFluidFilterInput = {
+  base64?: Maybe<StringQueryOperatorInput>;
+  tracedSVG?: Maybe<StringQueryOperatorInput>;
+  aspectRatio?: Maybe<FloatQueryOperatorInput>;
+  src?: Maybe<StringQueryOperatorInput>;
+  srcSet?: Maybe<StringQueryOperatorInput>;
+  srcWebp?: Maybe<StringQueryOperatorInput>;
+  srcSetWebp?: Maybe<StringQueryOperatorInput>;
+  sizes?: Maybe<StringQueryOperatorInput>;
+  originalImg?: Maybe<StringQueryOperatorInput>;
+  originalName?: Maybe<StringQueryOperatorInput>;
+  presentationWidth?: Maybe<IntQueryOperatorInput>;
+  presentationHeight?: Maybe<IntQueryOperatorInput>;
+};
 
-export interface AccessTimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface ChangeTimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface BirthTimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface AtimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface MtimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface CtimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface BirthtimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface AuthorJson extends Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  bio: string | null;
-  avatar: File | null;
-  twitter: string | null;
-  github: string | null;
-  internal: internal_13 | null;
-}
-
-export interface internal_13 {
-  contentDigest: string | null;
-  type: string | null;
-  owner: string | null;
-}
-
-export interface ImageSharp extends Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  internal: internal_14 | null;
-  fixed: ImageSharpFixed | null;
-  resolutions: ImageSharpResolutions | null;
-  fluid: ImageSharpFluid | null;
-  sizes: ImageSharpSizes | null;
-  original: ImageSharpOriginal | null;
-  resize: ImageSharpResize | null;
-}
-
-export interface FixedImageSharpArgs {
-  width: number | null;
-  height: number | null;
-  jpegProgressive: boolean | null;
-  grayscale: boolean | null;
-  duotone: DuotoneGradient | null;
-  traceSVG: Potrace | null;
-  quality: number | null;
-  toFormat: ImageFormat | null;
-  cropFocus: ImageCropFocus | null;
-  rotate: number | null;
-}
-
-export interface ResolutionsImageSharpArgs {
-  width: number | null;
-  height: number | null;
-  jpegProgressive: boolean | null;
-  grayscale: boolean | null;
-  duotone: DuotoneGradient | null;
-  traceSVG: Potrace | null;
-  quality: number | null;
-  toFormat: ImageFormat | null;
-  cropFocus: ImageCropFocus | null;
-  rotate: number | null;
-}
-
-export interface FluidImageSharpArgs {
-  maxWidth: number | null;
-  maxHeight: number | null;
-  grayscale: boolean | null;
-  jpegProgressive: boolean | null;
-  duotone: DuotoneGradient | null;
-  traceSVG: Potrace | null;
-  quality: number | null;
-  toFormat: ImageFormat | null;
-  cropFocus: ImageCropFocus | null;
-  rotate: number | null;
-}
-
-export interface SizesImageSharpArgs {
-  maxWidth: number | null;
-  maxHeight: number | null;
-  grayscale: boolean | null;
-  jpegProgressive: boolean | null;
-  duotone: DuotoneGradient | null;
-  traceSVG: Potrace | null;
-  quality: number | null;
-  toFormat: ImageFormat | null;
-  cropFocus: ImageCropFocus | null;
-  rotate: number | null;
-}
-
-export interface ResizeImageSharpArgs {
-  width: number | null;
-  height: number | null;
-  quality: number | null;
-  jpegProgressive: boolean | null;
-  pngCompressionLevel: number | null;
-  grayscale: boolean | null;
-  duotone: DuotoneGradient | null;
-  base64: boolean | null;
-  traceSVG: Potrace | null;
-  toFormat: ImageFormat | null;
-  cropFocus: ImageCropFocus | null;
-  rotate: number | null;
-}
-
-export interface internal_14 {
-  contentDigest: string | null;
-  type: string | null;
-  owner: string | null;
-}
-
-export interface DuotoneGradient {
-  highlight: string | null;
-  shadow: string | null;
-  opacity: number | null;
-}
-
-export interface Potrace {
-  turnPolicy: PotraceTurnPolicy | null;
-  turdSize: number | null;
-  alphaMax: number | null;
-  optCurve: boolean | null;
-  optTolerance: number | null;
-  threshold: number | null;
-  blackOnWhite: boolean | null;
-  color: string | null;
-  background: string | null;
-}
-
-export type PotraceTurnPolicy = "TURNPOLICY_BLACK" | "TURNPOLICY_WHITE" | "TURNPOLICY_LEFT" | "TURNPOLICY_RIGHT" | "TURNPOLICY_MINORITY" | "TURNPOLICY_MAJORITY";
-
-export type ImageFormat = "NO_CHANGE" | "JPG" | "PNG" | "WEBP";
-
-export type ImageCropFocus = "CENTER" | "NORTH" | "NORTHEAST" | "EAST" | "SOUTHEAST" | "SOUTH" | "SOUTHWEST" | "WEST" | "NORTHWEST" | "ENTROPY" | "ATTENTION";
-
-export interface ImageSharpFixed {
-  base64: string | null;
-  tracedSVG: string | null;
-  aspectRatio: number | null;
-  width: number | null;
-  height: number | null;
-  src: string | null;
-  srcSet: string | null;
-  srcWebp: string | null;
-  srcSetWebp: string | null;
-  originalName: string | null;
-}
-
-export interface ImageSharpResolutions {
-  base64: string | null;
-  tracedSVG: string | null;
-  aspectRatio: number | null;
-  width: number | null;
-  height: number | null;
-  src: string | null;
-  srcSet: string | null;
-  srcWebp: string | null;
-  srcSetWebp: string | null;
-  originalName: string | null;
-}
-
-export interface ImageSharpFluid {
-  base64: string | null;
-  tracedSVG: string | null;
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  srcWebp: string | null;
-  srcSetWebp: string | null;
-  sizes: string | null;
-  originalImg: string | null;
-  originalName: string | null;
-}
-
-export interface ImageSharpSizes {
-  base64: string | null;
-  tracedSVG: string | null;
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  srcWebp: string | null;
-  srcSetWebp: string | null;
-  sizes: string | null;
-  originalImg: string | null;
-  originalName: string | null;
-}
-
-export interface ImageSharpOriginal {
-  width: number | null;
-  height: number | null;
-  src: string | null;
-}
-
-export interface ImageSharpResize {
-  src: string | null;
-  tracedSVG: string | null;
-  width: number | null;
-  height: number | null;
-  aspectRatio: number | null;
-  originalName: string | null;
-}
-
-export interface MarkdownRemark extends Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  internal: internal_15 | null;
-  frontmatter: frontmatter_2 | null;
-  rawMarkdownBody: string | null;
-  fileAbsolutePath: string | null;
-  fields: fields_2 | null;
-  html: string | null;
-  htmlAst: JSON | null;
-  excerpt: string | null;
-  headings: Array<MarkdownHeading> | null;
-  timeToRead: number | null;
-  tableOfContents: string | null;
-  wordCount: wordCount | null;
-}
-
-export interface ExcerptMarkdownRemarkArgs {
-  pruneLength: number | null;
-  truncate: boolean | null;
-}
-
-export interface HeadingsMarkdownRemarkArgs {
-  depth: HeadingLevels | null;
-}
-
-export interface internal_15 {
-  content: string | null;
-  type: string | null;
-  contentDigest: string | null;
-  owner: string | null;
-  fieldOwners: fieldOwners_2 | null;
-}
-
-export interface fieldOwners_2 {
-  slug: string | null;
-}
-
-export interface frontmatter_2 {
-  title: string | null;
-  createdDate: Date | null;
-  updatedDate: Date | null;
-  author: AuthorJson | null;
-  tags: Array<string> | null;
-  image: File | null;
-  draft: boolean | null;
-  _PARENT: string | null;
-}
-
-export interface CreatedDatefrontmatter_2Args {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface UpdatedDatefrontmatter_2Args {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface fields_2 {
-  slug: string | null;
-}
-
-export type JSON = any;
-
-export type HeadingLevels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-
-export interface MarkdownHeading {
-  value: string | null;
-  depth: number | null;
-}
-
-export interface wordCount {
-  paragraphs: number | null;
-  sentences: number | null;
-  words: number | null;
-}
-
-export interface internal_12 {
-  contentDigest: string | null;
-  type: string | null;
-  mediaType: string | null;
-  description: string | null;
-  owner: string | null;
-}
-
-export type fileDistinctEnum = "id" | "children" | "parent" | "internal___contentDigest" | "internal___type" | "internal___mediaType" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime";
-
-export type fileGroupEnum = "id" | "children" | "parent" | "internal___contentDigest" | "internal___type" | "internal___mediaType" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime";
-
-export interface fileGroupConnectionConnection {
+export type ImageSharpGroupConnection = {
+  __typename?: "ImageSharpGroupConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<ImageSharpEdge>;
+  nodes: Array<ImageSharp>;
   pageInfo: PageInfo;
-  edges: Array<fileGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
-}
-
-export interface fileGroupConnectionEdge {
-  node: File | null;
-  next: File | null;
-  previous: File | null;
-}
-
-export interface imageSharpConnectionSort {
-  fields: Array<ImageSharpConnectionSortByFieldsEnum>;
-  order: imageSharpConnectionSortOrderValues | null;
-}
-
-export type ImageSharpConnectionSortByFieldsEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner" | "fixed___base64" | "fixed___tracedSVG" | "fixed___aspectRatio" | "fixed___width" | "fixed___height" | "fixed___src" | "fixed___srcSet" | "fixed___srcWebp" | "fixed___srcSetWebp" | "fixed___originalName" | "resolutions___base64" | "resolutions___tracedSVG" | "resolutions___aspectRatio" | "resolutions___width" | "resolutions___height" | "resolutions___src" | "resolutions___srcSet" | "resolutions___srcWebp" | "resolutions___srcSetWebp" | "resolutions___originalName" | "fluid___base64" | "fluid___tracedSVG" | "fluid___aspectRatio" | "fluid___src" | "fluid___srcSet" | "fluid___srcWebp" | "fluid___srcSetWebp" | "fluid___sizes" | "fluid___originalImg" | "fluid___originalName" | "sizes___base64" | "sizes___tracedSVG" | "sizes___aspectRatio" | "sizes___src" | "sizes___srcSet" | "sizes___srcWebp" | "sizes___srcSetWebp" | "sizes___sizes" | "sizes___originalImg" | "sizes___originalName" | "original___width" | "original___height" | "original___src" | "resize___src" | "resize___tracedSVG" | "resize___width" | "resize___height" | "resize___aspectRatio" | "resize___originalName";
-
-export type imageSharpConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterImageSharp {
-  id: imageSharpConnectionIdQueryString_2 | null;
-  internal: imageSharpConnectionInternalInputObject_2 | null;
-  fixed: fixedTypeName_4 | null;
-  resolutions: resolutionsTypeName_4 | null;
-  fluid: fluidTypeName_4 | null;
-  sizes: sizesTypeName_4 | null;
-  original: originalTypeName_4 | null;
-  resize: resizeTypeName_4 | null;
-}
-
-export interface imageSharpConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpConnectionInternalInputObject_2 {
-  contentDigest: imageSharpConnectionInternalContentDigestQueryString_2 | null;
-  type: imageSharpConnectionInternalTypeQueryString_2 | null;
-  owner: imageSharpConnectionInternalOwnerQueryString_2 | null;
-}
-
-export interface imageSharpConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedTypeName_4 {
-  base64: fixedBase64QueryString_4 | null;
-  tracedSVG: fixedTracedSvgQueryString_4 | null;
-  aspectRatio: fixedAspectRatioQueryFloat_4 | null;
-  width: fixedWidthQueryFloat_4 | null;
-  height: fixedHeightQueryFloat_4 | null;
-  src: fixedSrcQueryString_4 | null;
-  srcSet: fixedSrcSetQueryString_4 | null;
-  srcWebp: fixedSrcWebpQueryString_4 | null;
-  srcSetWebp: fixedSrcSetWebpQueryString_4 | null;
-  originalName: fixedOriginalNameQueryString_4 | null;
-}
-
-export interface fixedBase64QueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedTracedSvgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedAspectRatioQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedWidthQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedHeightQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcSetQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcSetWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedOriginalNameQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsTypeName_4 {
-  base64: resolutionsBase64QueryString_4 | null;
-  tracedSVG: resolutionsTracedSvgQueryString_4 | null;
-  aspectRatio: resolutionsAspectRatioQueryFloat_4 | null;
-  width: resolutionsWidthQueryFloat_4 | null;
-  height: resolutionsHeightQueryFloat_4 | null;
-  src: resolutionsSrcQueryString_4 | null;
-  srcSet: resolutionsSrcSetQueryString_4 | null;
-  srcWebp: resolutionsSrcWebpQueryString_4 | null;
-  srcSetWebp: resolutionsSrcSetWebpQueryString_4 | null;
-  originalName: resolutionsOriginalNameQueryString_4 | null;
-}
-
-export interface resolutionsBase64QueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsTracedSvgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsAspectRatioQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsWidthQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsHeightQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcSetQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcSetWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsOriginalNameQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidTypeName_4 {
-  base64: fluidBase64QueryString_4 | null;
-  tracedSVG: fluidTracedSvgQueryString_4 | null;
-  aspectRatio: fluidAspectRatioQueryFloat_4 | null;
-  src: fluidSrcQueryString_4 | null;
-  srcSet: fluidSrcSetQueryString_4 | null;
-  srcWebp: fluidSrcWebpQueryString_4 | null;
-  srcSetWebp: fluidSrcSetWebpQueryString_4 | null;
-  sizes: fluidSizesQueryString_4 | null;
-  originalImg: fluidOriginalImgQueryString_4 | null;
-  originalName: fluidOriginalNameQueryString_4 | null;
-}
-
-export interface fluidBase64QueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidTracedSvgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidAspectRatioQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fluidSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcSetQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcSetWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSizesQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidOriginalImgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidOriginalNameQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesTypeName_4 {
-  base64: sizesBase64QueryString_4 | null;
-  tracedSVG: sizesTracedSvgQueryString_4 | null;
-  aspectRatio: sizesAspectRatioQueryFloat_4 | null;
-  src: sizesSrcQueryString_4 | null;
-  srcSet: sizesSrcSetQueryString_4 | null;
-  srcWebp: sizesSrcWebpQueryString_4 | null;
-  srcSetWebp: sizesSrcSetWebpQueryString_4 | null;
-  sizes: sizesSizesQueryString_4 | null;
-  originalImg: sizesOriginalImgQueryString_4 | null;
-  originalName: sizesOriginalNameQueryString_4 | null;
-}
-
-export interface sizesBase64QueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesTracedSvgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesAspectRatioQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sizesSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcSetQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcSetWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSizesQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesOriginalImgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesOriginalNameQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface originalTypeName_4 {
-  width: originalWidthQueryFloat_4 | null;
-  height: originalHeightQueryFloat_4 | null;
-  src: originalSrcQueryString_4 | null;
-}
-
-export interface originalWidthQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface originalHeightQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface originalSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeTypeName_4 {
-  src: resizeSrcQueryString_4 | null;
-  tracedSVG: resizeTracedSvgQueryString_4 | null;
-  width: resizeWidthQueryInt_4 | null;
-  height: resizeHeightQueryInt_4 | null;
-  aspectRatio: resizeAspectRatioQueryFloat_4 | null;
-  originalName: resizeOriginalNameQueryString_4 | null;
-}
-
-export interface resizeSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeTracedSvgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeWidthQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resizeHeightQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resizeAspectRatioQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resizeOriginalNameQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface ImageSharpConnection {
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+};
+
+export type ImageSharpOriginal = {
+  __typename?: "ImageSharpOriginal";
+  width?: Maybe<Scalars["Float"]>;
+  height?: Maybe<Scalars["Float"]>;
+  src?: Maybe<Scalars["String"]>;
+};
+
+export type ImageSharpOriginalFilterInput = {
+  width?: Maybe<FloatQueryOperatorInput>;
+  height?: Maybe<FloatQueryOperatorInput>;
+  src?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ImageSharpResize = {
+  __typename?: "ImageSharpResize";
+  src?: Maybe<Scalars["String"]>;
+  tracedSVG?: Maybe<Scalars["String"]>;
+  width?: Maybe<Scalars["Int"]>;
+  height?: Maybe<Scalars["Int"]>;
+  aspectRatio?: Maybe<Scalars["Float"]>;
+  originalName?: Maybe<Scalars["String"]>;
+};
+
+export type ImageSharpResizeFilterInput = {
+  src?: Maybe<StringQueryOperatorInput>;
+  tracedSVG?: Maybe<StringQueryOperatorInput>;
+  width?: Maybe<IntQueryOperatorInput>;
+  height?: Maybe<IntQueryOperatorInput>;
+  aspectRatio?: Maybe<FloatQueryOperatorInput>;
+  originalName?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ImageSharpResolutions = {
+  __typename?: "ImageSharpResolutions";
+  base64?: Maybe<Scalars["String"]>;
+  tracedSVG?: Maybe<Scalars["String"]>;
+  aspectRatio?: Maybe<Scalars["Float"]>;
+  width?: Maybe<Scalars["Float"]>;
+  height?: Maybe<Scalars["Float"]>;
+  src?: Maybe<Scalars["String"]>;
+  srcSet?: Maybe<Scalars["String"]>;
+  srcWebp?: Maybe<Scalars["String"]>;
+  srcSetWebp?: Maybe<Scalars["String"]>;
+  originalName?: Maybe<Scalars["String"]>;
+};
+
+export type ImageSharpResolutionsFilterInput = {
+  base64?: Maybe<StringQueryOperatorInput>;
+  tracedSVG?: Maybe<StringQueryOperatorInput>;
+  aspectRatio?: Maybe<FloatQueryOperatorInput>;
+  width?: Maybe<FloatQueryOperatorInput>;
+  height?: Maybe<FloatQueryOperatorInput>;
+  src?: Maybe<StringQueryOperatorInput>;
+  srcSet?: Maybe<StringQueryOperatorInput>;
+  srcWebp?: Maybe<StringQueryOperatorInput>;
+  srcSetWebp?: Maybe<StringQueryOperatorInput>;
+  originalName?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ImageSharpSizes = {
+  __typename?: "ImageSharpSizes";
+  base64?: Maybe<Scalars["String"]>;
+  tracedSVG?: Maybe<Scalars["String"]>;
+  aspectRatio?: Maybe<Scalars["Float"]>;
+  src?: Maybe<Scalars["String"]>;
+  srcSet?: Maybe<Scalars["String"]>;
+  srcWebp?: Maybe<Scalars["String"]>;
+  srcSetWebp?: Maybe<Scalars["String"]>;
+  sizes?: Maybe<Scalars["String"]>;
+  originalImg?: Maybe<Scalars["String"]>;
+  originalName?: Maybe<Scalars["String"]>;
+  presentationWidth?: Maybe<Scalars["Int"]>;
+  presentationHeight?: Maybe<Scalars["Int"]>;
+};
+
+export type ImageSharpSizesFilterInput = {
+  base64?: Maybe<StringQueryOperatorInput>;
+  tracedSVG?: Maybe<StringQueryOperatorInput>;
+  aspectRatio?: Maybe<FloatQueryOperatorInput>;
+  src?: Maybe<StringQueryOperatorInput>;
+  srcSet?: Maybe<StringQueryOperatorInput>;
+  srcWebp?: Maybe<StringQueryOperatorInput>;
+  srcSetWebp?: Maybe<StringQueryOperatorInput>;
+  sizes?: Maybe<StringQueryOperatorInput>;
+  originalImg?: Maybe<StringQueryOperatorInput>;
+  originalName?: Maybe<StringQueryOperatorInput>;
+  presentationWidth?: Maybe<IntQueryOperatorInput>;
+  presentationHeight?: Maybe<IntQueryOperatorInput>;
+};
+
+export type ImageSharpSortInput = {
+  fields?: Maybe<Array<Maybe<ImageSharpFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type Internal = {
+  __typename?: "Internal";
+  content?: Maybe<Scalars["String"]>;
+  contentDigest: Scalars["String"];
+  description?: Maybe<Scalars["String"]>;
+  fieldOwners?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  ignoreType?: Maybe<Scalars["Boolean"]>;
+  mediaType?: Maybe<Scalars["String"]>;
+  owner: Scalars["String"];
+  type: Scalars["String"];
+};
+
+export type InternalFilterInput = {
+  content?: Maybe<StringQueryOperatorInput>;
+  contentDigest?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  fieldOwners?: Maybe<StringQueryOperatorInput>;
+  ignoreType?: Maybe<BooleanQueryOperatorInput>;
+  mediaType?: Maybe<StringQueryOperatorInput>;
+  owner?: Maybe<StringQueryOperatorInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+};
+
+export type IntQueryOperatorInput = {
+  eq?: Maybe<Scalars["Int"]>;
+  ne?: Maybe<Scalars["Int"]>;
+  gt?: Maybe<Scalars["Int"]>;
+  gte?: Maybe<Scalars["Int"]>;
+  lt?: Maybe<Scalars["Int"]>;
+  lte?: Maybe<Scalars["Int"]>;
+  in?: Maybe<Array<Maybe<Scalars["Int"]>>>;
+  nin?: Maybe<Array<Maybe<Scalars["Int"]>>>;
+};
+
+export type JSONQueryOperatorInput = {
+  eq?: Maybe<Scalars["JSON"]>;
+  ne?: Maybe<Scalars["JSON"]>;
+  in?: Maybe<Array<Maybe<Scalars["JSON"]>>>;
+  nin?: Maybe<Array<Maybe<Scalars["JSON"]>>>;
+  regex?: Maybe<Scalars["JSON"]>;
+  glob?: Maybe<Scalars["JSON"]>;
+};
+
+export type MarkdownHeading = {
+  __typename?: "MarkdownHeading";
+  value?: Maybe<Scalars["String"]>;
+  depth?: Maybe<Scalars["Int"]>;
+};
+
+export type MarkdownHeadingFilterInput = {
+  value?: Maybe<StringQueryOperatorInput>;
+  depth?: Maybe<IntQueryOperatorInput>;
+};
+
+export type MarkdownHeadingFilterListInput = {
+  elemMatch?: Maybe<MarkdownHeadingFilterInput>;
+};
+
+export type MarkdownRemark = Node & {
+  __typename?: "MarkdownRemark";
+  id: Scalars["ID"];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  frontmatter?: Maybe<MarkdownRemarkFrontmatter>;
+  excerpt?: Maybe<Scalars["String"]>;
+  rawMarkdownBody?: Maybe<Scalars["String"]>;
+  fileAbsolutePath?: Maybe<Scalars["String"]>;
+  fields?: Maybe<MarkdownRemarkFields>;
+  html?: Maybe<Scalars["String"]>;
+  htmlAst?: Maybe<Scalars["JSON"]>;
+  excerptAst?: Maybe<Scalars["JSON"]>;
+  headings?: Maybe<Array<Maybe<MarkdownHeading>>>;
+  timeToRead?: Maybe<Scalars["Int"]>;
+  tableOfContents?: Maybe<Scalars["String"]>;
+  wordCount?: Maybe<wordCount>;
+};
+
+export type MarkdownRemarkexcerptArgs = {
+  pruneLength: Scalars["Int"];
+  truncate: Scalars["Boolean"];
+  format: ExcerptFormats;
+};
+
+export type MarkdownRemarkexcerptAstArgs = {
+  pruneLength: Scalars["Int"];
+  truncate: Scalars["Boolean"];
+};
+
+export type MarkdownRemarkheadingsArgs = {
+  depth?: Maybe<HeadingLevels>;
+};
+
+export type MarkdownRemarktableOfContentsArgs = {
+  pathToSlugField: Scalars["String"];
+  maxDepth?: Maybe<Scalars["Int"]>;
+  heading?: Maybe<Scalars["String"]>;
+};
+
+export type MarkdownRemarkConnection = {
+  __typename?: "MarkdownRemarkConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<MarkdownRemarkEdge>;
+  nodes: Array<MarkdownRemark>;
   pageInfo: PageInfo;
-  edges: Array<ImageSharpEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<imageSharpGroupConnectionConnection> | null;
+  distinct: Array<Scalars["String"]>;
+  group: Array<MarkdownRemarkGroupConnection>;
+};
+
+export type MarkdownRemarkConnectiondistinctArgs = {
+  field: MarkdownRemarkFieldsEnum;
+};
+
+export type MarkdownRemarkConnectiongroupArgs = {
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  field: MarkdownRemarkFieldsEnum;
+};
+
+export type MarkdownRemarkEdge = {
+  __typename?: "MarkdownRemarkEdge";
+  next?: Maybe<MarkdownRemark>;
+  node: MarkdownRemark;
+  previous?: Maybe<MarkdownRemark>;
+};
+
+export type MarkdownRemarkFields = {
+  __typename?: "MarkdownRemarkFields";
+  slug?: Maybe<Scalars["String"]>;
+};
+
+export enum MarkdownRemarkFieldsEnum {
+  id = "id",
+  parent___id = "parent___id",
+  parent___parent___id = "parent___parent___id",
+  parent___parent___parent___id = "parent___parent___parent___id",
+  parent___parent___parent___children = "parent___parent___parent___children",
+  parent___parent___children = "parent___parent___children",
+  parent___parent___children___id = "parent___parent___children___id",
+  parent___parent___children___children = "parent___parent___children___children",
+  parent___parent___internal___content = "parent___parent___internal___content",
+  parent___parent___internal___contentDigest = "parent___parent___internal___contentDigest",
+  parent___parent___internal___description = "parent___parent___internal___description",
+  parent___parent___internal___fieldOwners = "parent___parent___internal___fieldOwners",
+  parent___parent___internal___ignoreType = "parent___parent___internal___ignoreType",
+  parent___parent___internal___mediaType = "parent___parent___internal___mediaType",
+  parent___parent___internal___owner = "parent___parent___internal___owner",
+  parent___parent___internal___type = "parent___parent___internal___type",
+  parent___children = "parent___children",
+  parent___children___id = "parent___children___id",
+  parent___children___parent___id = "parent___children___parent___id",
+  parent___children___parent___children = "parent___children___parent___children",
+  parent___children___children = "parent___children___children",
+  parent___children___children___id = "parent___children___children___id",
+  parent___children___children___children = "parent___children___children___children",
+  parent___children___internal___content = "parent___children___internal___content",
+  parent___children___internal___contentDigest = "parent___children___internal___contentDigest",
+  parent___children___internal___description = "parent___children___internal___description",
+  parent___children___internal___fieldOwners = "parent___children___internal___fieldOwners",
+  parent___children___internal___ignoreType = "parent___children___internal___ignoreType",
+  parent___children___internal___mediaType = "parent___children___internal___mediaType",
+  parent___children___internal___owner = "parent___children___internal___owner",
+  parent___children___internal___type = "parent___children___internal___type",
+  parent___internal___content = "parent___internal___content",
+  parent___internal___contentDigest = "parent___internal___contentDigest",
+  parent___internal___description = "parent___internal___description",
+  parent___internal___fieldOwners = "parent___internal___fieldOwners",
+  parent___internal___ignoreType = "parent___internal___ignoreType",
+  parent___internal___mediaType = "parent___internal___mediaType",
+  parent___internal___owner = "parent___internal___owner",
+  parent___internal___type = "parent___internal___type",
+  children = "children",
+  children___id = "children___id",
+  children___parent___id = "children___parent___id",
+  children___parent___parent___id = "children___parent___parent___id",
+  children___parent___parent___children = "children___parent___parent___children",
+  children___parent___children = "children___parent___children",
+  children___parent___children___id = "children___parent___children___id",
+  children___parent___children___children = "children___parent___children___children",
+  children___parent___internal___content = "children___parent___internal___content",
+  children___parent___internal___contentDigest = "children___parent___internal___contentDigest",
+  children___parent___internal___description = "children___parent___internal___description",
+  children___parent___internal___fieldOwners = "children___parent___internal___fieldOwners",
+  children___parent___internal___ignoreType = "children___parent___internal___ignoreType",
+  children___parent___internal___mediaType = "children___parent___internal___mediaType",
+  children___parent___internal___owner = "children___parent___internal___owner",
+  children___parent___internal___type = "children___parent___internal___type",
+  children___children = "children___children",
+  children___children___id = "children___children___id",
+  children___children___parent___id = "children___children___parent___id",
+  children___children___parent___children = "children___children___parent___children",
+  children___children___children = "children___children___children",
+  children___children___children___id = "children___children___children___id",
+  children___children___children___children = "children___children___children___children",
+  children___children___internal___content = "children___children___internal___content",
+  children___children___internal___contentDigest = "children___children___internal___contentDigest",
+  children___children___internal___description = "children___children___internal___description",
+  children___children___internal___fieldOwners = "children___children___internal___fieldOwners",
+  children___children___internal___ignoreType = "children___children___internal___ignoreType",
+  children___children___internal___mediaType = "children___children___internal___mediaType",
+  children___children___internal___owner = "children___children___internal___owner",
+  children___children___internal___type = "children___children___internal___type",
+  children___internal___content = "children___internal___content",
+  children___internal___contentDigest = "children___internal___contentDigest",
+  children___internal___description = "children___internal___description",
+  children___internal___fieldOwners = "children___internal___fieldOwners",
+  children___internal___ignoreType = "children___internal___ignoreType",
+  children___internal___mediaType = "children___internal___mediaType",
+  children___internal___owner = "children___internal___owner",
+  children___internal___type = "children___internal___type",
+  internal___content = "internal___content",
+  internal___contentDigest = "internal___contentDigest",
+  internal___description = "internal___description",
+  internal___fieldOwners = "internal___fieldOwners",
+  internal___ignoreType = "internal___ignoreType",
+  internal___mediaType = "internal___mediaType",
+  internal___owner = "internal___owner",
+  internal___type = "internal___type",
+  frontmatter___title = "frontmatter___title",
+  frontmatter___createdDate = "frontmatter___createdDate",
+  frontmatter___updatedDate = "frontmatter___updatedDate",
+  frontmatter___author___id = "frontmatter___author___id",
+  frontmatter___author___parent___id = "frontmatter___author___parent___id",
+  frontmatter___author___parent___children = "frontmatter___author___parent___children",
+  frontmatter___author___children = "frontmatter___author___children",
+  frontmatter___author___children___id = "frontmatter___author___children___id",
+  frontmatter___author___children___children = "frontmatter___author___children___children",
+  frontmatter___author___internal___content = "frontmatter___author___internal___content",
+  frontmatter___author___internal___contentDigest = "frontmatter___author___internal___contentDigest",
+  frontmatter___author___internal___description = "frontmatter___author___internal___description",
+  frontmatter___author___internal___fieldOwners = "frontmatter___author___internal___fieldOwners",
+  frontmatter___author___internal___ignoreType = "frontmatter___author___internal___ignoreType",
+  frontmatter___author___internal___mediaType = "frontmatter___author___internal___mediaType",
+  frontmatter___author___internal___owner = "frontmatter___author___internal___owner",
+  frontmatter___author___internal___type = "frontmatter___author___internal___type",
+  frontmatter___author___bio = "frontmatter___author___bio",
+  frontmatter___author___avatar___id = "frontmatter___author___avatar___id",
+  frontmatter___author___avatar___children = "frontmatter___author___avatar___children",
+  frontmatter___author___avatar___sourceInstanceName = "frontmatter___author___avatar___sourceInstanceName",
+  frontmatter___author___avatar___absolutePath = "frontmatter___author___avatar___absolutePath",
+  frontmatter___author___avatar___relativePath = "frontmatter___author___avatar___relativePath",
+  frontmatter___author___avatar___extension = "frontmatter___author___avatar___extension",
+  frontmatter___author___avatar___size = "frontmatter___author___avatar___size",
+  frontmatter___author___avatar___prettySize = "frontmatter___author___avatar___prettySize",
+  frontmatter___author___avatar___modifiedTime = "frontmatter___author___avatar___modifiedTime",
+  frontmatter___author___avatar___accessTime = "frontmatter___author___avatar___accessTime",
+  frontmatter___author___avatar___changeTime = "frontmatter___author___avatar___changeTime",
+  frontmatter___author___avatar___birthTime = "frontmatter___author___avatar___birthTime",
+  frontmatter___author___avatar___root = "frontmatter___author___avatar___root",
+  frontmatter___author___avatar___dir = "frontmatter___author___avatar___dir",
+  frontmatter___author___avatar___base = "frontmatter___author___avatar___base",
+  frontmatter___author___avatar___ext = "frontmatter___author___avatar___ext",
+  frontmatter___author___avatar___name = "frontmatter___author___avatar___name",
+  frontmatter___author___avatar___relativeDirectory = "frontmatter___author___avatar___relativeDirectory",
+  frontmatter___author___avatar___dev = "frontmatter___author___avatar___dev",
+  frontmatter___author___avatar___mode = "frontmatter___author___avatar___mode",
+  frontmatter___author___avatar___nlink = "frontmatter___author___avatar___nlink",
+  frontmatter___author___avatar___uid = "frontmatter___author___avatar___uid",
+  frontmatter___author___avatar___gid = "frontmatter___author___avatar___gid",
+  frontmatter___author___avatar___rdev = "frontmatter___author___avatar___rdev",
+  frontmatter___author___avatar___ino = "frontmatter___author___avatar___ino",
+  frontmatter___author___avatar___atimeMs = "frontmatter___author___avatar___atimeMs",
+  frontmatter___author___avatar___mtimeMs = "frontmatter___author___avatar___mtimeMs",
+  frontmatter___author___avatar___ctimeMs = "frontmatter___author___avatar___ctimeMs",
+  frontmatter___author___avatar___birthtimeMs = "frontmatter___author___avatar___birthtimeMs",
+  frontmatter___author___avatar___atime = "frontmatter___author___avatar___atime",
+  frontmatter___author___avatar___mtime = "frontmatter___author___avatar___mtime",
+  frontmatter___author___avatar___ctime = "frontmatter___author___avatar___ctime",
+  frontmatter___author___avatar___birthtime = "frontmatter___author___avatar___birthtime",
+  frontmatter___author___avatar___publicURL = "frontmatter___author___avatar___publicURL",
+  frontmatter___author___twitter = "frontmatter___author___twitter",
+  frontmatter___author___github = "frontmatter___author___github",
+  frontmatter___tags = "frontmatter___tags",
+  frontmatter___image___id = "frontmatter___image___id",
+  frontmatter___image___parent___id = "frontmatter___image___parent___id",
+  frontmatter___image___parent___children = "frontmatter___image___parent___children",
+  frontmatter___image___children = "frontmatter___image___children",
+  frontmatter___image___children___id = "frontmatter___image___children___id",
+  frontmatter___image___children___children = "frontmatter___image___children___children",
+  frontmatter___image___internal___content = "frontmatter___image___internal___content",
+  frontmatter___image___internal___contentDigest = "frontmatter___image___internal___contentDigest",
+  frontmatter___image___internal___description = "frontmatter___image___internal___description",
+  frontmatter___image___internal___fieldOwners = "frontmatter___image___internal___fieldOwners",
+  frontmatter___image___internal___ignoreType = "frontmatter___image___internal___ignoreType",
+  frontmatter___image___internal___mediaType = "frontmatter___image___internal___mediaType",
+  frontmatter___image___internal___owner = "frontmatter___image___internal___owner",
+  frontmatter___image___internal___type = "frontmatter___image___internal___type",
+  frontmatter___image___sourceInstanceName = "frontmatter___image___sourceInstanceName",
+  frontmatter___image___absolutePath = "frontmatter___image___absolutePath",
+  frontmatter___image___relativePath = "frontmatter___image___relativePath",
+  frontmatter___image___extension = "frontmatter___image___extension",
+  frontmatter___image___size = "frontmatter___image___size",
+  frontmatter___image___prettySize = "frontmatter___image___prettySize",
+  frontmatter___image___modifiedTime = "frontmatter___image___modifiedTime",
+  frontmatter___image___accessTime = "frontmatter___image___accessTime",
+  frontmatter___image___changeTime = "frontmatter___image___changeTime",
+  frontmatter___image___birthTime = "frontmatter___image___birthTime",
+  frontmatter___image___root = "frontmatter___image___root",
+  frontmatter___image___dir = "frontmatter___image___dir",
+  frontmatter___image___base = "frontmatter___image___base",
+  frontmatter___image___ext = "frontmatter___image___ext",
+  frontmatter___image___name = "frontmatter___image___name",
+  frontmatter___image___relativeDirectory = "frontmatter___image___relativeDirectory",
+  frontmatter___image___dev = "frontmatter___image___dev",
+  frontmatter___image___mode = "frontmatter___image___mode",
+  frontmatter___image___nlink = "frontmatter___image___nlink",
+  frontmatter___image___uid = "frontmatter___image___uid",
+  frontmatter___image___gid = "frontmatter___image___gid",
+  frontmatter___image___rdev = "frontmatter___image___rdev",
+  frontmatter___image___ino = "frontmatter___image___ino",
+  frontmatter___image___atimeMs = "frontmatter___image___atimeMs",
+  frontmatter___image___mtimeMs = "frontmatter___image___mtimeMs",
+  frontmatter___image___ctimeMs = "frontmatter___image___ctimeMs",
+  frontmatter___image___birthtimeMs = "frontmatter___image___birthtimeMs",
+  frontmatter___image___atime = "frontmatter___image___atime",
+  frontmatter___image___mtime = "frontmatter___image___mtime",
+  frontmatter___image___ctime = "frontmatter___image___ctime",
+  frontmatter___image___birthtime = "frontmatter___image___birthtime",
+  frontmatter___image___publicURL = "frontmatter___image___publicURL",
+  frontmatter___draft = "frontmatter___draft",
+  excerpt = "excerpt",
+  rawMarkdownBody = "rawMarkdownBody",
+  fileAbsolutePath = "fileAbsolutePath",
+  fields___slug = "fields___slug",
+  html = "html",
+  htmlAst = "htmlAst",
+  excerptAst = "excerptAst",
+  headings = "headings",
+  headings___value = "headings___value",
+  headings___depth = "headings___depth",
+  timeToRead = "timeToRead",
+  tableOfContents = "tableOfContents",
+  wordCount___paragraphs = "wordCount___paragraphs",
+  wordCount___sentences = "wordCount___sentences",
+  wordCount___words = "wordCount___words"
 }
 
-export interface DistinctImageSharpConnectionArgs {
-  field: imageSharpDistinctEnum | null;
-}
+export type MarkdownRemarkFieldsFilterInput = {
+  slug?: Maybe<StringQueryOperatorInput>;
+};
 
-export interface GroupImageSharpConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: imageSharpGroupEnum | null;
-}
+export type MarkdownRemarkFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
+  rawMarkdownBody?: Maybe<StringQueryOperatorInput>;
+  fileAbsolutePath?: Maybe<StringQueryOperatorInput>;
+  fields?: Maybe<MarkdownRemarkFieldsFilterInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  htmlAst?: Maybe<JSONQueryOperatorInput>;
+  excerptAst?: Maybe<JSONQueryOperatorInput>;
+  headings?: Maybe<MarkdownHeadingFilterListInput>;
+  timeToRead?: Maybe<IntQueryOperatorInput>;
+  tableOfContents?: Maybe<StringQueryOperatorInput>;
+  wordCount?: Maybe<wordCountFilterInput>;
+};
 
-export interface ImageSharpEdge {
-  node: ImageSharp | null;
-  next: ImageSharp | null;
-  previous: ImageSharp | null;
-}
+export type MarkdownRemarkFrontmatter = {
+  __typename?: "MarkdownRemarkFrontmatter";
+  title?: Maybe<Scalars["String"]>;
+  createdDate?: Maybe<Scalars["Date"]>;
+  updatedDate?: Maybe<Scalars["Date"]>;
+  author?: Maybe<AuthorJson>;
+  tags?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  image?: Maybe<File>;
+  draft?: Maybe<Scalars["Boolean"]>;
+};
 
-export type imageSharpDistinctEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
+export type MarkdownRemarkFrontmattercreatedDateArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export type imageSharpGroupEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
+export type MarkdownRemarkFrontmatterupdatedDateArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export interface imageSharpGroupConnectionConnection {
+export type MarkdownRemarkFrontmatterFilterInput = {
+  title?: Maybe<StringQueryOperatorInput>;
+  createdDate?: Maybe<DateQueryOperatorInput>;
+  updatedDate?: Maybe<DateQueryOperatorInput>;
+  author?: Maybe<AuthorJsonFilterInput>;
+  tags?: Maybe<StringQueryOperatorInput>;
+  image?: Maybe<FileFilterInput>;
+  draft?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type MarkdownRemarkGroupConnection = {
+  __typename?: "MarkdownRemarkGroupConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<MarkdownRemarkEdge>;
+  nodes: Array<MarkdownRemark>;
   pageInfo: PageInfo;
-  edges: Array<imageSharpGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+};
+
+export type MarkdownRemarkSortInput = {
+  fields?: Maybe<Array<Maybe<MarkdownRemarkFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+/** Node Interface */
+export type Node = {
+  __typename?: "Node";
+  id: Scalars["ID"];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+export type NodeFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+export type NodeFilterListInput = {
+  elemMatch?: Maybe<NodeFilterInput>;
+};
+
+export type PageInfo = {
+  __typename?: "PageInfo";
+  currentPage: Scalars["Int"];
+  hasPreviousPage: Scalars["Boolean"];
+  hasNextPage: Scalars["Boolean"];
+  itemCount: Scalars["Int"];
+  pageCount: Scalars["Int"];
+  perPage?: Maybe<Scalars["Int"]>;
+};
+
+export type Potrace = {
+  turnPolicy?: Maybe<PotraceTurnPolicy>;
+  turdSize?: Maybe<Scalars["Float"]>;
+  alphaMax?: Maybe<Scalars["Float"]>;
+  optCurve?: Maybe<Scalars["Boolean"]>;
+  optTolerance?: Maybe<Scalars["Float"]>;
+  threshold?: Maybe<Scalars["Int"]>;
+  blackOnWhite?: Maybe<Scalars["Boolean"]>;
+  color?: Maybe<Scalars["String"]>;
+  background?: Maybe<Scalars["String"]>;
+};
+
+export enum PotraceTurnPolicy {
+  TURNPOLICY_BLACK = "TURNPOLICY_BLACK",
+  TURNPOLICY_WHITE = "TURNPOLICY_WHITE",
+  TURNPOLICY_LEFT = "TURNPOLICY_LEFT",
+  TURNPOLICY_RIGHT = "TURNPOLICY_RIGHT",
+  TURNPOLICY_MINORITY = "TURNPOLICY_MINORITY",
+  TURNPOLICY_MAJORITY = "TURNPOLICY_MAJORITY"
 }
 
-export interface imageSharpGroupConnectionEdge {
-  node: ImageSharp | null;
-  next: ImageSharp | null;
-  previous: ImageSharp | null;
-}
+export type Query = {
+  __typename?: "Query";
+  file?: Maybe<File>;
+  allFile?: Maybe<FileConnection>;
+  sitePage?: Maybe<SitePage>;
+  allSitePage?: Maybe<SitePageConnection>;
+  sitePlugin?: Maybe<SitePlugin>;
+  allSitePlugin?: Maybe<SitePluginConnection>;
+  site?: Maybe<Site>;
+  allSite?: Maybe<SiteConnection>;
+  directory?: Maybe<Directory>;
+  allDirectory?: Maybe<DirectoryConnection>;
+  imageSharp?: Maybe<ImageSharp>;
+  allImageSharp?: Maybe<ImageSharpConnection>;
+  markdownRemark?: Maybe<MarkdownRemark>;
+  allMarkdownRemark?: Maybe<MarkdownRemarkConnection>;
+  authorJson?: Maybe<AuthorJson>;
+  allAuthorJson?: Maybe<AuthorJsonConnection>;
+};
 
-export interface markdownRemarkConnectionSort {
-  fields: Array<MarkdownRemarkConnectionSortByFieldsEnum>;
-  order: markdownRemarkConnectionSortOrderValues | null;
-}
+export type QueryfileArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  sourceInstanceName?: Maybe<StringQueryOperatorInput>;
+  absolutePath?: Maybe<StringQueryOperatorInput>;
+  relativePath?: Maybe<StringQueryOperatorInput>;
+  extension?: Maybe<StringQueryOperatorInput>;
+  size?: Maybe<IntQueryOperatorInput>;
+  prettySize?: Maybe<StringQueryOperatorInput>;
+  modifiedTime?: Maybe<DateQueryOperatorInput>;
+  accessTime?: Maybe<DateQueryOperatorInput>;
+  changeTime?: Maybe<DateQueryOperatorInput>;
+  birthTime?: Maybe<DateQueryOperatorInput>;
+  root?: Maybe<StringQueryOperatorInput>;
+  dir?: Maybe<StringQueryOperatorInput>;
+  base?: Maybe<StringQueryOperatorInput>;
+  ext?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  relativeDirectory?: Maybe<StringQueryOperatorInput>;
+  dev?: Maybe<FloatQueryOperatorInput>;
+  mode?: Maybe<IntQueryOperatorInput>;
+  nlink?: Maybe<IntQueryOperatorInput>;
+  uid?: Maybe<IntQueryOperatorInput>;
+  gid?: Maybe<IntQueryOperatorInput>;
+  rdev?: Maybe<IntQueryOperatorInput>;
+  ino?: Maybe<FloatQueryOperatorInput>;
+  atimeMs?: Maybe<FloatQueryOperatorInput>;
+  mtimeMs?: Maybe<FloatQueryOperatorInput>;
+  ctimeMs?: Maybe<FloatQueryOperatorInput>;
+  birthtimeMs?: Maybe<FloatQueryOperatorInput>;
+  atime?: Maybe<DateQueryOperatorInput>;
+  mtime?: Maybe<DateQueryOperatorInput>;
+  ctime?: Maybe<DateQueryOperatorInput>;
+  birthtime?: Maybe<DateQueryOperatorInput>;
+  publicURL?: Maybe<StringQueryOperatorInput>;
+};
 
-export type MarkdownRemarkConnectionSortByFieldsEnum = "id" | "parent" | "internal___content" | "internal___type" | "internal___contentDigest" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter____PARENT" | "excerpt" | "rawMarkdownBody" | "fileAbsolutePath" | "fields___slug" | "html" | "headings" | "timeToRead" | "tableOfContents" | "wordCount___paragraphs" | "wordCount___sentences" | "wordCount___words";
+export type QueryallFileArgs = {
+  filter?: Maybe<FileFilterInput>;
+  sort?: Maybe<FileSortInput>;
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+};
 
-export type markdownRemarkConnectionSortOrderValues = "ASC" | "DESC";
+export type QuerysitePageArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  path?: Maybe<StringQueryOperatorInput>;
+  jsonName?: Maybe<StringQueryOperatorInput>;
+  internalComponentName?: Maybe<StringQueryOperatorInput>;
+  component?: Maybe<StringQueryOperatorInput>;
+  componentChunkName?: Maybe<StringQueryOperatorInput>;
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
+  pluginCreator?: Maybe<SitePluginFilterInput>;
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
+  componentPath?: Maybe<StringQueryOperatorInput>;
+};
 
-export interface filterMarkdownRemark {
-  id: markdownRemarkConnectionIdQueryString_2 | null;
-  internal: markdownRemarkConnectionInternalInputObject_2 | null;
-  frontmatter: markdownRemarkConnectionFrontmatterInputObject_2 | null;
-  excerpt: excerptQueryString_4 | null;
-  rawMarkdownBody: markdownRemarkConnectionRawMarkdownBodyQueryString_2 | null;
-  fileAbsolutePath: markdownRemarkConnectionFileAbsolutePathQueryString_2 | null;
-  fields: markdownRemarkConnectionFieldsInputObject_2 | null;
-  html: htmlQueryString_4 | null;
-  headings: headingsQueryList_4 | null;
-  timeToRead: timeToReadQueryInt_4 | null;
-  tableOfContents: tableOfContentsQueryString_4 | null;
-  wordCount: wordCountTypeName_4 | null;
-}
+export type QueryallSitePageArgs = {
+  filter?: Maybe<SitePageFilterInput>;
+  sort?: Maybe<SitePageSortInput>;
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+};
 
-export interface markdownRemarkConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type QuerysitePluginArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  resolve?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+  pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>;
+  nodeAPIs?: Maybe<StringQueryOperatorInput>;
+  browserAPIs?: Maybe<StringQueryOperatorInput>;
+  ssrAPIs?: Maybe<StringQueryOperatorInput>;
+  pluginFilepath?: Maybe<StringQueryOperatorInput>;
+  packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
+};
 
-export interface markdownRemarkConnectionInternalInputObject_2 {
-  content: markdownRemarkConnectionInternalContentQueryString_2 | null;
-  type: markdownRemarkConnectionInternalTypeQueryString_2 | null;
-  contentDigest: markdownRemarkConnectionInternalContentDigestQueryString_2 | null;
-  owner: markdownRemarkConnectionInternalOwnerQueryString_2 | null;
-  fieldOwners: markdownRemarkConnectionInternalFieldOwnersInputObject_2 | null;
-}
+export type QueryallSitePluginArgs = {
+  filter?: Maybe<SitePluginFilterInput>;
+  sort?: Maybe<SitePluginSortInput>;
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+};
 
-export interface markdownRemarkConnectionInternalContentQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type QuerysiteArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
+  mapping?: Maybe<SiteMappingFilterInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
+  polyfill?: Maybe<BooleanQueryOperatorInput>;
+  buildTime?: Maybe<DateQueryOperatorInput>;
+};
 
-export interface markdownRemarkConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type QueryallSiteArgs = {
+  filter?: Maybe<SiteFilterInput>;
+  sort?: Maybe<SiteSortInput>;
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+};
 
-export interface markdownRemarkConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type QuerydirectoryArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  sourceInstanceName?: Maybe<StringQueryOperatorInput>;
+  absolutePath?: Maybe<StringQueryOperatorInput>;
+  relativePath?: Maybe<StringQueryOperatorInput>;
+  extension?: Maybe<StringQueryOperatorInput>;
+  size?: Maybe<IntQueryOperatorInput>;
+  prettySize?: Maybe<StringQueryOperatorInput>;
+  modifiedTime?: Maybe<DateQueryOperatorInput>;
+  accessTime?: Maybe<DateQueryOperatorInput>;
+  changeTime?: Maybe<DateQueryOperatorInput>;
+  birthTime?: Maybe<DateQueryOperatorInput>;
+  root?: Maybe<StringQueryOperatorInput>;
+  dir?: Maybe<StringQueryOperatorInput>;
+  base?: Maybe<StringQueryOperatorInput>;
+  ext?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  relativeDirectory?: Maybe<StringQueryOperatorInput>;
+  dev?: Maybe<FloatQueryOperatorInput>;
+  mode?: Maybe<IntQueryOperatorInput>;
+  nlink?: Maybe<IntQueryOperatorInput>;
+  uid?: Maybe<IntQueryOperatorInput>;
+  gid?: Maybe<IntQueryOperatorInput>;
+  rdev?: Maybe<IntQueryOperatorInput>;
+  ino?: Maybe<FloatQueryOperatorInput>;
+  atimeMs?: Maybe<FloatQueryOperatorInput>;
+  mtimeMs?: Maybe<FloatQueryOperatorInput>;
+  ctimeMs?: Maybe<FloatQueryOperatorInput>;
+  birthtimeMs?: Maybe<FloatQueryOperatorInput>;
+  atime?: Maybe<DateQueryOperatorInput>;
+  mtime?: Maybe<DateQueryOperatorInput>;
+  ctime?: Maybe<DateQueryOperatorInput>;
+  birthtime?: Maybe<DateQueryOperatorInput>;
+};
 
-export interface markdownRemarkConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type QueryallDirectoryArgs = {
+  filter?: Maybe<DirectoryFilterInput>;
+  sort?: Maybe<DirectorySortInput>;
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+};
 
-export interface markdownRemarkConnectionInternalFieldOwnersInputObject_2 {
-  slug: markdownRemarkConnectionInternalFieldOwnersSlugQueryString_2 | null;
-}
+export type QueryimageSharpArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  fixed?: Maybe<ImageSharpFixedFilterInput>;
+  resolutions?: Maybe<ImageSharpResolutionsFilterInput>;
+  fluid?: Maybe<ImageSharpFluidFilterInput>;
+  sizes?: Maybe<ImageSharpSizesFilterInput>;
+  original?: Maybe<ImageSharpOriginalFilterInput>;
+  resize?: Maybe<ImageSharpResizeFilterInput>;
+};
 
-export interface markdownRemarkConnectionInternalFieldOwnersSlugQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type QueryallImageSharpArgs = {
+  filter?: Maybe<ImageSharpFilterInput>;
+  sort?: Maybe<ImageSharpSortInput>;
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+};
 
-export interface markdownRemarkConnectionFrontmatterInputObject_2 {
-  title: markdownRemarkConnectionFrontmatterTitleQueryString_2 | null;
-  createdDate: markdownRemarkConnectionFrontmatterCreatedDateQueryString_2 | null;
-  updatedDate: markdownRemarkConnectionFrontmatterUpdatedDateQueryString_2 | null;
-  author: markdownRemarkConnectionFrontmatterAuthorQueryString_2 | null;
-  tags: markdownRemarkConnectionFrontmatterTagsQueryList_2 | null;
-  image: markdownRemarkConnectionFrontmatterImageQueryString_2 | null;
-  draft: markdownRemarkConnectionFrontmatterDraftQueryBoolean_2 | null;
-  _PARENT: markdownRemarkConnectionFrontmatterParentQueryString_2 | null;
-}
+export type QuerymarkdownRemarkArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
+  rawMarkdownBody?: Maybe<StringQueryOperatorInput>;
+  fileAbsolutePath?: Maybe<StringQueryOperatorInput>;
+  fields?: Maybe<MarkdownRemarkFieldsFilterInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  htmlAst?: Maybe<JSONQueryOperatorInput>;
+  excerptAst?: Maybe<JSONQueryOperatorInput>;
+  headings?: Maybe<MarkdownHeadingFilterListInput>;
+  timeToRead?: Maybe<IntQueryOperatorInput>;
+  tableOfContents?: Maybe<StringQueryOperatorInput>;
+  wordCount?: Maybe<wordCountFilterInput>;
+};
 
-export interface markdownRemarkConnectionFrontmatterTitleQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type QueryallMarkdownRemarkArgs = {
+  filter?: Maybe<MarkdownRemarkFilterInput>;
+  sort?: Maybe<MarkdownRemarkSortInput>;
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+};
 
-export interface markdownRemarkConnectionFrontmatterCreatedDateQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type QueryauthorJsonArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  bio?: Maybe<StringQueryOperatorInput>;
+  avatar?: Maybe<FileFilterInput>;
+  twitter?: Maybe<StringQueryOperatorInput>;
+  github?: Maybe<StringQueryOperatorInput>;
+};
 
-export interface markdownRemarkConnectionFrontmatterUpdatedDateQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type QueryallAuthorJsonArgs = {
+  filter?: Maybe<AuthorJsonFilterInput>;
+  sort?: Maybe<AuthorJsonSortInput>;
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+};
 
-export interface markdownRemarkConnectionFrontmatterAuthorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type Site = Node & {
+  __typename?: "Site";
+  id: Scalars["ID"];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars["Int"]>;
+  host?: Maybe<Scalars["String"]>;
+  mapping?: Maybe<SiteMapping>;
+  pathPrefix?: Maybe<Scalars["String"]>;
+  polyfill?: Maybe<Scalars["Boolean"]>;
+  buildTime?: Maybe<Scalars["Date"]>;
+};
 
-export interface markdownRemarkConnectionFrontmatterTagsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+export type SitebuildTimeArgs = {
+  formatString?: Maybe<Scalars["String"]>;
+  fromNow?: Maybe<Scalars["Boolean"]>;
+  difference?: Maybe<Scalars["String"]>;
+  locale?: Maybe<Scalars["String"]>;
+};
 
-export interface markdownRemarkConnectionFrontmatterImageQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterDraftQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterParentQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface excerptQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionRawMarkdownBodyQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFileAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFieldsInputObject_2 {
-  slug: markdownRemarkConnectionFieldsSlugQueryString_2 | null;
-}
-
-export interface markdownRemarkConnectionFieldsSlugQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface htmlQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface headingsQueryList_4 {
-  elemMatch: headingsListElemTypeName_4 | null;
-}
-
-export interface headingsListElemTypeName_4 {
-  value: headingsListElemValueQueryString_4 | null;
-  depth: headingsListElemDepthQueryInt_4 | null;
-}
-
-export interface headingsListElemValueQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface headingsListElemDepthQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface timeToReadQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface tableOfContentsQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface wordCountTypeName_4 {
-  paragraphs: wordCountParagraphsQueryInt_4 | null;
-  sentences: wordCountSentencesQueryInt_4 | null;
-  words: wordCountWordsQueryInt_4 | null;
-}
-
-export interface wordCountParagraphsQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface wordCountSentencesQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface wordCountWordsQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface MarkdownRemarkConnection {
+export type SiteConnection = {
+  __typename?: "SiteConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<SiteEdge>;
+  nodes: Array<Site>;
   pageInfo: PageInfo;
-  edges: Array<MarkdownRemarkEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<markdownRemarkGroupConnectionConnection> | null;
+  distinct: Array<Scalars["String"]>;
+  group: Array<SiteGroupConnection>;
+};
+
+export type SiteConnectiondistinctArgs = {
+  field: SiteFieldsEnum;
+};
+
+export type SiteConnectiongroupArgs = {
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  field: SiteFieldsEnum;
+};
+
+export type SiteEdge = {
+  __typename?: "SiteEdge";
+  next?: Maybe<Site>;
+  node: Site;
+  previous?: Maybe<Site>;
+};
+
+export enum SiteFieldsEnum {
+  id = "id",
+  parent___id = "parent___id",
+  parent___parent___id = "parent___parent___id",
+  parent___parent___parent___id = "parent___parent___parent___id",
+  parent___parent___parent___children = "parent___parent___parent___children",
+  parent___parent___children = "parent___parent___children",
+  parent___parent___children___id = "parent___parent___children___id",
+  parent___parent___children___children = "parent___parent___children___children",
+  parent___parent___internal___content = "parent___parent___internal___content",
+  parent___parent___internal___contentDigest = "parent___parent___internal___contentDigest",
+  parent___parent___internal___description = "parent___parent___internal___description",
+  parent___parent___internal___fieldOwners = "parent___parent___internal___fieldOwners",
+  parent___parent___internal___ignoreType = "parent___parent___internal___ignoreType",
+  parent___parent___internal___mediaType = "parent___parent___internal___mediaType",
+  parent___parent___internal___owner = "parent___parent___internal___owner",
+  parent___parent___internal___type = "parent___parent___internal___type",
+  parent___children = "parent___children",
+  parent___children___id = "parent___children___id",
+  parent___children___parent___id = "parent___children___parent___id",
+  parent___children___parent___children = "parent___children___parent___children",
+  parent___children___children = "parent___children___children",
+  parent___children___children___id = "parent___children___children___id",
+  parent___children___children___children = "parent___children___children___children",
+  parent___children___internal___content = "parent___children___internal___content",
+  parent___children___internal___contentDigest = "parent___children___internal___contentDigest",
+  parent___children___internal___description = "parent___children___internal___description",
+  parent___children___internal___fieldOwners = "parent___children___internal___fieldOwners",
+  parent___children___internal___ignoreType = "parent___children___internal___ignoreType",
+  parent___children___internal___mediaType = "parent___children___internal___mediaType",
+  parent___children___internal___owner = "parent___children___internal___owner",
+  parent___children___internal___type = "parent___children___internal___type",
+  parent___internal___content = "parent___internal___content",
+  parent___internal___contentDigest = "parent___internal___contentDigest",
+  parent___internal___description = "parent___internal___description",
+  parent___internal___fieldOwners = "parent___internal___fieldOwners",
+  parent___internal___ignoreType = "parent___internal___ignoreType",
+  parent___internal___mediaType = "parent___internal___mediaType",
+  parent___internal___owner = "parent___internal___owner",
+  parent___internal___type = "parent___internal___type",
+  children = "children",
+  children___id = "children___id",
+  children___parent___id = "children___parent___id",
+  children___parent___parent___id = "children___parent___parent___id",
+  children___parent___parent___children = "children___parent___parent___children",
+  children___parent___children = "children___parent___children",
+  children___parent___children___id = "children___parent___children___id",
+  children___parent___children___children = "children___parent___children___children",
+  children___parent___internal___content = "children___parent___internal___content",
+  children___parent___internal___contentDigest = "children___parent___internal___contentDigest",
+  children___parent___internal___description = "children___parent___internal___description",
+  children___parent___internal___fieldOwners = "children___parent___internal___fieldOwners",
+  children___parent___internal___ignoreType = "children___parent___internal___ignoreType",
+  children___parent___internal___mediaType = "children___parent___internal___mediaType",
+  children___parent___internal___owner = "children___parent___internal___owner",
+  children___parent___internal___type = "children___parent___internal___type",
+  children___children = "children___children",
+  children___children___id = "children___children___id",
+  children___children___parent___id = "children___children___parent___id",
+  children___children___parent___children = "children___children___parent___children",
+  children___children___children = "children___children___children",
+  children___children___children___id = "children___children___children___id",
+  children___children___children___children = "children___children___children___children",
+  children___children___internal___content = "children___children___internal___content",
+  children___children___internal___contentDigest = "children___children___internal___contentDigest",
+  children___children___internal___description = "children___children___internal___description",
+  children___children___internal___fieldOwners = "children___children___internal___fieldOwners",
+  children___children___internal___ignoreType = "children___children___internal___ignoreType",
+  children___children___internal___mediaType = "children___children___internal___mediaType",
+  children___children___internal___owner = "children___children___internal___owner",
+  children___children___internal___type = "children___children___internal___type",
+  children___internal___content = "children___internal___content",
+  children___internal___contentDigest = "children___internal___contentDigest",
+  children___internal___description = "children___internal___description",
+  children___internal___fieldOwners = "children___internal___fieldOwners",
+  children___internal___ignoreType = "children___internal___ignoreType",
+  children___internal___mediaType = "children___internal___mediaType",
+  children___internal___owner = "children___internal___owner",
+  children___internal___type = "children___internal___type",
+  internal___content = "internal___content",
+  internal___contentDigest = "internal___contentDigest",
+  internal___description = "internal___description",
+  internal___fieldOwners = "internal___fieldOwners",
+  internal___ignoreType = "internal___ignoreType",
+  internal___mediaType = "internal___mediaType",
+  internal___owner = "internal___owner",
+  internal___type = "internal___type",
+  siteMetadata___title = "siteMetadata___title",
+  siteMetadata___googleVerification = "siteMetadata___googleVerification",
+  siteMetadata___disqus = "siteMetadata___disqus",
+  port = "port",
+  host = "host",
+  mapping___MarkdownRemark_frontmatter_author = "mapping___MarkdownRemark_frontmatter_author",
+  pathPrefix = "pathPrefix",
+  polyfill = "polyfill",
+  buildTime = "buildTime"
 }
 
-export interface DistinctMarkdownRemarkConnectionArgs {
-  field: markdownRemarkDistinctEnum | null;
-}
+export type SiteFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
+  mapping?: Maybe<SiteMappingFilterInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
+  polyfill?: Maybe<BooleanQueryOperatorInput>;
+  buildTime?: Maybe<DateQueryOperatorInput>;
+};
 
-export interface GroupMarkdownRemarkConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: markdownRemarkGroupEnum | null;
-}
-
-export interface MarkdownRemarkEdge {
-  node: MarkdownRemark | null;
-  next: MarkdownRemark | null;
-  previous: MarkdownRemark | null;
-}
-
-export type markdownRemarkDistinctEnum = "id" | "parent" | "internal___content" | "internal___type" | "internal___contentDigest" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter____PARENT" | "excerpt" | "rawMarkdownBody" | "fileAbsolutePath" | "fields___slug";
-
-export type markdownRemarkGroupEnum = "id" | "parent" | "internal___content" | "internal___type" | "internal___contentDigest" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter____PARENT" | "excerpt" | "rawMarkdownBody" | "fileAbsolutePath" | "fields___slug";
-
-export interface markdownRemarkGroupConnectionConnection {
+export type SiteGroupConnection = {
+  __typename?: "SiteGroupConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<SiteEdge>;
+  nodes: Array<Site>;
   pageInfo: PageInfo;
-  edges: Array<markdownRemarkGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
-}
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+};
 
-export interface markdownRemarkGroupConnectionEdge {
-  node: MarkdownRemark | null;
-  next: MarkdownRemark | null;
-  previous: MarkdownRemark | null;
-}
+export type SiteMapping = {
+  __typename?: "SiteMapping";
+  MarkdownRemark_frontmatter_author?: Maybe<Scalars["String"]>;
+};
 
-export interface authorJsonConnectionSort {
-  fields: Array<AuthorJsonConnectionSortByFieldsEnum>;
-  order: authorJsonConnectionSortOrderValues | null;
-}
+export type SiteMappingFilterInput = {
+  MarkdownRemark_frontmatter_author?: Maybe<StringQueryOperatorInput>;
+};
 
-export type AuthorJsonConnectionSortByFieldsEnum = "id" | "bio" | "avatar" | "twitter" | "github" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
+export type SitePage = Node & {
+  __typename?: "SitePage";
+  id: Scalars["ID"];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  path?: Maybe<Scalars["String"]>;
+  jsonName?: Maybe<Scalars["String"]>;
+  internalComponentName?: Maybe<Scalars["String"]>;
+  component?: Maybe<Scalars["String"]>;
+  componentChunkName?: Maybe<Scalars["String"]>;
+  isCreatedByStatefulCreatePages?: Maybe<Scalars["Boolean"]>;
+  context?: Maybe<SitePageContext>;
+  pluginCreator?: Maybe<SitePlugin>;
+  pluginCreatorId?: Maybe<Scalars["String"]>;
+  componentPath?: Maybe<Scalars["String"]>;
+};
 
-export type authorJsonConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterAuthorJson {
-  id: authorJsonConnectionIdQueryString_2 | null;
-  bio: authorJsonConnectionBioQueryString_2 | null;
-  avatar: authorJsonConnectionAvatarQueryString_2 | null;
-  twitter: authorJsonConnectionTwitterQueryString_2 | null;
-  github: authorJsonConnectionGithubQueryString_2 | null;
-  internal: authorJsonConnectionInternalInputObject_2 | null;
-}
-
-export interface authorJsonConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionBioQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionAvatarQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionTwitterQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionGithubQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionInternalInputObject_2 {
-  contentDigest: authorJsonConnectionInternalContentDigestQueryString_2 | null;
-  type: authorJsonConnectionInternalTypeQueryString_2 | null;
-  owner: authorJsonConnectionInternalOwnerQueryString_2 | null;
-}
-
-export interface authorJsonConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface AuthorJsonConnection {
+export type SitePageConnection = {
+  __typename?: "SitePageConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<SitePageEdge>;
+  nodes: Array<SitePage>;
   pageInfo: PageInfo;
-  edges: Array<AuthorJsonEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<authorJsonGroupConnectionConnection> | null;
+  distinct: Array<Scalars["String"]>;
+  group: Array<SitePageGroupConnection>;
+};
+
+export type SitePageConnectiondistinctArgs = {
+  field: SitePageFieldsEnum;
+};
+
+export type SitePageConnectiongroupArgs = {
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  field: SitePageFieldsEnum;
+};
+
+export type SitePageContext = {
+  __typename?: "SitePageContext";
+  slug?: Maybe<Scalars["String"]>;
+  tag?: Maybe<Scalars["String"]>;
+  skip?: Maybe<Scalars["Int"]>;
+};
+
+export type SitePageContextFilterInput = {
+  slug?: Maybe<StringQueryOperatorInput>;
+  tag?: Maybe<StringQueryOperatorInput>;
+  skip?: Maybe<IntQueryOperatorInput>;
+};
+
+export type SitePageEdge = {
+  __typename?: "SitePageEdge";
+  next?: Maybe<SitePage>;
+  node: SitePage;
+  previous?: Maybe<SitePage>;
+};
+
+export enum SitePageFieldsEnum {
+  id = "id",
+  parent___id = "parent___id",
+  parent___parent___id = "parent___parent___id",
+  parent___parent___parent___id = "parent___parent___parent___id",
+  parent___parent___parent___children = "parent___parent___parent___children",
+  parent___parent___children = "parent___parent___children",
+  parent___parent___children___id = "parent___parent___children___id",
+  parent___parent___children___children = "parent___parent___children___children",
+  parent___parent___internal___content = "parent___parent___internal___content",
+  parent___parent___internal___contentDigest = "parent___parent___internal___contentDigest",
+  parent___parent___internal___description = "parent___parent___internal___description",
+  parent___parent___internal___fieldOwners = "parent___parent___internal___fieldOwners",
+  parent___parent___internal___ignoreType = "parent___parent___internal___ignoreType",
+  parent___parent___internal___mediaType = "parent___parent___internal___mediaType",
+  parent___parent___internal___owner = "parent___parent___internal___owner",
+  parent___parent___internal___type = "parent___parent___internal___type",
+  parent___children = "parent___children",
+  parent___children___id = "parent___children___id",
+  parent___children___parent___id = "parent___children___parent___id",
+  parent___children___parent___children = "parent___children___parent___children",
+  parent___children___children = "parent___children___children",
+  parent___children___children___id = "parent___children___children___id",
+  parent___children___children___children = "parent___children___children___children",
+  parent___children___internal___content = "parent___children___internal___content",
+  parent___children___internal___contentDigest = "parent___children___internal___contentDigest",
+  parent___children___internal___description = "parent___children___internal___description",
+  parent___children___internal___fieldOwners = "parent___children___internal___fieldOwners",
+  parent___children___internal___ignoreType = "parent___children___internal___ignoreType",
+  parent___children___internal___mediaType = "parent___children___internal___mediaType",
+  parent___children___internal___owner = "parent___children___internal___owner",
+  parent___children___internal___type = "parent___children___internal___type",
+  parent___internal___content = "parent___internal___content",
+  parent___internal___contentDigest = "parent___internal___contentDigest",
+  parent___internal___description = "parent___internal___description",
+  parent___internal___fieldOwners = "parent___internal___fieldOwners",
+  parent___internal___ignoreType = "parent___internal___ignoreType",
+  parent___internal___mediaType = "parent___internal___mediaType",
+  parent___internal___owner = "parent___internal___owner",
+  parent___internal___type = "parent___internal___type",
+  children = "children",
+  children___id = "children___id",
+  children___parent___id = "children___parent___id",
+  children___parent___parent___id = "children___parent___parent___id",
+  children___parent___parent___children = "children___parent___parent___children",
+  children___parent___children = "children___parent___children",
+  children___parent___children___id = "children___parent___children___id",
+  children___parent___children___children = "children___parent___children___children",
+  children___parent___internal___content = "children___parent___internal___content",
+  children___parent___internal___contentDigest = "children___parent___internal___contentDigest",
+  children___parent___internal___description = "children___parent___internal___description",
+  children___parent___internal___fieldOwners = "children___parent___internal___fieldOwners",
+  children___parent___internal___ignoreType = "children___parent___internal___ignoreType",
+  children___parent___internal___mediaType = "children___parent___internal___mediaType",
+  children___parent___internal___owner = "children___parent___internal___owner",
+  children___parent___internal___type = "children___parent___internal___type",
+  children___children = "children___children",
+  children___children___id = "children___children___id",
+  children___children___parent___id = "children___children___parent___id",
+  children___children___parent___children = "children___children___parent___children",
+  children___children___children = "children___children___children",
+  children___children___children___id = "children___children___children___id",
+  children___children___children___children = "children___children___children___children",
+  children___children___internal___content = "children___children___internal___content",
+  children___children___internal___contentDigest = "children___children___internal___contentDigest",
+  children___children___internal___description = "children___children___internal___description",
+  children___children___internal___fieldOwners = "children___children___internal___fieldOwners",
+  children___children___internal___ignoreType = "children___children___internal___ignoreType",
+  children___children___internal___mediaType = "children___children___internal___mediaType",
+  children___children___internal___owner = "children___children___internal___owner",
+  children___children___internal___type = "children___children___internal___type",
+  children___internal___content = "children___internal___content",
+  children___internal___contentDigest = "children___internal___contentDigest",
+  children___internal___description = "children___internal___description",
+  children___internal___fieldOwners = "children___internal___fieldOwners",
+  children___internal___ignoreType = "children___internal___ignoreType",
+  children___internal___mediaType = "children___internal___mediaType",
+  children___internal___owner = "children___internal___owner",
+  children___internal___type = "children___internal___type",
+  internal___content = "internal___content",
+  internal___contentDigest = "internal___contentDigest",
+  internal___description = "internal___description",
+  internal___fieldOwners = "internal___fieldOwners",
+  internal___ignoreType = "internal___ignoreType",
+  internal___mediaType = "internal___mediaType",
+  internal___owner = "internal___owner",
+  internal___type = "internal___type",
+  path = "path",
+  jsonName = "jsonName",
+  internalComponentName = "internalComponentName",
+  component = "component",
+  componentChunkName = "componentChunkName",
+  isCreatedByStatefulCreatePages = "isCreatedByStatefulCreatePages",
+  context___slug = "context___slug",
+  context___tag = "context___tag",
+  context___skip = "context___skip",
+  pluginCreator___id = "pluginCreator___id",
+  pluginCreator___parent___id = "pluginCreator___parent___id",
+  pluginCreator___parent___parent___id = "pluginCreator___parent___parent___id",
+  pluginCreator___parent___parent___children = "pluginCreator___parent___parent___children",
+  pluginCreator___parent___children = "pluginCreator___parent___children",
+  pluginCreator___parent___children___id = "pluginCreator___parent___children___id",
+  pluginCreator___parent___children___children = "pluginCreator___parent___children___children",
+  pluginCreator___parent___internal___content = "pluginCreator___parent___internal___content",
+  pluginCreator___parent___internal___contentDigest = "pluginCreator___parent___internal___contentDigest",
+  pluginCreator___parent___internal___description = "pluginCreator___parent___internal___description",
+  pluginCreator___parent___internal___fieldOwners = "pluginCreator___parent___internal___fieldOwners",
+  pluginCreator___parent___internal___ignoreType = "pluginCreator___parent___internal___ignoreType",
+  pluginCreator___parent___internal___mediaType = "pluginCreator___parent___internal___mediaType",
+  pluginCreator___parent___internal___owner = "pluginCreator___parent___internal___owner",
+  pluginCreator___parent___internal___type = "pluginCreator___parent___internal___type",
+  pluginCreator___children = "pluginCreator___children",
+  pluginCreator___children___id = "pluginCreator___children___id",
+  pluginCreator___children___parent___id = "pluginCreator___children___parent___id",
+  pluginCreator___children___parent___children = "pluginCreator___children___parent___children",
+  pluginCreator___children___children = "pluginCreator___children___children",
+  pluginCreator___children___children___id = "pluginCreator___children___children___id",
+  pluginCreator___children___children___children = "pluginCreator___children___children___children",
+  pluginCreator___children___internal___content = "pluginCreator___children___internal___content",
+  pluginCreator___children___internal___contentDigest = "pluginCreator___children___internal___contentDigest",
+  pluginCreator___children___internal___description = "pluginCreator___children___internal___description",
+  pluginCreator___children___internal___fieldOwners = "pluginCreator___children___internal___fieldOwners",
+  pluginCreator___children___internal___ignoreType = "pluginCreator___children___internal___ignoreType",
+  pluginCreator___children___internal___mediaType = "pluginCreator___children___internal___mediaType",
+  pluginCreator___children___internal___owner = "pluginCreator___children___internal___owner",
+  pluginCreator___children___internal___type = "pluginCreator___children___internal___type",
+  pluginCreator___internal___content = "pluginCreator___internal___content",
+  pluginCreator___internal___contentDigest = "pluginCreator___internal___contentDigest",
+  pluginCreator___internal___description = "pluginCreator___internal___description",
+  pluginCreator___internal___fieldOwners = "pluginCreator___internal___fieldOwners",
+  pluginCreator___internal___ignoreType = "pluginCreator___internal___ignoreType",
+  pluginCreator___internal___mediaType = "pluginCreator___internal___mediaType",
+  pluginCreator___internal___owner = "pluginCreator___internal___owner",
+  pluginCreator___internal___type = "pluginCreator___internal___type",
+  pluginCreator___resolve = "pluginCreator___resolve",
+  pluginCreator___name = "pluginCreator___name",
+  pluginCreator___version = "pluginCreator___version",
+  pluginCreator___pluginOptions___plugins = "pluginCreator___pluginOptions___plugins",
+  pluginCreator___pluginOptions___plugins___resolve = "pluginCreator___pluginOptions___plugins___resolve",
+  pluginCreator___pluginOptions___plugins___id = "pluginCreator___pluginOptions___plugins___id",
+  pluginCreator___pluginOptions___plugins___name = "pluginCreator___pluginOptions___plugins___name",
+  pluginCreator___pluginOptions___plugins___version = "pluginCreator___pluginOptions___plugins___version",
+  pluginCreator___pluginOptions___plugins___browserAPIs = "pluginCreator___pluginOptions___plugins___browserAPIs",
+  pluginCreator___pluginOptions___plugins___ssrAPIs = "pluginCreator___pluginOptions___plugins___ssrAPIs",
+  pluginCreator___pluginOptions___plugins___pluginFilepath = "pluginCreator___pluginOptions___plugins___pluginFilepath",
+  pluginCreator___pluginOptions___name = "pluginCreator___pluginOptions___name",
+  pluginCreator___pluginOptions___path = "pluginCreator___pluginOptions___path",
+  pluginCreator___pluginOptions___trackingId = "pluginCreator___pluginOptions___trackingId",
+  pluginCreator___pluginOptions___head = "pluginCreator___pluginOptions___head",
+  pluginCreator___pluginOptions___anonymize = "pluginCreator___pluginOptions___anonymize",
+  pluginCreator___pluginOptions___respectDNT = "pluginCreator___pluginOptions___respectDNT",
+  pluginCreator___pluginOptions___maxWidth = "pluginCreator___pluginOptions___maxWidth",
+  pluginCreator___pluginOptions___backgroundColor = "pluginCreator___pluginOptions___backgroundColor",
+  pluginCreator___pluginOptions___short_name = "pluginCreator___pluginOptions___short_name",
+  pluginCreator___pluginOptions___start_url = "pluginCreator___pluginOptions___start_url",
+  pluginCreator___pluginOptions___background_color = "pluginCreator___pluginOptions___background_color",
+  pluginCreator___pluginOptions___theme_color = "pluginCreator___pluginOptions___theme_color",
+  pluginCreator___pluginOptions___display = "pluginCreator___pluginOptions___display",
+  pluginCreator___pluginOptions___pathCheck = "pluginCreator___pluginOptions___pathCheck",
+  pluginCreator___nodeAPIs = "pluginCreator___nodeAPIs",
+  pluginCreator___browserAPIs = "pluginCreator___browserAPIs",
+  pluginCreator___ssrAPIs = "pluginCreator___ssrAPIs",
+  pluginCreator___pluginFilepath = "pluginCreator___pluginFilepath",
+  pluginCreator___packageJson___name = "pluginCreator___packageJson___name",
+  pluginCreator___packageJson___description = "pluginCreator___packageJson___description",
+  pluginCreator___packageJson___version = "pluginCreator___packageJson___version",
+  pluginCreator___packageJson___main = "pluginCreator___packageJson___main",
+  pluginCreator___packageJson___license = "pluginCreator___packageJson___license",
+  pluginCreator___packageJson___dependencies = "pluginCreator___packageJson___dependencies",
+  pluginCreator___packageJson___dependencies___name = "pluginCreator___packageJson___dependencies___name",
+  pluginCreator___packageJson___dependencies___version = "pluginCreator___packageJson___dependencies___version",
+  pluginCreator___packageJson___devDependencies = "pluginCreator___packageJson___devDependencies",
+  pluginCreator___packageJson___devDependencies___name = "pluginCreator___packageJson___devDependencies___name",
+  pluginCreator___packageJson___devDependencies___version = "pluginCreator___packageJson___devDependencies___version",
+  pluginCreator___packageJson___peerDependencies = "pluginCreator___packageJson___peerDependencies",
+  pluginCreator___packageJson___peerDependencies___name = "pluginCreator___packageJson___peerDependencies___name",
+  pluginCreator___packageJson___peerDependencies___version = "pluginCreator___packageJson___peerDependencies___version",
+  pluginCreator___packageJson___keywords = "pluginCreator___packageJson___keywords",
+  pluginCreatorId = "pluginCreatorId",
+  componentPath = "componentPath"
 }
 
-export interface DistinctAuthorJsonConnectionArgs {
-  field: authorJsonDistinctEnum | null;
-}
+export type SitePageFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  path?: Maybe<StringQueryOperatorInput>;
+  jsonName?: Maybe<StringQueryOperatorInput>;
+  internalComponentName?: Maybe<StringQueryOperatorInput>;
+  component?: Maybe<StringQueryOperatorInput>;
+  componentChunkName?: Maybe<StringQueryOperatorInput>;
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
+  pluginCreator?: Maybe<SitePluginFilterInput>;
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
+  componentPath?: Maybe<StringQueryOperatorInput>;
+};
 
-export interface GroupAuthorJsonConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: authorJsonGroupEnum | null;
-}
-
-export interface AuthorJsonEdge {
-  node: AuthorJson | null;
-  next: AuthorJson | null;
-  previous: AuthorJson | null;
-}
-
-export type authorJsonDistinctEnum = "id" | "bio" | "avatar" | "twitter" | "github" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export type authorJsonGroupEnum = "id" | "bio" | "avatar" | "twitter" | "github" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export interface authorJsonGroupConnectionConnection {
+export type SitePageGroupConnection = {
+  __typename?: "SitePageGroupConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<SitePageEdge>;
+  nodes: Array<SitePage>;
   pageInfo: PageInfo;
-  edges: Array<authorJsonGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
-}
-
-export interface authorJsonGroupConnectionEdge {
-  node: AuthorJson | null;
-  next: AuthorJson | null;
-  previous: AuthorJson | null;
-}
-
-export interface sitePageJsonNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageInternalComponentNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageComponentQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageComponentChunkNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageContextInputObject {
-  slug: sitePageContextSlugQueryString | null;
-  tag: sitePageContextTagQueryString | null;
-  skip: sitePageContextSkipQueryInteger | null;
-}
-
-export interface sitePageContextSlugQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageContextTagQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageContextSkipQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePagePluginCreatorInputObject {
-  resolve: sitePagePluginCreatorResolveQueryString | null;
-  id: sitePagePluginCreatorIdQueryString | null;
-  name: sitePagePluginCreatorNameQueryString | null;
-  version: sitePagePluginCreatorVersionQueryString | null;
-  pluginOptions: sitePagePluginCreatorPluginOptionsInputObject | null;
-  nodeAPIs: sitePagePluginCreatorNodeApIsQueryList | null;
-  browserAPIs: sitePagePluginCreatorBrowserApIsQueryList | null;
-  ssrAPIs: sitePagePluginCreatorSsrApIsQueryList | null;
-  pluginFilepath: sitePagePluginCreatorPluginFilepathQueryString | null;
-  packageJson: sitePagePluginCreatorPackageJsonInputObject | null;
-  parent: sitePagePluginCreatorParentQueryString | null;
-  internal: sitePagePluginCreatorInternalInputObject | null;
-}
-
-export interface sitePagePluginCreatorResolveQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsInputObject {
-  plugins: sitePagePluginCreatorPluginOptionsPluginsQueryList | null;
-  name: sitePagePluginCreatorPluginOptionsNameQueryString | null;
-  path: sitePagePluginCreatorPluginOptionsPathQueryString | null;
-  trackingId: sitePagePluginCreatorPluginOptionsTrackingIdQueryString | null;
-  head: sitePagePluginCreatorPluginOptionsHeadQueryBoolean | null;
-  anonymize: sitePagePluginCreatorPluginOptionsAnonymizeQueryBoolean | null;
-  respectDNT: sitePagePluginCreatorPluginOptionsRespectDntQueryBoolean | null;
-  maxWidth: sitePagePluginCreatorPluginOptionsMaxWidthQueryInteger | null;
-  backgroundColor: sitePagePluginCreatorPluginOptionsBackgroundColorQueryString | null;
-  short_name: sitePagePluginCreatorPluginOptionsShortNameQueryString | null;
-  start_url: sitePagePluginCreatorPluginOptionsStartUrlQueryString | null;
-  background_color: sitePagePluginCreatorPluginOptionsBackgroundColorQueryString_2 | null;
-  theme_color: sitePagePluginCreatorPluginOptionsThemeColorQueryString | null;
-  display: sitePagePluginCreatorPluginOptionsDisplayQueryString | null;
-  pathCheck: sitePagePluginCreatorPluginOptionsPathCheckQueryBoolean | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsQueryList {
-  elemMatch: sitePagePluginCreatorPluginOptionsPluginsInputObject | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsInputObject {
-  resolve: sitePagePluginCreatorPluginOptionsPluginsResolveQueryString | null;
-  id: sitePagePluginCreatorPluginOptionsPluginsIdQueryString | null;
-  name: sitePagePluginCreatorPluginOptionsPluginsNameQueryString | null;
-  version: sitePagePluginCreatorPluginOptionsPluginsVersionQueryString | null;
-  pluginOptions: sitePagePluginCreatorPluginOptionsPluginsPluginOptionsInputObject | null;
-  browserAPIs: sitePagePluginCreatorPluginOptionsPluginsBrowserApIsQueryList | null;
-  ssrAPIs: sitePagePluginCreatorPluginOptionsPluginsSsrApIsQueryList | null;
-  pluginFilepath: sitePagePluginCreatorPluginOptionsPluginsPluginFilepathQueryString | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsResolveQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsPluginOptionsInputObject {
-  maxWidth: sitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger | null;
-  backgroundColor: sitePagePluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsBrowserApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsSsrApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsPluginFilepathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsTrackingIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsHeadQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsAnonymizeQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsRespectDntQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsMaxWidthQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsBackgroundColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsShortNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsStartUrlQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsBackgroundColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsThemeColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsDisplayQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPathCheckQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePagePluginCreatorNodeApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorBrowserApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorSsrApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginFilepathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonInputObject {
-  name: sitePagePluginCreatorPackageJsonNameQueryString | null;
-  description: sitePagePluginCreatorPackageJsonDescriptionQueryString | null;
-  version: sitePagePluginCreatorPackageJsonVersionQueryString | null;
-  main: sitePagePluginCreatorPackageJsonMainQueryString | null;
-  license: sitePagePluginCreatorPackageJsonLicenseQueryString | null;
-  dependencies: sitePagePluginCreatorPackageJsonDependenciesQueryList | null;
-  devDependencies: sitePagePluginCreatorPackageJsonDevDependenciesQueryList | null;
-  peerDependencies: sitePagePluginCreatorPackageJsonPeerDependenciesQueryList | null;
-  keywords: sitePagePluginCreatorPackageJsonKeywordsQueryList | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDescriptionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonMainQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonLicenseQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDependenciesQueryList {
-  elemMatch: sitePagePluginCreatorPackageJsonDependenciesInputObject | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDependenciesInputObject {
-  name: sitePagePluginCreatorPackageJsonDependenciesNameQueryString | null;
-  version: sitePagePluginCreatorPackageJsonDependenciesVersionQueryString | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDevDependenciesQueryList {
-  elemMatch: sitePagePluginCreatorPackageJsonDevDependenciesInputObject | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDevDependenciesInputObject {
-  name: sitePagePluginCreatorPackageJsonDevDependenciesNameQueryString | null;
-  version: sitePagePluginCreatorPackageJsonDevDependenciesVersionQueryString | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDevDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDevDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonPeerDependenciesQueryList {
-  elemMatch: sitePagePluginCreatorPackageJsonPeerDependenciesInputObject | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonPeerDependenciesInputObject {
-  name: sitePagePluginCreatorPackageJsonPeerDependenciesNameQueryString | null;
-  version: sitePagePluginCreatorPackageJsonPeerDependenciesVersionQueryString | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonPeerDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonPeerDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonKeywordsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorParentQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorInternalInputObject {
-  contentDigest: sitePagePluginCreatorInternalContentDigestQueryString | null;
-  type: sitePagePluginCreatorInternalTypeQueryString | null;
-  owner: sitePagePluginCreatorInternalOwnerQueryString | null;
-}
-
-export interface sitePagePluginCreatorInternalContentDigestQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorInternalTypeQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorInternalOwnerQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageComponentPathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageInternalInputObject_2 {
-  type: sitePageInternalTypeQueryString_2 | null;
-  contentDigest: sitePageInternalContentDigestQueryString_2 | null;
-  description: sitePageInternalDescriptionQueryString | null;
-  owner: sitePageInternalOwnerQueryString_2 | null;
-}
-
-export interface sitePageInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageInternalDescriptionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginResolveQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsInputObject_2 {
-  plugins: sitePluginPluginOptionsPluginsQueryList_2 | null;
-  name: sitePluginPluginOptionsNameQueryString_2 | null;
-  path: sitePluginPluginOptionsPathQueryString_2 | null;
-  trackingId: sitePluginPluginOptionsTrackingIdQueryString_2 | null;
-  head: sitePluginPluginOptionsHeadQueryBoolean_2 | null;
-  anonymize: sitePluginPluginOptionsAnonymizeQueryBoolean_2 | null;
-  respectDNT: sitePluginPluginOptionsRespectDntQueryBoolean_2 | null;
-  maxWidth: sitePluginPluginOptionsMaxWidthQueryInteger_2 | null;
-  backgroundColor: sitePluginPluginOptionsBackgroundColorQueryString_3 | null;
-  short_name: sitePluginPluginOptionsShortNameQueryString_2 | null;
-  start_url: sitePluginPluginOptionsStartUrlQueryString_2 | null;
-  background_color: sitePluginPluginOptionsBackgroundColorQueryString_4 | null;
-  theme_color: sitePluginPluginOptionsThemeColorQueryString_2 | null;
-  display: sitePluginPluginOptionsDisplayQueryString_2 | null;
-  pathCheck: sitePluginPluginOptionsPathCheckQueryBoolean_2 | null;
-}
-
-export interface sitePluginPluginOptionsPluginsQueryList_2 {
-  elemMatch: sitePluginPluginOptionsPluginsInputObject_2 | null;
-}
-
-export interface sitePluginPluginOptionsPluginsInputObject_2 {
-  resolve: sitePluginPluginOptionsPluginsResolveQueryString_2 | null;
-  id: sitePluginPluginOptionsPluginsIdQueryString_2 | null;
-  name: sitePluginPluginOptionsPluginsNameQueryString_2 | null;
-  version: sitePluginPluginOptionsPluginsVersionQueryString_2 | null;
-  pluginOptions: sitePluginPluginOptionsPluginsPluginOptionsInputObject_2 | null;
-  browserAPIs: sitePluginPluginOptionsPluginsBrowserApIsQueryList_2 | null;
-  ssrAPIs: sitePluginPluginOptionsPluginsSsrApIsQueryList_2 | null;
-  pluginFilepath: sitePluginPluginOptionsPluginsPluginFilepathQueryString_2 | null;
-}
-
-export interface sitePluginPluginOptionsPluginsResolveQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsPluginOptionsInputObject_2 {
-  maxWidth: sitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 | null;
-  backgroundColor: sitePluginPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 | null;
-}
-
-export interface sitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsBrowserApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsSsrApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsPluginFilepathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsTrackingIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsHeadQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginPluginOptionsAnonymizeQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginPluginOptionsRespectDntQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginPluginOptionsMaxWidthQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePluginPluginOptionsBackgroundColorQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsShortNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsStartUrlQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsBackgroundColorQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsThemeColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsDisplayQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPathCheckQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginNodeApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginBrowserApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginSsrApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginFilepathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonInputObject_2 {
-  name: sitePluginPackageJsonNameQueryString_2 | null;
-  description: sitePluginPackageJsonDescriptionQueryString_2 | null;
-  version: sitePluginPackageJsonVersionQueryString_2 | null;
-  main: sitePluginPackageJsonMainQueryString_2 | null;
-  license: sitePluginPackageJsonLicenseQueryString_2 | null;
-  dependencies: sitePluginPackageJsonDependenciesQueryList_2 | null;
-  devDependencies: sitePluginPackageJsonDevDependenciesQueryList_2 | null;
-  peerDependencies: sitePluginPackageJsonPeerDependenciesQueryList_2 | null;
-  keywords: sitePluginPackageJsonKeywordsQueryList_2 | null;
-}
-
-export interface sitePluginPackageJsonNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonMainQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonLicenseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonDependenciesQueryList_2 {
-  elemMatch: sitePluginPackageJsonDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginPackageJsonDependenciesInputObject_2 {
-  name: sitePluginPackageJsonDependenciesNameQueryString_2 | null;
-  version: sitePluginPackageJsonDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginPackageJsonDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonDevDependenciesQueryList_2 {
-  elemMatch: sitePluginPackageJsonDevDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginPackageJsonDevDependenciesInputObject_2 {
-  name: sitePluginPackageJsonDevDependenciesNameQueryString_2 | null;
-  version: sitePluginPackageJsonDevDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginPackageJsonDevDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonDevDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonPeerDependenciesQueryList_2 {
-  elemMatch: sitePluginPackageJsonPeerDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginPackageJsonPeerDependenciesInputObject_2 {
-  name: sitePluginPackageJsonPeerDependenciesNameQueryString_2 | null;
-  version: sitePluginPackageJsonPeerDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginPackageJsonPeerDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonPeerDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonKeywordsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginInternalInputObject_2 {
-  contentDigest: sitePluginInternalContentDigestQueryString_2 | null;
-  type: sitePluginInternalTypeQueryString_2 | null;
-  owner: sitePluginInternalOwnerQueryString_2 | null;
-}
-
-export interface sitePluginInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteSiteMetadataInputObject_2 {
-  title: siteSiteMetadataTitleQueryString_2 | null;
-  googleVerification: siteSiteMetadataGoogleVerificationQueryString_2 | null;
-  disqus: siteSiteMetadataDisqusQueryString_2 | null;
-}
-
-export interface siteSiteMetadataTitleQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteSiteMetadataGoogleVerificationQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteSiteMetadataDisqusQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePortQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteHostQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteMappingInputObject_2 {
-  MarkdownRemark_frontmatter_author: siteMappingMarkdownRemarkFrontmatterAuthorQueryString_2 | null;
-}
-
-export interface siteMappingMarkdownRemarkFrontmatterAuthorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePathPrefixQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePolyfillQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface siteBuildTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteInternalInputObject_2 {
-  contentDigest: siteInternalContentDigestQueryString_2 | null;
-  type: siteInternalTypeQueryString_2 | null;
-  owner: siteInternalOwnerQueryString_2 | null;
-}
-
-export interface siteInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface Site extends Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  siteMetadata: siteMetadata_2 | null;
-  port: Date | null;
-  host: string | null;
-  mapping: mapping_2 | null;
-  pathPrefix: string | null;
-  polyfill: boolean | null;
-  buildTime: Date | null;
-  internal: internal_16 | null;
-}
-
-export interface PortSiteArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface BuildTimeSiteArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface siteMetadata_2 {
-  title: string | null;
-  googleVerification: string | null;
-  disqus: string | null;
-}
-
-export interface mapping_2 {
-  MarkdownRemark_frontmatter_author: string | null;
-}
-
-export interface internal_16 {
-  contentDigest: string | null;
-  type: string | null;
-  owner: string | null;
-}
-
-export interface directoryIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryInternalInputObject_2 {
-  contentDigest: directoryInternalContentDigestQueryString_2 | null;
-  type: directoryInternalTypeQueryString_2 | null;
-  description: directoryInternalDescriptionQueryString_2 | null;
-  owner: directoryInternalOwnerQueryString_2 | null;
-}
-
-export interface directoryInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryInternalDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directorySourceInstanceNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryRelativePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryExtensionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directorySizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryPrettySizeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryModifiedTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryAccessTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryChangeTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryBirthTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryRootQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryDirQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryBaseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryExtQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryRelativeDirectoryQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryDevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryModeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryNlinkQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryUidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryGidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryRdevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryBlksizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryInoQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryBlocksQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryAtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryMtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryCtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryBirthtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryAtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryMtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryCtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryBirthtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileInternalInputObject_2 {
-  contentDigest: fileInternalContentDigestQueryString_2 | null;
-  type: fileInternalTypeQueryString_2 | null;
-  mediaType: fileInternalMediaTypeQueryString_2 | null;
-  description: fileInternalDescriptionQueryString_2 | null;
-  owner: fileInternalOwnerQueryString_2 | null;
-}
-
-export interface fileInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileInternalMediaTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileInternalDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileSourceInstanceNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileRelativePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileExtensionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileSizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface filePrettySizeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileModifiedTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileAccessTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileChangeTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileBirthTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileRootQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileDirQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileBaseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileExtQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileRelativeDirectoryQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileDevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileModeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileNlinkQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileUidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileGidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileRdevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileBlksizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileInoQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileBlocksQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileAtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileMtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileCtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileBirthtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileAtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileMtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileCtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileBirthtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface publicUrlQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpInternalInputObject_2 {
-  contentDigest: imageSharpInternalContentDigestQueryString_2 | null;
-  type: imageSharpInternalTypeQueryString_2 | null;
-  owner: imageSharpInternalOwnerQueryString_2 | null;
-}
-
-export interface imageSharpInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedTypeName_3 {
-  base64: fixedBase64QueryString_3 | null;
-  tracedSVG: fixedTracedSvgQueryString_3 | null;
-  aspectRatio: fixedAspectRatioQueryFloat_3 | null;
-  width: fixedWidthQueryFloat_3 | null;
-  height: fixedHeightQueryFloat_3 | null;
-  src: fixedSrcQueryString_3 | null;
-  srcSet: fixedSrcSetQueryString_3 | null;
-  srcWebp: fixedSrcWebpQueryString_3 | null;
-  srcSetWebp: fixedSrcSetWebpQueryString_3 | null;
-  originalName: fixedOriginalNameQueryString_3 | null;
-}
-
-export interface fixedBase64QueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedTracedSvgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedAspectRatioQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedWidthQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedHeightQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcSetQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcSetWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedOriginalNameQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsTypeName_3 {
-  base64: resolutionsBase64QueryString_3 | null;
-  tracedSVG: resolutionsTracedSvgQueryString_3 | null;
-  aspectRatio: resolutionsAspectRatioQueryFloat_3 | null;
-  width: resolutionsWidthQueryFloat_3 | null;
-  height: resolutionsHeightQueryFloat_3 | null;
-  src: resolutionsSrcQueryString_3 | null;
-  srcSet: resolutionsSrcSetQueryString_3 | null;
-  srcWebp: resolutionsSrcWebpQueryString_3 | null;
-  srcSetWebp: resolutionsSrcSetWebpQueryString_3 | null;
-  originalName: resolutionsOriginalNameQueryString_3 | null;
-}
-
-export interface resolutionsBase64QueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsTracedSvgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsAspectRatioQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsWidthQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsHeightQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcSetQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcSetWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsOriginalNameQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidTypeName_3 {
-  base64: fluidBase64QueryString_3 | null;
-  tracedSVG: fluidTracedSvgQueryString_3 | null;
-  aspectRatio: fluidAspectRatioQueryFloat_3 | null;
-  src: fluidSrcQueryString_3 | null;
-  srcSet: fluidSrcSetQueryString_3 | null;
-  srcWebp: fluidSrcWebpQueryString_3 | null;
-  srcSetWebp: fluidSrcSetWebpQueryString_3 | null;
-  sizes: fluidSizesQueryString_3 | null;
-  originalImg: fluidOriginalImgQueryString_3 | null;
-  originalName: fluidOriginalNameQueryString_3 | null;
-}
-
-export interface fluidBase64QueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidTracedSvgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidAspectRatioQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fluidSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcSetQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcSetWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSizesQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidOriginalImgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidOriginalNameQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesTypeName_3 {
-  base64: sizesBase64QueryString_3 | null;
-  tracedSVG: sizesTracedSvgQueryString_3 | null;
-  aspectRatio: sizesAspectRatioQueryFloat_3 | null;
-  src: sizesSrcQueryString_3 | null;
-  srcSet: sizesSrcSetQueryString_3 | null;
-  srcWebp: sizesSrcWebpQueryString_3 | null;
-  srcSetWebp: sizesSrcSetWebpQueryString_3 | null;
-  sizes: sizesSizesQueryString_3 | null;
-  originalImg: sizesOriginalImgQueryString_3 | null;
-  originalName: sizesOriginalNameQueryString_3 | null;
-}
-
-export interface sizesBase64QueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesTracedSvgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesAspectRatioQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sizesSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcSetQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcSetWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSizesQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesOriginalImgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesOriginalNameQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface originalTypeName_3 {
-  width: originalWidthQueryFloat_3 | null;
-  height: originalHeightQueryFloat_3 | null;
-  src: originalSrcQueryString_3 | null;
-}
-
-export interface originalWidthQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface originalHeightQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface originalSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeTypeName_3 {
-  src: resizeSrcQueryString_3 | null;
-  tracedSVG: resizeTracedSvgQueryString_3 | null;
-  width: resizeWidthQueryInt_3 | null;
-  height: resizeHeightQueryInt_3 | null;
-  aspectRatio: resizeAspectRatioQueryFloat_3 | null;
-  originalName: resizeOriginalNameQueryString_3 | null;
-}
-
-export interface resizeSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeTracedSvgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeWidthQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resizeHeightQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resizeAspectRatioQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resizeOriginalNameQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkInternalInputObject_2 {
-  content: markdownRemarkInternalContentQueryString_2 | null;
-  type: markdownRemarkInternalTypeQueryString_2 | null;
-  contentDigest: markdownRemarkInternalContentDigestQueryString_2 | null;
-  owner: markdownRemarkInternalOwnerQueryString_2 | null;
-  fieldOwners: markdownRemarkInternalFieldOwnersInputObject_2 | null;
-}
-
-export interface markdownRemarkInternalContentQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkInternalFieldOwnersInputObject_2 {
-  slug: markdownRemarkInternalFieldOwnersSlugQueryString_2 | null;
-}
-
-export interface markdownRemarkInternalFieldOwnersSlugQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterInputObject_2 {
-  title: markdownRemarkFrontmatterTitleQueryString_2 | null;
-  createdDate: markdownRemarkFrontmatterCreatedDateQueryString_2 | null;
-  updatedDate: markdownRemarkFrontmatterUpdatedDateQueryString_2 | null;
-  author: markdownRemarkFrontmatterAuthorQueryString_2 | null;
-  tags: markdownRemarkFrontmatterTagsQueryList_2 | null;
-  image: markdownRemarkFrontmatterImageQueryString_2 | null;
-  draft: markdownRemarkFrontmatterDraftQueryBoolean_2 | null;
-  _PARENT: markdownRemarkFrontmatterParentQueryString_2 | null;
-}
-
-export interface markdownRemarkFrontmatterTitleQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterCreatedDateQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterUpdatedDateQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterAuthorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterTagsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterImageQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterDraftQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface markdownRemarkFrontmatterParentQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface excerptQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkRawMarkdownBodyQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFileAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFieldsInputObject_2 {
-  slug: markdownRemarkFieldsSlugQueryString_2 | null;
-}
-
-export interface markdownRemarkFieldsSlugQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface htmlQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface headingsQueryList_3 {
-  elemMatch: headingsListElemTypeName_3 | null;
-}
-
-export interface headingsListElemTypeName_3 {
-  value: headingsListElemValueQueryString_3 | null;
-  depth: headingsListElemDepthQueryInt_3 | null;
-}
-
-export interface headingsListElemValueQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface headingsListElemDepthQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface timeToReadQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface tableOfContentsQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface wordCountTypeName_3 {
-  paragraphs: wordCountParagraphsQueryInt_3 | null;
-  sentences: wordCountSentencesQueryInt_3 | null;
-  words: wordCountWordsQueryInt_3 | null;
-}
-
-export interface wordCountParagraphsQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface wordCountSentencesQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface wordCountWordsQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface authorJsonIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonBioQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonAvatarQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonTwitterQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonGithubQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonInternalInputObject_2 {
-  contentDigest: authorJsonInternalContentDigestQueryString_2 | null;
-  type: authorJsonInternalTypeQueryString_2 | null;
-  owner: authorJsonInternalOwnerQueryString_2 | null;
-}
-
-export interface authorJsonInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+};
+
+export type SitePageSortInput = {
+  fields?: Maybe<Array<Maybe<SitePageFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type SitePlugin = Node & {
+  __typename?: "SitePlugin";
+  id: Scalars["ID"];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  resolve?: Maybe<Scalars["String"]>;
+  name?: Maybe<Scalars["String"]>;
+  version?: Maybe<Scalars["String"]>;
+  pluginOptions?: Maybe<SitePluginPluginOptions>;
+  nodeAPIs?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  browserAPIs?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  ssrAPIs?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  pluginFilepath?: Maybe<Scalars["String"]>;
+  packageJson?: Maybe<SitePluginPackageJson>;
+};
+
+export type SitePluginConnection = {
+  __typename?: "SitePluginConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<SitePluginEdge>;
+  nodes: Array<SitePlugin>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars["String"]>;
+  group: Array<SitePluginGroupConnection>;
+};
+
+export type SitePluginConnectiondistinctArgs = {
+  field: SitePluginFieldsEnum;
+};
+
+export type SitePluginConnectiongroupArgs = {
+  skip?: Maybe<Scalars["Int"]>;
+  limit?: Maybe<Scalars["Int"]>;
+  field: SitePluginFieldsEnum;
+};
+
+export type SitePluginEdge = {
+  __typename?: "SitePluginEdge";
+  next?: Maybe<SitePlugin>;
+  node: SitePlugin;
+  previous?: Maybe<SitePlugin>;
+};
+
+export enum SitePluginFieldsEnum {
+  id = "id",
+  parent___id = "parent___id",
+  parent___parent___id = "parent___parent___id",
+  parent___parent___parent___id = "parent___parent___parent___id",
+  parent___parent___parent___children = "parent___parent___parent___children",
+  parent___parent___children = "parent___parent___children",
+  parent___parent___children___id = "parent___parent___children___id",
+  parent___parent___children___children = "parent___parent___children___children",
+  parent___parent___internal___content = "parent___parent___internal___content",
+  parent___parent___internal___contentDigest = "parent___parent___internal___contentDigest",
+  parent___parent___internal___description = "parent___parent___internal___description",
+  parent___parent___internal___fieldOwners = "parent___parent___internal___fieldOwners",
+  parent___parent___internal___ignoreType = "parent___parent___internal___ignoreType",
+  parent___parent___internal___mediaType = "parent___parent___internal___mediaType",
+  parent___parent___internal___owner = "parent___parent___internal___owner",
+  parent___parent___internal___type = "parent___parent___internal___type",
+  parent___children = "parent___children",
+  parent___children___id = "parent___children___id",
+  parent___children___parent___id = "parent___children___parent___id",
+  parent___children___parent___children = "parent___children___parent___children",
+  parent___children___children = "parent___children___children",
+  parent___children___children___id = "parent___children___children___id",
+  parent___children___children___children = "parent___children___children___children",
+  parent___children___internal___content = "parent___children___internal___content",
+  parent___children___internal___contentDigest = "parent___children___internal___contentDigest",
+  parent___children___internal___description = "parent___children___internal___description",
+  parent___children___internal___fieldOwners = "parent___children___internal___fieldOwners",
+  parent___children___internal___ignoreType = "parent___children___internal___ignoreType",
+  parent___children___internal___mediaType = "parent___children___internal___mediaType",
+  parent___children___internal___owner = "parent___children___internal___owner",
+  parent___children___internal___type = "parent___children___internal___type",
+  parent___internal___content = "parent___internal___content",
+  parent___internal___contentDigest = "parent___internal___contentDigest",
+  parent___internal___description = "parent___internal___description",
+  parent___internal___fieldOwners = "parent___internal___fieldOwners",
+  parent___internal___ignoreType = "parent___internal___ignoreType",
+  parent___internal___mediaType = "parent___internal___mediaType",
+  parent___internal___owner = "parent___internal___owner",
+  parent___internal___type = "parent___internal___type",
+  children = "children",
+  children___id = "children___id",
+  children___parent___id = "children___parent___id",
+  children___parent___parent___id = "children___parent___parent___id",
+  children___parent___parent___children = "children___parent___parent___children",
+  children___parent___children = "children___parent___children",
+  children___parent___children___id = "children___parent___children___id",
+  children___parent___children___children = "children___parent___children___children",
+  children___parent___internal___content = "children___parent___internal___content",
+  children___parent___internal___contentDigest = "children___parent___internal___contentDigest",
+  children___parent___internal___description = "children___parent___internal___description",
+  children___parent___internal___fieldOwners = "children___parent___internal___fieldOwners",
+  children___parent___internal___ignoreType = "children___parent___internal___ignoreType",
+  children___parent___internal___mediaType = "children___parent___internal___mediaType",
+  children___parent___internal___owner = "children___parent___internal___owner",
+  children___parent___internal___type = "children___parent___internal___type",
+  children___children = "children___children",
+  children___children___id = "children___children___id",
+  children___children___parent___id = "children___children___parent___id",
+  children___children___parent___children = "children___children___parent___children",
+  children___children___children = "children___children___children",
+  children___children___children___id = "children___children___children___id",
+  children___children___children___children = "children___children___children___children",
+  children___children___internal___content = "children___children___internal___content",
+  children___children___internal___contentDigest = "children___children___internal___contentDigest",
+  children___children___internal___description = "children___children___internal___description",
+  children___children___internal___fieldOwners = "children___children___internal___fieldOwners",
+  children___children___internal___ignoreType = "children___children___internal___ignoreType",
+  children___children___internal___mediaType = "children___children___internal___mediaType",
+  children___children___internal___owner = "children___children___internal___owner",
+  children___children___internal___type = "children___children___internal___type",
+  children___internal___content = "children___internal___content",
+  children___internal___contentDigest = "children___internal___contentDigest",
+  children___internal___description = "children___internal___description",
+  children___internal___fieldOwners = "children___internal___fieldOwners",
+  children___internal___ignoreType = "children___internal___ignoreType",
+  children___internal___mediaType = "children___internal___mediaType",
+  children___internal___owner = "children___internal___owner",
+  children___internal___type = "children___internal___type",
+  internal___content = "internal___content",
+  internal___contentDigest = "internal___contentDigest",
+  internal___description = "internal___description",
+  internal___fieldOwners = "internal___fieldOwners",
+  internal___ignoreType = "internal___ignoreType",
+  internal___mediaType = "internal___mediaType",
+  internal___owner = "internal___owner",
+  internal___type = "internal___type",
+  resolve = "resolve",
+  name = "name",
+  version = "version",
+  pluginOptions___plugins = "pluginOptions___plugins",
+  pluginOptions___plugins___resolve = "pluginOptions___plugins___resolve",
+  pluginOptions___plugins___id = "pluginOptions___plugins___id",
+  pluginOptions___plugins___name = "pluginOptions___plugins___name",
+  pluginOptions___plugins___version = "pluginOptions___plugins___version",
+  pluginOptions___plugins___pluginOptions___maxWidth = "pluginOptions___plugins___pluginOptions___maxWidth",
+  pluginOptions___plugins___pluginOptions___backgroundColor = "pluginOptions___plugins___pluginOptions___backgroundColor",
+  pluginOptions___plugins___browserAPIs = "pluginOptions___plugins___browserAPIs",
+  pluginOptions___plugins___ssrAPIs = "pluginOptions___plugins___ssrAPIs",
+  pluginOptions___plugins___pluginFilepath = "pluginOptions___plugins___pluginFilepath",
+  pluginOptions___name = "pluginOptions___name",
+  pluginOptions___path = "pluginOptions___path",
+  pluginOptions___trackingId = "pluginOptions___trackingId",
+  pluginOptions___head = "pluginOptions___head",
+  pluginOptions___anonymize = "pluginOptions___anonymize",
+  pluginOptions___respectDNT = "pluginOptions___respectDNT",
+  pluginOptions___maxWidth = "pluginOptions___maxWidth",
+  pluginOptions___backgroundColor = "pluginOptions___backgroundColor",
+  pluginOptions___short_name = "pluginOptions___short_name",
+  pluginOptions___start_url = "pluginOptions___start_url",
+  pluginOptions___background_color = "pluginOptions___background_color",
+  pluginOptions___theme_color = "pluginOptions___theme_color",
+  pluginOptions___display = "pluginOptions___display",
+  pluginOptions___pathCheck = "pluginOptions___pathCheck",
+  nodeAPIs = "nodeAPIs",
+  browserAPIs = "browserAPIs",
+  ssrAPIs = "ssrAPIs",
+  pluginFilepath = "pluginFilepath",
+  packageJson___name = "packageJson___name",
+  packageJson___description = "packageJson___description",
+  packageJson___version = "packageJson___version",
+  packageJson___main = "packageJson___main",
+  packageJson___license = "packageJson___license",
+  packageJson___dependencies = "packageJson___dependencies",
+  packageJson___dependencies___name = "packageJson___dependencies___name",
+  packageJson___dependencies___version = "packageJson___dependencies___version",
+  packageJson___devDependencies = "packageJson___devDependencies",
+  packageJson___devDependencies___name = "packageJson___devDependencies___name",
+  packageJson___devDependencies___version = "packageJson___devDependencies___version",
+  packageJson___peerDependencies = "packageJson___peerDependencies",
+  packageJson___peerDependencies___name = "packageJson___peerDependencies___name",
+  packageJson___peerDependencies___version = "packageJson___peerDependencies___version",
+  packageJson___keywords = "packageJson___keywords"
+}
+
+export type SitePluginFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  resolve?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+  pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>;
+  nodeAPIs?: Maybe<StringQueryOperatorInput>;
+  browserAPIs?: Maybe<StringQueryOperatorInput>;
+  ssrAPIs?: Maybe<StringQueryOperatorInput>;
+  pluginFilepath?: Maybe<StringQueryOperatorInput>;
+  packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
+};
+
+export type SitePluginGroupConnection = {
+  __typename?: "SitePluginGroupConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<SitePluginEdge>;
+  nodes: Array<SitePlugin>;
+  pageInfo: PageInfo;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+};
+
+export type SitePluginPackageJson = {
+  __typename?: "SitePluginPackageJson";
+  name?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+  version?: Maybe<Scalars["String"]>;
+  main?: Maybe<Scalars["String"]>;
+  license?: Maybe<Scalars["String"]>;
+  dependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDependencies>>>;
+  devDependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDevDependencies>>>;
+  peerDependencies?: Maybe<Array<Maybe<SitePluginPackageJsonPeerDependencies>>>;
+  keywords?: Maybe<Array<Maybe<Scalars["String"]>>>;
+};
+
+export type SitePluginPackageJsonDependencies = {
+  __typename?: "SitePluginPackageJsonDependencies";
+  name?: Maybe<Scalars["String"]>;
+  version?: Maybe<Scalars["String"]>;
+};
+
+export type SitePluginPackageJsonDependenciesFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPackageJsonDependenciesFilterListInput = {
+  elemMatch?: Maybe<SitePluginPackageJsonDependenciesFilterInput>;
+};
+
+export type SitePluginPackageJsonDevDependencies = {
+  __typename?: "SitePluginPackageJsonDevDependencies";
+  name?: Maybe<Scalars["String"]>;
+  version?: Maybe<Scalars["String"]>;
+};
+
+export type SitePluginPackageJsonDevDependenciesFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPackageJsonDevDependenciesFilterListInput = {
+  elemMatch?: Maybe<SitePluginPackageJsonDevDependenciesFilterInput>;
+};
+
+export type SitePluginPackageJsonFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+  main?: Maybe<StringQueryOperatorInput>;
+  license?: Maybe<StringQueryOperatorInput>;
+  dependencies?: Maybe<SitePluginPackageJsonDependenciesFilterListInput>;
+  devDependencies?: Maybe<SitePluginPackageJsonDevDependenciesFilterListInput>;
+  peerDependencies?: Maybe<
+    SitePluginPackageJsonPeerDependenciesFilterListInput
+  >;
+  keywords?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPackageJsonPeerDependencies = {
+  __typename?: "SitePluginPackageJsonPeerDependencies";
+  name?: Maybe<Scalars["String"]>;
+  version?: Maybe<Scalars["String"]>;
+};
+
+export type SitePluginPackageJsonPeerDependenciesFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
+  elemMatch?: Maybe<SitePluginPackageJsonPeerDependenciesFilterInput>;
+};
+
+export type SitePluginPluginOptions = {
+  __typename?: "SitePluginPluginOptions";
+  plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>;
+  name?: Maybe<Scalars["String"]>;
+  path?: Maybe<Scalars["String"]>;
+  trackingId?: Maybe<Scalars["String"]>;
+  head?: Maybe<Scalars["Boolean"]>;
+  anonymize?: Maybe<Scalars["Boolean"]>;
+  respectDNT?: Maybe<Scalars["Boolean"]>;
+  maxWidth?: Maybe<Scalars["Int"]>;
+  backgroundColor?: Maybe<Scalars["String"]>;
+  short_name?: Maybe<Scalars["String"]>;
+  start_url?: Maybe<Scalars["String"]>;
+  background_color?: Maybe<Scalars["String"]>;
+  theme_color?: Maybe<Scalars["String"]>;
+  display?: Maybe<Scalars["String"]>;
+  pathCheck?: Maybe<Scalars["Boolean"]>;
+};
+
+export type SitePluginPluginOptionsFilterInput = {
+  plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  path?: Maybe<StringQueryOperatorInput>;
+  trackingId?: Maybe<StringQueryOperatorInput>;
+  head?: Maybe<BooleanQueryOperatorInput>;
+  anonymize?: Maybe<BooleanQueryOperatorInput>;
+  respectDNT?: Maybe<BooleanQueryOperatorInput>;
+  maxWidth?: Maybe<IntQueryOperatorInput>;
+  backgroundColor?: Maybe<StringQueryOperatorInput>;
+  short_name?: Maybe<StringQueryOperatorInput>;
+  start_url?: Maybe<StringQueryOperatorInput>;
+  background_color?: Maybe<StringQueryOperatorInput>;
+  theme_color?: Maybe<StringQueryOperatorInput>;
+  display?: Maybe<StringQueryOperatorInput>;
+  pathCheck?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsPlugins = {
+  __typename?: "SitePluginPluginOptionsPlugins";
+  resolve?: Maybe<Scalars["String"]>;
+  id?: Maybe<Scalars["String"]>;
+  name?: Maybe<Scalars["String"]>;
+  version?: Maybe<Scalars["String"]>;
+  pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptions>;
+  browserAPIs?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  ssrAPIs?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  pluginFilepath?: Maybe<Scalars["String"]>;
+};
+
+export type SitePluginPluginOptionsPluginsFilterInput = {
+  resolve?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+  pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsFilterInput>;
+  browserAPIs?: Maybe<StringQueryOperatorInput>;
+  ssrAPIs?: Maybe<StringQueryOperatorInput>;
+  pluginFilepath?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsPluginsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsPluginsFilterInput>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptions = {
+  __typename?: "SitePluginPluginOptionsPluginsPluginOptions";
+  maxWidth?: Maybe<Scalars["Int"]>;
+  backgroundColor?: Maybe<Scalars["String"]>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
+  maxWidth?: Maybe<IntQueryOperatorInput>;
+  backgroundColor?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginSortInput = {
+  fields?: Maybe<Array<Maybe<SitePluginFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type SiteSiteMetadata = {
+  __typename?: "SiteSiteMetadata";
+  title?: Maybe<Scalars["String"]>;
+  googleVerification?: Maybe<Scalars["String"]>;
+  disqus?: Maybe<Scalars["String"]>;
+};
+
+export type SiteSiteMetadataFilterInput = {
+  title?: Maybe<StringQueryOperatorInput>;
+  googleVerification?: Maybe<StringQueryOperatorInput>;
+  disqus?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SiteSortInput = {
+  fields?: Maybe<Array<Maybe<SiteFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export enum SortOrderEnum {
+  ASC = "ASC",
+  DESC = "DESC"
+}
+
+export type StringQueryOperatorInput = {
+  eq?: Maybe<Scalars["String"]>;
+  ne?: Maybe<Scalars["String"]>;
+  in?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  nin?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  regex?: Maybe<Scalars["String"]>;
+  glob?: Maybe<Scalars["String"]>;
+};
+
+export type wordCount = {
+  __typename?: "wordCount";
+  paragraphs?: Maybe<Scalars["Int"]>;
+  sentences?: Maybe<Scalars["Int"]>;
+  words?: Maybe<Scalars["Int"]>;
+};
+
+export type wordCountFilterInput = {
+  paragraphs?: Maybe<IntQueryOperatorInput>;
+  sentences?: Maybe<IntQueryOperatorInput>;
+  words?: Maybe<IntQueryOperatorInput>;
+};

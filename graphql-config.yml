@@ -1,0 +1,12 @@
+schema:
+  - "http://localhost:8000/___graphql"
+documents: []
+config: {}
+generates:
+  ./src/graphql-types.d.ts:
+    config:
+      namingConvention: keep
+    plugins:
+      - add: // tslint:disable
+      - "typescript"
+require: []
