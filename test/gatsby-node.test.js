@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-disable no-undef, max-nested-callbacks */
 jest.mock('path');
 const {createPages, onCreateNode} = require('../gatsby-node');
 
@@ -61,13 +61,16 @@ describe('gatsby-node', () => {
         });
     });
 
-    it('should throw an error on graphql error', () => {
+    test('should throw an error on graphql error', async () => {
+      expect.assertions(1);
       graphql.mockReturnValueOnce(
         Promise.resolve({errors: 'something wrong!'})
       );
-
-      expect(createPages({graphql, actions}))
-        .toThrow();
+      try {
+        await createPages({graphql, actions});
+      } catch (error) {
+        expect(error).toMatch('something wrong!');
+      }
     });
 
     it('should create tags pages', () => {
