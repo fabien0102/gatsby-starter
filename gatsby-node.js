@@ -14,13 +14,10 @@ const cleanArray = arr => compact(uniq(arr));
 exports.onCreateNode = ({node, actions, getNode}) => {
   const {createNodeField} = actions;
   let slug;
-  switch (node.internal.type) {
-    // eslint-disable-next-line quotes
-    case `MarkdownRemark`:
-      const fileNode = getNode(node.parent);
-      const [basePath, name] = fileNode.relativePath.split('/');
-      slug = `/${basePath}/${name}/`;
-      break;
+  if (node.internal.type === 'MarkdownRemark') {
+    const fileNode = getNode(node.parent);
+    const [basePath, name] = fileNode.relativePath.split('/');
+    slug = `/${basePath}/${name}/`;
   }
 
   if (slug) {

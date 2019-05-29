@@ -26,7 +26,7 @@ export const reducer = (state: StoreState, action: ToggleSidebar): StoreState =>
 
 // Store
 export const initialState: StoreState = { isSidebarVisible: false };
-export const store = createStore<StoreState>(
+export const store = createStore<StoreState, any, any, any>(
   reducer,
   initialState,
   devToolsEnhancer({}),
