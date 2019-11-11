@@ -3,6 +3,9 @@
         "outDir": "./dist/",
         "sourceMap": true,
         "noImplicitAny": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
         "module": "commonjs",
         "target": "esnext",
         "jsx": "react",
@@ -10,5 +13,6 @@
     },
     "include": [
         "./src/**/*"
-    ]
+    ],
+    "typeRoots": ["node_modules/@types"]
 }

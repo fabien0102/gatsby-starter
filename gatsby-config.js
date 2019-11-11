@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 module.exports = {
   siteMetadata: {
     title: `My website`,

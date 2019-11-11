@@ -4,11 +4,15 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
         "target": "es5",
         "jsx": "react",
         "lib": ["dom", "esnext"]
     },
     "include": [
         "../src/**/*"
-    ]
+    ],
+    "typeRoots": ["../node_modules/@types"]
 }

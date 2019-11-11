@@ -1,10 +1,10 @@
 import * as React from "react";
 import { GatsbyLinkProps } from "gatsby-link";
 import { Card, List } from "semantic-ui-react";
-import { markdownRemarkGroupConnectionConnection } from "../../graphql-types";
+import { MarkdownRemarkGroupConnection } from "../../graphql-types";
 
 interface TagsCardProps extends React.HTMLProps<HTMLDivElement> {
-  tags: markdownRemarkGroupConnectionConnection[];
+  tags: MarkdownRemarkGroupConnection[];
   Link: React.ComponentClass<GatsbyLinkProps<any>>;
   tag?: string;
 }

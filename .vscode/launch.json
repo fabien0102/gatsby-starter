@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Start a dev server",
-      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/cli.js",
+      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby.js",
       "args": [
         "develop"
       ],
@@ -20,7 +20,7 @@
       "type": "node",
       "request": "launch",
       "name": "Build a static site",
-      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/cli.js",
+      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby.js",
       "args": [
         "build"
       ]

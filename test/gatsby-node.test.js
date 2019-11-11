@@ -61,13 +61,16 @@ describe('gatsby-node', () => {
         });
     });
 
-    it('should throw an error on graphql error', () => {
+    test('should throw an error on graphql error', async () => {
+      expect.assertions(1);
       graphql.mockReturnValueOnce(
         Promise.resolve({errors: 'something wrong!'})
       );
-
-      expect(createPages({graphql, actions}))
-        .toThrow();
+      try {
+        await createPages({graphql, actions});
+      } catch (error) {
+        expect(error).toMatch('something wrong!');
+      }
     });
 
     it('should create tags pages', () => {
@@ -139,7 +142,7 @@ describe('gatsby-node', () => {
 
     describe('pagination', () => {
       const generateData = n => {
-        const edges = [...Array(n)].map((val, i) => ({
+        const edges = [...new Array(n)].map((val, i) => ({
           node: {
             fields: {
               slug: `/blog/2017-04-18--article-${i + 1}/`

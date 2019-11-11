@@ -6,13 +6,13 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { withKnobs, select } from "@storybook/addon-knobs";
 import TagsCard from "./TagsCard";
-import { markdownRemarkGroupConnectionConnection } from "../../graphql-types";
+import { MarkdownRemarkGroupConnection } from "../../graphql-types";
 
 const tags = [
   { fieldValue: "tag01", totalCount: 2 },
   { fieldValue: "tag02", totalCount: 4 },
   { fieldValue: "tag03", totalCount: 6 },
-] as markdownRemarkGroupConnectionConnection[];
+] as MarkdownRemarkGroupConnection[];
 
 const LinkStub = ((props: any) =>
   <div onClick={action(props.to.toString())} >{props.children}</div>) as any;

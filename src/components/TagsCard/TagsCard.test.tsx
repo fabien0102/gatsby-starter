@@ -4,7 +4,7 @@ import * as React from "react";
 import TagsCard from "./TagsCard";
 
 import { Card, List } from "semantic-ui-react";
-import { markdownRemarkGroupConnectionConnection } from "../../graphql-types";
+import { MarkdownRemarkGroupConnection } from "../../graphql-types";
 
 // Configure enzyme with react 16 adapter
 const Adapter: any = require("enzyme-adapter-react-16");
@@ -23,7 +23,7 @@ describe("TagsCard component", () => {
       { fieldValue: "tag01", totalCount: 2 },
       { fieldValue: "tag02", totalCount: 4 },
       { fieldValue: "tag03", totalCount: 6 },
-    ] as markdownRemarkGroupConnectionConnection[];
+    ] as MarkdownRemarkGroupConnection[];
 
     const wrapper = shallow(<TagsCard tags={tags} Link={LinkStub} />);
 
@@ -35,7 +35,7 @@ describe("TagsCard component", () => {
       { fieldValue: "tag01", totalCount: 2 },
       { fieldValue: "tag02", totalCount: 4 },
       { fieldValue: "tag03", totalCount: 6 },
-    ] as markdownRemarkGroupConnectionConnection[];
+    ] as MarkdownRemarkGroupConnection[];
 
     const wrapper = shallow(<TagsCard tags={tags} Link={LinkStub} tag="tag01"/>);
 

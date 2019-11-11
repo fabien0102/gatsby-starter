@@ -40,8 +40,8 @@ const addWithCustomData = function (plop, action, data) {
       mkdirp.sync(path.dirname(fileDestPath));
       fs.writeFileSync(fileDestPath, plop.renderString(template, data));
       return `add ${fileDestPath}`;
-    } catch (err) {
-      return err.message;
+    } catch (error) {
+      return error.message;
     }
   };
 };
