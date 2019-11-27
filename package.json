@@ -18,7 +18,6 @@
     "test:watch": "jest --watch",
     "generate": "plop --plopfile ./generators/plopfile.js",
     "graphql-types": "graphql-codegen --config ./graphql-config.yml",
-    "precommit": "lint-staged",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o public/docs",
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
@@ -185,5 +184,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  }
 }
