@@ -1,3 +1,29 @@
 {
-  "xo.enable": true
+  "xo.enable": true,
+  "cSpell.words": [
+    "autolink",
+    "browserslist",
+    "codeclimate",
+    "devtools",
+    "disqus",
+    "es",
+    "eslint",
+    "esnext",
+    "extension",
+    "flowtype",
+    "gatsby",
+    "headers",
+    "info",
+    "interop",
+    "lcov",
+    "module",
+    "plopfile",
+    "plugin",
+    "prismjs",
+    "redux",
+    "remark",
+    "reporter",
+    "stylelint",
+    "test"
+  ]
 }

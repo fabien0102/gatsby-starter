@@ -2,7 +2,7 @@
   "name": "gatsby-starter",
   "version": "1.0.0",
   "description": "Gatsby 1.0 starter",
-  "author": "fabien0102 <fabien0102@gmail.com>",
+  "author": "James Tharpe <jimmy.tharpe@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "gatsby develop",
@@ -23,9 +23,6 @@
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
   },
   "dependencies": {
-    "@graphql-codegen/add": "^1.2.0",
-    "@graphql-codegen/cli": "^1.9.0",
-    "@graphql-codegen/typescript": "^1.2.0",
     "babel-eslint": "^10.0.1",
     "change-case": "^3.1.0",
     "codeclimate-test-reporter": "^0.5.1",
@@ -60,6 +57,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
+    "@graphql-codegen/add": "^1.2.0",
+    "@graphql-codegen/cli": "^1.9.0",
+    "@graphql-codegen/typescript": "^1.2.0",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-knobs": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
@@ -165,7 +165,10 @@
     "rules": {
       "no-case-declarations": 0,
       "default-case": 0
-    }
+    },
+    "ignores": [
+      "*.tsx"
+    ]
   },
   "remarkConfig": {
     "plugins": [
