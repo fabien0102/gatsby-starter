@@ -82,7 +82,7 @@ const BlogPostPage = (props: BlogPostProps) => {
       <Image
         {...cover}
         fluid
-      /> 
+      />
       <Segment vertical
         style={{ border: "none" }}
         dangerouslySetInnerHTML={{
