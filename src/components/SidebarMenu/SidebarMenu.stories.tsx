@@ -1,12 +1,12 @@
-/* tslint:disable no-var-requires */
-const withReadme = (require("storybook-readme/with-readme") as any).default;
-const SidebarMenuReadme = require("./README.md");
-
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import { SidebarMenu } from "./SidebarMenu";
+
+/* tslint:disable no-var-requires */
+const withReadme = (require("storybook-readme/with-readme") as any).default;
+const SidebarMenuReadme = require("./README.md");
 
 const items = [
   { name: "Home", path: "/", exact: true, icon: "home" },
