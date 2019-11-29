@@ -1,6 +1,5 @@
 import { createStore } from "redux";
 import { devToolsEnhancer } from "redux-devtools-extension";
-import { get } from "lodash";
 
 export interface StoreState {
   isSidebarVisible: boolean;

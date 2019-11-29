@@ -1,12 +1,12 @@
+import { action } from "@storybook/addon-actions";
+import { select, withKnobs } from "@storybook/addon-knobs";
+import { storiesOf } from "@storybook/react";
+import * as React from "react";
+import { MarkdownRemarkGroupConnection } from "../../graphql-types";
+import TagsCard from "./TagsCard";
+
 const withReadme = (require("storybook-readme/with-readme") as any).default;
 const TagsCardReadme = require("./README.md");
-
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { withKnobs, select } from "@storybook/addon-knobs";
-import TagsCard from "./TagsCard";
-import { MarkdownRemarkGroupConnection } from "../../graphql-types";
 
 const tags = [
   { fieldValue: "tag01", totalCount: 2 },

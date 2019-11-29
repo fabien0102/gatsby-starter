@@ -2,7 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { toggleSidebar } from "../../store";
-import { Container, Label, Menu, Icon } from "semantic-ui-react";
+import { Container, Menu, Icon } from "semantic-ui-react";
 import { MenuProps } from "../Menu";
 
 interface HeaderMenuProps extends MenuProps {

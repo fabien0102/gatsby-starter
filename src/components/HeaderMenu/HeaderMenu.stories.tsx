@@ -7,6 +7,7 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import { HeaderMenu } from "./HeaderMenu";
+import { Dispatch } from "redux";
 
 const items = [
   { name: "Home", path: "/", exact: true },
@@ -16,7 +17,7 @@ const items = [
 
 const LinkStub = (props: any) =>
   <div {...props} onClick={action(props.to.toString())} >{props.children}</div>;
-const dispatchStub = (a: any) => action(a.type)(a) && a;
+const dispatchStub: Dispatch = (a: any) => { action(a.type)(a); return a; };
 
 storiesOf("HeaderMenu", module)
   .addDecorator(withKnobs)

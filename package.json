@@ -165,7 +165,11 @@
     "rules": {
       "no-case-declarations": 0,
       "default-case": 0
-    }
+    },
+    "ignores": [
+      "**/*.tsx",
+      "**/*.ts"
+    ]
   },
   "remarkConfig": {
     "plugins": [
