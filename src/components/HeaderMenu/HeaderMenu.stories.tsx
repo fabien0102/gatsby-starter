@@ -4,10 +4,7 @@ import { action } from "@storybook/addon-actions";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import { HeaderMenu } from "./HeaderMenu";
 import { Dispatch } from "redux";
-
-/* tslint:disable no-var-requires */
-const withReadme = (require("storybook-readme/with-readme") as any).default;
-const HeaderMenuReadme = require("./README.md");
+import { resolve } from "path";
 
 const items = [
   { name: "Home", path: "/", exact: true },
@@ -21,7 +18,9 @@ const dispatchStub: Dispatch = (a: any) => { action(a.type)(a); return a; };
 
 storiesOf("HeaderMenu", module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme(HeaderMenuReadme))
+  .addParameters({
+    fileName: resolve(__dirname, "README.md"),
+  })
   .add("default", () => {
     const pathname = text("pathname", "/");
     const inverted = boolean("inverted", false);

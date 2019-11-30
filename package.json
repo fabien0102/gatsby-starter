@@ -76,6 +76,7 @@
     "@types/react-redux": "^7.0.9",
     "@types/react-test-renderer": "^16.8.1",
     "@types/semantic-ui": "^2.2.7",
+    "@types/storybook-readme": "^5.0.4",
     "@types/webpack-env": "^1.13.9",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
