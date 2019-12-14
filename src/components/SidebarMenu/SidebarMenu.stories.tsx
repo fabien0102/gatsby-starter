@@ -1,12 +1,9 @@
-/* tslint:disable no-var-requires */
-const withReadme = (require("storybook-readme/with-readme") as any).default;
-const SidebarMenuReadme = require("./README.md");
-
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { SidebarMenu } from "./SidebarMenu";
+import { resolve } from "path";
 
 const items = [
   { name: "Home", path: "/", exact: true, icon: "home" },
@@ -19,7 +16,9 @@ const LinkStub: any = (props: any) =>
 
 storiesOf("SidebarMenu", module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme(SidebarMenuReadme))
+  .addParameters({
+    fileName: resolve(__dirname, "README.md"),
+  })
   .add("default", () => {
     const pathname = text("pathname", "/");
 

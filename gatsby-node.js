@@ -29,7 +29,7 @@ exports.onCreateNode = ({node, actions, getNode}) => {
 // Implement the Gatsby API `createPages`.
 // This is called after the Gatsby bootstrap is finished
 // so you have access to any information necessary to
-// programatically create pages.
+// programmatically create pages.
 exports.createPages = ({graphql, actions}) => {
   const {createPage} = actions;
 

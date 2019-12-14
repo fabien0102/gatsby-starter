@@ -5,8 +5,8 @@ const mkdirp = require('mkdirp');
 /**
  * Input validator - ensure input is not empty.
  *
- * @param {string} name
- * @return {boolean|string}
+ * @param {string} name - the name of the required field
+ * @returns {any} A function to required the given field
  */
 const inputRequired = name => {
   return value => (/.+/.test(value) ? true : `${name} is required`);
@@ -19,10 +19,11 @@ const inputRequired = name => {
  * Note: I don’t have implement the "file already exists" security
  *
  * @param {any} plop - plop instance
- * @param {object} action
- *   @param {string} action.path
- *   @param {string} action.templateFile
- * @param {object} data
+ * @param {object} action - Data about the action to add
+ *   @param {string} action.path - Path to write
+ *   @param {string} action.templateFile - Template file to use
+ * @param {object} data - Data to render
+ * @returns {any} - A function to add a plop
  */
 const addWithCustomData = function (plop, action, data) {
   const makeDestPath = p => path.resolve(plop.getDestBasePath(), p);
