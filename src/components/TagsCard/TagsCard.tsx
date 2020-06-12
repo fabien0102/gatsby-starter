@@ -1,5 +1,6 @@
 import * as React from "react";
 import { GatsbyLinkProps } from "gatsby-link";
+import { kebabCase } from "lodash";
 import { Card, List } from "semantic-ui-react";
 import { MarkdownRemarkGroupConnection } from "../../graphql-types";
 
@@ -24,7 +25,7 @@ export default (props: TagsCardProps) => {
             const activeStyle = {
               fontWeight: "700",
             };
-            const tagLink = isActive ? `/blog` : `/blog/tags/${tag.fieldValue}/`;
+            const tagLink = isActive ? `/blog` : `/blog/tags/${kebabCase(tag.fieldValue)}/`;
             return (
               <List.Item as="span" key={tag.fieldValue}>
                 <List.Icon name="tag" color={isActive ? "blue" : null} />

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { get } from "lodash";
+import { get, kebabCase } from "lodash";
 import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
 import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection, Site } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
@@ -21,7 +21,7 @@ const BlogPostPage = (props: BlogPostProps) => {
   const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
 
   const tags = props.data.post.frontmatter.tags
-    .map((tag) => <Label key={tag}><Link to={`/blog/tags/${tag}/`}>{tag}</Link></Label>);
+    .map((tag) => <Label key={tag}><Link to={`/blog/tags/${kebabCase(tag)}/`}>{tag}</Link></Label>);
 
   const recents = props.data.recents.edges
     .map(({ node }) => {
