@@ -1,97 +1,53 @@
-# Gatsby 2.0 starter
+# space-apps-kushimoto.github.io
 
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
-[![Build Status](https://travis-ci.org/fabien0102/gatsby-starter.svg?branch=master)](https://travis-ci.org/fabien0102/gatsby-starter)
-[![Build status](https://ci.appveyor.com/api/projects/status/k06pajqcm23lay1s/branch/master?svg=true)](https://ci.appveyor.com/project/fabien0102/gatsby-starter/branch/master)
-[![Code Climate](https://codeclimate.com/github/fabien0102/gatsby-starter/badges/gpa.svg)](https://codeclimate.com/github/fabien0102/gatsby-starter)
-[![Test Coverage](https://codeclimate.com/github/fabien0102/gatsby-starter/badges/coverage.svg)](https://codeclimate.com/github/fabien0102/gatsby-starter/coverage)
+このリポジトリは Space Apps Kushimoto の公式サイトのリポジトリです。
 
-Demo: <https://fabien0102-gatsby-starter.netlify.com/>
+https://space-apps-kushimoto.github.io/
 
-Storybook: <https://fabien0102-gatsby-starter.netlify.com/docs/>
+## ブログの書き方
 
-Gatsby 2.0 starter for generate awesome static website working with a nice env development.
+1. GitHub 上でこのリポジトリをフォーク。
 
-## Warning
+2. フォークしたリポジトリ上で、`/_posts/`ディレクトリに移動。
 
-This starter is currently in wip (see progression to #What's inside session).
+   - 例：`https://github.com/[your-name]/space-apps-kushimoto.github.io/tree/master/_posts`
 
-## Getting started
+3. [Create New File] をクリック
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+   - <img width="500" alt="スクリーンショット 2019-07-30 13 36 34" src="https://user-images.githubusercontent.com/8760841/62172910-f59d1e00-b36e-11e9-96c5-5281461ccf9f.png">
 
-```bash
-$ gatsby new my-website https://github.com/fabien0102/gatsby-starter
-```
+4. 記事を書く。
 
-Run `npm start` (or press `F5` if you are on VSCode) to hot-serve your website on <http://localhost:8000>.
+5. プルリクエストを送る。
 
-Run `npm run build` to create static site ready to host (`/public`)
+### 投稿形式
 
-## What's inside?
+- ファイル名を`YYYY-MM-DD-name-of-post.md`の形式で保存。
+- 最初の行に下の形式でメタデータを追加。
+  - https://github.com/ndrewtl/airspace-jekyll/blame/master/_posts/2016-05-20-welcome-to-jekyll.md#L1-L7
+- マークダウン形式で記述。
 
--   [ ] Gatsby 2.0 (alpha)
-    -   [x] sharp
-    -   [x] offline support
-    -   [ ] google analytics
-    -   [x] manifest
-    -   [x] typescript
-    -   [x] blog in markdown
--   [x] Best practices tools
-    -   [x] [Jest](https://facebook.github.io/jest/) / [Enzyme](http://airbnb.io/enzyme/)
-    -   [x] [Storybook](https://storybooks.js.org/)
-    -   [x] [Typescript](https://www.typescriptlang.org/) / [tslint](https://palantir.github.io/tslint/)
-    -   [x] [xo linter](https://github.com/sindresorhus/xo)
-    -   [x] [Remark-lint](https://github.com/wooorm/remark-lint)
-    -   [x] [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for autofix each commit
-    -   [x] Travis/AppVeyor config (unix-osx-windows CI)
-    -   [x] Code climate config
--   [x] SEO
-    -   [x] [Helmet](https://github.com/nfl/react-helmet)
--   [x] [Semantic-ui](http://react.semantic-ui.com) for styling
--   [x] Lazyboy tools
-    -   [x] [plop](https://github.com/amwmedia/plop) templates -> `npm run generate`
+## 開発者向け
 
-## Files structure
+## 始め方
 
-     .
-     ├── data                          // website data (included into graphQL)
-     │   ├── author.json               // list of blog authors
-     │   ├── avatars                   // authors avatars
-     │   └── blog                      // all blog data (posts, images)
-     ├── gatsby-config.js              // gatsby configuration
-     ├── gatsby-node.js                // gatsby node hooks
-     ├── generators                    // generators (`npm run generate`)
-     │   ├── blog-post-generator.js    // `blog post` generator
-     │   ├── component-generator.js    // `component` generator
-     │   ├── page-generator.js         // `page` generator
-     │   ├── plopfile.js               // generators entry
-     │   ├── templates                 // all templates (handlebar notation)
-     │   └── utils.js                  // utils scripts for generators
-     ├── package.json
-     ├── public                        // output folder (in .gitignore)
-     ├── README.md                     // this file
-     ├── src                           // sources
-     │   ├── components                // all react components
-     │   ├── css                       // styles
-     │   ├── declarations.d.ts         // declarations for no typescript modules/files
-     │   ├── graphql-types.d.ts        // graphql types (`npm run graphql-types`)
-     │   ├── html.tsx                  // main html (required)
-     │   ├── layouts                   // layouts
-     │   │   └── default.tsx           // default layout (required)
-     │   ├── pages                     // all pages
-     │   └── templates                 // all templates (used for procedural page creation, see `gatsby-node.js`)
-     ├── tools                         // miscs tools for dev
-     │   └── update-post-date.js       // update post date hook
-     ├── tsconfig.json                 // typescript configuration
-     ├── tslint.json                   // tslint configuration
-     └── package-lock.json             // npm lock file
+Code Sand Box で開く。
+<a href="https://codesandbox.io/s/github/fabien0102/gatsby-starter" class="css-1q3a7e1"><span class="css-epvm6">CodeSandbox&nbsp;<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMjMiIHZpZXdCb3g9IjAgMCAyMyAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb2N1c2FibGU9ImZhbHNlIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExLjUgMTEuNjE3djExLjE3YS44OTcuODk3IDAgMDAuNDk3LS4xNDJsOC45NDQtNS4xMTFjLjM1NC0uMjAyLjQ5OC0uNTE2LjQ5OC0uOTIzVjYuMjQ3YS44Ny44NyAwIDAwLS4xNDMtLjQ5N2wtOS41MSA1LjM3M2EuNTY4LjU2OCAwIDAwLS4yODYuNDk0em00Ljk3IDYuNDE0YzAgLjI4NC0uMTA3LjQyNi0uMzU2LjU2OGwtMi45ODEgMS43MDNjLS4yMTMuMTQyLS40OTcuMDcyLS40OTctLjIxMnYtNy41OTZjMC0uMjAzLjE3OS0uNDY3LjM1NS0uNTY4bDYuODE1LTMuOTA0Yy4xODktLjExLjM1NC4wNjUuMzU0LjI4NHY0LjA0NmMwIC4yMS0uMDk4LjM5OC0uMjg0LjQ5N2wtMy4wNTIgMS42MzNjLS4xODUuMDk4LS4zNTUuMjg3LS4zNTUuNDk2djMuMDUzeiIgZmlsbD0iIzk5OSIvPgogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS41NjIgMTYuNjExVjYuMjQ3YzAtLjQwOC4yMTQtLjc5Mi41NjctLjk5NEwxMC43OS4zNTVjLjE4OC0uMDk5LjQ5OC0uMTQyLjcxLS4xNDIuMjE0IDAgLjU0Mi4wNTMuNzEuMTQybDguNTkgNC44OThjLjE3LjEuNDAxLjMzMi40OTcuNDk3bC05LjUxMiA1LjM5NWEuNTcyLjU3MiAwIDAwLS4yODQuNDk3djExLjE0NWExLjE0IDEuMTQgMCAwMS0uNTY4LS4xNDJMMi4yIDE3LjYwNWMtLjM1My0uMjAyLS42MzgtLjU4Ni0uNjM4LS45OTR6bTEuMjc3LTguMzA2djQuMDQ3YzAgLjI4NC4wNzEuNDI2LjM1NS41NjhsMi45ODIgMS43MDNhLjU4NS41ODUgMCAwMS4zNTUuNTY4djIuODRjMCAuMjg0LjA3LjQyNi4zNTUuNTY4bDIuOTgxIDEuNzAzYy4yODQuMTQyLjQ5Ny4wNzEuNDk3LS4yMTN2LTcuNTk1YS41ODUuNTg1IDAgMDAtLjM1NS0uNTY4TDMuMzM2IDguMDkzYy0uMjEzLS4xNDItLjQ5Ny0uMDcxLS40OTcuMjEyem0xMS42NDItNC44MjdMMTEuODU1IDQuOTdhLjY0NS42NDUgMCAwMS0uNzEgMEw4LjUxOCAzLjQ4YS41ODguNTg4IDAgMDAtLjU2OCAwTDQuNjg1IDUuMzIzYy0uMjg0LjE0Mi0uMjg0LjQyNiAwIC41NjhsNi41MyAzLjc2MmMuMTc2LjEuMzk0LjEuNTY5IDBsNi41My0zLjc2MmMuMjE0LS4xNDIuMjg1LS40MjYgMC0uNTY4TDE1LjA1IDMuNDc4YS41ODguNTg4IDAgMDAtLjU2OCAweiIgZmlsbD0iI0YyRjJGMiIvPgo8L3N2Zz4K" alt="" class="css-1rn0cej"></span></a>
 
-## Plop generators - `npm run generate`
+### 修正方法
 
-To avoid any boring copy/paste, this starter-kit have many generators to permit
-simple bootstrap of current file pattern (eg. components/pages/blog posts). e.g. to add a new blog post first add the authors to data/authors.json and add authors' images to the data/avatars folder. Next execute 'npm run generate' and select 'Blog post'. Follow the prompts for a new post. Each blog post requires an image be added to the /data/blog/<your new post> folder prior to running 'gatsby develop'.
+#### 内容
 
-You can add/delete/modify any generators into `/generators` folder.
+`src/pages/` フォルダ内にあるファイルを編集。
 
-Be lazy and have fun!
+#### CSS
+
+`src/css/custom.css` の末尾に追記していく。
+
+#### 画像
+
+`static/` フォルダ内に画像をアップロード。`<img src="./your-image.png">` で表示。
+
+## 参考
+
+https://github.com/ndrewtl/airspace-jekyll
