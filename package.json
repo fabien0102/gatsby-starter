@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@graphql-codegen/add": "^1.2.0",
-    "@graphql-codegen/cli": "^1.9.0",
+    "@graphql-codegen/cli": "^1.21.8",
     "@graphql-codegen/typescript": "^1.2.0",
     "babel-eslint": "^10.0.1",
     "change-case": "^3.1.0",
@@ -91,7 +91,7 @@
     "flat": "^4.1.0",
     "husky": "2.3.0",
     "jest": "^24.8.0",
-    "lint-staged": "8.1.7",
+    "lint-staged": "13.1.0",
     "mkdirp": "^0.5.1",
     "plop": "^2.3.0",
     "raw-loader": "^2.0.0",
