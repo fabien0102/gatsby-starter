@@ -88,7 +88,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "flat": "^4.1.0",
+    "flat": "^5.0.1",
     "husky": "2.3.0",
     "jest": "^24.8.0",
     "lint-staged": "8.1.7",
